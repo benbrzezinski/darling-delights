@@ -1,0 +1,38 @@
+@use "../../scss/mixins.scss" as *;
+
+.advantages {
+  display: flex;
+  gap: 100px;
+  padding-block: 50px;
+  padding-inline: 60px;
+
+  @include max-width(950px) {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+}
+
+.advantagesItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.advantagesIcon {
+  width: 62px;
+  height: 62px;
+  color: var(--cl-3);
+}
+
+.advantagesTitle {
+  font-family: var(--ff-sec);
+  font-size: var(--fs-3);
+  line-height: 1.6;
+}
+
+.advantagesText {
+  color: var(--cl-10);
+  line-height: 1.6;
+  text-align: center;
+}
