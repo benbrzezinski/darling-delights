@@ -9,7 +9,7 @@ const Hero = () => {
           <h1 className={scss.title}>
             Sparkle & Shine: Exquisite Elegance Unveiled
           </h1>
-          <Link to="shop" className={scss.btn}>
+          <Link to="shop" className={scss.shopBtn}>
             Shop now
           </Link>
         </section>

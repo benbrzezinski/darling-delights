@@ -1,0 +1,29 @@
+.background {
+  background-color: var(--cl-13);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 1400px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+  padding-inline: 15px;
+  margin: auto;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-size: var(--fs-6);
+  line-height: 1.4;
+  color: var(--cl-12);
+}
+
+.video {
+  max-height: 650px;
+  border-radius: var(--br-main);
+  display: grid;
+  place-items: center;
+}

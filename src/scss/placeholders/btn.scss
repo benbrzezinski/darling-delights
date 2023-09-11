@@ -1,0 +1,26 @@
+%btn {
+  width: 200px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-12);
+  background-color: transparent;
+  border: 1px solid var(--cl-12);
+  border-radius: var(--br-sec);
+  transition-property: color, border-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  &:hover {
+    color: var(--cl-8);
+    border-color: var(--cl-8);
+  }
+
+  &:active {
+    color: var(--cl-9);
+    border-color: var(--cl-9);
+  }
+}

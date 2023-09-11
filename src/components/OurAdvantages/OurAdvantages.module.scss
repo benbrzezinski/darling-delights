@@ -2,17 +2,22 @@
 
 .advantages {
   display: flex;
+  justify-content: center;
   gap: 100px;
-  padding-block: 50px;
-  padding-inline: 60px;
+  padding: 50px;
+  padding-top: 70px;
+  max-width: 1400px;
+  margin: auto;
 
   @include max-width(950px) {
     flex-wrap: wrap;
     gap: 50px;
+    padding-inline: 15px;
   }
 }
 
 .advantagesItem {
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;

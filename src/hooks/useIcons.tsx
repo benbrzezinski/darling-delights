@@ -3,10 +3,7 @@ import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
 import { BsTruck, BsChatHeart } from "react-icons/bs";
 import { MdOutlinePayments } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
-
-interface IconClass {
-  className: string;
-}
+import { IconClass } from "../types";
 
 const useIcons = () => {
   const Hamburger = ({ className }: IconClass) => (
