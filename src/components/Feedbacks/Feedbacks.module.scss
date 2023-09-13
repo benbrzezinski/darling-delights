@@ -1,0 +1,112 @@
+@use "../../scss/index.scss" as *;
+
+.background {
+  background-color: var(--cl-7);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  max-width: 1400px;
+  padding-block: 70px;
+  padding-inline: 15px;
+  margin: auto;
+
+  @include max-width(1205px) {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.headline {
+  width: 312px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  @include max-width(1205px) {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-7);
+  line-height: 1.4;
+  color: var(--cl-4);
+
+  @include max-width(746px) {
+    font-size: var(--fs-6);
+  }
+}
+
+.text {
+  width: 280px;
+  line-height: 1.6;
+  color: var(--cl-4);
+}
+
+.feedbackBox {
+  width: 700px;
+  height: 450px;
+
+  @include max-width(746px) {
+    width: 290px;
+    height: auto;
+  }
+}
+
+.feedback {
+  display: flex;
+  gap: 35px;
+  border-radius: var(--br-main);
+  background-color: var(--cl-9);
+  overflow: hidden;
+
+  @include max-width(746px) {
+    min-height: 900px;
+    flex-direction: column;
+  }
+}
+
+.feedbackImg {
+  max-width: 300px;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+.feedbackInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  padding: 30px 40px 30px 0;
+
+  @include max-width(746px) {
+    padding: 0 15px 35px 15px;
+  }
+}
+
+.feedbackText {
+  line-height: 1.6;
+  color: var(--cl-4);
+  margin-bottom: 20px;
+}
+
+.feedbackAuthor {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-4);
+  margin-bottom: 5px;
+}
+
+.feedbackCountry {
+  line-height: 1.6;
+  color: var(--cl-4);
+}

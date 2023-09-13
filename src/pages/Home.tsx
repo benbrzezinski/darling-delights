@@ -4,6 +4,7 @@ import FeaturedProducts from "../components/FeaturedProducts";
 import OurCollections from "../components/OurCollections";
 import OurSelection from "../components/OurSelection";
 import OurStory from "../components/OurStory";
+import Feedbacks from "../components/Feedbacks";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <OurCollections />
       <OurSelection />
       <OurStory />
+      <Feedbacks />
     </>
   );
 };

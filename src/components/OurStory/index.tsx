@@ -21,10 +21,7 @@ const OurStory = () => {
           controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
           poster="/assets/images/video-poster.jpg"
         >
-          <source
-            src="https://www.dropbox.com/scl/fi/6k1caews3e2y5dgii3ytg/our-story.mp4?rlkey=qf22l1rjmcs1mow23uteht6vg&dl=1"
-            type="video/mp4"
-          />
+          <source src="/assets/videos/our-story.mp4" type="video/mp4" />
           Your browser does not support the video tag
         </video>
       </div>

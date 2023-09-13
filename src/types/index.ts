@@ -9,6 +9,19 @@ export interface Product {
   placement?: ProductPlacement;
 }
 
+export interface Feedback {
+  id: string;
+  author: string;
+  country: string;
+  img: string;
+  text: string;
+}
+
 export interface IconClass {
   className: string;
+}
+
+export interface Header {
+  isSmallScreen: boolean;
+  openMobileMenu: () => void;
 }

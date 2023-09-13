@@ -1,0 +1,89 @@
+@use "../../scss/mixins.scss" as *;
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1400px;
+  padding-block: 15px;
+  padding-inline: 50px;
+  margin: auto;
+
+  @include max-width(560px) {
+    padding-inline: 15px;
+  }
+}
+
+.header {
+  background-color: var(--cl-7);
+}
+
+.logoBox {
+  flex: 1;
+}
+
+.logo {
+  font-family: var(--ff-sec);
+  font-size: var(--fs-5);
+  line-height: 1.4;
+  color: var(--cl-sec);
+}
+
+.hamburgerBtn {
+  background-color: transparent;
+  border: none;
+}
+
+.nav {
+  display: flex;
+  flex: 1;
+  gap: 30px;
+}
+
+.navItem {
+  color: var(--cl-4);
+  font-size: var(--fs-sec);
+  font-weight: var(--fw-main);
+  line-height: 1.6;
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-3);
+  }
+}
+
+.isActive {
+  color: var(--cl-3);
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 76px;
+    height: 4px;
+    background-color: var(--cl-3);
+    border-radius: var(--br-main);
+    position: absolute;
+    bottom: -10px;
+    left: -19px;
+  }
+}
+
+.iconsBox {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  color: var(--cl-4);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-3);
+  }
+}

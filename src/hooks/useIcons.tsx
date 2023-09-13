@@ -1,5 +1,9 @@
 import { IconContext } from "react-icons";
-import { AiOutlineUser, AiOutlineShoppingCart } from "react-icons/ai";
+import {
+  AiOutlineUser,
+  AiOutlineShoppingCart,
+  AiOutlineClose,
+} from "react-icons/ai";
 import { BsTruck, BsChatHeart } from "react-icons/bs";
 import { MdOutlinePayments } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -9,6 +13,12 @@ const useIcons = () => {
   const Hamburger = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
       <RxHamburgerMenu />
+    </IconContext.Provider>
+  );
+
+  const Close = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <AiOutlineClose />
     </IconContext.Provider>
   );
 
@@ -42,7 +52,7 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
-  return { Hamburger, User, ShoppingCart, Truck, Heart, Payment };
+  return { Hamburger, Close, User, ShoppingCart, Truck, Heart, Payment };
 };
 
 export default useIcons;

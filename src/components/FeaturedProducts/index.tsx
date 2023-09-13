@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { products } from "../../db/fake-products";
+import products from "../../db/fake-products";
 import { ProductPlacement } from "../../types/enums";
 import scss from "./FeaturedProducts.module.scss";
 

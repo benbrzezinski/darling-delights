@@ -46,11 +46,11 @@
   }
 
   &.first {
-    background-image: url("https://www.dropbox.com/scl/fi/i65uu1ld4zs8r4kmk6cwg/our-collections-1.jpg?rlkey=upeg367ef24fgc4o299ap3nyx&dl=1");
+    background-image: url("https://i.ibb.co/0yt4b4b/our-collections-1.jpg");
   }
 
   &.sec {
-    background-image: url("https://www.dropbox.com/scl/fi/2rcw1p2f7swz8kawv9pov/our-collections-2.jpg?rlkey=bvno7qu65268893u3qmdze7yi&dl=1");
+    background-image: url("https://i.ibb.co/XZb59cy/our-collections-2.jpg");
 
     @include min-width(1205px) {
       transform: translateY(-35px);
@@ -58,15 +58,15 @@
   }
 
   &.third {
-    background-image: url("https://www.dropbox.com/scl/fi/hgyao9vk7uws96a82a3ex/our-collections-3.jpg?rlkey=dhqb8i2owuzsvzx8s7tned92t&dl=1");
+    background-image: url("https://i.ibb.co/9gGt184/our-collections-3.jpg");
   }
 
   &.fourth {
-    background-image: url("https://www.dropbox.com/scl/fi/rc55vxbez6e4cj5vz4jti/our-collections-4.jpg?rlkey=zqoc1kut6jmcax1pt9xok63ku&dl=1");
+    background-image: url("https://i.ibb.co/ThC9hKs/our-collections-4.jpg");
   }
 
   &.fifth {
-    background-image: url("https://www.dropbox.com/scl/fi/9o793vby1g7via2ylbaqm/our-collections-5.jpg?rlkey=wh5mc2zxievzm3xpomfp8h9s6&dl=1");
+    background-image: url("https://i.ibb.co/TKYcHkK/our-collections-5.jpg");
 
     @include min-width(1205px) {
       transform: translateY(-35px);
@@ -74,7 +74,7 @@
   }
 
   &.sixth {
-    background-image: url("https://www.dropbox.com/scl/fi/jlvwjd51sy28dympogyx2/our-collections-6.jpg?rlkey=lqedbb36fz1m7b909s9zqvyzl&dl=1");
+    background-image: url("https://i.ibb.co/wKwKVnG/our-collections-6.jpg");
   }
 }
 

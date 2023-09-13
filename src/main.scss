@@ -1,6 +1,7 @@
 @use "./scss/variables.scss" as *;
 @import "../node_modules/modern-normalize/modern-normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manrope:wght@400;600&display=swap");
+@import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 * {
   margin: 0;
@@ -17,6 +18,7 @@ body {
   color: var(--cl-main);
   background-color: var(--cl-4);
   min-height: 100dvh;
+  overflow-x: hidden;
 }
 
 ul,

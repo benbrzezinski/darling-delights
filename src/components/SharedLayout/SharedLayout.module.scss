@@ -1,102 +1,61 @@
-@use "../../scss/mixins.scss" as *;
-
-.wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  max-width: 1400px;
-  padding-block: 15px;
-  padding-inline: 50px;
-  margin: auto;
-
-  @include max-width(560px) {
-    padding-inline: 15px;
-  }
-}
-
-.header {
-  background-color: var(--cl-7);
-}
-
-.logoBox {
-  flex: 1;
-}
-
-.logo {
-  font-family: var(--ff-sec);
-  font-size: var(--fs-5);
-  line-height: 1.4;
-  color: var(--cl-sec);
-}
-
-.hamburgerBtn {
-  background-color: transparent;
-  border: none;
-}
-
-.mobileMenuBox {
-  position: relative;
-  height: 20px;
-}
+@use "../../scss/index.scss" as *;
 
 .navMobile {
   position: absolute;
-  bottom: -210px;
-  left: -43px;
+  inset: 0;
+  transform: translateX(100%);
   z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
-  background-color: var(--cl-9);
-  border-radius: var(--br-main);
-  padding: 15px;
-}
-
-.nav {
-  display: flex;
-  flex: 1;
+  justify-content: center;
   gap: 30px;
+  background-color: var(--cl-9);
+  border: 4px solid var(--cl-3);
+  transition: transform var(--duration) var(--timing-function);
+  padding: 20px;
+
+  &.visible {
+    transform: translateX(0);
+  }
+
+  @include landscape() {
+    gap: 10px;
+  }
 }
 
 .navItem {
   color: var(--cl-4);
-  font-size: var(--fs-sec);
+  font-size: var(--fs-3);
   font-weight: var(--fw-main);
-  line-height: 1.6;
+  line-height: 1.4;
   transition: color var(--duration) var(--timing-function);
+  padding-block: 10px;
+  padding-inline: 50px;
 
   &:hover,
   &:focus-visible {
     color: var(--cl-3);
+  }
+
+  @include landscape() {
+    font-size: var(--fs-main);
   }
 }
 
 .isActiveMobile {
   color: var(--cl-3);
   position: relative;
+  border: 2px solid var(--cl-3);
+  border-radius: var(--br-main);
 }
 
-.isActive {
-  color: var(--cl-3);
-  position: relative;
-
-  &::before {
-    content: "";
-    width: 76px;
-    height: 4px;
-    background-color: var(--cl-3);
-    border-radius: var(--br-main);
-    position: absolute;
-    bottom: -10px;
-    left: -19px;
-  }
-}
-
-.iconsBox {
-  display: flex;
-  gap: 15px;
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
 }
 
 .icon {
@@ -110,10 +69,4 @@
   &:focus-visible {
     color: var(--cl-3);
   }
-}
-
-.backdrop {
-  position: absolute;
-  inset: 0;
-  z-index: 9;
 }
