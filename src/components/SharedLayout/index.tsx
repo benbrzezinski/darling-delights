@@ -5,6 +5,7 @@ import { useState, useEffect, Suspense } from "react";
 import useIcons from "../../hooks/useIcons";
 import Header from "../Header";
 import Footer from "../Footer";
+import Loader from "../Loader";
 import scss from "./SharedLayout.module.scss";
 
 const SharedLayout = () => {
@@ -13,10 +14,14 @@ const SharedLayout = () => {
   const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
-    isSmallScreen
-      ? disableBodyScroll(document.body)
-      : enableBodyScroll(document.body);
-  }, [isSmallScreen]);
+    if (isMobileMenuOpen && isSmallScreen) {
+      return disableBodyScroll(document.body);
+    }
+
+    if (!isSmallScreen) {
+      return enableBodyScroll(document.body);
+    }
+  }, [isMobileMenuOpen, isSmallScreen]);
 
   const openMobileMenu = () => {
     disableBodyScroll(document.body);
@@ -32,7 +37,7 @@ const SharedLayout = () => {
     <>
       <Header isSmallScreen={isSmallScreen} openMobileMenu={openMobileMenu} />
       <main>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </main>

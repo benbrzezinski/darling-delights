@@ -1,7 +1,7 @@
 @use "../../scss/index.scss" as *;
 
 .navMobile {
-  position: absolute;
+  position: fixed;
   inset: 0;
   transform: translateX(100%);
   z-index: 10;
@@ -10,8 +10,11 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
+  background-image: url("/assets/images/hero-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-color: var(--cl-9);
-  border: 4px solid var(--cl-3);
   transition: transform var(--duration) var(--timing-function);
   padding: 20px;
 

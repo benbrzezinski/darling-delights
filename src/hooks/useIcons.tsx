@@ -4,9 +4,12 @@ import {
   AiOutlineShoppingCart,
   AiOutlineClose,
 } from "react-icons/ai";
-import { BsTruck, BsChatHeart } from "react-icons/bs";
+import { BsTruck, BsChatHeart, BsTwitter, BsYoutube } from "react-icons/bs";
+import { BiLogoLinkedinSquare } from "react-icons/bi";
 import { MdOutlinePayments } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { PiEnvelopeSimpleLight } from "react-icons/pi";
+import { FaFacebook } from "react-icons/fa6";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -52,7 +55,50 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
-  return { Hamburger, Close, User, ShoppingCart, Truck, Heart, Payment };
+  const Envelope = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <PiEnvelopeSimpleLight />
+    </IconContext.Provider>
+  );
+
+  const Twitter = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <BsTwitter />
+    </IconContext.Provider>
+  );
+
+  const Facebook = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaFacebook />
+    </IconContext.Provider>
+  );
+
+  const LinkedIn = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <BiLogoLinkedinSquare />
+    </IconContext.Provider>
+  );
+
+  const YouTube = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <BsYoutube />
+    </IconContext.Provider>
+  );
+
+  return {
+    Hamburger,
+    Close,
+    User,
+    ShoppingCart,
+    Truck,
+    Heart,
+    Payment,
+    Envelope,
+    Twitter,
+    Facebook,
+    LinkedIn,
+    YouTube,
+  };
 };
 
 export default useIcons;

@@ -25,3 +25,7 @@ export interface Header {
   isSmallScreen: boolean;
   openMobileMenu: () => void;
 }
+
+export interface Loader {
+  isVisible?: boolean;
+}
