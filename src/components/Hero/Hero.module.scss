@@ -147,3 +147,20 @@
     box-shadow: none;
   }
 }
+
+.mouse {
+  width: 30px;
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  cursor: pointer;
+  transition-property: transform, opacity;
+  transition-duration: var(--duration), calc(var(--duration) + 250ms);
+  transition-timing-function: var(--timing-function);
+
+  &.notVisible {
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+  }
+}

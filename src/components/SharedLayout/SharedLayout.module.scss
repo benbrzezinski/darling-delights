@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: var(--cl-9);
+  background-color: var(--cl-7);
   transition: transform var(--duration) var(--timing-function);
   padding: 20px;
 
@@ -71,5 +71,22 @@
   &:hover,
   &:focus-visible {
     color: var(--cl-3);
+  }
+}
+
+.scrollUp {
+  width: 50px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  cursor: pointer;
+  transition-property: transform, opacity;
+  transition-duration: var(--duration), calc(var(--duration) + 250ms);
+  transition-timing-function: var(--timing-function);
+
+  &.notVisible {
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
   }
 }

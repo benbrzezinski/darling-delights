@@ -20,6 +20,7 @@ const OurStory = () => {
           onMouseLeave={hideControls}
           controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
           poster="/assets/images/video-poster.jpg"
+          controls
         >
           <source src="/assets/videos/our-story.mp4" type="video/mp4" />
           Your browser does not support the video tag

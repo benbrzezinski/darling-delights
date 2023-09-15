@@ -1,15 +1,18 @@
+import Lottie from "lottie-react";
+import { useState, useEffect, Suspense } from "react";
+import { NavLink, Outlet } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import { NavLink, Outlet } from "react-router-dom";
-import { useState, useEffect, Suspense } from "react";
 import useIcons from "../../hooks/useIcons";
 import Header from "../Header";
 import Footer from "../Footer";
 import Loader from "../Loader";
+import scrollUp from "../../json/scroll-up.json";
 import scss from "./SharedLayout.module.scss";
 
 const SharedLayout = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTop, setIsTop] = useState(true);
   const { Close } = useIcons();
   const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
 
@@ -23,6 +26,18 @@ const SharedLayout = () => {
     }
   }, [isMobileMenuOpen, isSmallScreen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY === 0 ? setIsTop(true) : setIsTop(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const openMobileMenu = () => {
     disableBodyScroll(document.body);
     setIsMobileMenuOpen(true);
@@ -31,6 +46,13 @@ const SharedLayout = () => {
   const closeMobileMenu = () => {
     enableBodyScroll(document.body);
     setIsMobileMenuOpen(false);
+  };
+
+  const handleScroll = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -99,6 +121,13 @@ const SharedLayout = () => {
           </NavLink>
         </nav>
       ) : null}
+      <Lottie
+        animationData={scrollUp}
+        className={
+          isTop ? `${scss.scrollUp} ${scss.notVisible}` : scss.scrollUp
+        }
+        onClick={handleScroll}
+      />
     </>
   );
 };
