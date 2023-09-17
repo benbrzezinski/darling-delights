@@ -22,8 +22,11 @@ const OurStory = () => {
           poster="/assets/images/video-poster.jpg"
           controls
         >
-          <source src="/assets/videos/our-story.mp4" type="video/mp4" />
-          Your browser does not support the video tag
+          <source
+            src="https://drive.google.com/uc?export=download&id=1L4gRIWo_c7c6ZOg4alId_gsfuLmdnxOH"
+            type="video/mp4"
+          />
+          Your browser does not support mp4 videos
         </video>
       </div>
     </div>

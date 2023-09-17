@@ -1,84 +1,9 @@
-@use "../../scss/index.scss" as *;
-
-.navMobile {
-  position: fixed;
-  inset: 0;
-  transform: translateX(100%);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  background-image: url("/assets/images/hero-bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: var(--cl-7);
-  transition: transform var(--duration) var(--timing-function);
-  padding: 20px;
-
-  &.visible {
-    transform: translateX(0);
-  }
-
-  @include landscape() {
-    gap: 10px;
-  }
-}
-
-.navItem {
-  color: var(--cl-4);
-  font-size: var(--fs-3);
-  font-weight: var(--fw-main);
-  line-height: 1.4;
-  transition: color var(--duration) var(--timing-function);
-  padding-block: 10px;
-  padding-inline: 50px;
-
-  &:hover,
-  &:focus-visible {
-    color: var(--cl-3);
-  }
-
-  @include landscape() {
-    font-size: var(--fs-main);
-  }
-}
-
-.isActiveMobile {
-  color: var(--cl-3);
-  position: relative;
-  border: 2px solid var(--cl-3);
-  border-radius: var(--br-main);
-}
-
-.closeBtn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: transparent;
-  border: none;
-}
-
-.icon {
-  color: var(--cl-4);
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  transition: color var(--duration) var(--timing-function);
-
-  &:hover,
-  &:focus-visible {
-    color: var(--cl-3);
-  }
-}
-
 .scrollUp {
   width: 50px;
   position: fixed;
   bottom: 50px;
   right: 50px;
+  z-index: 2;
   cursor: pointer;
   transition-property: transform, opacity;
   transition-duration: var(--duration), calc(var(--duration) + 250ms);

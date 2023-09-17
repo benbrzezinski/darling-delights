@@ -26,6 +26,11 @@ export interface Header {
   openMobileMenu: () => void;
 }
 
+export interface MobileNav {
+  isMobileMenuOpen: boolean;
+  closeMobileMenu: () => void;
+}
+
 export interface Loader {
   isVisible?: boolean;
 }
