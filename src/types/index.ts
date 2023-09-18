@@ -6,7 +6,7 @@ export interface Product {
   name: string;
   price: number;
   img: string;
-  placement?: ProductPlacement;
+  placement: ProductPlacement;
 }
 
 export interface Feedback {
@@ -15,6 +15,11 @@ export interface Feedback {
   country: string;
   img: string;
   text: string;
+}
+
+export interface Action {
+  payload: string;
+  type: string;
 }
 
 export interface IconClass {

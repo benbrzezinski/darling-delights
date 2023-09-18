@@ -20,6 +20,7 @@ const MobileNav = ({ isMobileMenuOpen, closeMobileMenu }: MobileNav) => {
         className={({ isActive }) =>
           isActive ? `${scss.navItem} ${scss.isActiveMobile}` : scss.navItem
         }
+        onClick={closeMobileMenu}
       >
         Home
       </NavLink>
@@ -28,6 +29,7 @@ const MobileNav = ({ isMobileMenuOpen, closeMobileMenu }: MobileNav) => {
         className={({ isActive }) =>
           isActive ? `${scss.navItem} ${scss.isActiveMobile}` : scss.navItem
         }
+        onClick={closeMobileMenu}
       >
         Shop
       </NavLink>
@@ -36,6 +38,7 @@ const MobileNav = ({ isMobileMenuOpen, closeMobileMenu }: MobileNav) => {
         className={({ isActive }) =>
           isActive ? `${scss.navItem} ${scss.isActiveMobile}` : scss.navItem
         }
+        onClick={closeMobileMenu}
       >
         Collections
       </NavLink>
@@ -44,6 +47,7 @@ const MobileNav = ({ isMobileMenuOpen, closeMobileMenu }: MobileNav) => {
         className={({ isActive }) =>
           isActive ? `${scss.navItem} ${scss.isActiveMobile}` : scss.navItem
         }
+        onClick={closeMobileMenu}
       >
         About
       </NavLink>
@@ -52,6 +56,7 @@ const MobileNav = ({ isMobileMenuOpen, closeMobileMenu }: MobileNav) => {
         className={({ isActive }) =>
           isActive ? `${scss.navItem} ${scss.isActiveMobile}` : scss.navItem
         }
+        onClick={closeMobileMenu}
       >
         Contact
       </NavLink>

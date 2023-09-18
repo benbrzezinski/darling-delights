@@ -5,7 +5,7 @@ import {
   AiOutlineClose,
 } from "react-icons/ai";
 import { BsTruck, BsChatHeart, BsTwitter, BsYoutube } from "react-icons/bs";
-import { BiLogoLinkedinSquare } from "react-icons/bi";
+import { BiLogoLinkedinSquare, BiSearchAlt } from "react-icons/bi";
 import { MdOutlinePayments } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
@@ -85,6 +85,12 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Search = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <BiSearchAlt />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -98,6 +104,7 @@ const useIcons = () => {
     Facebook,
     LinkedIn,
     YouTube,
+    Search,
   };
 };
 
