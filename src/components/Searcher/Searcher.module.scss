@@ -2,7 +2,7 @@
 
 .background {
   background-color: var(--cl-7);
-  background-image: url("/assets/images/hero-bg.png");
+  background-image: url("/assets/svgs/hero-bg.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -18,6 +18,11 @@
   padding-bottom: 150px;
   padding-inline: 15px;
   margin: auto;
+
+  @include max-width(416px) {
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
 }
 
 .title {
