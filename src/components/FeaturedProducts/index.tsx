@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
-import products from "../../db/fake-products";
+import useProducts from "../../hooks/useProducts";
 import { ProductPlacement } from "../../types/enums";
 import scss from "./FeaturedProducts.module.scss";
 
 const FeaturedProducts = () => {
-  const featuredProducts = products.filter(
-    ({ placement }) => placement === ProductPlacement.Featured
+  const { products } = useProducts();
+
+  const featuredProducts = products.filter(({ placement }) =>
+    placement.includes(ProductPlacement.Featured)
   );
 
   return (

@@ -6,7 +6,8 @@ export interface Product {
   name: string;
   price: number;
   img: string;
-  placement: ProductPlacement;
+  placement: ProductPlacement[];
+  inBusket: boolean;
 }
 
 export interface Feedback {
@@ -17,9 +18,9 @@ export interface Feedback {
   text: string;
 }
 
-export interface Action {
-  payload: string;
-  type: string;
+export interface OptionType {
+  value: string;
+  label: string;
 }
 
 export interface IconClass {

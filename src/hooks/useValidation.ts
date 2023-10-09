@@ -7,7 +7,7 @@ const useValidation = () => {
       return false;
     }
 
-    toast.success("Thank you for subscribing! 🎉");
+    toast.success("Thank you for subscribing 🎉");
     return true;
   };
 

@@ -6,10 +6,15 @@ import {
 } from "react-icons/ai";
 import { BsTruck, BsChatHeart, BsTwitter, BsYoutube } from "react-icons/bs";
 import { BiLogoLinkedinSquare, BiSearchAlt } from "react-icons/bi";
-import { MdOutlinePayments } from "react-icons/md";
+import {
+  MdOutlinePayments,
+  MdArrowForwardIos,
+  MdArrowBackIosNew,
+} from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
 import { FaFacebook } from "react-icons/fa6";
+import { GiBigDiamondRing } from "react-icons/gi";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -91,6 +96,24 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Ring = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <GiBigDiamondRing />
+    </IconContext.Provider>
+  );
+
+  const Greater = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <MdArrowForwardIos />
+    </IconContext.Provider>
+  );
+
+  const Lower = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <MdArrowBackIosNew />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -105,6 +128,9 @@ const useIcons = () => {
     LinkedIn,
     YouTube,
     Search,
+    Ring,
+    Greater,
+    Lower,
   };
 };
 

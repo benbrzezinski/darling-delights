@@ -15,3 +15,20 @@
     @content;
   }
 }
+
+@mixin rotate-mixin() {
+  @keyframes rotate {
+    0% {
+      transform: scale(1);
+    }
+    35% {
+      transform: scale(1.2);
+    }
+    75% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

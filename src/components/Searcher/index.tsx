@@ -1,13 +1,13 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ChangeEventHandler } from "react";
-import { selectSearcher } from "../../redux/searcher/selectors";
-import { setSearcher } from "../../redux/searcher/slice";
+import { setSearcher } from "../../redux/filters/slice";
+import { selectSearcher } from "../../redux/filters/selectors";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Searcher.module.scss";
 
 const Searcher = () => {
-  const searcher = useSelector(selectSearcher);
   const dispatch = useDispatch();
+  const searcher = useSelector(selectSearcher);
   const { Search } = useIcons();
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
@@ -23,8 +23,8 @@ const Searcher = () => {
           <input
             type="text"
             className={scss.searcher}
-            value={searcher}
             onChange={handleChange}
+            value={searcher}
             placeholder="Find jewelry you like"
           />
           <Search className={scss.icon} />
