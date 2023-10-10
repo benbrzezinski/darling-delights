@@ -16,8 +16,8 @@
   }
 }
 
-@mixin rotate-mixin() {
-  @keyframes rotate {
+@mixin scale-mixin() {
+  @keyframes scale {
     0% {
       transform: scale(1);
     }

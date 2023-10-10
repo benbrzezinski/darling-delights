@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { nanoid } from "nanoid";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
@@ -8,26 +9,27 @@ const Pagination = ({
   currentPage,
   setCurrentPage,
 }: {
-  productsPerPage: 13;
+  productsPerPage: 12 | 13;
   currentPage: number;
   setCurrentPage: (page: number) => void;
 }) => {
   const { filteredProducts } = useProducts();
   const { Greater, Lower } = useIcons();
+
+  const quantityOfPages = Math.ceil(filteredProducts.length / productsPerPage);
   const pages: number[] = [];
 
-  for (
-    let i = 1;
-    i <= Math.ceil(filteredProducts.length / productsPerPage);
-    i++
-  ) {
+  for (let i = 1; i <= quantityOfPages; i++) {
     pages.push(i);
   }
 
+  useEffect(() => {
+    if (quantityOfPages) setCurrentPage(1);
+  }, [quantityOfPages, filteredProducts.length, setCurrentPage]);
+
   const scrollTop = () => {
     window.scrollTo({
-      top: 0,
-      left: 0,
+      top: 500,
       behavior: "smooth",
     });
   };
@@ -40,8 +42,8 @@ const Pagination = ({
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              setCurrentPage(currentPage - 1);
               scrollTop();
+              setCurrentPage(currentPage - 1);
             }}
           >
             <Lower className={scss.iconLT} />
@@ -65,8 +67,8 @@ const Pagination = ({
                 : scss.paginationBtn
             }
             onClick={() => {
-              setCurrentPage(page);
               scrollTop();
+              setCurrentPage(page);
             }}
           >
             {page}
@@ -79,8 +81,8 @@ const Pagination = ({
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              setCurrentPage(currentPage + 1);
               scrollTop();
+              setCurrentPage(currentPage + 1);
             }}
           >
             <Greater className={scss.iconGT} />

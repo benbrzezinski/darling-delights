@@ -2,7 +2,14 @@
   position: fixed;
   top: 35%;
   left: 50%;
-  z-index: 2;
+  z-index: 5;
   margin-top: -50px;
   margin-left: -50px;
+}
+
+.spanDown {
+  width: 100px;
+  height: 100px;
+  margin-inline: auto;
+  margin-bottom: 200px;
 }

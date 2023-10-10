@@ -38,22 +38,25 @@
   background-color: transparent;
   border-radius: var(--br-3);
 
-  &:not(:last-child)::after {
-    content: "";
-    width: 1px;
-    height: 20px;
-    background-color: var(--cl-17);
-    position: absolute;
-    right: -4px;
+  @include min-width(450px) {
+    &:not(:last-child)::after {
+      content: "";
+      width: 1px;
+      height: 20px;
+      background-color: var(--cl-17);
+      position: absolute;
+      right: -4px;
+    }
   }
 
   &:has(.radio:checked) {
     color: var(--cl-4);
     background-color: var(--cl-12);
 
-    &:not(:last-child)::after {
-      content: "";
-      width: 0;
+    @include min-width(450px) {
+      &:not(:last-child)::after {
+        width: 0;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 @use "../../scss/index.scss" as *;
-@include rotate-mixin();
+@include scale-mixin();
 
 .wrapper {
   display: grid;
@@ -86,8 +86,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  padding-top: 70px;
+  gap: 45px;
+  padding-top: 50px;
 }
 
 .infoText {
@@ -102,5 +102,5 @@
   width: 140px;
   height: 140px;
   fill: var(--cl-sec);
-  animation: rotate 10s linear infinite;
+  animation: scale 10s linear infinite;
 }

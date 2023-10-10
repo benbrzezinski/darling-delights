@@ -9,4 +9,5 @@ export enum ProductPlacement {
   Featured = "FEATURED",
   Selection = "SELECTION",
   Shop = "SHOP",
+  Collection = "COLLECTION",
 }
