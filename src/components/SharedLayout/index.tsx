@@ -10,6 +10,7 @@ import Header from "../Header";
 import MobileNav from "../MobileNav";
 import Footer from "../Footer";
 import Loader from "../Loader";
+import scrollToValue from "../../utils/scrollToValue";
 import scrollUp from "../../json/scroll-up.json";
 import scss from "./SharedLayout.module.scss";
 
@@ -49,11 +50,8 @@ const SharedLayout = () => {
     setIsMobileMenuOpen(false);
   };
 
-  const scrollTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+  const handleScrollTop = () => {
+    scrollToValue(0);
   };
 
   return (
@@ -76,7 +74,7 @@ const SharedLayout = () => {
         className={
           isTop ? `${scss.scrollUp} ${scss.notVisible}` : scss.scrollUp
         }
-        onClick={scrollTop}
+        onClick={handleScrollTop}
       />
       <ToastContainer position="top-center" />
     </>

@@ -3,6 +3,7 @@ export enum ProductType {
   Bracelet = "BRACELET",
   Necklace = "NECKLACE",
   Earring = "EARRING",
+  Brooch = "BROOCH",
 }
 
 export enum ProductPlacement {

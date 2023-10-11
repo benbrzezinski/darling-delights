@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { nanoid } from "nanoid";
+import { Pagination } from "../../types";
+import scrollToValue from "../../utils/scrollToValue";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Pagination.module.scss";
@@ -8,11 +10,7 @@ const Pagination = ({
   productsPerPage,
   currentPage,
   setCurrentPage,
-}: {
-  productsPerPage: 12 | 13;
-  currentPage: number;
-  setCurrentPage: (page: number) => void;
-}) => {
+}: Pagination) => {
   const { filteredProducts } = useProducts();
   const { Greater, Lower } = useIcons();
 
@@ -27,13 +25,6 @@ const Pagination = ({
     if (quantityOfPages) setCurrentPage(1);
   }, [quantityOfPages, filteredProducts.length, setCurrentPage]);
 
-  const scrollTop = () => {
-    window.scrollTo({
-      top: 500,
-      behavior: "smooth",
-    });
-  };
-
   return pages.length > 0 ? (
     <ul className={scss.pagination}>
       {currentPage !== pages[0] ? (
@@ -42,8 +33,8 @@ const Pagination = ({
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              scrollTop();
-              setCurrentPage(currentPage - 1);
+              scrollToValue(500);
+              setCurrentPage(prev => prev - 1);
             }}
           >
             <Lower className={scss.iconLT} />
@@ -67,7 +58,7 @@ const Pagination = ({
                 : scss.paginationBtn
             }
             onClick={() => {
-              scrollTop();
+              scrollToValue(500);
               setCurrentPage(page);
             }}
           >
@@ -81,8 +72,8 @@ const Pagination = ({
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              scrollTop();
-              setCurrentPage(currentPage + 1);
+              scrollToValue(500);
+              setCurrentPage(prev => prev + 1);
             }}
           >
             <Greater className={scss.iconGT} />

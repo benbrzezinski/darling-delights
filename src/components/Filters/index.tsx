@@ -1,12 +1,16 @@
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
 import { ChangeEventHandler } from "react";
 import { useDispatch } from "react-redux";
-import { OptionType } from "../../types";
 import { setProductType, setSortedPrice } from "../../redux/filters/slice";
+import { OptionType } from "../../types";
+import { ProductType } from "../../types/enums";
+import useFilters from "../../hooks/useFilters";
 import scss from "./Filters.module.scss";
 
 const Filters = () => {
   const dispatch = useDispatch();
+  const { productType, sortedPrice } = useFilters();
+
   const options: OptionType[] = [
     { value: "asc", label: "lowest to highest" },
     { value: "desc", label: "highest to lowest" },
@@ -17,8 +21,19 @@ const Filters = () => {
     if (productType !== undefined) dispatch(setProductType(productType));
   };
 
-  const handleSelect = (option: OptionType | null) => {
+  const handleSelect = (option: SingleValue<OptionType>) => {
     if (option) dispatch(setSortedPrice(option.value));
+  };
+
+  const handleDefaultValue = () => {
+    switch (sortedPrice) {
+      case "asc":
+        return options[0];
+      case "desc":
+        return options[1];
+      default:
+        return { value: "", label: "Sort by price" };
+    }
   };
 
   return (
@@ -29,8 +44,8 @@ const Filters = () => {
             <input
               type="radio"
               name="filter"
-              defaultChecked
               className={scss.radio}
+              defaultChecked={productType === ""}
               data-type=""
               onChange={handleChange}
             />
@@ -43,7 +58,8 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              data-type="RING"
+              defaultChecked={productType === "RING"}
+              data-type={ProductType.Ring}
               onChange={handleChange}
             />
             Rings
@@ -55,7 +71,8 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              data-type="BRACELET"
+              defaultChecked={productType === "BRACELET"}
+              data-type={ProductType.Bracelet}
               onChange={handleChange}
             />
             Bracelets
@@ -67,7 +84,8 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              data-type="NECKLACE"
+              defaultChecked={productType === "NECKLACE"}
+              data-type={ProductType.Necklace}
               onChange={handleChange}
             />
             Necklaces
@@ -79,7 +97,8 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              data-type="EARRING"
+              defaultChecked={productType === "EARRING"}
+              data-type={ProductType.Earring}
               onChange={handleChange}
             />
             Earrings
@@ -89,7 +108,7 @@ const Filters = () => {
       <Select
         options={options}
         onChange={handleSelect}
-        defaultValue={{ value: "", label: "Sort by price" }}
+        defaultValue={handleDefaultValue()}
         className={scss.reactSelectContainer}
         styles={{
           control: baseStyles => ({

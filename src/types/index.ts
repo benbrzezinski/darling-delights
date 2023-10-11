@@ -37,6 +37,12 @@ export interface MobileNav {
   closeMobileMenu: () => void;
 }
 
+export interface Pagination {
+  productsPerPage: 12 | 13;
+  currentPage: number;
+  setCurrentPage: (page: number | ((prev: number) => number)) => void;
+}
+
 export interface Loader {
   isVisible?: boolean;
 }

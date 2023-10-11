@@ -5,6 +5,7 @@ import ScrollToTop from "./ScrollToTop";
 
 const Home = lazy(() => import("../pages/Home"));
 const Shop = lazy(() => import("../pages/Shop"));
+const ShopDetails = lazy(() => import("../pages/ShopDetails"));
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       >
         <Route index element={<Home />} />
         <Route path="shop" element={<Shop />} />
+        <Route path="shop/:id" element={<ShopDetails />} />
       </Route>
     </Routes>
   );
