@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Searcher from "../components/Searcher";
 import Filters from "../components/Filters";
-import Products from "../components/Products";
+import ShopProducts from "../components/ShopProducts";
 import OurAdvantages from "../components/OurAdvantages";
 
 const Shop = () => {
@@ -12,7 +12,7 @@ const Shop = () => {
       </Helmet>
       <Searcher />
       <Filters />
-      <Products />
+      <ShopProducts />
       <OurAdvantages />
     </>
   );

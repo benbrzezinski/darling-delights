@@ -46,3 +46,7 @@ export interface Pagination {
 export interface Loader {
   isVisible?: boolean;
 }
+
+export interface LocationState {
+  from: string;
+}

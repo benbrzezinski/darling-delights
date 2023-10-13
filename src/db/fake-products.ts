@@ -1,10 +1,9 @@
-import { nanoid } from "nanoid";
 import { Product } from "../types";
 import { ProductType, ProductPlacement } from "../types/enums";
 
 const products: Product[] = [
   {
-    id: nanoid(),
+    id: "208149a56aa14b2298f871dc86284c08",
     type: ProductType.Necklace,
     name: "Radiance Necklace",
     price: 168.76,
@@ -13,7 +12,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "d7f86ac01c934634b68f5a858ed0e2ad",
     type: ProductType.Earring,
     name: "Refined Earrings",
     price: 125.28,
@@ -22,7 +21,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "69ce70484e184178a0a0059750e573fe",
     type: ProductType.Earring,
     name: "Delights Earrings",
     price: 323.71,
@@ -31,7 +30,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "ab7286ffc2854ca6ba42bf3c6494a21a",
     type: ProductType.Necklace,
     name: "Luxury Gems Necklace",
     price: 168.76,
@@ -40,7 +39,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "bdbb2d67fb194132b7ad8030cdacb3a7",
     type: ProductType.Bracelet,
     name: "Aurora Bracelet",
     price: 125.28,
@@ -49,7 +48,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "80290a9e2f6141a4a92b45b5107af7c9",
     type: ProductType.Bracelet,
     name: "Reflections Bracelet",
     price: 228.75,
@@ -58,7 +57,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "9f6a5121e4d94481be0716cee9a03bd5",
     type: ProductType.Ring,
     name: "Dreamy Infinity Ring",
     price: 327.71,
@@ -67,7 +66,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "4183489a65ea430dafa082966d1d72ae",
     type: ProductType.Ring,
     name: "Opulent Jewels Ring",
     price: 168.76,
@@ -76,7 +75,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "ee235d84daa14081a6e764f6ae297cd7",
     type: ProductType.Earring,
     name: "Serene Solitaire Earrings",
     price: 125.28,
@@ -85,7 +84,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "d7b1f3d112c549c8af95993f116f5a7c",
     type: ProductType.Earring,
     name: "Ornate Earrings",
     price: 802.49,
@@ -94,7 +93,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "cedb180151e74ee198bce833ea667235",
     type: ProductType.Earring,
     name: "Timeless Halo Earrings",
     price: 620.73,
@@ -103,7 +102,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "aa922d9d271642fb88ba2a87844f1027",
     type: ProductType.Ring,
     name: "Sparkling Ring",
     price: 450.89,
@@ -112,7 +111,16 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "481016fdb54340479b17a7e654ab7551",
+    type: ProductType.Ring,
+    name: "Lavish Ring",
+    price: 348.89,
+    img: "https://i.ibb.co/rcd8trw/shop-17.jpg",
+    placement: [ProductPlacement.Shop],
+    inBusket: false,
+  },
+  {
+    id: "eb662e4d3ca84f0a88fb6d175783f512",
     type: ProductType.Earring,
     name: "Graceful Earrings",
     price: 124.38,
@@ -121,7 +129,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "f40694efdef4462888ab05b5b9f713d8",
     type: ProductType.Bracelet,
     name: "Luxury Charms Bracelet",
     price: 620.73,
@@ -130,7 +138,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "bcf2748b5e7f46ebac4b085dbc8a130c",
     type: ProductType.Ring,
     name: "Blissful Bloom Ring",
     price: 348.89,
@@ -139,7 +147,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "b90d7d85205b483bb17eb7604219178a",
     type: ProductType.Bracelet,
     name: "Marvelous Bracelet",
     price: 942.16,
@@ -148,7 +156,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "0e38a3439d454c49bb7c211b9d840c4f",
     type: ProductType.Ring,
     name: "Timeless Elegance Ring",
     price: 168.76,
@@ -157,7 +165,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "e4c41f34f1c34d3f8a432b24faede0c9",
     type: ProductType.Ring,
     name: "Glimmering Ring",
     price: 515.35,
@@ -166,16 +174,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
-    type: ProductType.Ring,
-    name: "Shimmering Ring",
-    price: 250.72,
-    img: "https://i.ibb.co/jwTXrjQ/our-selection-product-1.jpg",
-    placement: [ProductPlacement.Selection, ProductPlacement.Shop],
-    inBusket: false,
-  },
-  {
-    id: nanoid(),
+    id: "99dce481572e44818b3a451bacd98320",
     type: ProductType.Earring,
     name: "Exquisite Earrings",
     price: 327.71,
@@ -188,7 +187,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "6af510f7b48743f5ba680e75b94a521e",
     type: ProductType.Earring,
     name: "Elegance Earrings",
     price: 620.73,
@@ -201,7 +200,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "6ed32a907dca477b83d01d39f7fd8617",
     type: ProductType.Ring,
     name: "Palatial Jewels Ring",
     price: 168.76,
@@ -210,7 +209,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "252290fa1a4f4e729df1a043e4bfccdb",
     type: ProductType.Ring,
     name: "Serene Solitaire Ring",
     price: 125.28,
@@ -219,7 +218,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "186c4ba1dab5480184d033c3986f5d8b",
     type: ProductType.Brooch,
     name: "Timeless Brooch",
     price: 204.54,
@@ -228,16 +227,16 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "837371ca8a9c46f68ed6bdfa4e3fbb26",
     type: ProductType.Ring,
-    name: "Lavish Ring",
-    price: 450.89,
-    img: "https://i.ibb.co/rcd8trw/shop-17.jpg",
-    placement: [ProductPlacement.Shop],
+    name: "Shimmering Ring",
+    price: 250.72,
+    img: "https://i.ibb.co/jwTXrjQ/our-selection-product-1.jpg",
+    placement: [ProductPlacement.Selection, ProductPlacement.Shop],
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "b9c52a9e118845928c534937fd530852",
     type: ProductType.Ring,
     name: "Luxurious Ring",
     price: 250.72,
@@ -246,7 +245,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "68cd8ac9562f4028b46573914179699c",
     type: ProductType.Necklace,
     name: "Deluxe Emerald Necklace",
     price: 1015.99,
@@ -255,7 +254,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "2b296f2357094eb3bd79c3ee941d2f96",
     type: ProductType.Ring,
     name: "Dedicated Rubin Ring",
     price: 802.49,
@@ -264,7 +263,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "060a9e01672a4711a4cb0741094770d5",
     type: ProductType.Necklace,
     name: "Sparkling Necklace",
     price: 515.35,
@@ -273,7 +272,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "e6aacdeb712747ac8f121ec65c19568e",
     type: ProductType.Earring,
     name: "Glimmering Earrings",
     price: 450.89,
@@ -282,7 +281,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "fd8f1db3ec7a4f8884fdd97cf639c58e",
     type: ProductType.Earring,
     name: "Splendid Earrings",
     price: 780.99,
@@ -291,7 +290,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "f1b28bb3bb9144ccb6954572ab8e5bfb",
     type: ProductType.Bracelet,
     name: "Extraordinary Bracelet",
     price: 150.25,
@@ -300,7 +299,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "25db0acc060144fcadc078c39cef8c54",
     type: ProductType.Necklace,
     name: "Magnificent Necklace",
     price: 1010.99,
@@ -309,7 +308,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "ab2469c32d8848d88a24528fd821f79e",
     type: ProductType.Earring,
     name: "Elaborate Earrings",
     price: 204.54,
@@ -318,7 +317,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "9e2b2bf12931418eabb4b68f5aa2cec6",
     type: ProductType.Necklace,
     name: "Sophisticated Necklace",
     price: 327.71,
@@ -327,7 +326,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "698c88f5a1ce486c8952b7d322d79770",
     type: ProductType.Necklace,
     name: "Grand Necklace",
     price: 168.76,
@@ -336,7 +335,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "f8ff7e781c9b43c8bc36ae7f7b728a90",
     type: ProductType.Bracelet,
     name: "Astonishing Bracelet",
     price: 89.99,
@@ -345,7 +344,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "4275e95ef866461bac2b66b05c9106af",
     type: ProductType.Earring,
     name: "Exclusive Earrings",
     price: 250.72,
@@ -354,7 +353,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "13cf7a08f1514332a1b6d1d870703012",
     type: ProductType.Ring,
     name: "Luxury Ring",
     price: 450.89,
@@ -363,7 +362,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "c85e3a658cc74264aff00da782cec5d0",
     type: ProductType.Necklace,
     name: "Recherche Necklace",
     price: 780.99,
@@ -372,7 +371,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "95ad0f259729472492efc123b9430a7e",
     type: ProductType.Necklace,
     name: "Sumptuous Necklace",
     price: 204.54,
@@ -381,7 +380,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "5c6f29ad8a854e9587642f521140a2aa",
     type: ProductType.Bracelet,
     name: "Fanciful Bracelet",
     price: 125.28,
@@ -390,7 +389,7 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: nanoid(),
+    id: "fc6e23c444bd4891a2cec60afe02cad9",
     type: ProductType.Bracelet,
     name: "Resplendent Bracelet",
     price: 450.89,

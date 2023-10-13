@@ -33,8 +33,8 @@ const Pagination = ({
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              scrollToValue(500);
               setCurrentPage(prev => prev - 1);
+              scrollToValue(500);
             }}
           >
             <Lower className={scss.iconLT} />
@@ -58,8 +58,8 @@ const Pagination = ({
                 : scss.paginationBtn
             }
             onClick={() => {
-              scrollToValue(500);
               setCurrentPage(page);
+              scrollToValue(500);
             }}
           >
             {page}
@@ -72,8 +72,8 @@ const Pagination = ({
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              scrollToValue(500);
               setCurrentPage(prev => prev + 1);
+              scrollToValue(500);
             }}
           >
             <Greater className={scss.iconGT} />

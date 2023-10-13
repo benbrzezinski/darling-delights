@@ -1,14 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import Pagination from "../Pagination";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Products.module.scss";
 
-const Products = () => {
+const ShopProducts = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const { filteredProducts } = useProducts();
+  const { pathname } = useLocation();
   const { Ring } = useIcons();
 
   const isMediumScreen = useMediaQuery({ query: "(max-width: 1215px)" });
@@ -32,7 +33,7 @@ const Products = () => {
                 className={i === 8 ? scss.bigProductsItem : scss.productsItem}
                 key={id}
               >
-                <Link to={id}>
+                <Link to={id} state={{ from: pathname }}>
                   <img
                     width={i === 8 ? 576 : 276}
                     height={i === 8 ? 760 : 320}
@@ -63,7 +64,7 @@ const Products = () => {
                 className={i === 8 ? scss.bigProductsItem : scss.productsItem}
                 key={id}
               >
-                <Link to={id}>
+                <Link to={id} state={{ from: pathname }}>
                   <img
                     width={i === 8 ? 576 : 276}
                     height={i === 8 ? 760 : 320}
@@ -96,4 +97,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ShopProducts;
