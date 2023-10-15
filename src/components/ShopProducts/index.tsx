@@ -1,16 +1,15 @@
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import Pagination from "../Pagination";
+import Notification from "../Notification";
+import usePage from "../../hooks/usePage";
 import useProducts from "../../hooks/useProducts";
-import useIcons from "../../hooks/useIcons";
-import scss from "./Products.module.scss";
+import scss from "./ShopProducts.module.scss";
 
 const ShopProducts = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const { currentPage } = usePage();
   const { filteredProducts } = useProducts();
   const { pathname } = useLocation();
-  const { Ring } = useIcons();
 
   const isMediumScreen = useMediaQuery({ query: "(max-width: 1215px)" });
   const productsPerPage = isMediumScreen ? 12 : 13;
@@ -50,11 +49,7 @@ const ShopProducts = () => {
               </li>
             ))}
           </ul>
-          <Pagination
-            productsPerPage={productsPerPage}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
+          <Pagination productsPerPage={productsPerPage} />
         </>
       ) : filteredProducts.length > 0 ? (
         <>
@@ -81,17 +76,10 @@ const ShopProducts = () => {
               </li>
             ))}
           </ul>
-          <Pagination
-            productsPerPage={productsPerPage}
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
-          />
+          <Pagination productsPerPage={productsPerPage} />
         </>
       ) : (
-        <div className={scss.infoBox}>
-          <h2 className={scss.infoText}>Sorry, there are no products</h2>
-          <Ring className={scss.ring} />
-        </div>
+        <Notification text="Sorry, no products were found" />
       )}
     </div>
   );

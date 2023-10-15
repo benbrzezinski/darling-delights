@@ -39,8 +39,10 @@ export interface MobileNav {
 
 export interface Pagination {
   productsPerPage: 12 | 13;
-  currentPage: number;
-  setCurrentPage: (page: number | ((prev: number) => number)) => void;
+}
+
+export interface Notification {
+  text: string;
 }
 
 export interface Loader {

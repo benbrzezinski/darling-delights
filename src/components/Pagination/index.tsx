@@ -1,18 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
 import { Pagination } from "../../types";
+import { setPage } from "../../redux/page/slice";
 import scrollToValue from "../../utils/scrollToValue";
+import usePage from "../../hooks/usePage";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Pagination.module.scss";
 
-const Pagination = ({
-  productsPerPage,
-  currentPage,
-  setCurrentPage,
-}: Pagination) => {
+const Pagination = ({ productsPerPage }: Pagination) => {
+  const { currentPage } = usePage();
   const { filteredProducts } = useProducts();
   const { Greater, Lower } = useIcons();
+  const initialRender = useRef(true);
+  const dispatch = useDispatch();
 
   const quantityOfPages = Math.ceil(filteredProducts.length / productsPerPage);
   const pages: number[] = [];
@@ -22,8 +24,13 @@ const Pagination = ({
   }
 
   useEffect(() => {
-    if (quantityOfPages) setCurrentPage(1);
-  }, [quantityOfPages, filteredProducts.length, setCurrentPage]);
+    if (initialRender.current) {
+      initialRender.current = false;
+      return;
+    }
+
+    if (quantityOfPages) dispatch(setPage(1));
+  }, [quantityOfPages, filteredProducts.length, dispatch]);
 
   return pages.length > 0 ? (
     <ul className={scss.pagination}>
@@ -33,7 +40,7 @@ const Pagination = ({
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              setCurrentPage(prev => prev - 1);
+              dispatch(setPage(currentPage - 1));
               scrollToValue(500);
             }}
           >
@@ -58,7 +65,7 @@ const Pagination = ({
                 : scss.paginationBtn
             }
             onClick={() => {
-              setCurrentPage(page);
+              dispatch(setPage(page));
               scrollToValue(500);
             }}
           >
@@ -72,7 +79,7 @@ const Pagination = ({
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              setCurrentPage(prev => prev + 1);
+              dispatch(setPage(currentPage + 1));
               scrollToValue(500);
             }}
           >

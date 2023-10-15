@@ -1,5 +1,4 @@
 @use "../../scss/index.scss" as *;
-@include scale-mixin();
 
 .wrapper {
   display: grid;
@@ -79,28 +78,4 @@
 .productPrice {
   line-height: 1.6;
   color: var(--cl-main);
-}
-
-.infoBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 45px;
-  padding-top: 50px;
-}
-
-.infoText {
-  font-size: var(--fs-5);
-  font-family: var(--ff-sec);
-  font-weight: var(--fw-sec);
-  line-height: 1.2;
-  text-align: center;
-}
-
-.ring {
-  width: 140px;
-  height: 140px;
-  fill: var(--cl-sec);
-  animation: scale 10s linear infinite;
 }
