@@ -68,21 +68,3 @@
 .radio {
   display: none;
 }
-
-.reactSelectContainer {
-  width: 190px;
-  line-height: 1.18;
-
-  &::after {
-    content: "";
-    width: 89%;
-    height: 1px;
-    background-color: var(--cl-9);
-    position: absolute;
-    left: 10px;
-  }
-
-  & div {
-    border: none;
-  }
-}

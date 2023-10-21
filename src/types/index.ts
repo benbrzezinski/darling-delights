@@ -1,11 +1,17 @@
-import { ProductType, ProductPlacement } from "./enums";
+import { SingleValue } from "react-select";
+import { ProductType, ProductPlacement, FeedbackPlacement } from "./enums";
 
 export interface Product {
   id: string;
+  code: string;
   type: ProductType;
   name: string;
   price: number;
   img: string;
+  color: {
+    name: string;
+    hex: string;
+  };
   placement: ProductPlacement[];
   inBusket: boolean;
 }
@@ -16,15 +22,7 @@ export interface Feedback {
   country: string;
   img: string;
   text: string;
-}
-
-export interface OptionType {
-  value: string;
-  label: string;
-}
-
-export interface IconClass {
-  className: string;
+  placement: FeedbackPlacement;
 }
 
 export interface Header {
@@ -35,6 +33,14 @@ export interface Header {
 export interface MobileNav {
   isMobileMenuOpen: boolean;
   closeMobileMenu: () => void;
+}
+
+export interface Selects {
+  options: OptionType[];
+  handleSelect: (option: SingleValue<OptionType>) => void;
+  handleValue: () => OptionType;
+  width: string;
+  afterWidth: string;
 }
 
 export interface Pagination {
@@ -49,6 +55,15 @@ export interface Loader {
   isVisible?: boolean;
 }
 
-export interface LocationState {
-  from: string;
+export interface IconClass {
+  className: string;
+}
+
+export interface OptionType {
+  value: string;
+  label: string;
+}
+
+export interface OptionTypeObj {
+  [key: string]: OptionType[];
 }

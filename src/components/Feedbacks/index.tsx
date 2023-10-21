@@ -1,8 +1,8 @@
 import { Carousel } from "react-responsive-carousel";
-import feedbacks from "../../db/fake-feedbacks";
+import { Feedback } from "../../types";
 import scss from "./Feedbacks.module.scss";
 
-const Feedbacks = () => {
+const Feedbacks = ({ feedbacks }: { feedbacks: Feedback[] }) => {
   return (
     <div className={scss.background}>
       <div className={scss.wrapper}>

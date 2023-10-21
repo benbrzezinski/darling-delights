@@ -1,0 +1,6 @@
+.paymentSelectsBox {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 272px);
+  gap: 24px;
+}

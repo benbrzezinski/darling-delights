@@ -1,11 +1,10 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ProductPlacement } from "../../types/enums";
 import useProducts from "../../hooks/useProducts";
 import scss from "./OurSelection.module.scss";
 
 const OurSelection = () => {
   const { products } = useProducts();
-  const { pathname } = useLocation();
 
   const selectionProducts = products.filter(({ placement }) =>
     placement.includes(ProductPlacement.Selection)
@@ -28,7 +27,9 @@ const OurSelection = () => {
         <ul className={scss.products}>
           {selectionProducts.map(({ id, name, price, img }) => (
             <li className={scss.productsItem} key={id}>
-              <Link to={`shop/${id}`} state={{ from: pathname }}>
+              <Link
+                to={{ pathname: `shop/${id}`, search: "?size=48&quantity=1" }}
+              >
                 <img
                   width={276}
                   height={320}

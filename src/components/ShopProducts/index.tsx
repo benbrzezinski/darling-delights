@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import Pagination from "../Pagination";
 import Notification from "../Notification";
@@ -9,7 +9,6 @@ import scss from "./ShopProducts.module.scss";
 const ShopProducts = () => {
   const { currentPage } = usePage();
   const { filteredProducts } = useProducts();
-  const { pathname } = useLocation();
 
   const isMediumScreen = useMediaQuery({ query: "(max-width: 1215px)" });
   const productsPerPage = isMediumScreen ? 12 : 13;
@@ -32,7 +31,9 @@ const ShopProducts = () => {
                 className={i === 8 ? scss.bigProductsItem : scss.productsItem}
                 key={id}
               >
-                <Link to={id} state={{ from: pathname }}>
+                <Link
+                  to={{ pathname: id, search: "?from=shop&size=48&quantity=1" }}
+                >
                   <img
                     width={i === 8 ? 576 : 276}
                     height={i === 8 ? 760 : 320}
@@ -59,7 +60,9 @@ const ShopProducts = () => {
                 className={i === 8 ? scss.bigProductsItem : scss.productsItem}
                 key={id}
               >
-                <Link to={id} state={{ from: pathname }}>
+                <Link
+                  to={{ pathname: id, search: "?from=shop&size=48&quantity=1" }}
+                >
                   <img
                     width={i === 8 ? 576 : 276}
                     height={i === 8 ? 760 : 320}

@@ -11,6 +11,11 @@
   @include max-width(560px) {
     padding-inline: 15px;
   }
+
+  @include max-width(979px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .imagesBox {
@@ -43,5 +48,73 @@
   &:hover,
   :focus-visible {
     transform: scale(1.4);
+  }
+}
+
+.detailsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.name {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-6);
+  line-height: 1.4;
+  color: var(--cl-12);
+
+  @include max-width(420px) {
+    font-size: var(--fs-5);
+  }
+}
+
+.code {
+  line-height: 1.6;
+  color: var(--cl-11);
+}
+
+.price {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-6);
+  line-height: 1.4;
+  color: var(--cl-19);
+
+  @include max-width(420px) {
+    font-size: var(--fs-5);
+  }
+}
+
+.colorName {
+  display: inline-block;
+  font-weight: var(--fw-sec);
+  line-height: 1.6;
+  color: var(--cl-18);
+  margin-bottom: 4px;
+}
+
+.color {
+  display: block;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--cl-12);
+  border-radius: 50%;
+  position: relative;
+}
+
+.fullColor {
+  width: 200px;
+  height: 100px;
+  border-radius: var(--br-main);
+  position: absolute;
+  top: -45px;
+  visibility: hidden;
+
+  &.isVisible {
+    visibility: visible;
+  }
+
+  @include max-width(420px) {
+    width: 123px;
   }
 }

@@ -12,3 +12,8 @@ export enum ProductPlacement {
   Shop = "SHOP",
   Collection = "COLLECTION",
 }
+
+export enum FeedbackPlacement {
+  Home = "HOME",
+  Shop = "SHOP",
+}

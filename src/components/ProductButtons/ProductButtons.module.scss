@@ -1,0 +1,36 @@
+@use "../../scss/index.scss" as *;
+
+.paymentBox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-block: 12px;
+}
+
+.paymentBtn {
+  @extend %btn;
+  width: 272px;
+  gap: 10px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.buyBtn {
+  color: var(--cl-4);
+  background-color: var(--cl-12);
+  border: none;
+
+  &:hover {
+    color: var(--cl-4);
+    background-color: var(--cl-8);
+  }
+
+  &:active {
+    color: var(--cl-4);
+    background-color: var(--cl-9);
+  }
+}

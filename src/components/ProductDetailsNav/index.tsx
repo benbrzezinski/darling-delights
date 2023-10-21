@@ -1,16 +1,20 @@
-import { Link, useParams, useLocation } from "react-router-dom";
-import { LocationState } from "../../types";
+import {
+  Link,
+  useParams,
+  useSearchParams,
+  useLocation,
+} from "react-router-dom";
 import useIcons from "../../hooks/useIcons";
 import useProducts from "../../hooks/useProducts";
 import scss from "./ProductDetailsNav.module.scss";
 
 const ProductDetailsNav = () => {
+  const [searchParams] = useSearchParams();
   const { id } = useParams();
   const { Greater } = useIcons();
   const { products } = useProducts();
 
-  const location = useLocation();
-  const locationState = location?.state as LocationState;
+  const { pathname, search } = useLocation();
   const product = products.find(product => product.id === id);
 
   return (
@@ -23,15 +27,15 @@ const ProductDetailsNav = () => {
       <li>
         <Greater className={scss.icon} />
       </li>
-      {locationState.from !== "/" ? (
+      {searchParams.get("from") ? (
         <>
           <li>
             <Link
-              to={locationState.from}
+              to={`/${searchParams.get("from")}`}
               className={scss.productNavLink}
-            >{`${locationState.from
-              .slice(1, 2)
-              .toLocaleUpperCase()}${locationState.from.slice(2)}`}</Link>
+            >
+              {searchParams.get("from")}
+            </Link>
           </li>
           <li>
             <Greater className={scss.icon} />
@@ -39,11 +43,7 @@ const ProductDetailsNav = () => {
         </>
       ) : null}
       <li>
-        <Link
-          to={location.pathname}
-          state={locationState}
-          className={scss.productNavLink}
-        >
+        <Link to={pathname + search} className={scss.productNavLink}>
           {product && product.name}
         </Link>
       </li>

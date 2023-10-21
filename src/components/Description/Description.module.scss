@@ -1,0 +1,65 @@
+@use "../../scss//index.scss" as *;
+
+.wrapper {
+  max-width: 1400px;
+  padding-inline: 50px;
+  margin: auto;
+
+  @include max-width(560px) {
+    padding-inline: 15px;
+  }
+}
+
+.descriptionBox {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: var(--cl-13);
+  border-radius: var(--br-main);
+  padding-block: 50px;
+  padding-inline: 70px;
+
+  @include max-width(560px) {
+    text-align: center;
+    padding-inline: 20px;
+  }
+}
+
+.text {
+  line-height: 1.6;
+  color: var(--cl-11);
+  margin-bottom: 24px;
+}
+
+.heading {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-6);
+  line-height: 1.4;
+  color: var(--cl-12);
+
+  @include max-width(852px) {
+    font-size: var(--fs-5);
+  }
+}
+
+.description,
+.featuresItem {
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-11);
+}
+
+.title {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-11);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: disc inside;
+}

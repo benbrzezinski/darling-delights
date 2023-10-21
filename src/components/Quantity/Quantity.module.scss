@@ -1,0 +1,45 @@
+.text {
+  font-weight: var(--fw-sec);
+  line-height: 1.6;
+  color: var(--cl-18);
+  margin-bottom: 4px;
+}
+
+.quantityBox {
+  display: flex;
+  gap: 16px;
+}
+
+.quantityBtn {
+  width: 40px;
+  height: 45px;
+  color: var(--cl-20);
+  background-color: var(--cl-21);
+  border: none;
+  border-radius: var(--br-4);
+  text-align: center;
+  transition-property: color, background-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-main);
+    background-color: var(--cl-5);
+  }
+
+  &:active {
+    color: var(--cl-main);
+    background-color: var(--cl-6);
+  }
+}
+
+.quantity {
+  width: 40px;
+  height: 45px;
+  color: var(--cl-main);
+  background-color: var(--cl-21);
+  border: none;
+  border-radius: var(--br-4);
+  text-align: center;
+}

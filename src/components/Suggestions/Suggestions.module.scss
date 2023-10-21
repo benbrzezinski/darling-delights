@@ -1,0 +1,84 @@
+@use "../../scss//index.scss" as *;
+
+.wrapper {
+  max-width: 1400px;
+  padding-top: 45px;
+  padding-inline: 50px;
+  padding-bottom: 100px;
+  margin: auto;
+
+  @include max-width(560px) {
+    padding-inline: 15px;
+  }
+}
+
+.headline {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-6);
+  line-height: 1.4;
+  color: var(--cl-12);
+  margin-bottom: 25px;
+
+  @include max-width(852px) {
+    font-size: var(--fs-5);
+  }
+}
+
+.products {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 30px;
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 5px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-inline: 5px;
+  padding-bottom: 5px;
+
+  &::-webkit-scrollbar {
+    width: 14px;
+    height: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    background-color: var(--cl-5);
+    border-radius: var(--br-sec);
+    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.05),
+      inset 1px 1px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+.productsItem {
+  @extend %productsItem;
+  scroll-snap-align: start;
+}
+
+.productImg {
+  @extend %productImg;
+}
+
+.productInfoBox {
+  @extend %productInfoBox;
+}
+
+.productName {
+  @extend %productName;
+}
+
+.productPrice {
+  @extend %productPrice;
+}

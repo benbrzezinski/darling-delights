@@ -10,6 +10,7 @@ import {
   MdOutlinePayments,
   MdArrowForwardIos,
   MdArrowBackIosNew,
+  MdAddShoppingCart,
 } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
@@ -114,6 +115,12 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const AddShoppingCart = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <MdAddShoppingCart />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -131,6 +138,7 @@ const useIcons = () => {
     Ring,
     Greater,
     Lower,
+    AddShoppingCart,
   };
 };
 
