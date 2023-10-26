@@ -1,23 +1,22 @@
 @use "../../scss/index.scss" as *;
 
-.background {
-  background-color: var(--cl-13);
-}
-
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
   max-width: 1400px;
-  padding-top: 50px;
-  padding-bottom: 70px;
+  padding-block: 70px;
   padding-inline: 50px;
   margin: auto;
 
-  @include max-width(500px) {
+  @include max-width(560px) {
     padding-inline: 15px;
   }
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 36px;
 }
 
 .title {
@@ -25,6 +24,13 @@
   font-size: var(--fs-6);
   line-height: 1.4;
   color: var(--cl-12);
+}
+
+.text {
+  max-width: 530px;
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-11);
 }
 
 .video {

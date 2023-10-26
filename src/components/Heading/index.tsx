@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import throttle from "lodash.throttle";
 import mouseScrolling from "../../json/mouse-scrolling.json";
-import scss from "./Hero.module.scss";
+import scss from "./Heading.module.scss";
 
-const Hero = () => {
+const Heading = () => {
   const THROTTLE_DELAY = 300;
   const [isTop, setIsTop] = useState(true);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -60,4 +60,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Heading;

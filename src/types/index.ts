@@ -51,6 +51,12 @@ export interface Notification {
   text: string;
 }
 
+export interface CollectionDetailsHeading {
+  bgImg: string;
+  title: string;
+  text: string;
+}
+
 export interface Loader {
   isVisible?: boolean;
 }

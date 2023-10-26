@@ -19,7 +19,7 @@ const OurStory = () => {
           onMouseEnter={showControls}
           onMouseLeave={hideControls}
           controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
-          poster="/assets/images/video-poster.jpg"
+          poster="/assets/images/video-poster-1.jpg"
           controls
         >
           <source

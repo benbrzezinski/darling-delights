@@ -1,4 +1,4 @@
-@use "../../scss/mixins.scss" as *;
+@use "../../scss/index.scss" as *;
 
 .wrapper {
   display: flex;
@@ -60,13 +60,14 @@
 
   &::before {
     content: "";
-    width: 76px;
+    width: 89px;
     height: 4px;
     background-color: var(--cl-3);
     border-radius: var(--br-main);
     position: absolute;
     bottom: -10px;
-    left: -19px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 

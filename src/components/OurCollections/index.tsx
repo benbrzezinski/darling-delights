@@ -7,32 +7,32 @@ const OurCollections = () => {
       <h2 className={scss.title}>Our Collections</h2>
       <ul className={scss.collections}>
         <li className={`${scss.collectionsItem} ${scss.first}`}>
-          <Link to="collections" className={scss.collectionsLink}>
+          <Link to="collections/summer" className={scss.collectionsLink}>
             <p className={scss.collectionsName}>Luxurious Lustre</p>
           </Link>
         </li>
         <li className={`${scss.collectionsItem} ${scss.sec}`}>
-          <Link to="collections" className={scss.collectionsLink}>
+          <Link to="collections/spring" className={scss.collectionsLink}>
             <p className={scss.collectionsName}>Radiant Reflections</p>
           </Link>
         </li>
         <li className={`${scss.collectionsItem} ${scss.third}`}>
-          <Link to="collections" className={scss.collectionsLink}>
+          <Link to="collections/summer" className={scss.collectionsLink}>
             <p className={scss.collectionsName}>Majestic Mementos</p>
           </Link>
         </li>
         <li className={`${scss.collectionsItem} ${scss.fourth}`}>
-          <Link to="collections" className={scss.collectionsLink}>
+          <Link to="collections/spring" className={scss.collectionsLink}>
             <p className={scss.collectionsName}>Blissful Baubles</p>
           </Link>
         </li>
         <li className={`${scss.collectionsItem} ${scss.fifth}`}>
-          <Link to="collections" className={scss.collectionsLink}>
+          <Link to="collections/summer" className={scss.collectionsLink}>
             <p className={scss.collectionsName}>Timeless Treasures</p>
           </Link>
         </li>
         <li className={`${scss.collectionsItem} ${scss.sixth}`}>
-          <Link to="collections" className={scss.collectionsLink}>
+          <Link to="collections/spring" className={scss.collectionsLink}>
             <p className={scss.collectionsName}>Divine Diamonds</p>
           </Link>
         </li>

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { FeedbackPlacement } from "../types/enums";
-import Hero from "../components/Hero";
+import Heading from "../components/Heading";
 import OurAdvantages from "../components/OurAdvantages";
 import FeaturedProducts from "../components/FeaturedProducts";
 import OurCollections from "../components/OurCollections";
@@ -19,7 +19,7 @@ const Home = () => {
       <Helmet>
         <title>Darling Delights</title>
       </Helmet>
-      <Hero />
+      <Heading />
       <OurAdvantages />
       <FeaturedProducts />
       <OurCollections />

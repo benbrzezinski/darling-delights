@@ -44,7 +44,7 @@ const ProductDetailsNav = () => {
       ) : null}
       <li>
         <Link to={pathname + search} className={scss.productNavLink}>
-          {product && product.name}
+          {product ? product.name : "Not Found"}
         </Link>
       </li>
     </ul>

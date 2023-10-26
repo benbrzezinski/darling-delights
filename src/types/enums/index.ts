@@ -10,7 +10,8 @@ export enum ProductPlacement {
   Featured = "FEATURED",
   Selection = "SELECTION",
   Shop = "SHOP",
-  Collection = "COLLECTION",
+  CollectionSummer = "COLLECTION_SUMMER",
+  CollectionSpring = "COLLECTION_SPRING",
 }
 
 export enum FeedbackPlacement {

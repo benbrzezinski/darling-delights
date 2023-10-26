@@ -83,7 +83,7 @@ const products: Product[] = [
       name: "Old Brick",
       hex: "#8b2125",
     },
-    placement: [ProductPlacement.Shop],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
     inBusket: false,
   },
   {
@@ -97,7 +97,7 @@ const products: Product[] = [
       name: "Puce",
       hex: "#cd7f95",
     },
-    placement: [ProductPlacement.Shop],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
     inBusket: false,
   },
   {
@@ -129,6 +129,20 @@ const products: Product[] = [
     inBusket: false,
   },
   {
+    id: "eb662e4d3ca84f0a88fb6d175783f512",
+    code: "63417",
+    type: ProductType.Earring,
+    name: "Graceful Earrings",
+    price: 124.38,
+    img: "https://i.ibb.co/s3yMzMF/shop-10.jpg",
+    color: {
+      name: "Ocean Green",
+      hex: "#49a17e",
+    },
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
+    inBusket: false,
+  },
+  {
     id: "d7b1f3d112c549c8af95993f116f5a7c",
     code: "76950",
     type: ProductType.Earring,
@@ -139,7 +153,7 @@ const products: Product[] = [
       name: "Mystic",
       hex: "#e1e4ef",
     },
-    placement: [ProductPlacement.Shop],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
     inBusket: false,
   },
   {
@@ -185,17 +199,31 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: "eb662e4d3ca84f0a88fb6d175783f512",
-    code: "63417",
-    type: ProductType.Earring,
-    name: "Graceful Earrings",
-    price: 124.38,
-    img: "https://i.ibb.co/s3yMzMF/shop-10.jpg",
+    id: "456t45y565hyy5656ujd429d840c4f",
+    code: "95832",
+    type: ProductType.Necklace,
+    name: "Striking Necklace",
+    price: 450.25,
+    img: "https://i.ibb.co/FXqxgKT/collection-14.jpg",
     color: {
-      name: "Ocean Green",
-      hex: "#49a17e",
+      name: "French Gray",
+      hex: "#babdc6",
     },
-    placement: [ProductPlacement.Shop],
+    placement: [ProductPlacement.CollectionSpring],
+    inBusket: false,
+  },
+  {
+    id: "0e38a3439d454c49bb7c211b9d840c4f",
+    code: "63342",
+    type: ProductType.Ring,
+    name: "Timeless Elegance Ring",
+    price: 168.76,
+    img: "https://i.ibb.co/DYr7wC4/shop-13.jpg",
+    color: {
+      name: "Bay of Many",
+      hex: "#303691",
+    },
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
     inBusket: false,
   },
   {
@@ -241,20 +269,6 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: "0e38a3439d454c49bb7c211b9d840c4f",
-    code: "63342",
-    type: ProductType.Ring,
-    name: "Timeless Elegance Ring",
-    price: 168.76,
-    img: "https://i.ibb.co/DYr7wC4/shop-13.jpg",
-    color: {
-      name: "Bay of Many",
-      hex: "#303691",
-    },
-    placement: [ProductPlacement.Shop],
-    inBusket: false,
-  },
-  {
     id: "e4c41f34f1c34d3f8a432b24faede0c9",
     code: "89845",
     type: ProductType.Ring,
@@ -282,7 +296,7 @@ const products: Product[] = [
     placement: [
       ProductPlacement.Selection,
       ProductPlacement.Shop,
-      ProductPlacement.Collection,
+      ProductPlacement.CollectionSummer,
     ],
     inBusket: false,
   },
@@ -300,7 +314,7 @@ const products: Product[] = [
     placement: [
       ProductPlacement.Selection,
       ProductPlacement.Shop,
-      ProductPlacement.Collection,
+      ProductPlacement.CollectionSummer,
     ],
     inBusket: false,
   },
@@ -315,7 +329,7 @@ const products: Product[] = [
       name: "Copper Canyon",
       hex: "#873b11",
     },
-    placement: [ProductPlacement.Collection],
+    placement: [ProductPlacement.CollectionSummer],
     inBusket: false,
   },
   {
@@ -329,7 +343,21 @@ const products: Product[] = [
       name: "Pampas",
       hex: "#f4f2ec",
     },
-    placement: [ProductPlacement.Shop, ProductPlacement.Collection],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSummer],
+    inBusket: false,
+  },
+  {
+    id: "858e79a4d7884aedaee5cade723a5c64",
+    code: "94658",
+    type: ProductType.Necklace,
+    name: "Timeless Deluxe Necklace",
+    price: 168.76,
+    img: "https://i.ibb.co/NTcQrWD/collection-13.jpg",
+    color: {
+      name: "Straw",
+      hex: "#d3b881",
+    },
+    placement: [ProductPlacement.CollectionSummer],
     inBusket: false,
   },
   {
@@ -343,7 +371,7 @@ const products: Product[] = [
       name: "Harvest Gold",
       hex: "#d9ae6f",
     },
-    placement: [ProductPlacement.Collection],
+    placement: [ProductPlacement.CollectionSummer],
     inBusket: false,
   },
   {
@@ -399,7 +427,7 @@ const products: Product[] = [
       name: "Cerise",
       hex: "#d03887",
     },
-    placement: [ProductPlacement.Shop],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
     inBusket: false,
   },
   {
@@ -413,7 +441,7 @@ const products: Product[] = [
       name: "Mongoose",
       hex: "#bda684",
     },
-    placement: [ProductPlacement.Shop, ProductPlacement.Collection],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSummer],
     inBusket: false,
   },
   {
@@ -427,7 +455,7 @@ const products: Product[] = [
       name: "Rodeo Dust",
       hex: "#c6ad95",
     },
-    placement: [ProductPlacement.Shop, ProductPlacement.Collection],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSummer],
     inBusket: false,
   },
   {
@@ -511,7 +539,7 @@ const products: Product[] = [
       name: "Smoky",
       hex: "#67557f",
     },
-    placement: [ProductPlacement.Shop],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
     inBusket: false,
   },
   {
@@ -539,7 +567,7 @@ const products: Product[] = [
       name: "",
       hex: "",
     },
-    placement: [ProductPlacement.Shop],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
     inBusket: false,
   },
   {
@@ -553,7 +581,7 @@ const products: Product[] = [
       name: "Pancho",
       hex: "#ecc5a6",
     },
-    placement: [ProductPlacement.Shop, ProductPlacement.Collection],
+    placement: [ProductPlacement.Shop, ProductPlacement.CollectionSummer],
     inBusket: false,
   },
   {
