@@ -3,6 +3,7 @@ import {
   AiOutlineUser,
   AiOutlineShoppingCart,
   AiOutlineClose,
+  AiOutlineFileText,
 } from "react-icons/ai";
 import { BsTruck, BsChatHeart, BsTwitter, BsYoutube } from "react-icons/bs";
 import { BiLogoLinkedinSquare, BiSearchAlt } from "react-icons/bi";
@@ -16,6 +17,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
 import { FaFacebook } from "react-icons/fa6";
 import { GiBigDiamondRing } from "react-icons/gi";
+import { FiPhoneCall } from "react-icons/fi";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -64,6 +66,18 @@ const useIcons = () => {
   const Envelope = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
       <PiEnvelopeSimpleLight />
+    </IconContext.Provider>
+  );
+
+  const Phone = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FiPhoneCall />
+    </IconContext.Provider>
+  );
+
+  const FileText = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <AiOutlineFileText />
     </IconContext.Provider>
   );
 
@@ -130,6 +144,8 @@ const useIcons = () => {
     Heart,
     Payment,
     Envelope,
+    Phone,
+    FileText,
     Twitter,
     Facebook,
     LinkedIn,

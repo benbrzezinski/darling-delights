@@ -1,0 +1,128 @@
+@use "../../scss/index.scss" as *;
+
+.background {
+  background-color: var(--cl-7);
+}
+
+.wrapper {
+  max-width: 1400px;
+  padding-top: 70px;
+  padding-inline: 50px;
+  padding-bottom: 40px;
+  margin: auto;
+
+  @include max-width(500px) {
+    padding-inline: 15px;
+  }
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+
+  @include max-width(1007px) {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: 378px;
+}
+
+.contactFormBox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 36px;
+  }
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-main);
+  font-size: var(--fs-6);
+  line-height: 1.4;
+  color: var(--cl-sec);
+  margin-bottom: 10px;
+
+  @include max-width(330px) {
+    font-size: var(--fs-5);
+  }
+}
+
+.label {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+  color: var(--cl-6);
+  padding-left: 4px;
+  margin-bottom: 4px;
+}
+
+.input {
+  background-color: var(--cl-4);
+  line-height: 1.6;
+  color: var(--cl-11);
+  border-top-left-radius: var(--br-main);
+  border-top-right-radius: var(--br-main);
+  box-shadow: 0 1px 0 var(--cl-10);
+  border: none;
+  transition: box-shadow var(--duration) var(--timing-function);
+  padding-block: 8px;
+  padding-inline: 16px;
+
+  &::placeholder {
+    color: var(--cl-6);
+  }
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 0 5px var(--cl-10);
+  }
+}
+
+.textarea {
+  resize: none;
+  box-shadow: none;
+  border: 1px solid var(--cl-10);
+  padding-inline: 12px;
+}
+
+.error {
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+  color: var(--cl-22);
+  padding-left: 16px;
+  margin-top: 4px;
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-14);
+  background-color: var(--cl-3);
+  border: none;
+  border-radius: var(--br-sec);
+  padding-block: 12px;
+  transition: background-color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--cl-15);
+  }
+
+  &:active {
+    background-color: var(--cl-16);
+  }
+}

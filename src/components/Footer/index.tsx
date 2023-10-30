@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { useRef, FormEventHandler } from "react";
+import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import useIcons from "../../hooks/useIcons";
 import useValidation from "../../hooks/useValidation";
 import scss from "./Footer.module.scss";
 
 const Footer = () => {
-  const newsletterId = useRef(nanoid());
   const { Envelope, Twitter, Facebook, LinkedIn, YouTube } = useIcons();
-  const { emailVerify } = useValidation();
+  const { verifyEmail, isEmailChecked } = useValidation();
+  const newsletterID = useRef(nanoid());
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
@@ -16,10 +17,11 @@ const Footer = () => {
     const form = e.currentTarget;
     const email = form.elements.namedItem("email") as HTMLInputElement;
 
-    if (!emailVerify(email.value)) {
-      return form.reset();
+    if (!verifyEmail(email.value.trim())) {
+      return;
     }
 
+    toast.success("Thank you for subscribing 🎉");
     form.reset();
   };
 
@@ -79,7 +81,7 @@ const Footer = () => {
           <h3 className={scss.newsletterTitle}>Subscribe to our newsletter</h3>
           <form className={scss.newsletterForm} onSubmit={handleSubmit}>
             <label
-              htmlFor={newsletterId.current}
+              htmlFor={newsletterID.current}
               className={scss.newsletterLabel}
             >
               For product announcements and exclusive insights
@@ -89,7 +91,7 @@ const Footer = () => {
               <input
                 type="email"
                 name="email"
-                id={newsletterId.current}
+                id={newsletterID.current}
                 className={scss.newsletterInput}
                 placeholder="Input your e-mail"
                 required
@@ -98,6 +100,7 @@ const Footer = () => {
                 Subscribe
               </button>
             </div>
+            {isEmailChecked && <p className={scss.emailError}>Invalid email</p>}
           </form>
         </div>
       </div>

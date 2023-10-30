@@ -1,0 +1,111 @@
+@use "../../scss/index.scss" as *;
+
+.wrapper {
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 50px;
+  padding-bottom: 70px;
+  margin: auto;
+
+  @include max-width(1080px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+  }
+
+  @include max-width(560px) {
+    padding-inline: 15px;
+  }
+}
+
+.heading {
+  max-width: 552px;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-7);
+  line-height: 1.4;
+  color: var(--cl-12);
+  margin-bottom: 12px;
+
+  @include max-width(507px) {
+    font-size: var(--fs-6);
+  }
+}
+
+.text {
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-11);
+
+  @include max-width(507px) {
+    font-size: var(--fs-main);
+  }
+}
+
+.images {
+  width: 400px;
+  position: relative;
+  left: -152px;
+
+  @include max-width(1240px) {
+    left: 0;
+  }
+
+  @include max-width(1080px) {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+}
+
+.imgFirst {
+  width: 400px;
+  aspect-ratio: 2 / 2.8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://i.ibb.co/cgs89XN/featured-product-2.jpg");
+  background-color: var(--cl-5);
+  border-radius: var(--br-main);
+
+  @include max-width(1240px) {
+    width: 300px;
+  }
+
+  @include max-width(1080px) {
+    width: 350px;
+  }
+}
+
+.imgSec {
+  width: 240px;
+  aspect-ratio: 2 / 2.7;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://i.ibb.co/72SFWJr/about-3.jpg");
+  background-color: var(--cl-5);
+  border-radius: 120px 120px 0 0;
+  position: absolute;
+  top: 50%;
+  left: 312px;
+  transform: translateY(-50%);
+  box-shadow: 0 8px 17px var(--cl-main), 0 0 2px var(--cl-main);
+
+  @include max-width(1240px) {
+    width: 150px;
+    left: 244px;
+  }
+
+  @include max-width(1080px) {
+    position: static;
+    transform: translateY(0);
+    width: 350px;
+    border-radius: var(--br-main);
+    box-shadow: none;
+  }
+}

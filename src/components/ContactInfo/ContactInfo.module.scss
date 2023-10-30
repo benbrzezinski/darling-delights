@@ -1,0 +1,35 @@
+.infoList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding-top: 120px;
+}
+
+.infoItem {
+  width: 258px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--cl-4);
+}
+
+.infoLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.6;
+  color: var(--cl-4);
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-3);
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}

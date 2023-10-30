@@ -1,17 +1,48 @@
-import { toast } from "react-toastify";
+import { useState } from "react";
 
 const useValidation = () => {
-  const emailVerify = (email: string) => {
-    if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
-      toast.error("Enter a valid e-mail");
+  const [isNameChecked, setIsNameChecked] = useState(false);
+  const [isEmailChecked, setIsEmailChecked] = useState(false);
+  const [isMessageChecked, setIsMessageChecked] = useState(false);
+
+  const verifyName = (name: string) => {
+    if (!name.match(/^[A-Za-z\s]+$/)) {
+      setIsNameChecked(true);
       return false;
     }
 
-    toast.success("Thank you for subscribing 🎉");
+    setIsNameChecked(false);
     return true;
   };
 
-  return { emailVerify };
+  const verifyEmail = (email: string) => {
+    if (!email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+      setIsEmailChecked(true);
+      return false;
+    }
+
+    setIsEmailChecked(false);
+    return true;
+  };
+
+  const verifyMessage = (message: string) => {
+    if (!(message.split(" ").length >= 10)) {
+      setIsMessageChecked(true);
+      return false;
+    }
+
+    setIsMessageChecked(false);
+    return true;
+  };
+
+  return {
+    verifyName,
+    verifyEmail,
+    verifyMessage,
+    isNameChecked,
+    isEmailChecked,
+    isMessageChecked,
+  };
 };
 
 export default useValidation;

@@ -1,0 +1,24 @@
+@use "../../scss/index.scss" as *;
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, 162px);
+  gap: 30px;
+
+  @include max-width(1007px) {
+    grid-template-columns: repeat(2, 162px);
+  }
+
+  @include max-width(374px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.photo {
+  width: 162px;
+  height: 216px;
+  object-fit: cover;
+  background-color: var(--cl-9);
+  border-radius: var(--br-main);
+}

@@ -31,6 +31,10 @@
   font-size: var(--fs-3);
   line-height: 1.6;
   color: var(--cl-11);
+
+  @include max-width(507px) {
+    font-size: var(--fs-main);
+  }
 }
 
 .video {

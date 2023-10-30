@@ -58,10 +58,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
-  @include max-width(1000px) {
-    align-items: center;
-  }
 }
 
 .newsletterTitle {
@@ -70,22 +66,26 @@
   font-size: var(--fs-4);
   line-height: 1.4;
   color: var(--cl-4);
+
+  @include max-width(1000px) {
+    text-align: center;
+  }
 }
 
 .newsletterForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-
-  @include max-width(1000px) {
-    align-items: center;
-  }
 }
 
 .newsletterLabel {
   font-size: var(--fs-sec);
   line-height: 1.4;
   color: var(--cl-13);
+  margin-bottom: 16px;
+
+  @include max-width(1000px) {
+    text-align: center;
+  }
 
   @include max-width(500px) {
     font-size: var(--fs-9);
@@ -164,6 +164,14 @@
   top: 9px;
   left: 15px;
   transition: color var(--duration) var(--timing-function);
+}
+
+.emailError {
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+  color: var(--cl-22);
+  padding-left: 42px;
+  margin-top: 4px;
 }
 
 .wrapperDown {

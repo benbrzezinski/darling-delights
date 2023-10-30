@@ -157,20 +157,6 @@ const products: Product[] = [
     inBusket: false,
   },
   {
-    id: "cedb180151e74ee198bce833ea667235",
-    code: "18346",
-    type: ProductType.Earring,
-    name: "Timeless Halo Earrings",
-    price: 620.73,
-    img: "https://i.ibb.co/mJKZ7WT/shop-3.jpg",
-    color: {
-      name: "Westar",
-      hex: "#e2ded9",
-    },
-    placement: [ProductPlacement.Shop],
-    inBusket: false,
-  },
-  {
     id: "aa922d9d271642fb88ba2a87844f1027",
     code: "66492",
     type: ProductType.Ring,
@@ -180,6 +166,20 @@ const products: Product[] = [
     color: {
       name: "Pale Slate",
       hex: "#c3bfc0",
+    },
+    placement: [ProductPlacement.Shop],
+    inBusket: false,
+  },
+  {
+    id: "cedb180151e74ee198bce833ea667235",
+    code: "18346",
+    type: ProductType.Earring,
+    name: "Timeless Halo Earrings",
+    price: 620.73,
+    img: "https://i.ibb.co/mJKZ7WT/shop-3.jpg",
+    color: {
+      name: "Westar",
+      hex: "#e2ded9",
     },
     placement: [ProductPlacement.Shop],
     inBusket: false,
