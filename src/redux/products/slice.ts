@@ -5,14 +5,14 @@ const productsSlice = createSlice({
   name: "products",
   initialState: products,
   reducers: {
-    toggleInBusket: (state, action: PayloadAction<string>) => {
+    toggleInBasket: (state, action: PayloadAction<string>) => {
       const product = state.find(({ id }) => id === action.payload);
-      if (product) product.inBusket = !product.inBusket;
+      if (product) product.inBasket = !product.inBasket;
     },
   },
 });
 
 const productsReducer = productsSlice.reducer;
-export const { toggleInBusket } = productsSlice.actions;
+export const { toggleInBasket } = productsSlice.actions;
 
 export default productsReducer;

@@ -1,5 +1,13 @@
 import { useState, useRef } from "react";
 import { useParams } from "react-router-dom";
+import Lightbox from "yet-another-react-lightbox";
+import Counter from "yet-another-react-lightbox/plugins/counter";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/counter.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Size from "../Size";
 import Quantity from "../Quantity";
 import ProductButtons from "../ProductButtons";
@@ -9,6 +17,7 @@ import useProducts from "../../hooks/useProducts";
 import scss from "./ProductDetails.module.scss";
 
 const ProductDetails = () => {
+  const [open, setOpen] = useState(false);
   const [showColor, setShowColor] = useState(false);
   const { id } = useParams();
   const { products } = useProducts();
@@ -35,6 +44,7 @@ const ProductDetails = () => {
               src={product.img}
               alt={product.name}
               className={scss.productImg}
+              onClick={() => setOpen(true)}
               loading="lazy"
             />
           </div>
@@ -76,6 +86,12 @@ const ProductDetails = () => {
         <ProductButtons />
         <ProductSelects />
       </div>
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={[{ src: product.img, alt: product.name }]}
+        plugins={[Counter, Thumbnails, Fullscreen, Zoom]}
+      />
     </div>
   ) : (
     <Notification text="Sorry, product was not found" />
