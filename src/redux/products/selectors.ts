@@ -7,7 +7,9 @@ import {
 } from "../filters/selectors";
 import { ProductPlacement } from "../../types/enums";
 
-export const selectProducts = (state: RootState) => state.products;
+export const selectProducts = (state: RootState) => state.products.items;
+
+export const selectBasket = (state: RootState) => state.products.basket;
 
 export const selectFilteredProducts = createSelector(
   [selectProducts, selectSearcher, selectProductType, selectSortedPrice],

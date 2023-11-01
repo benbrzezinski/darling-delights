@@ -13,7 +13,6 @@ export interface Product {
     hex: string;
   };
   placement: ProductPlacement[];
-  inBasket: boolean;
 }
 
 export interface Feedback {

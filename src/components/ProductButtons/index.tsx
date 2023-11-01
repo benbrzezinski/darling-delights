@@ -7,11 +7,11 @@ import scss from "./ProductButtons.module.scss";
 
 const ProductButtons = () => {
   const { id } = useParams();
-  const { products } = useProducts();
+  const { basket } = useProducts();
   const { AddShoppingCart } = useIcons();
   const dispatch = useDispatch();
 
-  const isInBasket = products.find(product => product.id === id)?.inBasket;
+  const isInBasket = basket.find(product => product.id === id);
 
   const handleToggleInBasket = () => {
     if (id) dispatch(toggleInBasket(id));

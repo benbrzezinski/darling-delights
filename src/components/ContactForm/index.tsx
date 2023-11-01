@@ -33,6 +33,8 @@ const ContactForm = () => {
       !verifyEmail(email.value.trim()) ||
       !verifyMessage(message.value.trim())
     ) {
+      verifyEmail(email.value.trim());
+      verifyMessage(message.value.trim());
       return;
     }
 

@@ -1,3 +1,5 @@
+@use "../../scss/index.scss" as *;
+
 .text {
   font-weight: var(--fw-sec);
   line-height: 1.6;
@@ -42,4 +44,8 @@
   border: none;
   border-radius: var(--br-4);
   text-align: center;
+}
+
+.error {
+  @extend %error;
 }

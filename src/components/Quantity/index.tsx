@@ -1,10 +1,10 @@
 import { useSearchParams } from "react-router-dom";
-import { ChangeEventHandler } from "react";
-import { toast } from "react-toastify";
+import { useState, ChangeEventHandler } from "react";
 import scss from "./Quantity.module.scss";
 
 const Quantity = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [isQuantityChecked, setIsQuantityChecked] = useState(false);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
     const quantity = e.currentTarget.value;
@@ -14,40 +14,47 @@ const Quantity = () => {
     if (quantity === "") {
       searchParams.set("quantity", "");
       setSearchParams(searchParams);
-      return (e.currentTarget.value = "");
+      e.currentTarget.value = "";
+      return;
     }
 
     if (Number(quantity) < min || Number(quantity) > max) {
       searchParams.set("quantity", "1");
       setSearchParams(searchParams);
       e.currentTarget.value = "1";
-      return toast.warning("Enter a value from 1 to 99");
+      setIsQuantityChecked(true);
+      return;
     }
 
     searchParams.set("quantity", quantity);
     setSearchParams(searchParams);
+    setIsQuantityChecked(false);
   };
 
   const decreaseQuantity = () => {
     const quantity = String(Number(searchParams.get("quantity")) - 1);
 
     if (Number(quantity) < 1) {
-      return toast.warning("Enter a value from 1 to 99");
+      setIsQuantityChecked(true);
+      return;
     }
 
     searchParams.set("quantity", quantity);
     setSearchParams(searchParams);
+    setIsQuantityChecked(false);
   };
 
   const increaseQuantity = () => {
     const quantity = String(Number(searchParams.get("quantity")) + 1);
 
     if (Number(quantity) > 99) {
-      return toast.warning("Enter a value from 1 to 99");
+      setIsQuantityChecked(true);
+      return;
     }
 
     searchParams.set("quantity", quantity);
     setSearchParams(searchParams);
+    setIsQuantityChecked(false);
   };
 
   return (
@@ -78,6 +85,9 @@ const Quantity = () => {
           +
         </button>
       </div>
+      {isQuantityChecked && (
+        <p className={scss.error}>Allowed values are between 1 and 99</p>
+      )}
     </div>
   );
 };

@@ -167,11 +167,8 @@
 }
 
 .emailError {
-  font-size: var(--fs-sec);
-  line-height: 1.6;
-  color: var(--cl-22);
+  @extend %error;
   padding-left: 42px;
-  margin-top: 4px;
 }
 
 .wrapperDown {

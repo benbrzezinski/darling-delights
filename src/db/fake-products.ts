@@ -14,7 +14,6 @@ const products: Product[] = [
       hex: "#8f8278",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "bdbb2d67fb194132b7ad8030cdacb3a7",
@@ -28,7 +27,6 @@ const products: Product[] = [
       hex: "#ddaf7e",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "80290a9e2f6141a4a92b45b5107af7c9",
@@ -42,7 +40,6 @@ const products: Product[] = [
       hex: "#8b2125",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
-    inBasket: false,
   },
   {
     id: "9f6a5121e4d94481be0716cee9a03bd5",
@@ -56,7 +53,6 @@ const products: Product[] = [
       hex: "#cd7f95",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
-    inBasket: false,
   },
   {
     id: "4183489a65ea430dafa082966d1d72ae",
@@ -70,7 +66,6 @@ const products: Product[] = [
       hex: "#ae9868",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "ee235d84daa14081a6e764f6ae297cd7",
@@ -84,7 +79,6 @@ const products: Product[] = [
       hex: "#0e57ee",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "eb662e4d3ca84f0a88fb6d175783f512",
@@ -98,7 +92,6 @@ const products: Product[] = [
       hex: "#49a17e",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
-    inBasket: false,
   },
   {
     id: "d7b1f3d112c549c8af95993f116f5a7c",
@@ -112,7 +105,6 @@ const products: Product[] = [
       hex: "#e1e4ef",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
-    inBasket: false,
   },
   {
     id: "aa922d9d271642fb88ba2a87844f1027",
@@ -126,7 +118,6 @@ const products: Product[] = [
       hex: "#c3bfc0",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "cedb180151e74ee198bce833ea667235",
@@ -140,7 +131,6 @@ const products: Product[] = [
       hex: "#e2ded9",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "481016fdb54340479b17a7e654ab7551",
@@ -154,7 +144,6 @@ const products: Product[] = [
       hex: "#dadff8",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "bcf2748b5e7f46ebac4b085dbc8a130c",
@@ -168,7 +157,6 @@ const products: Product[] = [
       hex: "#f6d387",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "b90d7d85205b483bb17eb7604219178a",
@@ -182,7 +170,6 @@ const products: Product[] = [
       hex: "#e6be8e",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "e4c41f34f1c34d3f8a432b24faede0c9",
@@ -196,7 +183,6 @@ const products: Product[] = [
       hex: "#e6c3af",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "99dce481572e44818b3a451bacd98320",
@@ -214,7 +200,6 @@ const products: Product[] = [
       ProductPlacement.Shop,
       ProductPlacement.CollectionSummer,
     ],
-    inBasket: false,
   },
   {
     id: "6af510f7b48743f5ba680e75b94a521e",
@@ -232,7 +217,6 @@ const products: Product[] = [
       ProductPlacement.Shop,
       ProductPlacement.CollectionSummer,
     ],
-    inBasket: false,
   },
   {
     id: "6ed32a907dca477b83d01d39f7fd8617",
@@ -246,7 +230,6 @@ const products: Product[] = [
       hex: "#873b11",
     },
     placement: [ProductPlacement.CollectionSummer, ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "252290fa1a4f4e729df1a043e4bfccdb",
@@ -260,7 +243,6 @@ const products: Product[] = [
       hex: "#f4f2ec",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSummer],
-    inBasket: false,
   },
   {
     id: "858e79a4d7884aedaee5cade723a5c64",
@@ -274,7 +256,6 @@ const products: Product[] = [
       hex: "#d3b881",
     },
     placement: [ProductPlacement.CollectionSummer, ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "186c4ba1dab5480184d033c3986f5d8b",
@@ -288,7 +269,6 @@ const products: Product[] = [
       hex: "#d9ae6f",
     },
     placement: [ProductPlacement.CollectionSummer, ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "208149a56aa14b2298f871dc86284c08",
@@ -302,7 +282,6 @@ const products: Product[] = [
       hex: "#dfcbaf",
     },
     placement: [ProductPlacement.Featured, ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "837371ca8a9c46f68ed6bdfa4e3fbb26",
@@ -316,7 +295,6 @@ const products: Product[] = [
       hex: "#c34924",
     },
     placement: [ProductPlacement.Selection, ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "d7f86ac01c934634b68f5a858ed0e2ad",
@@ -330,7 +308,6 @@ const products: Product[] = [
       hex: "#b4905f",
     },
     placement: [ProductPlacement.Featured, ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "69ce70484e184178a0a0059750e573fe",
@@ -344,7 +321,6 @@ const products: Product[] = [
       hex: "#e2bf62",
     },
     placement: [ProductPlacement.Featured, ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "456t45y565hyy5656ujd429d840c4f",
@@ -358,7 +334,6 @@ const products: Product[] = [
       hex: "#babdc6",
     },
     placement: [ProductPlacement.CollectionSpring, ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "0e38a3439d454c49bb7c211b9d840c4f",
@@ -372,7 +347,6 @@ const products: Product[] = [
       hex: "#303691",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
-    inBasket: false,
   },
   {
     id: "b9c52a9e118845928c534937fd530852",
@@ -386,7 +360,6 @@ const products: Product[] = [
       hex: "#ccbebe",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "698c88f5a1ce486c8952b7d322d79770",
@@ -400,7 +373,6 @@ const products: Product[] = [
       hex: "#67557f",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
-    inBasket: false,
   },
   {
     id: "4275e95ef866461bac2b66b05c9106af",
@@ -414,7 +386,6 @@ const products: Product[] = [
       hex: "#87a5ae",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
-    inBasket: false,
   },
   {
     id: "060a9e01672a4711a4cb0741094770d5",
@@ -428,7 +399,6 @@ const products: Product[] = [
       hex: "#bda684",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSummer],
-    inBasket: false,
   },
   {
     id: "e6aacdeb712747ac8f121ec65c19568e",
@@ -442,7 +412,6 @@ const products: Product[] = [
       hex: "#c6ad95",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSummer],
-    inBasket: false,
   },
   {
     id: "13cf7a08f1514332a1b6d1d870703012",
@@ -456,7 +425,6 @@ const products: Product[] = [
       hex: "#ecc5a6",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSummer],
-    inBasket: false,
   },
   {
     id: "c85e3a658cc74264aff00da782cec5d0",
@@ -470,7 +438,6 @@ const products: Product[] = [
       hex: "#b2915c",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "95ad0f259729472492efc123b9430a7e",
@@ -484,7 +451,6 @@ const products: Product[] = [
       hex: "#997e38",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "fd8f1db3ec7a4f8884fdd97cf639c58e",
@@ -498,7 +464,6 @@ const products: Product[] = [
       hex: "#172820",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "5c6f29ad8a854e9587642f521140a2aa",
@@ -512,7 +477,6 @@ const products: Product[] = [
       hex: "#ede2e1",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "fc6e23c444bd4891a2cec60afe02cad9",
@@ -526,7 +490,6 @@ const products: Product[] = [
       hex: "#796538",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "f40694efdef4462888ab05b5b9f713d8",
@@ -540,7 +503,6 @@ const products: Product[] = [
       hex: "#ca8c6b",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "68cd8ac9562f4028b46573914179699c",
@@ -554,7 +516,6 @@ const products: Product[] = [
       hex: "#0c6e41",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "2b296f2357094eb3bd79c3ee941d2f96",
@@ -568,7 +529,6 @@ const products: Product[] = [
       hex: "#d03887",
     },
     placement: [ProductPlacement.Shop, ProductPlacement.CollectionSpring],
-    inBasket: false,
   },
   {
     id: "f1b28bb3bb9144ccb6954572ab8e5bfb",
@@ -582,7 +542,6 @@ const products: Product[] = [
       hex: "#f5bf68",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "f8ff7e781c9b43c8bc36ae7f7b728a90",
@@ -596,7 +555,6 @@ const products: Product[] = [
       hex: "#9b9c90",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "25db0acc060144fcadc078c39cef8c54",
@@ -610,7 +568,6 @@ const products: Product[] = [
       hex: "#15346f",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "ab2469c32d8848d88a24528fd821f79e",
@@ -624,7 +581,6 @@ const products: Product[] = [
       hex: "#c0c4c5",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
   {
     id: "9e2b2bf12931418eabb4b68f5aa2cec6",
@@ -638,7 +594,6 @@ const products: Product[] = [
       hex: "#898989",
     },
     placement: [ProductPlacement.Shop],
-    inBasket: false,
   },
 ];
 
