@@ -11,6 +11,9 @@ export const selectProducts = (state: RootState) => state.products.items;
 
 export const selectBasket = (state: RootState) => state.products.basket;
 
+export const selectIsBasketInfoOpen = (state: RootState) =>
+  state.products.isBasketInfoOpen;
+
 export const selectFilteredProducts = createSelector(
   [selectProducts, selectSearcher, selectProductType, selectSortedPrice],
   (products, searcher, productType, sortedPrice) => {

@@ -9,6 +9,8 @@ const products: Product[] = [
     name: "Luxury Gems Necklace",
     price: 168.76,
     img: "https://i.ibb.co/QXJ45ZF/shop-11.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Squirrel",
       hex: "#8f8278",
@@ -22,6 +24,8 @@ const products: Product[] = [
     name: "Aurora Bracelet",
     price: 125.28,
     img: "https://i.ibb.co/FnFrWxw/shop-8.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Tumbleweed",
       hex: "#ddaf7e",
@@ -35,6 +39,8 @@ const products: Product[] = [
     name: "Reflections Bracelet",
     price: 228.75,
     img: "https://i.ibb.co/Dw3mkZK/shop-2.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Old Brick",
       hex: "#8b2125",
@@ -48,6 +54,8 @@ const products: Product[] = [
     name: "Dreamy Infinity Ring",
     price: 327.71,
     img: "https://i.ibb.co/H47sDZP/shop-6.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Puce",
       hex: "#cd7f95",
@@ -61,6 +69,8 @@ const products: Product[] = [
     name: "Opulent Jewels Ring",
     price: 168.76,
     img: "https://i.ibb.co/Q9HqdFK/shop-4.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Teak",
       hex: "#ae9868",
@@ -74,6 +84,8 @@ const products: Product[] = [
     name: "Serene Solitaire Earrings",
     price: 125.28,
     img: "https://i.ibb.co/3m834Wz/shop-5.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Blue Ribbon",
       hex: "#0e57ee",
@@ -87,6 +99,8 @@ const products: Product[] = [
     name: "Graceful Earrings",
     price: 124.38,
     img: "https://i.ibb.co/s3yMzMF/shop-10.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Ocean Green",
       hex: "#49a17e",
@@ -100,6 +114,8 @@ const products: Product[] = [
     name: "Ornate Earrings",
     price: 802.49,
     img: "https://i.ibb.co/qpJWCZf/shop-31.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Mystic",
       hex: "#e1e4ef",
@@ -113,6 +129,8 @@ const products: Product[] = [
     name: "Sparkling Ring",
     price: 450.89,
     img: "https://i.ibb.co/cYTp3dk/shop-9.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Pale Slate",
       hex: "#c3bfc0",
@@ -126,6 +144,8 @@ const products: Product[] = [
     name: "Timeless Halo Earrings",
     price: 620.73,
     img: "https://i.ibb.co/mJKZ7WT/shop-3.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Westar",
       hex: "#e2ded9",
@@ -139,6 +159,8 @@ const products: Product[] = [
     name: "Lavish Ring",
     price: 348.89,
     img: "https://i.ibb.co/rcd8trw/shop-17.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Moon Raker",
       hex: "#dadff8",
@@ -152,6 +174,8 @@ const products: Product[] = [
     name: "Blissful Bloom Ring",
     price: 348.89,
     img: "https://i.ibb.co/RjhmwZ4/shop-7.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Marzipan",
       hex: "#f6d387",
@@ -165,6 +189,8 @@ const products: Product[] = [
     name: "Marvelous Bracelet",
     price: 942.16,
     img: "https://i.ibb.co/QDfhycK/shop-29.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Gold Sand",
       hex: "#e6be8e",
@@ -178,6 +204,8 @@ const products: Product[] = [
     name: "Glimmering Ring",
     price: 515.35,
     img: "https://i.ibb.co/bbX1QL2/shop-1.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Rose Fog",
       hex: "#e6c3af",
@@ -191,6 +219,8 @@ const products: Product[] = [
     name: "Exquisite Earrings",
     price: 327.71,
     img: "https://i.ibb.co/2PKL4gz/our-selection-product-2.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Edgewater",
       hex: "#c8e0d3",
@@ -208,6 +238,8 @@ const products: Product[] = [
     name: "Elegance Earrings",
     price: 620.73,
     img: "https://i.ibb.co/HXvfbyM/our-selection-product-3.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Whiskey",
       hex: "#cfa06a",
@@ -225,6 +257,8 @@ const products: Product[] = [
     name: "Palatial Jewels Ring",
     price: 168.76,
     img: "https://i.ibb.co/J2WW6N9/collection-1.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Copper Canyon",
       hex: "#873b11",
@@ -238,6 +272,8 @@ const products: Product[] = [
     name: "Serene Solitaire Ring",
     price: 125.28,
     img: "https://i.ibb.co/0QGL94f/collection-2.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Pampas",
       hex: "#f4f2ec",
@@ -251,6 +287,8 @@ const products: Product[] = [
     name: "Timeless Deluxe Necklace",
     price: 168.76,
     img: "https://i.ibb.co/NTcQrWD/collection-13.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Straw",
       hex: "#d3b881",
@@ -264,6 +302,8 @@ const products: Product[] = [
     name: "Timeless Brooch",
     price: 204.54,
     img: "https://i.ibb.co/LNrTNFg/collection-3.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Harvest Gold",
       hex: "#d9ae6f",
@@ -277,6 +317,8 @@ const products: Product[] = [
     name: "Radiance Necklace",
     price: 168.76,
     img: "https://i.ibb.co/bKDgk5Z/featured-product-1.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Grain Brown",
       hex: "#dfcbaf",
@@ -290,6 +332,8 @@ const products: Product[] = [
     name: "Shimmering Ring",
     price: 250.72,
     img: "https://i.ibb.co/jwTXrjQ/our-selection-product-1.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Piper",
       hex: "#c34924",
@@ -303,6 +347,8 @@ const products: Product[] = [
     name: "Refined Earrings",
     price: 125.28,
     img: "https://i.ibb.co/cgs89XN/featured-product-2.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Muddy Waters",
       hex: "#b4905f",
@@ -316,6 +362,8 @@ const products: Product[] = [
     name: "Delights Earrings",
     price: 323.71,
     img: "https://i.ibb.co/6XXjSfK/featured-product-3.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Equator",
       hex: "#e2bf62",
@@ -329,6 +377,8 @@ const products: Product[] = [
     name: "Striking Necklace",
     price: 450.25,
     img: "https://i.ibb.co/FXqxgKT/collection-14.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "French Gray",
       hex: "#babdc6",
@@ -342,6 +392,8 @@ const products: Product[] = [
     name: "Timeless Elegance Ring",
     price: 168.76,
     img: "https://i.ibb.co/DYr7wC4/shop-13.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Bay of Many",
       hex: "#303691",
@@ -355,6 +407,8 @@ const products: Product[] = [
     name: "Luxurious Ring",
     price: 250.72,
     img: "https://i.ibb.co/NNd20kP/shop-16.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Cold Turkey",
       hex: "#ccbebe",
@@ -368,6 +422,8 @@ const products: Product[] = [
     name: "Grand Necklace",
     price: 168.76,
     img: "https://i.ibb.co/Yd5wcvC/shop-21.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Smoky",
       hex: "#67557f",
@@ -381,6 +437,8 @@ const products: Product[] = [
     name: "Exclusive Earrings",
     price: 250.72,
     img: "https://i.ibb.co/r4GyGGG/shop-22.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Bali Hai",
       hex: "#87a5ae",
@@ -394,6 +452,8 @@ const products: Product[] = [
     name: "Sparkling Necklace",
     price: 515.35,
     img: "https://i.ibb.co/G0Z16FK/collection-5.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Mongoose",
       hex: "#bda684",
@@ -407,6 +467,8 @@ const products: Product[] = [
     name: "Glimmering Earrings",
     price: 450.89,
     img: "https://i.ibb.co/zQCLKfM/collection-6.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Rodeo Dust",
       hex: "#c6ad95",
@@ -420,6 +482,8 @@ const products: Product[] = [
     name: "Luxury Ring",
     price: 450.89,
     img: "https://i.ibb.co/WBBxxbb/collection-4.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Pancho",
       hex: "#ecc5a6",
@@ -433,6 +497,8 @@ const products: Product[] = [
     name: "Recherche Necklace",
     price: 780.99,
     img: "https://i.ibb.co/BPS2bbr/shop-24.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Teak",
       hex: "#b2915c",
@@ -446,6 +512,8 @@ const products: Product[] = [
     name: "Sumptuous Necklace",
     price: 204.54,
     img: "https://i.ibb.co/YR97Gx7/shop-25.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Sycamore",
       hex: "#997e38",
@@ -459,6 +527,8 @@ const products: Product[] = [
     name: "Splendid Earrings",
     price: 780.99,
     img: "https://i.ibb.co/mDbJZrz/shop-30.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Racing Green",
       hex: "#172820",
@@ -472,6 +542,8 @@ const products: Product[] = [
     name: "Fanciful Bracelet",
     price: 125.28,
     img: "https://i.ibb.co/RjWBcfQ/shop-20.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Soft Peach",
       hex: "#ede2e1",
@@ -485,6 +557,8 @@ const products: Product[] = [
     name: "Resplendent Bracelet",
     price: 450.89,
     img: "https://i.ibb.co/XfRcqTM/shop-27.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Yellow Metal",
       hex: "#796538",
@@ -498,6 +572,8 @@ const products: Product[] = [
     name: "Luxury Charms Bracelet",
     price: 620.73,
     img: "https://i.ibb.co/MG7X057/shop-12.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Antique Brass",
       hex: "#ca8c6b",
@@ -511,6 +587,8 @@ const products: Product[] = [
     name: "Deluxe Emerald Necklace",
     price: 1015.99,
     img: "https://i.ibb.co/dpf7Tfn/shop-14.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Salem",
       hex: "#0c6e41",
@@ -524,6 +602,8 @@ const products: Product[] = [
     name: "Dedicated Rubin Ring",
     price: 802.49,
     img: "https://i.ibb.co/VpCqLgh/shop-23.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Cerise",
       hex: "#d03887",
@@ -537,6 +617,8 @@ const products: Product[] = [
     name: "Extraordinary Bracelet",
     price: 150.25,
     img: "https://i.ibb.co/TLyY6JC/shop-28.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Rajah",
       hex: "#f5bf68",
@@ -550,6 +632,8 @@ const products: Product[] = [
     name: "Astonishing Bracelet",
     price: 89.99,
     img: "https://i.ibb.co/8c1QC7W/shop-26.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Lemon Grass",
       hex: "#9b9c90",
@@ -563,6 +647,8 @@ const products: Product[] = [
     name: "Magnificent Necklace",
     price: 1010.99,
     img: "https://i.ibb.co/b121nPh/shop-15.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Chathams Blue",
       hex: "#15346f",
@@ -576,6 +662,8 @@ const products: Product[] = [
     name: "Elaborate Earrings",
     price: 204.54,
     img: "https://i.ibb.co/vJHJsry/shop-18.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Silver Sand",
       hex: "#c0c4c5",
@@ -589,6 +677,8 @@ const products: Product[] = [
     name: "Sophisticated Necklace",
     price: 327.71,
     img: "https://i.ibb.co/qnGvBxR/shop-19.jpg",
+    size: "",
+    quantity: "",
     color: {
       name: "Gray",
       hex: "#898989",

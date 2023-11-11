@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CollectionDetailsHeading } from "../../types";
 import useIcons from "../../hooks/useIcons";
 import scss from "./CollectionDetailsHeading.module.scss";
@@ -8,6 +8,7 @@ const CollectionDetailsHeading = ({
   title,
   text,
 }: CollectionDetailsHeading) => {
+  const { pathname } = useLocation();
   const { Lower, Greater } = useIcons();
 
   return (
@@ -22,12 +23,24 @@ const CollectionDetailsHeading = ({
           <h1 className={scss.title}>{title}</h1>
           <p className={scss.text}>{text}</p>
           <div className={scss.linkBox}>
-            <Link to="/collections/summer" className={scss.link}>
-              <Lower className={scss.icon} />
-            </Link>
-            <Link to="/collections/spring" className={scss.link}>
-              <Greater className={scss.icon} />
-            </Link>
+            <button
+              className={scss.btn}
+              type="button"
+              disabled={pathname.includes("summer")}
+            >
+              <Link to="/collections/summer" className={scss.link}>
+                <Lower className={scss.icon} />
+              </Link>
+            </button>
+            <button
+              className={scss.btn}
+              type="button"
+              disabled={pathname.includes("spring")}
+            >
+              <Link to="/collections/spring" className={scss.link}>
+                <Greater className={scss.icon} />
+              </Link>
+            </button>
           </div>
         </section>
       </div>

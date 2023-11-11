@@ -1,0 +1,110 @@
+@use "../../scss/index.scss" as *;
+
+.paymentBox {
+  height: fit-content;
+  position: relative;
+  border-radius: var(--br-4);
+  box-shadow: 0 0 1px var(--cl-main), 0 0 2px var(--cl-main);
+  padding: 24px;
+  padding-top: 18px;
+
+  @include max-width(357px) {
+    padding-block: 18px;
+    padding-inline: 9px;
+  }
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-sec);
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+.paymentMethodBox {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cl-21);
+  border: 1px solid var(--cl-12);
+  border-radius: var(--br-4);
+  padding: 15px;
+  margin-top: 30px;
+}
+
+.paymentMethodImg {
+  width: 100px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+}
+
+.paymentMethodText {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-9);
+  line-height: 1.6;
+  color: var(--cl-12);
+}
+
+.paymentMethodForm {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.creditCardInput {
+  width: 160px;
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-9);
+  line-height: 1.6;
+  color: var(--cl-12);
+  background-color: var(--cl-4);
+  border: 1px solid var(--cl-10);
+  border-radius: var(--br-4);
+  padding-block: 5px;
+  padding-inline: 12px;
+
+  @include max-width(357px) {
+    width: 154px;
+  }
+
+  &.small {
+    width: 40px;
+    text-align: center;
+    padding-inline: 6px;
+  }
+}
+
+.blikInput {
+  width: 24px;
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-9);
+  line-height: 1.6;
+  color: var(--cl-12);
+  background-color: var(--cl-4);
+  border: 1px solid var(--cl-10);
+  border-radius: var(--br-4);
+  text-align: center;
+  padding-block: 5px;
+  padding-inline: 6px;
+  margin-top: 10px;
+
+  &:not(:last-of-type) {
+    margin-right: 10px;
+  }
+}
+
+.proceedBtn {
+  @extend %greenBtn;
+  width: 280px;
+  position: absolute;
+  bottom: 24px;
+
+  @include max-width(357px) {
+    width: 275px;
+    bottom: 30px;
+  }
+}

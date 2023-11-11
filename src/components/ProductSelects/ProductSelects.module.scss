@@ -1,6 +1,75 @@
+@use "../../scss/index.scss" as *;
+
+.paymentSelectsContainer {
+  display: grid;
+  margin-top: 8px;
+
+  @include max-width(1256px) {
+    justify-content: center;
+  }
+
+  @include max-width(979px) {
+    justify-content: initial;
+  }
+
+  @include max-width(682px) {
+    justify-content: center;
+  }
+}
+
 .paymentSelectsBox {
+  position: relative;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, 272px);
   gap: 24px;
+}
+
+.infoBtn {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  background-color: transparent;
+  border: none;
+  border-radius: var(--br-sec);
+
+  @include max-width(357px) {
+    right: -2px;
+  }
+}
+
+.infoIcon {
+  color: var(--cl-5);
+  width: 24px;
+  height: 24px;
+  border-radius: var(--br-sec);
+  transition-property: color, background-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-6);
+  }
+}
+
+.paymentSelectsInfoTitle {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.paymentSelectsInfoList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.paymentSelectsInfoItem {
+  font-size: var(--fs-9);
+  line-height: 1.6;
 }

@@ -70,7 +70,7 @@
 }
 
 .shopBtn {
-  @extend %btn;
+  @extend %transparentBtn;
   color: var(--cl-4);
   border-color: var(--cl-4);
 

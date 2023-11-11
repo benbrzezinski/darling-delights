@@ -1,3 +1,4 @@
+import { MouseEvent, RefObject } from "react";
 import { SingleValue } from "react-select";
 import { ProductType, ProductPlacement, FeedbackPlacement } from "./enums";
 
@@ -8,11 +9,19 @@ export interface Product {
   name: string;
   price: number;
   img: string;
+  size: string;
+  quantity: string;
   color: {
     name: string;
     hex: string;
   };
   placement: ProductPlacement[];
+}
+
+export interface ProductPayload {
+  id: string;
+  size?: string;
+  quantity?: string;
 }
 
 export interface Feedback {
@@ -27,11 +36,18 @@ export interface Feedback {
 export interface Header {
   isSmallScreen: boolean;
   openMobileMenu: () => void;
+  openBasket: () => void;
 }
 
 export interface MobileNav {
   isMobileMenuOpen: boolean;
   closeMobileMenu: () => void;
+}
+
+export interface Basket {
+  isBasketOpen: boolean;
+  closeBasket: () => void;
+  closeBasketByBackdrop: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
 export interface Selects {
@@ -48,6 +64,7 @@ export interface Pagination {
 
 export interface Notification {
   text: string;
+  paddingTop?: string;
 }
 
 export interface CollectionDetailsHeading {
@@ -71,4 +88,17 @@ export interface OptionType {
 
 export interface OptionTypeObj {
   [key: string]: OptionType[];
+}
+
+export interface InputRefs {
+  code: RefObject<HTMLInputElement>;
+  month: RefObject<HTMLInputElement>;
+  year: RefObject<HTMLInputElement>;
+  cvc: RefObject<HTMLInputElement>;
+  blik1: RefObject<HTMLInputElement>;
+  blik2: RefObject<HTMLInputElement>;
+  blik3: RefObject<HTMLInputElement>;
+  blik4: RefObject<HTMLInputElement>;
+  blik5: RefObject<HTMLInputElement>;
+  blik6: RefObject<HTMLInputElement>;
 }

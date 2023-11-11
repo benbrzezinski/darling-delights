@@ -8,29 +8,18 @@
   padding-block: 12px;
 }
 
-.paymentBtn {
-  @extend %btn;
+.basketBtn {
+  @extend %transparentBtn;
   width: 272px;
   gap: 10px;
+}
+
+.buyBtn {
+  @extend %greenBtn;
+  width: 272px;
 }
 
 .icon {
   width: 24px;
   height: 24px;
-}
-
-.buyBtn {
-  color: var(--cl-4);
-  background-color: var(--cl-12);
-  border: none;
-
-  &:hover {
-    color: var(--cl-4);
-    background-color: var(--cl-8);
-  }
-
-  &:active {
-    color: var(--cl-4);
-    background-color: var(--cl-9);
-  }
 }

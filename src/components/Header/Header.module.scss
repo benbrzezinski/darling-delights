@@ -30,11 +30,6 @@
   color: var(--cl-sec);
 }
 
-.hamburgerBtn {
-  background-color: transparent;
-  border: none;
-}
-
 .nav {
   display: flex;
   flex: 1;
@@ -76,15 +71,36 @@
   gap: 15px;
 }
 
-.icon {
-  color: var(--cl-4);
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
-  transition: color var(--duration) var(--timing-function);
+.btn {
+  position: relative;
+  background-color: transparent;
+  border: none;
 
   &:hover,
   &:focus-visible {
-    color: var(--cl-3);
+    .icon {
+      color: var(--cl-3);
+    }
   }
+}
+
+.icon {
+  color: var(--cl-4);
+  width: 20px;
+  height: 20px;
+  transition: color var(--duration) var(--timing-function);
+}
+
+.info {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--br-sec);
+  position: absolute;
+  bottom: -10px;
+  transform: translateX(-50%);
+  font-size: var(--fs-9);
+  background-color: var(--cl-16);
+  color: var(--cl-4);
 }

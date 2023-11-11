@@ -1,0 +1,243 @@
+@use "../../scss/index.scss" as *;
+$delay: 150ms;
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: #171a1f66;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity var(--duration) var(--timing-function) $delay;
+
+  &.isVisible {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity var(--duration) var(--timing-function);
+  }
+}
+
+.wrapper {
+  position: fixed;
+  width: 440px;
+  height: 100%;
+  right: 0;
+  transform: translateX(100%);
+  z-index: 10;
+  background-color: var(--cl-4);
+  transition: transform var(--duration) var(--timing-function);
+  padding: 36px;
+
+  &.visible {
+    transform: translateX(0);
+    transition: transform var(--duration) var(--timing-function) $delay;
+  }
+
+  @include max-width(500px) {
+    width: 290px;
+    padding: 20px;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 52px;
+  right: 36px;
+  background-color: var(--cl-4);
+  border: none;
+
+  @include max-width(500px) {
+    top: 29px;
+    right: 20px;
+  }
+}
+
+.closeIcon {
+  color: var(--cl-main);
+  width: 24px;
+  height: 24px;
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-3);
+  }
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-sec);
+  line-height: 1.4;
+  color: var(--cl-12);
+  margin-bottom: 20px;
+
+  @include max-width(500px) {
+    font-size: var(--fs-5);
+  }
+}
+
+.basket {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+
+  &::-webkit-scrollbar {
+    width: 14px;
+    height: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    background-color: var(--cl-5);
+    border-radius: var(--br-sec);
+    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.05),
+      inset 1px 1px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+.basketItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 12px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--cl-5);
+  }
+}
+
+.basketImg {
+  object-fit: cover;
+  border-radius: var(--br-4);
+  background-color: var(--cl-5);
+}
+
+.basketProductInfoBox {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.name {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  line-height: 1.5;
+  color: var(--cl-11);
+
+  @include max-width(500px) {
+    font-size: var(--fs-sec);
+  }
+}
+
+.code {
+  font-size: var(--fs-9);
+  line-height: 1.4;
+  color: var(--cl-10);
+}
+
+.price {
+  font-size: var(--fs-sec);
+  line-height: 1.5;
+
+  @include max-width(500px) {
+    font-size: var(--fs-9);
+  }
+}
+
+.editLink {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--cl-4);
+  border-radius: var(--br-4);
+  transition: background-color var(--duration) var(--timing-function);
+  padding: 5px;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--cl-21);
+
+    .editPen {
+      color: var(--cl-sec);
+    }
+  }
+
+  &:active {
+    background-color: var(--cl-5);
+  }
+
+  @include max-width(500px) {
+    top: unset;
+    bottom: 5px;
+    right: 30px;
+  }
+}
+
+.editPen {
+  color: var(--cl-10);
+  width: 24px;
+  height: 24px;
+  transition: color var(--duration) var(--timing-function);
+}
+
+.quantity {
+  font-size: var(--fs-sec);
+  line-height: 1.4;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.basketInfoBox {
+  border-top: 1px solid var(--cl-5);
+  padding-top: 12px;
+  margin-top: 20px;
+}
+
+.totalBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.text {
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+}
+
+.total {
+  font-family: var(--ff-sec);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-sec);
+  line-height: 1.6;
+}
+
+.btn {
+  @extend %greenBtn;
+}

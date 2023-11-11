@@ -25,9 +25,9 @@ const AboutOurStory = () => {
         className={scss.video}
         onMouseEnter={showControls}
         onMouseLeave={hideControls}
-        controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
-        poster="/assets/images/video-poster-2.jpg"
         controls
+        controlsList="nodownload noremoteplayback noplaybackrate"
+        poster="/assets/images/video-poster-2.jpg"
       >
         <source
           src="https://drive.google.com/uc?export=download&id=1L4gRIWo_c7c6ZOg4alId_gsfuLmdnxOH"

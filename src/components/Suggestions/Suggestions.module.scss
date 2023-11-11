@@ -12,16 +12,41 @@
   }
 }
 
+.headlineBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding-inline: 5px;
+  margin-bottom: 25px;
+}
+
 .headline {
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-6);
   line-height: 1.4;
   color: var(--cl-12);
-  margin-bottom: 25px;
 
   @include max-width(852px) {
     font-size: var(--fs-5);
+  }
+
+  @include max-width(350px) {
+    font-size: var(--fs-4);
+  }
+}
+
+.link {
+  line-height: 1.6;
+  color: var(--cl-20);
+
+  @include max-width(852px) {
+    font-size: var(--fs-sec);
+  }
+
+  @include max-width(350px) {
+    font-size: var(--fs-9);
   }
 }
 

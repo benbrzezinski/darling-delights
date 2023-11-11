@@ -22,14 +22,19 @@ const Suggestions = () => {
 
   return product ? (
     <section className={scss.wrapper}>
-      <h2 className={scss.headline}>You may also like</h2>
+      <div className={scss.headlineBox}>
+        <h2 className={scss.headline}>You may also like</h2>
+        <Link to="/shop" className={scss.link}>
+          View more
+        </Link>
+      </div>
       <ul className={scss.products} ref={productsRef}>
         {suggestedProducts.map(({ id, name, price, img }) => (
           <li className={scss.productsItem} key={id}>
             <Link
               to={{
                 pathname: `/shop/${id}`,
-                search: "?size=48&quantity=1",
+                search: "?from=shop&size=48&quantity=1",
               }}
             >
               <img
@@ -49,7 +54,43 @@ const Suggestions = () => {
         ))}
       </ul>
     </section>
-  ) : null;
+  ) : (
+    <section className={scss.wrapper}>
+      <div className={scss.headlineBox}>
+        <h2 className={scss.headline}>You may also like</h2>
+        <Link to="/shop" className={scss.link}>
+          View more
+        </Link>
+      </div>
+      <ul className={scss.products} ref={productsRef}>
+        {products
+          .filter((_, i) => i < 9)
+          .map(({ id, name, price, img }) => (
+            <li className={scss.productsItem} key={id}>
+              <Link
+                to={{
+                  pathname: `/shop/${id}`,
+                  search: "?from=shop&size=48&quantity=1",
+                }}
+              >
+                <img
+                  width={276}
+                  height={320}
+                  src={img}
+                  alt={name}
+                  className={scss.productImg}
+                  loading="lazy"
+                />
+                <div className={scss.productInfoBox}>
+                  <p className={scss.productName}>{name}</p>
+                  <p className={scss.productPrice}>${price}</p>
+                </div>
+              </Link>
+            </li>
+          ))}
+      </ul>
+    </section>
+  );
 };
 
 export default Suggestions;

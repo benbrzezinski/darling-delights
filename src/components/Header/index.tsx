@@ -1,9 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
 import { Header } from "../../types";
+import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Header.module.scss";
 
-const Header = ({ isSmallScreen, openMobileMenu }: Header) => {
+const Header = ({ isSmallScreen, openMobileMenu, openBasket }: Header) => {
+  const { basket } = useProducts();
   const { Hamburger, User, ShoppingCart } = useIcons();
 
   return (
@@ -15,11 +17,7 @@ const Header = ({ isSmallScreen, openMobileMenu }: Header) => {
           </Link>
         </div>
         {isSmallScreen ? (
-          <button
-            type="button"
-            className={scss.hamburgerBtn}
-            onClick={openMobileMenu}
-          >
+          <button type="button" className={scss.btn} onClick={openMobileMenu}>
             <Hamburger className={scss.icon} />
           </button>
         ) : (
@@ -67,8 +65,15 @@ const Header = ({ isSmallScreen, openMobileMenu }: Header) => {
           </nav>
         )}
         <div className={scss.iconsBox}>
-          <User className={scss.icon} />
-          <ShoppingCart className={scss.icon} />
+          <button type="button" className={scss.btn}>
+            <User className={scss.icon} />
+          </button>
+          <button type="button" className={scss.btn} onClick={openBasket}>
+            <ShoppingCart className={scss.icon} />
+            {basket.length > 0 ? (
+              <p className={scss.info}>{basket.length}</p>
+            ) : null}
+          </button>
         </div>
       </div>
     </header>

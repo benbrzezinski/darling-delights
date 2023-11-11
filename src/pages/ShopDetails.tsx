@@ -7,6 +7,7 @@ import OurAdvantages from "../components/OurAdvantages";
 import Suggestions from "../components/Suggestions";
 import Feedbacks from "../components/Feedbacks";
 import feedbacks from "../db/fake-feedbacks";
+import BasketInfo from "../components/BasketInfo";
 
 const ShopDetails = () => {
   const feedbacksShop = feedbacks.filter(
@@ -24,6 +25,7 @@ const ShopDetails = () => {
       <OurAdvantages />
       <Suggestions />
       <Feedbacks feedbacks={feedbacksShop} />
+      <BasketInfo />
     </>
   );
 };

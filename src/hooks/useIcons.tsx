@@ -5,19 +5,27 @@ import {
   AiOutlineClose,
   AiOutlineFileText,
 } from "react-icons/ai";
-import { BsTruck, BsChatHeart, BsTwitter, BsYoutube } from "react-icons/bs";
+import {
+  BsTruck,
+  BsChatHeart,
+  BsTwitter,
+  BsYoutube,
+  BsInfoCircleFill,
+} from "react-icons/bs";
 import { BiLogoLinkedinSquare, BiSearchAlt } from "react-icons/bi";
 import {
   MdOutlinePayments,
   MdArrowForwardIos,
   MdArrowBackIosNew,
   MdAddShoppingCart,
+  MdOutlineEdit,
 } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
 import { FaFacebook } from "react-icons/fa6";
 import { GiBigDiamondRing } from "react-icons/gi";
 import { FiPhoneCall } from "react-icons/fi";
+import { ImBin } from "react-icons/im";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -135,6 +143,24 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const EditPen = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <MdOutlineEdit />
+    </IconContext.Provider>
+  );
+
+  const Bin = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <ImBin />
+    </IconContext.Provider>
+  );
+
+  const Info = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <BsInfoCircleFill />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -155,6 +181,9 @@ const useIcons = () => {
     Greater,
     Lower,
     AddShoppingCart,
+    EditPen,
+    Bin,
+    Info,
   };
 };
 

@@ -1,0 +1,127 @@
+@use "../../scss/index.scss" as *;
+
+.voucherForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.voucherLabel {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-3);
+  line-height: 1.6;
+}
+
+.voucherBox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.voucherInput {
+  width: 198px;
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-9);
+  line-height: 1.6;
+  color: var(--cl-12);
+  background-color: var(--cl-4);
+  border: 1px solid var(--cl-10);
+  border-radius: var(--br-4);
+  padding-block: 5px;
+  padding-inline: 12px;
+}
+
+.voucherBtn {
+  width: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+  color: var(--cl-14);
+  background-color: var(--cl-3);
+  border: none;
+  border-radius: var(--br-4);
+  transition: background-color var(--duration) var(--timing-function);
+  padding: 0 12px;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--cl-15);
+  }
+
+  &:active {
+    background-color: var(--cl-16);
+  }
+}
+
+.voucherValue {
+  width: 55px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-9);
+  line-height: 1.6;
+  color: var(--cl-24);
+  background-color: var(--cl-23);
+  border-radius: var(--br-3);
+  pointer-events: none;
+  user-select: none;
+}
+
+.error {
+  @extend %error;
+  padding-left: 2px;
+  margin-top: 0;
+}
+
+.paymentSummary {
+  padding-bottom: 72px;
+
+  @include max-width(357px) {
+    padding-bottom: 88px;
+  }
+}
+
+.paymentSummaryTitle {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.paymentSummaryBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.paymentSummaryText {
+  font-size: var(--fs-9);
+  line-height: 1.6;
+}
+
+.paymentSummaryPrice {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+}
+
+.paymentSummaryBoxTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--cl-21);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.paymentSummaryTotal {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-25);
+}

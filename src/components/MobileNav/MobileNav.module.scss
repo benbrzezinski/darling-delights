@@ -63,9 +63,8 @@
 
 .icon {
   color: var(--cl-4);
-  cursor: pointer;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   transition: color var(--duration) var(--timing-function);
 
   &:hover,

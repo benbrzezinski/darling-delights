@@ -1,0 +1,88 @@
+@use "../../scss/index.scss" as *;
+
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  background-color: #171a1f66;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity var(--duration) var(--timing-function);
+
+  &.isVisible {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.section {
+  max-width: 310px;
+  position: relative;
+  background-color: var(--cl-4);
+  border-radius: var(--br-main);
+  padding-block: 34px;
+  padding-inline: 30px;
+}
+
+.headlineBox {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-sec);
+  line-height: 1.4;
+  color: var(--cl-12);
+}
+
+.closeBtn {
+  background-color: var(--cl-4);
+  border: none;
+}
+
+.closeIcon {
+  color: var(--cl-main);
+  width: 24px;
+  height: 24px;
+  transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-3);
+  }
+}
+
+.productName {
+  font-size: var(--fs-sec);
+  font-weight: var(--fw-sec);
+  line-height: 1.6;
+}
+
+.productInfo {
+  font-size: var(--fs-9);
+  line-height: 1.6;
+  color: var(--cl-20);
+}
+
+.infoBtnBox {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.infoBtn {
+  @extend %transparentBtn;
+  width: 100%;
+}
+
+.basketBtn {
+  @extend %greenBtn;
+}
