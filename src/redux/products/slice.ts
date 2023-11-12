@@ -38,6 +38,15 @@ const productsSlice = createSlice({
         }
       }
     },
+    addToBasket: (state, action: PayloadAction<ProductPayload>) => {
+      const product = state.items.find(({ id }) => id === action.payload.id);
+
+      if (product) {
+        product.size = action.payload.size ?? "48";
+        product.quantity = action.payload.quantity ?? "1";
+        state.basket.push(product);
+      }
+    },
     closeBasketInfo: state => {
       state.isBasketInfoOpen = false;
       enableBodyScroll(document.body);
@@ -46,6 +55,7 @@ const productsSlice = createSlice({
 });
 
 const productsReducer = productsSlice.reducer;
-export const { toggleInBasket, closeBasketInfo } = productsSlice.actions;
+export const { toggleInBasket, addToBasket, closeBasketInfo } =
+  productsSlice.actions;
 
 export default productsReducer;

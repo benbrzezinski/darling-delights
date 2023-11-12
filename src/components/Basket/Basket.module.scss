@@ -92,6 +92,7 @@ $delay: 150ms;
   flex-grow: 1;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
   padding-right: 8px;
 
   &::-webkit-scrollbar {

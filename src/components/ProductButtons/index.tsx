@@ -5,7 +5,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { toggleInBasket, closeBasketInfo } from "../../redux/products/slice";
+import { toggleInBasket, addToBasket } from "../../redux/products/slice";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./ProductButtons.module.scss";
@@ -43,14 +43,13 @@ const ProductButtons = () => {
 
     if (!isInBasket && id) {
       dispatch(
-        toggleInBasket({
+        addToBasket({
           id,
           size: searchParams.get("size") ?? "48",
           quantity: searchParams.get("quantity") ?? "1",
         })
       );
 
-      dispatch(closeBasketInfo());
       navigate(`/basket${paymentParams}`);
     }
 

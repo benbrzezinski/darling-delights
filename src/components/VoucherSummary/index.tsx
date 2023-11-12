@@ -12,19 +12,23 @@ const VoucherSummary = () => {
 
   const subtotal = basket.reduce((acc, { price }) => acc + price, 0);
   const discount = voucherConfirmed === "y" ? 25 : 0;
-  const fee =
-    (searchParams.get("delivery") === "home" ? 5 : 0) +
-    (!searchParams.get("warranty")
-      ? 0
-      : searchParams.get("warranty") === "1"
-      ? 10
-      : 20) +
-    (!searchParams.get("care")
-      ? 0
-      : searchParams.get("care") === "basic"
-      ? 2
-      : 5);
-  const total = subtotal - discount + fee;
+  const deliveryFee = searchParams.get("delivery") === "home" ? 5 : 0;
+  const warrantyFee = !searchParams.get("warranty")
+    ? 0
+    : searchParams.get("warranty") === "1"
+    ? 10
+    : searchParams.get("warranty") === "2"
+    ? 20
+    : 0;
+  const careFee = !searchParams.get("care")
+    ? 0
+    : searchParams.get("care") === "basic"
+    ? 2
+    : searchParams.get("care") === "premium"
+    ? 6
+    : 0;
+  const totalFee = deliveryFee + warrantyFee + careFee;
+  const total = subtotal - discount + totalFee;
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
@@ -75,7 +79,7 @@ const VoucherSummary = () => {
         </div>
         <div className={scss.paymentSummaryBox}>
           <p className={scss.paymentSummaryText}>Fee</p>
-          <p className={scss.paymentSummaryPrice}>${fee.toFixed(2)}</p>
+          <p className={scss.paymentSummaryPrice}>${totalFee.toFixed(2)}</p>
         </div>
         <div className={scss.paymentSummaryBoxTotal}>
           <p className={scss.paymentSummaryText}>Total</p>

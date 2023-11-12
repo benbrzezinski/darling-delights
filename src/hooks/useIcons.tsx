@@ -1,11 +1,11 @@
 import { IconContext } from "react-icons";
 import {
   AiOutlineUser,
-  AiOutlineShoppingCart,
   AiOutlineClose,
   AiOutlineFileText,
 } from "react-icons/ai";
 import {
+  BsCart2,
   BsTruck,
   BsChatHeart,
   BsTwitter,
@@ -49,7 +49,7 @@ const useIcons = () => {
 
   const ShoppingCart = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
-      <AiOutlineShoppingCart />
+      <BsCart2 />
     </IconContext.Provider>
   );
 

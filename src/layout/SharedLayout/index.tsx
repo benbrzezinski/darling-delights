@@ -23,14 +23,15 @@ const SharedLayout = () => {
   const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
 
   useEffect(() => {
-    if (isBasketOpen || (isMobileMenuOpen && isSmallScreen)) {
-      return disableBodyScroll(document.body);
+    if (isMobileMenuOpen && isSmallScreen) {
+      disableBodyScroll(document.body);
+      return;
     }
 
-    if (!isBasketOpen || !isMobileMenuOpen || !isSmallScreen) {
-      return enableBodyScroll(document.body);
+    if (!isMobileMenuOpen || !isSmallScreen) {
+      enableBodyScroll(document.body);
     }
-  }, [isBasketOpen, isMobileMenuOpen, isSmallScreen]);
+  }, [isMobileMenuOpen, isSmallScreen]);
 
   useEffect(() => {
     const handleScroll = throttle(() => {
@@ -44,9 +45,29 @@ const SharedLayout = () => {
     };
   }, []);
 
+  const openBasket = () => {
+    setIsBasketOpen(true);
+
+    if (!isSmallScreen) {
+      disableBodyScroll(document.body);
+    }
+  };
+
+  const closeBasket = () => {
+    setIsBasketOpen(false);
+
+    if (!isSmallScreen) {
+      enableBodyScroll(document.body);
+    }
+  };
+
   const closeBasketByBackdrop = (e: MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) {
       setIsBasketOpen(false);
+    }
+
+    if (!isSmallScreen) {
+      enableBodyScroll(document.body);
     }
   };
 
@@ -59,7 +80,7 @@ const SharedLayout = () => {
       <Header
         isSmallScreen={isSmallScreen}
         openMobileMenu={() => setIsMobileMenuOpen(true)}
-        openBasket={() => setIsBasketOpen(true)}
+        openBasket={openBasket}
       />
       <main>
         <Suspense fallback={<Loader />}>
@@ -69,7 +90,7 @@ const SharedLayout = () => {
       <Footer />
       <Basket
         isBasketOpen={isBasketOpen}
-        closeBasket={() => setIsBasketOpen(false)}
+        closeBasket={closeBasket}
         closeBasketByBackdrop={closeBasketByBackdrop}
       />
       {isSmallScreen ? (

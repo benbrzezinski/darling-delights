@@ -99,8 +99,9 @@
   border-radius: var(--br-sec);
   position: absolute;
   bottom: -10px;
+  left: 1px;
   transform: translateX(-50%);
-  font-size: var(--fs-9);
+  font-size: calc(var(--fs-9) - 1px);
   background-color: var(--cl-16);
   color: var(--cl-4);
 }
