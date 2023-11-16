@@ -2,6 +2,12 @@ import { MouseEvent, RefObject } from "react";
 import { SingleValue } from "react-select";
 import { ProductType, ProductPlacement, FeedbackPlacement } from "./enums";
 
+export type VerifyCreditCard = (
+  name: string,
+  value: string,
+  ref?: HTMLInputElement | null
+) => boolean;
+
 export interface Product {
   id: string;
   code: string;
@@ -101,4 +107,9 @@ export interface InputRefs {
   blik4: RefObject<HTMLInputElement>;
   blik5: RefObject<HTMLInputElement>;
   blik6: RefObject<HTMLInputElement>;
+}
+
+export interface LocationState {
+  total: string;
+  basket: Product[];
 }

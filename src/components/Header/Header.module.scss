@@ -68,7 +68,7 @@
 
 .iconsBox {
   display: flex;
-  gap: 15px;
+  gap: 24px;
 }
 
 .btn {
@@ -89,6 +89,10 @@
   width: 20px;
   height: 20px;
   transition: color var(--duration) var(--timing-function);
+}
+
+.user {
+  transform: translateY(1px);
 }
 
 .info {

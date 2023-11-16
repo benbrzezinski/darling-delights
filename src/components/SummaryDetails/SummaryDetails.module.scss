@@ -1,0 +1,242 @@
+@use "../../scss/index.scss" as *;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+  padding: 50px;
+  padding-bottom: 100px;
+  margin: auto;
+
+  @include max-width(560px) {
+    padding-inline: 15px;
+  }
+}
+
+.summaryImg {
+  object-fit: cover;
+  background-color: var(--cl-5);
+  border-radius: var(--br-5);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-5);
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 12px;
+
+  @include max-width(392px) {
+    font-size: var(--fs-4);
+  }
+}
+
+.infoText {
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+  color: var(--cl-10);
+  text-align: center;
+  margin-bottom: 50px;
+
+  @include max-width(392px) {
+    font-size: var(--fs-9);
+  }
+}
+
+.summaryDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 560px;
+  background: var(--cl-4);
+  border-radius: var(--br-4);
+  box-shadow: 0 0 1px var(--cl-main), 0 0 2px var(--cl-main);
+  padding: 24px;
+}
+
+.summaryList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.summaryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+
+  &:nth-child(3) {
+    border-bottom: 1px solid var(--cl-5);
+    padding-bottom: 24px;
+  }
+
+  &:nth-child(4) {
+    padding-top: 4px;
+  }
+
+  &:last-child {
+    align-items: flex-start;
+    border-bottom: 1px solid var(--cl-5);
+    padding-bottom: 24px;
+  }
+
+  @include max-width(392px) {
+    gap: 30px;
+  }
+}
+
+.summaryBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.summaryIcon {
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--cl-12);
+
+  @include max-width(392px) {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.summaryName {
+  line-height: 1.6;
+  color: var(--cl-10);
+
+  @include max-width(392px) {
+    font-size: var(--fs-sec);
+  }
+}
+
+.summaryBgImg {
+  width: 100px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right center;
+
+  @include max-width(392px) {
+    width: 80px;
+  }
+}
+
+.summaryAddressBox {
+  text-align: end;
+  text-transform: capitalize;
+}
+
+.summaryText {
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+
+  @include max-width(392px) {
+    font-size: var(--fs-9);
+  }
+}
+
+.basketSummary {
+  max-height: 322px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @include max-width(664px) {
+    max-height: 378px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &::-webkit-scrollbar {
+    width: 14px;
+    height: 16px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 4px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    background-color: var(--cl-5);
+    border-radius: var(--br-sec);
+    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.05),
+      inset 1px 1px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  &::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+
+.basketSummaryItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include max-width(664px) {
+    flex-direction: column;
+  }
+}
+
+.basketSummaryImg {
+  min-width: 94px;
+  object-fit: cover;
+  border-radius: var(--br-4);
+  background-color: var(--cl-5);
+
+  @include max-width(664px) {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+.basketSummaryInfoBox {
+  width: 210px;
+
+  @include max-width(664px) {
+    width: auto;
+  }
+}
+
+.productName {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  line-height: 1.6;
+}
+
+.productInfo {
+  font-size: var(--fs-9);
+  line-height: 1.6;
+  color: var(--cl-20);
+}
+
+.productPrice {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+}
+
+.shopBtnBox {
+  display: flex;
+  justify-content: center;
+}
+
+.shopBtn {
+  @extend %greenBtn;
+  width: 220px;
+}

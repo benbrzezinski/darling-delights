@@ -2,7 +2,7 @@ import useIcons from "../../hooks/useIcons";
 import scss from "./OurAdvantages.module.scss";
 
 const OurAdvantages = () => {
-  const { Truck, Heart, Payment } = useIcons();
+  const { Truck, Heart, PaymentSecure } = useIcons();
 
   return (
     <ul className={scss.advantages}>
@@ -25,7 +25,7 @@ const OurAdvantages = () => {
         </p>
       </li>
       <li className={scss.advantagesItem}>
-        <Payment className={scss.advantagesIcon} />
+        <PaymentSecure className={scss.advantagesIcon} />
         <h3 className={scss.advantagesTitle}>Payment security</h3>
         <p className={scss.advantagesText}>
           Protecting your financial information is paramount. We employ

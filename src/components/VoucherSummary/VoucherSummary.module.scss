@@ -16,11 +16,11 @@
 
 .voucherBox {
   display: flex;
-  justify-content: space-between;
+  gap: 6px;
 }
 
 .voucherInput {
-  width: 198px;
+  flex-grow: 1;
   font-weight: var(--fw-sec);
   font-size: var(--fs-9);
   line-height: 1.6;

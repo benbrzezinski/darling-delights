@@ -1,9 +1,5 @@
 import { IconContext } from "react-icons";
-import {
-  AiOutlineUser,
-  AiOutlineClose,
-  AiOutlineFileText,
-} from "react-icons/ai";
+import { AiOutlineClose, AiOutlineFileText } from "react-icons/ai";
 import {
   BsCart2,
   BsTruck,
@@ -11,6 +7,7 @@ import {
   BsTwitter,
   BsYoutube,
   BsInfoCircleFill,
+  BsCurrencyDollar,
 } from "react-icons/bs";
 import { BiLogoLinkedinSquare, BiSearchAlt } from "react-icons/bi";
 import {
@@ -19,13 +16,18 @@ import {
   MdArrowBackIosNew,
   MdAddShoppingCart,
   MdOutlineEdit,
+  MdOutlineCalendarMonth,
 } from "react-icons/md";
+import { HiOutlineUser } from "react-icons/hi2";
+import { RiSecurePaymentFill } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
-import { FaFacebook } from "react-icons/fa6";
+import { FaRegAddressCard } from "react-icons/fa";
+import { FaFacebook, FaRegUser } from "react-icons/fa6";
 import { GiBigDiamondRing } from "react-icons/gi";
 import { FiPhoneCall } from "react-icons/fi";
 import { ImBin } from "react-icons/im";
+import { TfiReceipt } from "react-icons/tfi";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -43,7 +45,13 @@ const useIcons = () => {
 
   const User = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
-      <AiOutlineUser />
+      <HiOutlineUser />
+    </IconContext.Provider>
+  );
+
+  const Customer = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaRegUser />
     </IconContext.Provider>
   );
 
@@ -65,9 +73,15 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
-  const Payment = ({ className }: IconClass) => (
+  const PaymentMethod = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
       <MdOutlinePayments />
+    </IconContext.Provider>
+  );
+
+  const PaymentSecure = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <RiSecurePaymentFill />
     </IconContext.Provider>
   );
 
@@ -161,14 +175,40 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Calendar = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <MdOutlineCalendarMonth />
+    </IconContext.Provider>
+  );
+
+  const Receipt = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <TfiReceipt />
+    </IconContext.Provider>
+  );
+
+  const Dollar = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <BsCurrencyDollar />
+    </IconContext.Provider>
+  );
+
+  const AddressCard = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <FaRegAddressCard />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
     User,
+    Customer,
     ShoppingCart,
     Truck,
     Heart,
-    Payment,
+    PaymentMethod,
+    PaymentSecure,
     Envelope,
     Phone,
     FileText,
@@ -184,6 +224,10 @@ const useIcons = () => {
     EditPen,
     Bin,
     Info,
+    Calendar,
+    Receipt,
+    Dollar,
+    AddressCard,
   };
 };
 

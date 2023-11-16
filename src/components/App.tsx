@@ -12,6 +12,8 @@ const CollectionSpring = lazy(() => import("../pages/CollectionSpring"));
 const About = lazy(() => import("../pages/About"));
 const Contact = lazy(() => import("../pages/Contact"));
 const Basket = lazy(() => import("../pages/Basket"));
+const PaymentDetails = lazy(() => import("../pages/PaymentDetails"));
+const Summary = lazy(() => import("../pages/Summary"));
 
 const App = () => {
   return (
@@ -34,6 +36,8 @@ const App = () => {
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="basket" element={<Basket />} />
+        <Route path="payment" element={<PaymentDetails />} />
+        <Route path="summary" element={<Summary />} />
       </Route>
     </Routes>
   );

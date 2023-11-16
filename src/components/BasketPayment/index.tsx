@@ -1,8 +1,10 @@
-import { useState, useRef, ChangeEventHandler } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useState, useRef, ChangeEventHandler, FormEventHandler } from "react";
+import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { InputRefs } from "../../types";
 import ProductSelects from "../ProductSelects";
 import VoucherSummary from "../VoucherSummary";
+import useValidation from "../../hooks/useValidation";
 import scss from "./BasketPayment.module.scss";
 
 const BasketPayment = () => {
@@ -19,6 +21,9 @@ const BasketPayment = () => {
     blik5: "",
     blik6: "",
   });
+  const { verifyCreditCard, isCreditCardChecked } = useValidation();
+  const { search } = useLocation();
+  const navigate = useNavigate();
 
   const inputRefs: InputRefs = {
     code: useRef(null),
@@ -35,9 +40,7 @@ const BasketPayment = () => {
 
   const handleFocusNextInput = (name: keyof InputRefs) => {
     const ref = inputRefs[name];
-    if (ref && ref.current) {
-      ref.current.focus();
-    }
+    if (ref && ref.current) ref.current.focus();
   };
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
@@ -77,11 +80,55 @@ const BasketPayment = () => {
     }
   };
 
+  const handleCreditCardSubmit: FormEventHandler<HTMLFormElement> = e => {
+    e.preventDefault();
+
+    if (
+      verifyCreditCard("code", values.code, inputRefs.code.current) ||
+      verifyCreditCard("month", values.month, inputRefs.month.current) ||
+      verifyCreditCard("year", values.year, inputRefs.year.current) ||
+      verifyCreditCard("cvc", values.cvc, inputRefs.cvc.current)
+    ) {
+      return;
+    }
+
+    if (new Date(`${values.month}/01/${values.year}`) < new Date()) {
+      return toast.warning("Date cannot be in the past");
+    }
+
+    if (
+      searchParams.get("delivery") !== "home" &&
+      searchParams.get("delivery") !== "store"
+    ) {
+      return toast.warning("Choose your delivery method");
+    }
+
+    navigate(`/payment${search}`);
+  };
+
+  const handleBlikSubmit: FormEventHandler<HTMLFormElement> = e => {
+    e.preventDefault();
+
+    if (new Date(`${values.month}/01/${values.year}`) < new Date()) {
+      return toast.warning("Date cannot be in the past");
+    }
+
+    if (
+      searchParams.get("delivery") !== "home" &&
+      searchParams.get("delivery") !== "store"
+    ) {
+      return toast.warning("Choose your delivery method");
+    }
+
+    navigate(`/payment${search}`);
+  };
+
   return (
     <section className={scss.paymentBox}>
       <h2 className={scss.title}>Payment method</h2>
       <ProductSelects />
-      {searchParams.get("payment") ? (
+      {searchParams.get("payment") === "credit" ||
+      searchParams.get("payment") === "blik" ? (
         <>
           <div className={scss.paymentMethodBox}>
             <div
@@ -99,53 +146,91 @@ const BasketPayment = () => {
                 : "BLIK"}
             </p>
           </div>
-          <form className={scss.paymentMethodForm}>
+          <form
+            className={scss.paymentMethodForm}
+            onSubmit={
+              searchParams.get("payment") === "credit"
+                ? handleCreditCardSubmit
+                : handleBlikSubmit
+            }
+          >
             {searchParams.get("payment") === "credit" ? (
               <>
-                <input
-                  type="text"
-                  name="code"
-                  className={scss.creditCardInput}
-                  ref={inputRefs.code}
-                  placeholder="Card Number"
-                  maxLength={16}
-                  required
-                  value={values.code}
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  name="month"
-                  className={`${scss.creditCardInput} ${scss.small}`}
-                  ref={inputRefs.month}
-                  placeholder="MM"
-                  maxLength={2}
-                  required
-                  value={values.month}
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  name="year"
-                  className={`${scss.creditCardInput} ${scss.small}`}
-                  ref={inputRefs.year}
-                  placeholder="YY"
-                  maxLength={2}
-                  required
-                  value={values.year}
-                  onChange={handleChange}
-                />
-                <input
-                  type="text"
-                  name="cvc"
-                  className={`${scss.creditCardInput} ${scss.small}`}
-                  ref={inputRefs.cvc}
-                  placeholder="CVC"
-                  maxLength={3}
-                  required
-                  value={values.cvc}
-                  onChange={handleChange}
-                />
+                <div className={scss.creditCardBox}>
+                  <input
+                    type="text"
+                    name="code"
+                    className={scss.creditCardInput}
+                    ref={inputRefs.code}
+                    placeholder="Card number"
+                    maxLength={16}
+                    required
+                    value={values.code}
+                    onChange={handleChange}
+                    onBlur={e =>
+                      verifyCreditCard(e.target.name, e.target.value)
+                    }
+                  />
+                  <input
+                    type="text"
+                    name="month"
+                    className={`${scss.creditCardInput} ${scss.small}`}
+                    ref={inputRefs.month}
+                    placeholder="MM"
+                    maxLength={2}
+                    required
+                    value={values.month}
+                    onChange={handleChange}
+                    onBlur={e => {
+                      verifyCreditCard(e.target.name, e.target.value);
+
+                      if (Number(e.target.value) !== 0) {
+                        setValues(v => ({
+                          ...v,
+                          [e.target.name]: e.target.value.padStart(2, "0"),
+                        }));
+                      }
+                    }}
+                  />
+                  <input
+                    type="text"
+                    name="year"
+                    className={`${scss.creditCardInput} ${scss.small}`}
+                    ref={inputRefs.year}
+                    placeholder="YY"
+                    maxLength={2}
+                    required
+                    value={values.year}
+                    onChange={handleChange}
+                    onBlur={e => {
+                      verifyCreditCard(e.target.name, e.target.value);
+
+                      if (Number(e.target.value) !== 0) {
+                        setValues(v => ({
+                          ...v,
+                          [e.target.name]: e.target.value.padStart(2, "0"),
+                        }));
+                      }
+                    }}
+                  />
+                  <input
+                    type="text"
+                    name="cvc"
+                    className={`${scss.creditCardInput} ${scss.small}`}
+                    ref={inputRefs.cvc}
+                    placeholder="CVC"
+                    maxLength={3}
+                    required
+                    value={values.cvc}
+                    onChange={handleChange}
+                    onBlur={e =>
+                      verifyCreditCard(e.target.name, e.target.value)
+                    }
+                  />
+                </div>
+                {isCreditCardChecked && (
+                  <p className={scss.error}>{isCreditCardChecked}</p>
+                )}
               </>
             ) : (
               <>

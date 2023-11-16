@@ -1,6 +1,8 @@
-import { useState, useRef, FormEventHandler } from "react";
+import { useState, useEffect, useRef, FormEventHandler } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
+import { setTotal } from "../../redux/products/slice";
 import useProducts from "../../hooks/useProducts";
 import scss from "./VoucherSummary.module.scss";
 
@@ -8,6 +10,7 @@ const VoucherSummary = () => {
   const [voucherConfirmed, setVoucherConfirmed] = useState("");
   const [searchParams] = useSearchParams();
   const { basket } = useProducts();
+  const dispatch = useDispatch();
   const voucherID = useRef(nanoid());
 
   const subtotal = basket.reduce((acc, { price }) => acc + price, 0);
@@ -29,6 +32,10 @@ const VoucherSummary = () => {
     : 0;
   const totalFee = deliveryFee + warrantyFee + careFee;
   const total = subtotal - discount + totalFee;
+
+  useEffect(() => {
+    dispatch(setTotal(total.toFixed(2)));
+  }, [total, dispatch]);
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();

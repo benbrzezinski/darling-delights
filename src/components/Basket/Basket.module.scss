@@ -134,6 +134,7 @@ $delay: 150ms;
 }
 
 .basketImg {
+  min-width: 94px;
   object-fit: cover;
   border-radius: var(--br-4);
   background-color: var(--cl-5);

@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { VerifyCreditCard } from "../types";
 
 const useValidation = () => {
   const [isNameChecked, setIsNameChecked] = useState(false);
+  const [isLastNameChecked, setIsLastNameChecked] = useState(false);
   const [isEmailChecked, setIsEmailChecked] = useState(false);
   const [isMessageChecked, setIsMessageChecked] = useState(false);
-  const [isPaymentMethodChecked, setIsPaymentMethodChecked] = useState(false);
+  const [isCreditCardChecked, setIsCreditCardChecked] = useState<
+    string | boolean
+  >(false);
 
   const verifyName = (name: string) => {
     if (!name.match(/^[A-Za-z\s]+$/)) {
@@ -13,6 +17,16 @@ const useValidation = () => {
     }
 
     setIsNameChecked(false);
+    return true;
+  };
+
+  const verifyLastName = (name: string) => {
+    if (!name.match(/^[A-Za-z\s]+$/)) {
+      setIsLastNameChecked(true);
+      return false;
+    }
+
+    setIsLastNameChecked(false);
     return true;
   };
 
@@ -36,40 +50,73 @@ const useValidation = () => {
     return true;
   };
 
-  const verifyCreditCard = (value: string) => {
-    if (
-      !value.match(
-        /(^4[0-9]{12}(?:[0-9]{3})?$)|(^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$)/
-      )
-    ) {
-      setIsPaymentMethodChecked(true);
-      return false;
+  const verifyCreditCard: VerifyCreditCard = (name, value, ref) => {
+    switch (name) {
+      case "code":
+        if (
+          !value.match(
+            /(^4[0-9]{12}(?:[0-9]{3})?$)|(^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$)/
+          )
+        ) {
+          setIsCreditCardChecked("Card number is invalid");
+          if (ref) ref.focus();
+          return true;
+        }
+        break;
+
+      case "month":
+        if (value.length !== 2 || Number(value) < 1 || Number(value) > 12) {
+          setIsCreditCardChecked(
+            "Expiry month is invalid, allowed values are 01-12"
+          );
+          if (ref) ref.focus();
+          return true;
+        }
+        break;
+
+      case "year": {
+        const year = new Date();
+
+        if (
+          value.length !== 2 ||
+          year.getFullYear() > Number(value.padStart(4, "20"))
+        ) {
+          setIsCreditCardChecked(
+            "Expiry year is invalid, it cannot be in the past"
+          );
+          if (ref) ref.focus();
+          return true;
+        }
+        break;
+      }
+
+      case "cvc":
+        if (value.length !== 3) {
+          setIsCreditCardChecked("CVC is invalid");
+          if (ref) ref.focus();
+          return true;
+        }
+        break;
+
+      default:
+        return true;
     }
 
-    setIsPaymentMethodChecked(false);
-    return true;
-  };
-
-  const verifyBlik = (value: string) => {
-    if (!value.match(/^[0-9]{6}$/)) {
-      setIsPaymentMethodChecked(true);
-      return false;
-    }
-
-    setIsPaymentMethodChecked(false);
-    return true;
+    setIsCreditCardChecked(false);
+    return false;
   };
 
   return {
     verifyName,
+    verifyLastName,
     verifyEmail,
     verifyMessage,
     verifyCreditCard,
-    verifyBlik,
     isNameChecked,
+    isLastNameChecked,
     isEmailChecked,
     isMessageChecked,
-    isPaymentMethodChecked,
+    isCreditCardChecked,
   };
 };
 

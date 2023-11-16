@@ -66,7 +66,7 @@ const Header = ({ isSmallScreen, openMobileMenu, openBasket }: Header) => {
         )}
         <div className={scss.iconsBox}>
           <button type="button" className={scss.btn}>
-            <User className={scss.icon} />
+            <User className={`${scss.icon} ${scss.user}`} />
           </button>
           <button type="button" className={scss.btn} onClick={openBasket}>
             <ShoppingCart className={scss.icon} />

@@ -45,7 +45,7 @@
   overflow-x: hidden;
 
   @include max-width(664px) {
-    max-height: 460px;
+    max-height: 437px;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -87,13 +87,14 @@
 }
 
 .basketSummaryImg {
+  min-width: 120px;
   object-fit: cover;
   border-radius: var(--br-4);
   background-color: var(--cl-5);
 
   @include max-width(664px) {
-    width: 264px;
-    height: 264px;
+    width: 240px;
+    height: 240px;
   }
 }
 
@@ -106,8 +107,8 @@
 }
 
 .productName {
-  font-size: var(--fs-sec);
   font-weight: var(--fw-sec);
+  font-size: var(--fs-sec);
   line-height: 1.6;
 }
 

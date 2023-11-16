@@ -8,6 +8,7 @@ const initialState = {
   items: products,
   basket: [] as Product[],
   isBasketInfoOpen: false,
+  total: "",
 };
 
 const toastId = "3454654534312675867";
@@ -51,11 +52,14 @@ const productsSlice = createSlice({
       state.isBasketInfoOpen = false;
       enableBodyScroll(document.body);
     },
+    setTotal: (state, action: PayloadAction<string>) => {
+      state.total = action.payload;
+    },
   },
 });
 
 const productsReducer = productsSlice.reducer;
-export const { toggleInBasket, addToBasket, closeBasketInfo } =
+export const { toggleInBasket, addToBasket, closeBasketInfo, setTotal } =
   productsSlice.actions;
 
 export default productsReducer;
