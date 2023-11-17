@@ -1,10 +1,12 @@
 @use "../../scss/index.scss" as *;
 
 .wrapper {
+  max-width: 1400px;
+  min-height: 80dvh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  max-width: 1400px;
   padding: 50px;
   padding-bottom: 100px;
   margin: auto;
@@ -144,7 +146,7 @@
 }
 
 .basketSummary {
-  max-height: 322px;
+  max-height: 340px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -152,7 +154,7 @@
   overflow-x: hidden;
 
   @include max-width(664px) {
-    max-height: 378px;
+    max-height: 396px;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -223,6 +225,20 @@
   font-size: var(--fs-9);
   line-height: 1.6;
   color: var(--cl-20);
+}
+
+.productQuantity {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-9);
+  line-height: 1.6;
+  color: var(--cl-11);
+  background-color: var(--cl-21);
+  border-radius: var(--br-3);
+  padding-inline: 6px;
+  margin-top: 4px;
 }
 
 .productPrice {

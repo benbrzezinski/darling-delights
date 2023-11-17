@@ -61,7 +61,6 @@ export interface Selects {
   handleSelect: (option: SingleValue<OptionType>) => void;
   handleValue: () => OptionType;
   width: string;
-  afterWidth: string;
 }
 
 export interface Pagination {
@@ -112,4 +111,11 @@ export interface InputRefs {
 export interface LocationState {
   total: string;
   basket: Product[];
+  fullName: string;
+  country: string;
+  state: string;
+  city: string;
+  zipCode: string;
+  street: string;
+  houseNumber: string;
 }

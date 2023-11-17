@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { InputRefs } from "../../types";
 import ProductSelects from "../ProductSelects";
 import VoucherSummary from "../VoucherSummary";
+import useProducts from "../../hooks/useProducts";
 import useValidation from "../../hooks/useValidation";
 import scss from "./BasketPayment.module.scss";
 
@@ -21,6 +22,7 @@ const BasketPayment = () => {
     blik5: "",
     blik6: "",
   });
+  const { total } = useProducts();
   const { verifyCreditCard, isCreditCardChecked } = useValidation();
   const { search } = useLocation();
   const navigate = useNavigate();
@@ -103,15 +105,11 @@ const BasketPayment = () => {
       return toast.warning("Choose your delivery method");
     }
 
-    navigate(`/payment${search}`);
+    navigate(`/payment${search}`, { state: { total } });
   };
 
   const handleBlikSubmit: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
-
-    if (new Date(`${values.month}/01/${values.year}`) < new Date()) {
-      return toast.warning("Date cannot be in the past");
-    }
 
     if (
       searchParams.get("delivery") !== "home" &&
@@ -120,7 +118,7 @@ const BasketPayment = () => {
       return toast.warning("Choose your delivery method");
     }
 
-    navigate(`/payment${search}`);
+    navigate(`/payment${search}`, { state: { total } });
   };
 
   return (

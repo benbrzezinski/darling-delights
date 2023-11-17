@@ -55,11 +55,21 @@ const productsSlice = createSlice({
     setTotal: (state, action: PayloadAction<string>) => {
       state.total = action.payload;
     },
+    resetBasket: state => {
+      state.basket = [];
+      state.total = "";
+    },
   },
 });
 
 const productsReducer = productsSlice.reducer;
-export const { toggleInBasket, addToBasket, closeBasketInfo, setTotal } =
-  productsSlice.actions;
+
+export const {
+  toggleInBasket,
+  addToBasket,
+  closeBasketInfo,
+  setTotal,
+  resetBasket,
+} = productsSlice.actions;
 
 export default productsReducer;

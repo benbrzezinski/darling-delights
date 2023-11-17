@@ -1,13 +1,7 @@
 import Select from "react-select";
 import { Selects } from "../../types";
 
-const Selects = ({
-  options,
-  handleSelect,
-  handleValue,
-  width,
-  afterWidth,
-}: Selects) => {
+const Selects = ({ options, handleSelect, handleValue, width }: Selects) => {
   return (
     <Select
       options={options}
@@ -21,11 +15,10 @@ const Selects = ({
 
           "&::after": {
             content: '""',
-            width: afterWidth,
+            width: "100%",
             height: "1px",
             backgroundColor: "var(--cl-9)",
             position: "absolute",
-            left: "10px",
           },
         }),
         control: baseStyles => ({
