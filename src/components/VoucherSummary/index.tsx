@@ -13,7 +13,10 @@ const VoucherSummary = () => {
   const dispatch = useDispatch();
   const voucherID = useRef(nanoid());
 
-  const subtotal = basket.reduce((acc, { price }) => acc + price, 0);
+  const subtotal = basket.reduce(
+    (acc, { price, quantity }) => price * Number(quantity) + acc,
+    0
+  );
   const discount = voucherConfirmed === "y" ? 25 : 0;
   const deliveryFee = searchParams.get("delivery") === "home" ? 5 : 0;
   const warrantyFee = !searchParams.get("warranty")

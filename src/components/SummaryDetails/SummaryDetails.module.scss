@@ -21,6 +21,11 @@
   background-color: var(--cl-5);
   border-radius: var(--br-5);
   margin-bottom: 24px;
+
+  @include max-width(330px) {
+    width: 290px;
+    height: 290px;
+  }
 }
 
 .title {
@@ -41,7 +46,7 @@
   line-height: 1.6;
   color: var(--cl-10);
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 46px;
 
   @include max-width(392px) {
     font-size: var(--fs-9);
@@ -143,6 +148,11 @@
   @include max-width(392px) {
     font-size: var(--fs-9);
   }
+}
+
+.basketListHeading {
+  font-size: var(--fs-sec);
+  line-height: 1.6;
 }
 
 .basketSummary {

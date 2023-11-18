@@ -99,7 +99,7 @@ const PaymentDetailsForm = () => {
       return;
     }
 
-    const isStoreNotSelected = options.store.every(
+    const isStoreNotSelected = options.every(
       ({ value }) => value !== selectedStore
     );
     if (isStoreNotSelected) return toast.warning("Choose store address");
@@ -282,9 +282,9 @@ const PaymentDetailsForm = () => {
             </>
           ) : (
             <Selects
-              options={options.store}
+              options={options}
               handleSelect={option => handleSelect(option)}
-              handleValue={() => handleValue("store")}
+              handleValue={handleValue}
               width="100%"
             />
           )}

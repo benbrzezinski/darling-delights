@@ -13,7 +13,10 @@ const Basket = ({
   const { basket } = useProducts();
   const { Close, EditPen } = useIcons();
 
-  const total = basket.reduce((acc, { price }) => acc + price, 0);
+  const total = basket.reduce(
+    (acc, { price, quantity }) => price * Number(quantity) + acc,
+    0
+  );
 
   return (
     <div

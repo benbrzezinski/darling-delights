@@ -106,7 +106,6 @@ const Filters = () => {
         handleSelect={handleSelect}
         handleValue={handleDefaultValue}
         width="190px"
-        afterWidth="88.5%"
       />
     </div>
   );

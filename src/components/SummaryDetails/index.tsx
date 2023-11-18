@@ -40,7 +40,7 @@ const SummaryDetails = () => {
         <>
           <img
             className={scss.summaryImg}
-            src="https://i.ibb.co/rGyDwQF/summary-1.jpg"
+            src="https://i.ibb.co/BjK2gyL/summary-1.jpg"
             alt="picture of unpacking a gift"
             width={300}
             height={300}
@@ -105,8 +105,9 @@ const SummaryDetails = () => {
                   <p className={scss.summaryName}>Delivery Address</p>
                 </div>
                 <div className={scss.summaryAddressBox}>
-                  <p className={scss.summaryText}>{state.country}</p>
-                  <p className={scss.summaryText}>{state.state}</p>
+                  <p className={scss.summaryText}>
+                    {state.country}, {state.state}
+                  </p>
                   <p className={scss.summaryText}>
                     {state.zipCode}, {state.city}
                   </p>
@@ -116,7 +117,7 @@ const SummaryDetails = () => {
                 </div>
               </li>
             </ul>
-            <p className={scss.summaryText}>Order Line</p>
+            <p className={scss.basketListHeading}>Order Line</p>
             <ul
               className={scss.basketSummary}
               style={{
