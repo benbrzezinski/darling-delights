@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FormEventHandler } from "react";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
@@ -65,9 +65,30 @@ const SignForm = ({ type }: SignForm) => {
     <div className={scss.background}>
       <div className={scss.wrapper}>
         <section className={scss.section}>
-          <h1 className={scss.title}>
-            {type === "login" ? "Sign In Below" : "Sign Up Below"}
-          </h1>
+          <div className={scss.headingBox}>
+            <h1 className={scss.title}>
+              {type === "login" ? "Sign In Below" : "Sign Up Below"}
+            </h1>
+            <p className={scss.infoText}>
+              {type === "login" ? (
+                <>
+                  If you do not have an account yet, please go to the{" "}
+                  <Link to="/registration" className={scss.link}>
+                    SIGN UP
+                  </Link>{" "}
+                  tab
+                </>
+              ) : (
+                <>
+                  If you already have an account, please go to the{" "}
+                  <Link to="/login" className={scss.link}>
+                    SIGN IN
+                  </Link>{" "}
+                  tab
+                </>
+              )}
+            </p>
+          </div>
           <form
             className={scss.signForm}
             onSubmit={

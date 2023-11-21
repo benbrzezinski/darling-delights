@@ -27,6 +27,41 @@
   gap: 30px;
 }
 
+.headingBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-main);
+  font-size: var(--fs-7);
+  line-height: 1.4;
+  color: var(--cl-sec);
+}
+
+.infoText {
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+  color: var(--cl-6);
+  text-align: center;
+
+  @include max-width(431px) {
+    font-size: var(--fs-9);
+  }
+
+  @include max-width(373px) {
+    width: 260px;
+  }
+}
+
+.link {
+  color: var(--cl-5);
+  text-decoration: underline;
+}
+
 .signForm {
   width: 100%;
   display: flex;
@@ -40,14 +75,6 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-}
-
-.title {
-  font-family: var(--ff-sec);
-  font-weight: var(--fw-main);
-  font-size: var(--fs-7);
-  line-height: 1.4;
-  color: var(--cl-sec);
 }
 
 .label {
@@ -120,6 +147,7 @@
   height: 42px;
   display: grid;
   place-items: center;
+  text-transform: uppercase;
   font-size: var(--fs-3);
   line-height: 1.6;
   color: var(--cl-14);
