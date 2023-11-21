@@ -14,6 +14,8 @@ const Contact = lazy(() => import("../pages/Contact"));
 const Basket = lazy(() => import("../pages/Basket"));
 const PaymentDetails = lazy(() => import("../pages/PaymentDetails"));
 const Summary = lazy(() => import("../pages/Summary"));
+const SignIn = lazy(() => import("../pages/SignIn"));
+const SignUp = lazy(() => import("../pages/SignUp"));
 
 const App = () => {
   return (
@@ -38,6 +40,8 @@ const App = () => {
         <Route path="basket" element={<Basket />} />
         <Route path="payment" element={<PaymentDetails />} />
         <Route path="summary" element={<Summary />} />
+        <Route path="login" element={<SignIn />} />
+        <Route path="registration" element={<SignUp />} />
       </Route>
     </Routes>
   );

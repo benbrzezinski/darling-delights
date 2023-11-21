@@ -1,0 +1,141 @@
+@use "../../scss/index.scss" as *;
+
+.background {
+  background-color: var(--cl-7);
+}
+
+.wrapper {
+  max-width: 1400px;
+  min-height: 80dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  margin: auto;
+
+  @include max-width(560px) {
+    padding-bottom: 75px;
+    padding-inline: 15px;
+  }
+}
+
+.section {
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.signForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.signFormBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-main);
+  font-size: var(--fs-7);
+  line-height: 1.4;
+  color: var(--cl-sec);
+}
+
+.label {
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-sec);
+  line-height: 1.6;
+  color: var(--cl-6);
+  padding-left: 4px;
+}
+
+.input {
+  background-color: var(--cl-4);
+  line-height: 1.6;
+  color: var(--cl-11);
+  border-top-left-radius: var(--br-main);
+  border-top-right-radius: var(--br-main);
+  box-shadow: 0 1px 0 var(--cl-10);
+  border: none;
+  transition: box-shadow var(--duration) var(--timing-function);
+  padding-block: 8px;
+  padding-inline: 16px;
+
+  &::placeholder {
+    color: var(--cl-6);
+  }
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 0 5px var(--cl-10);
+  }
+}
+
+.error {
+  @extend %error;
+  padding-left: 16px;
+}
+
+.submitBtn {
+  width: 290px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-14);
+  background-color: var(--cl-3);
+  border: none;
+  border-radius: var(--br-sec);
+  padding-block: 12px;
+  transition: background-color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--cl-15);
+  }
+
+  &:active {
+    background-color: var(--cl-16);
+  }
+}
+
+.navBox {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navText {
+  width: 116px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-3);
+  line-height: 1.6;
+  color: var(--cl-14);
+  background-color: var(--cl-sec);
+  border-radius: var(--br-sec);
+
+  &.isActive {
+    color: var(--cl-main);
+    background-color: #ffb41d;
+  }
+}
+
+.navSlash {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: var(--fs-7);
+  line-height: 1.6;
+  pointer-events: none;
+}

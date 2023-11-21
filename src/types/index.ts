@@ -56,6 +56,10 @@ export interface Basket {
   closeBasketByBackdrop: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
+export interface SignForm {
+  type: string;
+}
+
 export interface Selects {
   options: OptionType[];
   handleSelect: (option: SingleValue<OptionType>) => void;

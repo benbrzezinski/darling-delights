@@ -1,10 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Header } from "../../types";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Header.module.scss";
 
 const Header = ({ isSmallScreen, openMobileMenu, openBasket }: Header) => {
+  const { pathname } = useLocation();
   const { basket } = useProducts();
   const { Hamburger, User, ShoppingCart } = useIcons();
 
@@ -65,9 +66,14 @@ const Header = ({ isSmallScreen, openMobileMenu, openBasket }: Header) => {
           </nav>
         )}
         <div className={scss.iconsBox}>
-          <button type="button" className={scss.btn}>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive || pathname === "/registration" ? scss.isUserActive : ""
+            }
+          >
             <User className={`${scss.icon} ${scss.user}`} />
-          </button>
+          </NavLink>
           <button type="button" className={scss.btn} onClick={openBasket}>
             <ShoppingCart className={scss.icon} />
             {basket.length > 0 ? (

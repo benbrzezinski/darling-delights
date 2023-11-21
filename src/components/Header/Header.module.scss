@@ -75,13 +75,6 @@
   position: relative;
   background-color: transparent;
   border: none;
-
-  &:hover,
-  &:focus-visible {
-    .icon {
-      color: var(--cl-3);
-    }
-  }
 }
 
 .icon {
@@ -89,10 +82,21 @@
   width: 20px;
   height: 20px;
   transition: color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--cl-3);
+  }
 }
 
 .user {
   transform: translateY(1px);
+}
+
+.isUserActive {
+  & .user {
+    color: var(--cl-3);
+  }
 }
 
 .info {
