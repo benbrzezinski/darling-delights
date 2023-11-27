@@ -75,10 +75,9 @@
 }
 
 .feedbackImg {
-  max-width: 300px;
+  min-width: 290px;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-  object-position: center;
   background-color: var(--cl-8);
 }
 
