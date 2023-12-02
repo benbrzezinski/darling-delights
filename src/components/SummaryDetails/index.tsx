@@ -40,7 +40,7 @@ const SummaryDetails = () => {
         <>
           <img
             className={scss.summaryImg}
-            src="https://i.ibb.co/BjK2gyL/summary-1.jpg"
+            src="/assets/images/summary-1.jpg"
             alt="picture of unpacking a gift"
             width={300}
             height={300}

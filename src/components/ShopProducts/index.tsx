@@ -34,14 +34,16 @@ const ShopProducts = () => {
                 <Link
                   to={{ pathname: id, search: "?from=shop&size=48&quantity=1" }}
                 >
-                  <img
-                    width={i === 8 ? 576 : 276}
-                    height={i === 8 ? 760 : 320}
-                    src={img}
-                    alt={name}
-                    className={scss.productImg}
-                    loading="lazy"
-                  />
+                  <div className={scss.productImgBox}>
+                    <img
+                      width={i === 8 ? 576 : 276}
+                      height={i === 8 ? 760 : 320}
+                      src={img}
+                      alt={name}
+                      className={scss.productImg}
+                      loading="lazy"
+                    />
+                  </div>
                   <div className={scss.productInfoBox}>
                     <p className={scss.productName}>{name}</p>
                     <p className={scss.productPrice}>${price}</p>

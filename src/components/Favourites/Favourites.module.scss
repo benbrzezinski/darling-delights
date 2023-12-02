@@ -69,7 +69,6 @@ $delay: 150ms;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .title {
@@ -84,7 +83,23 @@ $delay: 150ms;
   }
 }
 
-.basket {
+.clearAll {
+  position: absolute;
+  top: 100px;
+  right: 39px;
+  background-color: transparent;
+  border: none;
+  font-weight: var(--fw-sec);
+  line-height: 1.4;
+  text-transform: capitalize;
+
+  @include max-width(500px) {
+    top: 70px;
+    right: 23px;
+  }
+}
+
+.favourites {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -120,7 +135,7 @@ $delay: 150ms;
   }
 }
 
-.basketItem {
+.favouritesItem {
   position: relative;
   display: flex;
   align-items: center;
@@ -132,14 +147,18 @@ $delay: 150ms;
   }
 }
 
-.basketImg {
+.favouritesLink {
+  display: contents;
+}
+
+.favouritesImg {
   min-width: 94px;
   object-fit: cover;
   border-radius: var(--br-4);
   background-color: var(--cl-5);
 }
 
-.basketProductInfoBox {
+.favouritesProductInfoBox {
   display: inline-flex;
   flex-direction: column;
 }
@@ -164,81 +183,23 @@ $delay: 150ms;
 .price {
   font-size: var(--fs-sec);
   line-height: 1.5;
+  color: var(--cl-main);
 
   @include max-width(500px) {
     font-size: var(--fs-9);
   }
 }
 
-.editLink {
+.favouritesBtn {
   position: absolute;
-  top: 0;
-  right: 0;
-  background-color: var(--cl-4);
-  border-radius: var(--br-4);
-  transition: background-color var(--duration) var(--timing-function);
-  padding: 5px;
-
-  &:hover,
-  &:focus-visible {
-    background-color: var(--cl-21);
-
-    .editPen {
-      color: var(--cl-sec);
-    }
-  }
-
-  &:active {
-    background-color: var(--cl-5);
-  }
-
-  @include max-width(500px) {
-    top: unset;
-    bottom: 5px;
-    right: 30px;
-  }
+  top: -2px;
+  right: -6px;
+  background-color: transparent;
+  border: none;
 }
 
-.editPen {
-  color: var(--cl-10);
+.favouritesIcon {
   width: 24px;
   height: 24px;
-  transition: color var(--duration) var(--timing-function);
-}
-
-.quantity {
-  font-size: var(--fs-sec);
-  line-height: 1.4;
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-}
-
-.basketInfoBox {
-  border-top: 1px solid var(--cl-5);
-  padding-top: 12px;
-  margin-top: 20px;
-}
-
-.totalBox {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.text {
-  font-size: var(--fs-sec);
-  line-height: 1.6;
-}
-
-.total {
-  font-family: var(--ff-sec);
-  font-size: var(--fs-4);
-  font-weight: var(--fw-sec);
-  line-height: 1.6;
-}
-
-.btn {
-  @extend %greenBtn;
+  color: var(--cl-main);
 }

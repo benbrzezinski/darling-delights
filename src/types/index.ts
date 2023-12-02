@@ -43,6 +43,7 @@ export interface Header {
   isSmallScreen: boolean;
   openMobileMenu: () => void;
   openBasket: () => void;
+  openFavourites: () => void;
 }
 
 export interface MobileNav {
@@ -54,6 +55,12 @@ export interface Basket {
   isBasketOpen: boolean;
   closeBasket: () => void;
   closeBasketByBackdrop: (e: MouseEvent<HTMLDivElement>) => void;
+}
+
+export interface Favourites {
+  isFavouritesOpen: boolean;
+  closeFavourites: () => void;
+  closeFavouritesByBackdrop: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
 export interface SignForm {
@@ -73,6 +80,7 @@ export interface Pagination {
 
 export interface Notification {
   text: string;
+  flexGrow?: number;
   paddingTop?: string;
 }
 

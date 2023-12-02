@@ -8,6 +8,7 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import throttle from "lodash.throttle";
 import Header from "../../components/Header";
 import Basket from "../../components/Basket";
+import Favourites from "../../components/Favourites";
 import MobileNav from "../../components/MobileNav";
 import Footer from "../../components/Footer";
 import Loader from "../../components/Loader";
@@ -19,6 +20,7 @@ const SharedLayout = () => {
   const THROTTLE_DELAY = 300;
   const [isTop, setIsTop] = useState(true);
   const [isBasketOpen, setIsBasketOpen] = useState(false);
+  const [isFavouritesOpen, setIsFavouritesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const isSmallScreen = useMediaQuery({ query: "(max-width: 768px)" });
 
@@ -64,10 +66,36 @@ const SharedLayout = () => {
   const closeBasketByBackdrop = (e: MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) {
       setIsBasketOpen(false);
+
+      if (!isSmallScreen) {
+        enableBodyScroll(document.body);
+      }
     }
+  };
+
+  const openFavourites = () => {
+    setIsFavouritesOpen(true);
+
+    if (!isSmallScreen) {
+      disableBodyScroll(document.body);
+    }
+  };
+
+  const closeFavourites = () => {
+    setIsFavouritesOpen(false);
 
     if (!isSmallScreen) {
       enableBodyScroll(document.body);
+    }
+  };
+
+  const closeFavouritesByBackdrop = (e: MouseEvent<HTMLDivElement>) => {
+    if (e.currentTarget === e.target) {
+      setIsFavouritesOpen(false);
+
+      if (!isSmallScreen) {
+        enableBodyScroll(document.body);
+      }
     }
   };
 
@@ -81,6 +109,7 @@ const SharedLayout = () => {
         isSmallScreen={isSmallScreen}
         openMobileMenu={() => setIsMobileMenuOpen(true)}
         openBasket={openBasket}
+        openFavourites={openFavourites}
       />
       <main>
         <Suspense fallback={<Loader />}>
@@ -92,6 +121,11 @@ const SharedLayout = () => {
         isBasketOpen={isBasketOpen}
         closeBasket={closeBasket}
         closeBasketByBackdrop={closeBasketByBackdrop}
+      />
+      <Favourites
+        isFavouritesOpen={isFavouritesOpen}
+        closeFavourites={closeFavourites}
+        closeFavouritesByBackdrop={closeFavouritesByBackdrop}
       />
       {isSmallScreen ? (
         <MobileNav

@@ -7,6 +7,7 @@ import products from "../../db/fake-products";
 const initialState = {
   items: products,
   basket: [] as Product[],
+  favourites: [] as Product[],
   isBasketInfoOpen: false,
   total: "",
 };
@@ -39,6 +40,19 @@ const productsSlice = createSlice({
         }
       }
     },
+    toggleFavourites: (state, action: PayloadAction<string>) => {
+      const product = state.items.find(({ id }) => id === action.payload);
+
+      if (product) {
+        const i = state.favourites.findIndex(({ id }) => id === product.id);
+
+        if (i === -1) {
+          state.favourites.push(product);
+        } else {
+          state.favourites.splice(i, 1);
+        }
+      }
+    },
     addToBasket: (state, action: PayloadAction<ProductPayload>) => {
       const product = state.items.find(({ id }) => id === action.payload.id);
 
@@ -59,6 +73,9 @@ const productsSlice = createSlice({
       state.basket = [];
       state.total = "";
     },
+    resetFavourites: state => {
+      state.favourites = [];
+    },
   },
 });
 
@@ -66,10 +83,12 @@ const productsReducer = productsSlice.reducer;
 
 export const {
   toggleInBasket,
+  toggleFavourites,
   addToBasket,
   closeBasketInfo,
   setTotal,
   resetBasket,
+  resetFavourites,
 } = productsSlice.actions;
 
 export default productsReducer;

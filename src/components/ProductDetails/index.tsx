@@ -1,5 +1,7 @@
 import { useState, useRef } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleFavourites } from "../../redux/products/slice";
 import Lightbox from "yet-another-react-lightbox";
 import Counter from "yet-another-react-lightbox/plugins/counter";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
@@ -14,19 +16,27 @@ import ProductButtons from "../ProductButtons";
 import ProductSelects from "../ProductSelects";
 import Notification from "../Notification";
 import useProducts from "../../hooks/useProducts";
+import useIcons from "../../hooks/useIcons";
 import scss from "./ProductDetails.module.scss";
 
 const ProductDetails = () => {
   const [open, setOpen] = useState(false);
   const [showColor, setShowColor] = useState(false);
   const { id } = useParams();
-  const { products } = useProducts();
+  const { products, favourites } = useProducts();
+  const { FavouritesHeartEmpty, FavouritesHeartFull } = useIcons();
+  const dispatch = useDispatch();
 
   const colorNameRef = useRef<HTMLParagraphElement | null>(null);
   const product = products.find(product => product.id === id);
+  const isInFavourites = favourites.find(product => product.id === id);
 
   const toggleShowColor = () => {
     setShowColor(prev => !prev);
+  };
+
+  const handleToggleFavourites = () => {
+    if (id) dispatch(toggleFavourites(id));
   };
 
   return product ? (
@@ -40,6 +50,17 @@ const ProductDetails = () => {
         />
         <div>
           <div className={scss.imgBox}>
+            <button
+              className={scss.favouritesBtn}
+              type="button"
+              onClick={handleToggleFavourites}
+            >
+              {isInFavourites ? (
+                <FavouritesHeartFull className={scss.favourites} />
+              ) : (
+                <FavouritesHeartEmpty className={scss.favourites} />
+              )}
+            </button>
             <img
               src={product.img}
               alt={product.name}

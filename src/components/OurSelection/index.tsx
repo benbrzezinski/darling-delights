@@ -30,14 +30,16 @@ const OurSelection = () => {
               <Link
                 to={{ pathname: `shop/${id}`, search: "?size=48&quantity=1" }}
               >
-                <img
-                  width={276}
-                  height={320}
-                  src={img}
-                  alt={name}
-                  className={scss.productImg}
-                  loading="lazy"
-                />
+                <div className={scss.productImgBox}>
+                  <img
+                    width={276}
+                    height={320}
+                    src={img}
+                    alt={name}
+                    className={scss.productImg}
+                    loading="lazy"
+                  />
+                </div>
                 <div className={scss.productInfoBox}>
                   <p className={scss.productName}>{name}</p>
                   <p className={scss.productPrice}>${price}</p>

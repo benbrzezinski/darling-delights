@@ -31,7 +31,12 @@ const Basket = ({
         }
       >
         <section className={scss.section}>
-          <h2 className={scss.title}>Your basket</h2>
+          <h2
+            className={scss.title}
+            style={{ marginBottom: basket.length > 0 ? "20px" : "0px" }}
+          >
+            Your basket
+          </h2>
           <button type="button" className={scss.closeBtn} onClick={closeBasket}>
             <Close className={scss.closeIcon} />
           </button>

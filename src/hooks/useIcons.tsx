@@ -28,6 +28,7 @@ import { GiBigDiamondRing } from "react-icons/gi";
 import { FiPhoneCall } from "react-icons/fi";
 import { ImBin } from "react-icons/im";
 import { TfiReceipt } from "react-icons/tfi";
+import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -199,6 +200,18 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const FavouritesHeartEmpty = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <IoMdHeartEmpty />
+    </IconContext.Provider>
+  );
+
+  const FavouritesHeartFull = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <IoMdHeart />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -228,6 +241,8 @@ const useIcons = () => {
     Receipt,
     Dollar,
     AddressCard,
+    FavouritesHeartEmpty,
+    FavouritesHeartFull,
   };
 };
 

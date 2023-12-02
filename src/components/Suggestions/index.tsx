@@ -20,7 +20,7 @@ const Suggestions = () => {
     }
   }, [location.pathname]);
 
-  return product ? (
+  return product && suggestedProducts.length > 0 ? (
     <section className={scss.wrapper}>
       <div className={scss.headlineBox}>
         <h2 className={scss.headline}>You may also like</h2>
@@ -37,14 +37,16 @@ const Suggestions = () => {
                 search: "?from=shop&size=48&quantity=1",
               }}
             >
-              <img
-                width={276}
-                height={320}
-                src={img}
-                alt={name}
-                className={scss.productImg}
-                loading="lazy"
-              />
+              <div className={scss.productImgBox}>
+                <img
+                  width={276}
+                  height={320}
+                  src={img}
+                  alt={name}
+                  className={scss.productImg}
+                  loading="lazy"
+                />
+              </div>
               <div className={scss.productInfoBox}>
                 <p className={scss.productName}>{name}</p>
                 <p className={scss.productPrice}>${price}</p>
@@ -73,14 +75,16 @@ const Suggestions = () => {
                   search: "?from=shop&size=48&quantity=1",
                 }}
               >
-                <img
-                  width={276}
-                  height={320}
-                  src={img}
-                  alt={name}
-                  className={scss.productImg}
-                  loading="lazy"
-                />
+                <div className={scss.productImgBox}>
+                  <img
+                    width={276}
+                    height={320}
+                    src={img}
+                    alt={name}
+                    className={scss.productImg}
+                    loading="lazy"
+                  />
+                </div>
                 <div className={scss.productInfoBox}>
                   <p className={scss.productName}>{name}</p>
                   <p className={scss.productPrice}>${price}</p>

@@ -49,4 +49,9 @@
 .productImg {
   @extend %productImg;
   border-radius: var(--br-main);
+
+  &:hover,
+  :focus-visible {
+    transform: scale(1);
+  }
 }

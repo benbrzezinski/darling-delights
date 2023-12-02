@@ -42,11 +42,23 @@
   box-shadow: 0 0 1px var(--cl-5), 0 0 2px var(--cl-5);
 }
 
+%productImgBox {
+  overflow: hidden;
+  border-top-left-radius: var(--br-main);
+  border-top-right-radius: var(--br-main);
+}
+
 %productImg {
   object-fit: cover;
   border-top-left-radius: var(--br-main);
   border-top-right-radius: var(--br-main);
   background-color: var(--cl-5);
+  transition: transform var(--duration) var(--timing-function);
+
+  &:hover,
+  :focus-visible {
+    transform: scale(1.2);
+  }
 }
 
 %productInfoBox {

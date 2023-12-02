@@ -4,10 +4,15 @@ import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Header.module.scss";
 
-const Header = ({ isSmallScreen, openMobileMenu, openBasket }: Header) => {
+const Header = ({
+  isSmallScreen,
+  openMobileMenu,
+  openBasket,
+  openFavourites,
+}: Header) => {
   const { pathname } = useLocation();
-  const { basket } = useProducts();
-  const { Hamburger, User, ShoppingCart } = useIcons();
+  const { basket, favourites } = useProducts();
+  const { Hamburger, User, ShoppingCart, FavouritesHeartEmpty } = useIcons();
 
   return (
     <header className={scss.header}>
@@ -77,7 +82,13 @@ const Header = ({ isSmallScreen, openMobileMenu, openBasket }: Header) => {
           <button type="button" className={scss.btn} onClick={openBasket}>
             <ShoppingCart className={scss.icon} />
             {basket.length > 0 ? (
-              <p className={scss.info}>{basket.length}</p>
+              <p className={scss.quantityInfo}>{basket.length}</p>
+            ) : null}
+          </button>
+          <button type="button" className={scss.btn} onClick={openFavourites}>
+            <FavouritesHeartEmpty className={`${scss.icon} ${scss.user}`} />
+            {favourites.length > 0 ? (
+              <p className={scss.quantityInfo}>{favourites.length}</p>
             ) : null}
           </button>
         </div>

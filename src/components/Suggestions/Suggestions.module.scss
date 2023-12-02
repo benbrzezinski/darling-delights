@@ -59,6 +59,10 @@
   scroll-snap-align: start;
 }
 
+.productImgBox {
+  @extend %productImgBox;
+}
+
 .productImg {
   @extend %productImg;
 }

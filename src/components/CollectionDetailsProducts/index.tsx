@@ -19,14 +19,16 @@ const CollectionDetailsProducts = ({ products }: { products: Product[] }) => {
                   search: "?from=collections&size=48&quantity=1",
                 }}
               >
-                <img
-                  width={i === 4 ? 576 : 276}
-                  height={i === 4 ? 760 : 320}
-                  src={img}
-                  alt={name}
-                  className={scss.productImg}
-                  loading="lazy"
-                />
+                <div className={scss.productImgBox}>
+                  <img
+                    width={i === 4 ? 576 : 276}
+                    height={i === 4 ? 760 : 320}
+                    src={img}
+                    alt={name}
+                    className={scss.productImg}
+                    loading="lazy"
+                  />
+                </div>
                 <div className={scss.productInfoBox}>
                   <p className={scss.productName}>{name}</p>
                   <p className={scss.productPrice}>${price}</p>
