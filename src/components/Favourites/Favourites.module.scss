@@ -89,8 +89,11 @@ $delay: 150ms;
   right: 39px;
   background-color: transparent;
   border: none;
+  font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
+  font-size: 20px;
   line-height: 1.4;
+  color: var(--cl-main);
   text-transform: capitalize;
 
   @include max-width(500px) {

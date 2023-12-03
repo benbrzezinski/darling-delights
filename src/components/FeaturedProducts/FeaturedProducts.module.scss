@@ -61,6 +61,25 @@
 
 .productsItem {
   @extend %productsItem;
+
+  &:hover,
+  &:focus-visible {
+    .favouritesBox {
+      transform: translateY(0);
+    }
+  }
+}
+
+.favouritesBox {
+  @extend %favouritesBox;
+}
+
+.favouritesBtn {
+  @extend %favouritesBtn;
+}
+
+.favouritesIcon {
+  @extend %favouritesIcon;
 }
 
 .productImgBox {

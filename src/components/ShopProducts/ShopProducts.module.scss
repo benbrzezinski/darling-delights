@@ -30,12 +30,21 @@
 
 .productsItem {
   @extend %productsItem;
+
+  &:hover,
+  &:focus-visible {
+    .favouritesBox {
+      transform: translateY(0);
+    }
+  }
 }
 
 .bigProductsItem {
+  position: relative;
   width: 576px;
   grid-column: 1 / 3;
   grid-row: 3 / 5;
+  overflow: hidden;
   background-color: var(--cl-4);
   border-radius: var(--br-main);
   box-shadow: 0 0 1px var(--cl-5), 0 0 2px var(--cl-5);
@@ -45,6 +54,25 @@
     grid-column: auto;
     grid-row: auto;
   }
+
+  &:hover,
+  &:focus-visible {
+    .favouritesBox {
+      transform: translateY(0);
+    }
+  }
+}
+
+.favouritesBox {
+  @extend %favouritesBox;
+}
+
+.favouritesBtn {
+  @extend %favouritesBtn;
+}
+
+.favouritesIcon {
+  @extend %favouritesIcon;
 }
 
 .productImgBox {

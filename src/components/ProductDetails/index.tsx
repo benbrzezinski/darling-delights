@@ -50,17 +50,19 @@ const ProductDetails = () => {
         />
         <div>
           <div className={scss.imgBox}>
-            <button
-              className={scss.favouritesBtn}
-              type="button"
-              onClick={handleToggleFavourites}
-            >
-              {isInFavourites ? (
-                <FavouritesHeartFull className={scss.favourites} />
-              ) : (
-                <FavouritesHeartEmpty className={scss.favourites} />
-              )}
-            </button>
+            <div className={scss.favouritesBox}>
+              <button
+                className={scss.favouritesBtn}
+                type="button"
+                onClick={handleToggleFavourites}
+              >
+                {isInFavourites ? (
+                  <FavouritesHeartFull className={scss.favouritesIcon} />
+                ) : (
+                  <FavouritesHeartEmpty className={scss.favouritesIcon} />
+                )}
+              </button>
+            </div>
             <img
               src={product.img}
               alt={product.name}
