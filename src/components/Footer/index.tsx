@@ -7,7 +7,7 @@ import useValidation from "../../hooks/useValidation";
 import scss from "./Footer.module.scss";
 
 const Footer = () => {
-  const { Envelope, Twitter, Facebook, LinkedIn, YouTube } = useIcons();
+  const { Envelope, TikTok, Facebook, Instagram, YouTube } = useIcons();
   const { verifyEmail, isEmailChecked } = useValidation();
   const newsletterID = useRef(nanoid());
 
@@ -109,11 +109,11 @@ const Footer = () => {
         <ul className={scss.socialMedia}>
           <li>
             <a
-              href="https://twitter.com"
+              href="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
-              <Twitter className={scss.icon} />
+              <Instagram className={scss.icon} />
             </a>
           </li>
           <li>
@@ -127,11 +127,11 @@ const Footer = () => {
           </li>
           <li>
             <a
-              href="https://www.linkedin.com"
+              href="https://www.tiktok.com"
               target="_blank"
               rel="noopener noreferrer nofollow"
             >
-              <LinkedIn className={scss.icon} />
+              <TikTok className={scss.icon} />
             </a>
           </li>
           <li>

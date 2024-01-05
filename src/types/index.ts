@@ -3,7 +3,7 @@ import { SingleValue } from "react-select";
 import { ProductType, ProductPlacement, FeedbackPlacement } from "./enums";
 
 export type VerifyCreditCard = (
-  name: string,
+  name: "code" | "name" | "month" | "year" | "cvc",
   value: string,
   ref?: HTMLInputElement | null
 ) => boolean;
@@ -64,7 +64,7 @@ export interface Favourites {
 }
 
 export interface SignForm {
-  type: string;
+  type: "login" | "register";
 }
 
 export interface Selects {
@@ -108,6 +108,7 @@ export interface OptionTypeObj {
 }
 
 export interface InputRefs {
+  name: RefObject<HTMLInputElement>;
   code: RefObject<HTMLInputElement>;
   month: RefObject<HTMLInputElement>;
   year: RefObject<HTMLInputElement>;

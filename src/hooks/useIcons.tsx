@@ -4,12 +4,11 @@ import {
   BsCart2,
   BsTruck,
   BsChatHeart,
-  BsTwitter,
   BsYoutube,
   BsInfoCircleFill,
   BsCurrencyDollar,
 } from "react-icons/bs";
-import { BiLogoLinkedinSquare, BiSearchAlt } from "react-icons/bi";
+import { BiSearchAlt } from "react-icons/bi";
 import {
   MdOutlinePayments,
   MdArrowForwardIos,
@@ -22,7 +21,7 @@ import { HiOutlineUser } from "react-icons/hi2";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
-import { FaRegAddressCard } from "react-icons/fa";
+import { FaRegAddressCard, FaTiktok, FaInstagram } from "react-icons/fa";
 import { FaFacebook, FaRegUser } from "react-icons/fa6";
 import { GiBigDiamondRing } from "react-icons/gi";
 import { FiPhoneCall } from "react-icons/fi";
@@ -104,9 +103,9 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
-  const Twitter = ({ className }: IconClass) => (
+  const TikTok = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
-      <BsTwitter />
+      <FaTiktok />
     </IconContext.Provider>
   );
 
@@ -116,9 +115,9 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
-  const LinkedIn = ({ className }: IconClass) => (
+  const Instagram = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
-      <BiLogoLinkedinSquare />
+      <FaInstagram />
     </IconContext.Provider>
   );
 
@@ -225,9 +224,9 @@ const useIcons = () => {
     Envelope,
     Phone,
     FileText,
-    Twitter,
+    TikTok,
     Facebook,
-    LinkedIn,
+    Instagram,
     YouTube,
     Search,
     Ring,

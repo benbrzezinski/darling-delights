@@ -1,5 +1,13 @@
-import { useState, useRef, ChangeEventHandler, FormEventHandler } from "react";
+import {
+  useState,
+  useRef,
+  ChangeEventHandler,
+  FormEventHandler,
+  FocusEventHandler,
+} from "react";
 import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
+import Cards, { Focused } from "react-credit-cards-2";
+import "react-credit-cards-2/dist/lib/styles.scss";
 import { toast } from "react-toastify";
 import { InputRefs } from "../../types";
 import ProductSelects from "../ProductSelects";
@@ -11,10 +19,12 @@ import scss from "./BasketPayment.module.scss";
 const BasketPayment = () => {
   const [searchParams] = useSearchParams();
   const [values, setValues] = useState({
+    name: "",
     code: "",
     month: "",
     year: "",
     cvc: "",
+    focus: "",
     blik1: "",
     blik2: "",
     blik3: "",
@@ -28,6 +38,7 @@ const BasketPayment = () => {
   const navigate = useNavigate();
 
   const inputRefs: InputRefs = {
+    name: useRef(null),
     code: useRef(null),
     month: useRef(null),
     year: useRef(null),
@@ -38,6 +49,10 @@ const BasketPayment = () => {
     blik4: useRef(null),
     blik5: useRef(null),
     blik6: useRef(null),
+  };
+
+  const handleFocusInput: FocusEventHandler<HTMLInputElement> = e => {
+    setValues(v => ({ ...v, focus: e.target.name }));
   };
 
   const handleFocusNextInput = (name: keyof InputRefs) => {
@@ -86,6 +101,7 @@ const BasketPayment = () => {
     e.preventDefault();
 
     if (
+      verifyCreditCard("name", values.name, inputRefs.name.current) ||
       verifyCreditCard("code", values.code, inputRefs.code.current) ||
       verifyCreditCard("month", values.month, inputRefs.month.current) ||
       verifyCreditCard("year", values.year, inputRefs.year.current) ||
@@ -128,22 +144,27 @@ const BasketPayment = () => {
       {searchParams.get("payment") === "credit" ||
       searchParams.get("payment") === "blik" ? (
         <>
-          <div className={scss.paymentMethodBox}>
-            <div
-              className={scss.paymentMethodImg}
-              style={{
-                backgroundImage:
-                  searchParams.get("payment") === "credit"
-                    ? "url(assets/images/creditCard.png)"
-                    : "url(assets/svgs/blik.svg)",
-              }}
-            ></div>
-            <p className={scss.paymentMethodText}>
-              {searchParams.get("payment") === "credit"
-                ? "Visa / Mastercard"
-                : "BLIK"}
-            </p>
-          </div>
+          {searchParams.get("payment") === "credit" ? (
+            <Cards
+              number={values.code}
+              expiry={`${values.month}/${values.year}`}
+              cvc={values.cvc}
+              name={values.name}
+              focused={values.focus as Focused}
+              acceptedCards={["visa", "mastercard"]}
+              locale={{ valid: "Valid thru" }}
+            />
+          ) : (
+            <div className={scss.paymentMethodBox}>
+              <div
+                className={scss.paymentMethodImg}
+                style={{
+                  backgroundImage: "url(assets/svgs/blik.svg)",
+                }}
+              ></div>
+              <p className={scss.paymentMethodText}>BLIK</p>
+            </div>
+          )}
           <form
             className={scss.paymentMethodForm}
             onSubmit={
@@ -154,33 +175,52 @@ const BasketPayment = () => {
           >
             {searchParams.get("payment") === "credit" ? (
               <>
-                <div className={scss.creditCardBox}>
+                <div className={scss.flexBox}>
+                  <input
+                    type="text"
+                    name="name"
+                    className={`${scss.creditCardInput} ${scss.grow}`}
+                    ref={inputRefs.name}
+                    placeholder="Name"
+                    required
+                    value={values.name}
+                    onChange={e =>
+                      setValues(v => ({
+                        ...v,
+                        [e.target.name]: e.target.value,
+                      }))
+                    }
+                    onFocus={handleFocusInput}
+                    onBlur={e => verifyCreditCard("name", e.target.value)}
+                  />
+                </div>
+                <div className={scss.flexBox}>
                   <input
                     type="text"
                     name="code"
-                    className={scss.creditCardInput}
+                    className={`${scss.creditCardInput} ${scss.grow}`}
                     ref={inputRefs.code}
                     placeholder="Card number"
                     maxLength={16}
                     required
                     value={values.code}
                     onChange={handleChange}
-                    onBlur={e =>
-                      verifyCreditCard(e.target.name, e.target.value)
-                    }
+                    onFocus={handleFocusInput}
+                    onBlur={e => verifyCreditCard("code", e.target.value)}
                   />
                   <input
                     type="text"
                     name="month"
-                    className={`${scss.creditCardInput} ${scss.small}`}
+                    className={`${scss.creditCardInput} ${scss.expiry}`}
                     ref={inputRefs.month}
                     placeholder="MM"
                     maxLength={2}
                     required
                     value={values.month}
                     onChange={handleChange}
+                    onFocus={handleFocusInput}
                     onBlur={e => {
-                      verifyCreditCard(e.target.name, e.target.value);
+                      verifyCreditCard("month", e.target.value);
 
                       if (Number(e.target.value) !== 0) {
                         setValues(v => ({
@@ -193,15 +233,16 @@ const BasketPayment = () => {
                   <input
                     type="text"
                     name="year"
-                    className={`${scss.creditCardInput} ${scss.small}`}
+                    className={`${scss.creditCardInput} ${scss.expiry}`}
                     ref={inputRefs.year}
                     placeholder="YY"
                     maxLength={2}
                     required
                     value={values.year}
                     onChange={handleChange}
+                    onFocus={handleFocusInput}
                     onBlur={e => {
-                      verifyCreditCard(e.target.name, e.target.value);
+                      verifyCreditCard("year", e.target.value);
 
                       if (Number(e.target.value) !== 0) {
                         setValues(v => ({
@@ -214,16 +255,15 @@ const BasketPayment = () => {
                   <input
                     type="text"
                     name="cvc"
-                    className={`${scss.creditCardInput} ${scss.small}`}
+                    className={`${scss.creditCardInput} ${scss.cvc}`}
                     ref={inputRefs.cvc}
                     placeholder="CVC"
                     maxLength={3}
                     required
                     value={values.cvc}
                     onChange={handleChange}
-                    onBlur={e =>
-                      verifyCreditCard(e.target.name, e.target.value)
-                    }
+                    onFocus={handleFocusInput}
+                    onBlur={e => verifyCreditCard("cvc", e.target.value)}
                   />
                 </div>
                 {isCreditCardChecked && (

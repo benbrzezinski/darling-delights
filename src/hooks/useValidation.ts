@@ -52,6 +52,18 @@ const useValidation = () => {
 
   const verifyCreditCard: VerifyCreditCard = (name, value, ref) => {
     switch (name) {
+      case "name":
+        if (
+          !value.match(
+            /^[A-Za-z\u0400-\u04FF\u0500-\u052F\sąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+$/
+          )
+        ) {
+          setIsCreditCardChecked("Provided name is invalid");
+          if (ref) ref.focus();
+          return true;
+        }
+        break;
+
       case "code":
         if (
           !value.match(
