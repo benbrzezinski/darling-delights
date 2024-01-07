@@ -34,6 +34,39 @@
   transform: translateX(-6px);
 }
 
+.controller {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-70%);
+  width: 45px;
+  height: 45px;
+  z-index: 1;
+  place-items: center;
+  border: none;
+  border-radius: var(--br-5);
+  background-color: rgba(33 33 33 / 0.3);
+  transition: background-color var(--duration) var(--timing-function);
+
+  &:hover,
+  &:focus-visible {
+    background-color: rgba(33 33 33 / 0.7);
+  }
+
+  &.prev {
+    left: 15px;
+  }
+
+  &.next {
+    right: 15px;
+  }
+}
+
+.arrow {
+  width: 24px;
+  height: 24px;
+  color: var(--cl-4);
+}
+
 .products {
   @extend %products;
 }

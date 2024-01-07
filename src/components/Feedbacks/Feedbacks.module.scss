@@ -54,6 +54,8 @@
 .feedbackBox {
   width: 700px;
   height: 435px;
+  border-radius: var(--br-main);
+  overflow: hidden;
 
   @include max-width(746px) {
     width: 290px;
@@ -64,9 +66,7 @@
 .feedback {
   display: flex;
   gap: 35px;
-  border-radius: var(--br-main);
   background-color: var(--cl-9);
-  overflow: hidden;
 
   @include max-width(746px) {
     min-height: 900px;
