@@ -19,24 +19,21 @@
 }
 
 .section {
-  max-width: 310px;
-  position: relative;
   background-color: var(--cl-4);
   border-radius: var(--br-main);
-  padding-block: 34px;
-  padding-inline: 30px;
+  padding: 30px;
 }
 
 .headlineBox {
   display: flex;
   align-items: center;
   gap: 30px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
 .title {
   font-family: var(--ff-sec);
-  font-size: var(--fs-4);
+  font-size: clamp(1.3125rem, 0.5208rem + 3.9583vw, 2.5rem);
   font-weight: var(--fw-sec);
   line-height: 1.4;
   color: var(--cl-12);
@@ -49,8 +46,8 @@
 
 .closeIcon {
   color: var(--cl-main);
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   transition: color var(--duration) var(--timing-function);
 
   &:hover,
@@ -60,13 +57,13 @@
 }
 
 .productName {
-  font-size: var(--fs-sec);
+  font-size: clamp(0.875rem, 0.7083rem + 0.8333vw, 1.125rem);
   font-weight: var(--fw-sec);
   line-height: 1.6;
 }
 
 .productInfo {
-  font-size: var(--fs-9);
+  font-size: clamp(0.75rem, 0.5833rem + 0.8333vw, 1rem);
   line-height: 1.6;
   color: var(--cl-20);
 }
@@ -75,7 +72,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 .infoBtn {
