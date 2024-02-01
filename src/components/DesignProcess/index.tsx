@@ -2,7 +2,7 @@ import scss from "./DesignProcess.module.scss";
 
 const DesignProcess = () => {
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       <section className={scss.heading}>
         <h2 className={scss.title}>
           Step By Step Design Process For Every Piece

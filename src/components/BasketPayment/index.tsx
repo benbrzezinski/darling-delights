@@ -9,14 +9,19 @@ import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
 import Cards, { Focused } from "react-credit-cards-2";
 import "react-credit-cards-2/dist/lib/styles.scss";
 import { toast } from "react-toastify";
-import { InputRefs } from "../../types";
+import { InputRefsType } from "../../types";
 import ProductSelects from "../ProductSelects";
 import VoucherSummary from "../VoucherSummary";
 import useProducts from "../../hooks/useProducts";
 import useValidation from "../../hooks/useValidation";
 import scss from "./BasketPayment.module.scss";
+import { nanoid } from "nanoid";
 
 const BasketPayment = () => {
+  const ID = useRef({
+    toastDate: nanoid(),
+    toastDelivery: nanoid(),
+  });
   const [searchParams] = useSearchParams();
   const [values, setValues] = useState({
     name: "",
@@ -32,12 +37,7 @@ const BasketPayment = () => {
     blik5: "",
     blik6: "",
   });
-  const { total } = useProducts();
-  const { verifyCreditCard, isCreditCardChecked } = useValidation();
-  const { search } = useLocation();
-  const navigate = useNavigate();
-
-  const inputRefs: InputRefs = {
+  const inputRefs: InputRefsType = {
     name: useRef(null),
     code: useRef(null),
     month: useRef(null),
@@ -50,12 +50,16 @@ const BasketPayment = () => {
     blik5: useRef(null),
     blik6: useRef(null),
   };
+  const { total } = useProducts();
+  const { verifyCreditCard, isCreditCardChecked } = useValidation();
+  const { search } = useLocation();
+  const navigate = useNavigate();
 
   const handleFocusInput: FocusEventHandler<HTMLInputElement> = e => {
     setValues(v => ({ ...v, focus: e.target.name }));
   };
 
-  const handleFocusNextInput = (name: keyof InputRefs) => {
+  const handleFocusNextInput = (name: keyof InputRefsType) => {
     const ref = inputRefs[name];
     if (ref && ref.current) ref.current.focus();
   };
@@ -111,14 +115,20 @@ const BasketPayment = () => {
     }
 
     if (new Date(`${values.month}/01/${values.year}`) < new Date()) {
-      return toast.warning("Date cannot be in the past");
+      toast.warning("Date cannot be in the past", {
+        toastId: ID.current.toastDate,
+      });
+      return;
     }
 
     if (
       searchParams.get("delivery") !== "home" &&
       searchParams.get("delivery") !== "store"
     ) {
-      return toast.warning("Choose your delivery method");
+      toast.warning("Choose your delivery method", {
+        toastId: ID.current.toastDelivery,
+      });
+      return;
     }
 
     navigate(`/payment${search}`, { state: { total } });
@@ -131,7 +141,10 @@ const BasketPayment = () => {
       searchParams.get("delivery") !== "home" &&
       searchParams.get("delivery") !== "store"
     ) {
-      return toast.warning("Choose your delivery method");
+      toast.warning("Choose your delivery method", {
+        toastId: ID.current.toastDelivery,
+      });
+      return;
     }
 
     navigate(`/payment${search}`, { state: { total } });

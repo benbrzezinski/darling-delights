@@ -5,17 +5,14 @@
 }
 
 .wrapper {
-  max-width: 1400px;
   min-height: 80dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  margin: auto;
+  padding-block: 50px;
 
-  @include max-width(560px) {
+  @include max-width(768px) {
     padding-bottom: 75px;
-    padding-inline: 15px;
   }
 }
 
@@ -38,13 +35,12 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-main);
   font-size: var(--fs-7);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-sec);
 }
 
 .infoText {
   font-size: var(--fs-sec);
-  line-height: 1.6;
   color: var(--cl-6);
   text-align: center;
 
@@ -80,14 +76,12 @@
 .label {
   font-weight: var(--fw-sec);
   font-size: var(--fs-sec);
-  line-height: 1.6;
   color: var(--cl-6);
   padding-left: 4px;
 }
 
 .input {
   background-color: var(--cl-4);
-  line-height: 1.6;
   color: var(--cl-11);
   border-top-left-radius: var(--br-main);
   border-top-right-radius: var(--br-main);
@@ -118,7 +112,6 @@
   justify-content: center;
   align-items: center;
   font-size: var(--fs-3);
-  line-height: 1.6;
   color: var(--cl-14);
   background-color: var(--cl-3);
   border: none;
@@ -149,7 +142,6 @@
   place-items: center;
   text-transform: uppercase;
   font-size: var(--fs-3);
-  line-height: 1.6;
   color: var(--cl-14);
   background-color: var(--cl-sec);
   border-radius: var(--br-sec);
@@ -164,6 +156,5 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-7);
-  line-height: 1.6;
   pointer-events: none;
 }

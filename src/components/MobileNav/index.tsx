@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { MobileNav } from "../../types";
+import { MobileNavType } from "../../types";
 import useIcons from "../../hooks/useIcons";
 import scss from "./MobileNav.module.scss";
 
-const MobileNav = ({ isMobileMenuOpen, closeMobileMenu }: MobileNav) => {
+const MobileNav = ({ isMobileMenuOpen, closeMobileMenu }: MobileNavType) => {
   const { Close } = useIcons();
 
   return (

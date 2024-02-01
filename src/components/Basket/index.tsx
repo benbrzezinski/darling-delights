@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Basket } from "../../types";
+import { BasketType } from "../../types";
 import Notification from "../Notification";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
@@ -9,7 +9,7 @@ const Basket = ({
   isBasketOpen,
   closeBasket,
   closeBasketByBackdrop,
-}: Basket) => {
+}: BasketType) => {
   const { basket } = useProducts();
   const { Close, EditPen } = useIcons();
 
@@ -74,7 +74,7 @@ const Basket = ({
               ))}
             </ul>
           ) : (
-            <Notification text="The basket is empty" paddingTop="0" />
+            <Notification text="The basket is empty" paddingTop={0} />
           )}
           <div className={scss.basketInfoBox}>
             <div className={scss.totalBox}>

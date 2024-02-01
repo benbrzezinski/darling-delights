@@ -5,7 +5,7 @@ const OurAdvantages = () => {
   const { Truck, Heart, PaymentSecure } = useIcons();
 
   return (
-    <ul className={scss.advantages}>
+    <ul className={`container ${scss.advantages}`}>
       <li className={scss.advantagesItem}>
         <Truck className={scss.advantagesIcon} />
         <h3 className={scss.advantagesTitle}>Delivery</h3>

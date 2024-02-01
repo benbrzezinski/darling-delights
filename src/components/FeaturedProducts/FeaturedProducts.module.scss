@@ -4,11 +4,7 @@
   display: flex;
   justify-content: center;
   gap: 30px;
-  max-width: 1400px;
-  padding-top: 30px;
-  padding-bottom: 50px;
   padding-inline: 15px;
-  margin: auto;
 
   @include max-width(1262px) {
     flex-direction: column;
@@ -31,7 +27,7 @@
   max-width: 150px;
   font-family: var(--ff-sec);
   font-size: var(--fs-6);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
 
   @include max-width(1262px) {
@@ -40,7 +36,6 @@
 }
 
 .text {
-  line-height: 1.6;
   color: var(--cl-10);
 
   @include max-width(1262px) {

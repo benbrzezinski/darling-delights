@@ -8,11 +8,9 @@
 }
 
 .wrapper {
-  max-width: 1400px;
   padding-top: 140px;
   padding-inline: 100px;
   padding-bottom: 200px;
-  margin: auto;
 
   @include max-width(620px) {
     display: flex;
@@ -46,7 +44,6 @@
 }
 
 .text {
-  line-height: 1.6;
   color: var(--cl-4);
   margin-bottom: 70px;
 

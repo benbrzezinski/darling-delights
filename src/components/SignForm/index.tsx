@@ -1,20 +1,22 @@
+import { FormEventHandler, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { FormEventHandler } from "react";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
-import { SignForm } from "../../types";
+import { SignFormType } from "../../types";
 import useValidation from "../../hooks/useValidation";
 import scss from "./SignForm.module.scss";
 
-const SignForm = ({ type }: SignForm) => {
+const SignForm = ({ type }: SignFormType) => {
+  const ID = useRef({
+    name: nanoid(),
+    email: nanoid(),
+    password: nanoid(),
+    repeatPassword: nanoid(),
+    toastSuccess: nanoid(),
+    toastWarning: nanoid(),
+  });
   const { verifyName, verifyEmail, isNameChecked, isEmailChecked } =
     useValidation();
-
-  const nameID = nanoid();
-  const emailID = nanoid();
-  const passwordID = nanoid();
-  const repeatPasswordID = nanoid();
-  const toastId = nanoid();
 
   const handleSubmitLogin: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
@@ -27,7 +29,10 @@ const SignForm = ({ type }: SignForm) => {
       return;
     }
 
-    toast.success("You have successfully logged in");
+    toast.success("You have successfully logged in", {
+      toastId: ID.current.toastSuccess,
+    });
+
     form.reset();
   };
 
@@ -54,16 +59,22 @@ const SignForm = ({ type }: SignForm) => {
 
     if (password.value !== repeatPassword.value) {
       password.focus();
-      return toast.warning("Passwords don't match", { toastId });
+      toast.warning("Passwords don't match", {
+        toastId: ID.current.toastWarning,
+      });
+      return;
     }
 
-    toast.success("You have successfully registered, please check your email");
+    toast.success("You have successfully registered, please check your email", {
+      toastId: ID.current.toastSuccess,
+    });
+
     form.reset();
   };
 
   return (
     <div className={scss.background}>
-      <div className={scss.wrapper}>
+      <div className={`container ${scss.wrapper}`}>
         <section className={scss.section}>
           <div className={scss.headingBox}>
             <h1 className={scss.title}>
@@ -97,14 +108,14 @@ const SignForm = ({ type }: SignForm) => {
           >
             {type === "login" ? null : (
               <div className={scss.signFormBox}>
-                <label className={scss.label} htmlFor={nameID}>
+                <label className={scss.label} htmlFor={ID.current.name}>
                   Name
                 </label>
                 <input
                   className={scss.input}
                   type="text"
                   name="name"
-                  id={nameID}
+                  id={ID.current.name}
                   placeholder="John"
                   required
                 />
@@ -112,28 +123,28 @@ const SignForm = ({ type }: SignForm) => {
               </div>
             )}
             <div className={scss.signFormBox}>
-              <label className={scss.label} htmlFor={emailID}>
+              <label className={scss.label} htmlFor={ID.current.email}>
                 Email
               </label>
               <input
                 className={scss.input}
                 type="email"
                 name="email"
-                id={emailID}
+                id={ID.current.email}
                 placeholder="yourmail@emaily.com"
                 required
               />
               {isEmailChecked && <p className={scss.error}>Invalid email</p>}
             </div>
             <div className={scss.signFormBox}>
-              <label className={scss.label} htmlFor={passwordID}>
+              <label className={scss.label} htmlFor={ID.current.password}>
                 Password
               </label>
               <input
                 className={scss.input}
                 type="password"
                 name="password"
-                id={passwordID}
+                id={ID.current.password}
                 placeholder="***"
                 required
                 minLength={8}
@@ -143,14 +154,17 @@ const SignForm = ({ type }: SignForm) => {
             </div>
             {type === "login" ? null : (
               <div className={scss.signFormBox}>
-                <label className={scss.label} htmlFor={repeatPasswordID}>
+                <label
+                  className={scss.label}
+                  htmlFor={ID.current.repeatPassword}
+                >
                   Repeat password
                 </label>
                 <input
                   className={scss.input}
                   type="password"
                   name="repeatPassword"
-                  id={repeatPasswordID}
+                  id={ID.current.repeatPassword}
                   placeholder="***"
                   required
                   minLength={8}

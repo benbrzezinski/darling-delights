@@ -75,7 +75,7 @@ $delay: 150ms;
   font-family: var(--ff-sec);
   font-size: var(--fs-6);
   font-weight: var(--fw-sec);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
 
   @include max-width(500px) {
@@ -92,7 +92,7 @@ $delay: 150ms;
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: 20px;
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-main);
   text-transform: capitalize;
 
@@ -179,7 +179,7 @@ $delay: 150ms;
 
 .code {
   font-size: var(--fs-9);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-10);
 }
 

@@ -9,7 +9,7 @@ const Description = () => {
   const product = products.find(product => product.id === id);
 
   return product ? (
-    <div className={scss.wrapper}>
+    <div className="container">
       <section className={scss.descriptionBox}>
         <div>
           <p className={scss.text}>Description</p>

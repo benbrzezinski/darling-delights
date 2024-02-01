@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
-import { Pagination } from "../../types";
+import { PaginationType } from "../../types";
 import { setPage } from "../../redux/page/slice";
 import scrollToValue from "../../utils/scrollToValue";
 import usePage from "../../hooks/usePage";
@@ -9,7 +9,7 @@ import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Pagination.module.scss";
 
-const Pagination = ({ productsPerPage }: Pagination) => {
+const Pagination = ({ productsPerPage }: PaginationType) => {
   const { currentPage } = usePage();
   const { filteredProducts } = useProducts();
   const { Greater, Lower } = useIcons();

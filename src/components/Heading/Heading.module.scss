@@ -3,10 +3,7 @@
 .wrapper {
   display: flex;
   gap: 80px;
-  max-width: 1400px;
   padding-top: 200px;
-  padding-inline: 50px;
-  margin: auto;
 
   @include max-width(1240px) {
     justify-content: center;
@@ -24,7 +21,6 @@
 
   @include max-width(768px) {
     padding-top: 40px;
-    padding-inline: 15px;
   }
 }
 

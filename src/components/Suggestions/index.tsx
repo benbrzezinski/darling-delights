@@ -71,7 +71,7 @@ const Suggestions = () => {
   };
 
   return product && suggestedProducts.length > 0 ? (
-    <section className={scss.wrapper}>
+    <section className={`container ${scss.wrapper}`}>
       <div className={scss.headlineBox}>
         <h2 className={scss.headline}>You may also like</h2>
         <Link to="/shop" className={scss.link}>
@@ -144,7 +144,7 @@ const Suggestions = () => {
       </div>
     </section>
   ) : (
-    <section className={scss.wrapper}>
+    <section className={`container ${scss.wrapper}`}>
       <div className={scss.headlineBox}>
         <h2 className={scss.headline}>You may also like</h2>
         <Link to="/shop" className={scss.link}>

@@ -1,6 +1,9 @@
-@use "./scss/variables.scss" as *;
-@import "../node_modules/modern-normalize/modern-normalize.css";
+@use "./scss/index.scss" as *;
 @import "react-responsive-carousel/lib/styles/carousel.min.css";
+@import "yet-another-react-lightbox/styles.css";
+@import "yet-another-react-lightbox/plugins/counter.css";
+@import "yet-another-react-lightbox/plugins/thumbnails.css";
+@import "../node_modules/modern-normalize/modern-normalize.css";
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Manrope:wght@400;600&display=swap");
 
 #root {
@@ -12,13 +15,25 @@
   padding: 0;
 }
 
+.container {
+  max-width: 1400px;
+  padding-block: 70px;
+  padding-inline: 50px;
+  margin-inline: auto;
+
+  @include max-width(768px) {
+    padding-inline: 15px;
+  }
+}
+
 body {
   font-family: var(--ff-main), "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: var(--fs-main);
   font-weight: var(--fw-main);
+  font-size: var(--fs-main);
+  line-height: var(--lh-main);
   color: var(--cl-main);
   background-color: var(--cl-4);
   min-height: 100dvh;

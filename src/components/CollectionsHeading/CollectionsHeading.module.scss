@@ -14,10 +14,7 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  max-width: 1400px;
   padding-block: 120px;
-  padding-inline: 15px;
-  margin: auto;
 }
 
 .headline {
@@ -34,7 +31,6 @@
 
 .text {
   max-width: 500px;
-  line-height: 1.6;
   color: var(--cl-4);
   text-align: center;
 }

@@ -1,16 +1,8 @@
 @use "../../scss//index.scss" as *;
 
 .wrapper {
-  max-width: 1400px;
   display: flex;
   gap: 50px;
-  padding-inline: 50px;
-  padding-bottom: 70px;
-  margin: auto;
-
-  @include max-width(560px) {
-    padding-inline: 15px;
-  }
 
   @include max-width(979px) {
     flex-direction: column;
@@ -74,7 +66,7 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-6);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
 
   @include max-width(420px) {
@@ -83,14 +75,13 @@
 }
 
 .code {
-  line-height: 1.6;
   color: var(--cl-11);
 }
 
 .price {
   font-weight: var(--fw-sec);
   font-size: var(--fs-6);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-19);
 
   @include max-width(420px) {
@@ -101,7 +92,6 @@
 .colorName {
   display: inline-block;
   font-weight: var(--fw-sec);
-  line-height: 1.6;
   color: var(--cl-18);
   margin-bottom: 4px;
 }

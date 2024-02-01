@@ -1,7 +1,12 @@
 import Select from "react-select";
-import { Selects } from "../../types";
+import { SelectsType } from "../../types";
 
-const Selects = ({ options, handleSelect, handleValue, width }: Selects) => {
+const Selects = ({
+  options,
+  handleSelect,
+  handleValue,
+  width,
+}: SelectsType) => {
   return (
     <Select
       options={options}

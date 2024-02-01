@@ -1,26 +1,21 @@
 @use "../../scss//index.scss" as *;
 
 .productNav {
-  max-width: 1400px;
   display: flex;
   align-items: center;
   gap: 15px;
-  padding-top: 60px;
-  padding-inline: 50px;
+  padding-top: 50px;
   padding-bottom: 25px;
-  margin: auto;
 
-  @include max-width(560px) {
+  @include max-width(979px) {
     gap: 10px;
     padding-top: 30px;
-    padding-inline: 15px;
   }
 }
 
 .productNavLink {
   font-family: var(--ff-sec);
   font-size: var(--fs-sec);
-  line-height: 1.6;
   color: var(--cl-12);
   text-transform: capitalize;
 }

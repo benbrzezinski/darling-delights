@@ -4,15 +4,10 @@
   display: flex;
   justify-content: center;
   gap: 100px;
-  padding-block: 70px;
-  padding-inline: 50px;
-  max-width: 1400px;
-  margin: auto;
 
   @include max-width(950px) {
     flex-wrap: wrap;
     gap: 50px;
-    padding-inline: 15px;
   }
 }
 
@@ -33,11 +28,9 @@
 .advantagesTitle {
   font-family: var(--ff-sec);
   font-size: var(--fs-3);
-  line-height: 1.6;
 }
 
 .advantagesText {
   color: var(--cl-10);
-  line-height: 1.6;
   text-align: center;
 }

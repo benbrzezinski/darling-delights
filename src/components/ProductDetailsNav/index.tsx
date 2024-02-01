@@ -18,7 +18,7 @@ const ProductDetailsNav = () => {
   const product = products.find(product => product.id === id);
 
   return (
-    <ul className={scss.productNav}>
+    <ul className={`container ${scss.productNav}`}>
       <li>
         <Link to="/" className={scss.productNavLink}>
           Home

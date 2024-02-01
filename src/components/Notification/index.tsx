@@ -1,12 +1,12 @@
-import { Notification } from "../../types";
+import { NotificationType } from "../../types";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Notification.module.scss";
 
 const Notification = ({
   text,
   flexGrow = 0,
-  paddingTop = "50px",
-}: Notification) => {
+  paddingTop = 50,
+}: NotificationType) => {
   const { Ring } = useIcons();
 
   return (

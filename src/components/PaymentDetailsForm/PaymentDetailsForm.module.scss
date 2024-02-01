@@ -1,17 +1,11 @@
 @use "../../scss/index.scss" as *;
 
 .wrapper {
-  max-width: 1400px;
   min-height: 80dvh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
-  margin: auto;
-
-  @include max-width(560px) {
-    padding-inline: 15px;
-  }
+  padding-block: 50px;
 }
 
 .paymentDetailsForm {
@@ -26,7 +20,7 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-7);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
   text-align: center;
 
@@ -56,14 +50,12 @@
 .label {
   font-weight: var(--fw-sec);
   font-size: var(--fs-sec);
-  line-height: 1.6;
   color: var(--cl-20);
   padding-left: 4px;
 }
 
 .input {
   background-color: var(--cl-4);
-  line-height: 1.6;
   color: var(--cl-11);
   border-top-left-radius: var(--br-main);
   border-top-right-radius: var(--br-main);

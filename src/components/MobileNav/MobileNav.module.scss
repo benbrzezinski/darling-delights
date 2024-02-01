@@ -31,7 +31,7 @@
   color: var(--cl-4);
   font-size: var(--fs-3);
   font-weight: var(--fw-main);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   transition: color var(--duration) var(--timing-function);
   padding-block: 10px;
   padding-inline: 50px;

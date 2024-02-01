@@ -4,6 +4,8 @@ import { toast } from "react-toastify";
 import { Product, ProductPayload } from "../../types";
 import products from "../../db/fake-products";
 
+const toastId = "ZxyMIR5nUlgzDuhSClL62";
+
 const initialState = {
   items: products,
   basket: [] as Product[],
@@ -11,8 +13,6 @@ const initialState = {
   isBasketInfoOpen: false,
   total: "",
 };
-
-const toastId = "3454654534312675867";
 
 const productsSlice = createSlice({
   name: "products",

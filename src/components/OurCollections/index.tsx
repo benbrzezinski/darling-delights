@@ -3,7 +3,7 @@ import scss from "./OurCollections.module.scss";
 
 const OurCollections = () => {
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       <h2 className={scss.title}>Our Collections</h2>
       <ul className={scss.collections}>
         <li className={`${scss.collectionsItem} ${scss.first}`}>

@@ -1,16 +1,32 @@
-import { useSearchParams, useLocation, useNavigate } from "react-router-dom";
-import { FormEventHandler } from "react";
+import {
+  Navigate,
+  useSearchParams,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+import { FormEventHandler, useRef } from "react";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import { LocationState } from "../../types";
 import Selects from "../Selects";
-import Notification from "../Notification";
 import useSelectsPropsStore from "../../hooks/useSelectsPropsStore";
 import useProducts from "../../hooks/useProducts";
 import useValidation from "../../hooks/useValidation";
 import scss from "./PaymentDetailsForm.module.scss";
 
 const PaymentDetailsForm = () => {
+  const ID = useRef({
+    firstName: nanoid(),
+    lastName: nanoid(),
+    email: nanoid(),
+    country: nanoid(),
+    state: nanoid(),
+    city: nanoid(),
+    zipCode: nanoid(),
+    street: nanoid(),
+    houseNumber: nanoid(),
+    toastWarning: nanoid(),
+  });
   const [searchParams] = useSearchParams();
   const {
     verifyName,
@@ -27,18 +43,6 @@ const PaymentDetailsForm = () => {
   const navigate = useNavigate();
 
   const total = (location.state as LocationState)?.total;
-
-  const ID = {
-    firstName: nanoid(),
-    lastName: nanoid(),
-    email: nanoid(),
-    country: nanoid(),
-    state: nanoid(),
-    city: nanoid(),
-    zipCode: nanoid(),
-    street: nanoid(),
-    houseNumber: nanoid(),
-  };
 
   const handleSubmitToHome: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
@@ -78,6 +82,7 @@ const PaymentDetailsForm = () => {
         street: street.value,
         houseNumber: houseNumber.value,
       },
+      replace: true,
     });
   };
 
@@ -102,7 +107,13 @@ const PaymentDetailsForm = () => {
     const isStoreNotSelected = options.every(
       ({ value }) => value !== selectedStore
     );
-    if (isStoreNotSelected) return toast.warning("Choose store address");
+
+    if (isStoreNotSelected) {
+      toast.warning("Choose store address", {
+        toastId: ID.current.toastWarning,
+      });
+      return;
+    }
 
     const storeAddress = selectedStore.split(", ");
 
@@ -118,184 +129,181 @@ const PaymentDetailsForm = () => {
         street: storeAddress[4],
         houseNumber: storeAddress[5],
       },
+      replace: true,
     });
   };
 
-  return (
-    <div className={scss.wrapper}>
-      {total && basket.length > 0 ? (
-        <form
-          className={scss.paymentDetailsForm}
-          onSubmit={
-            searchParams.get("delivery") === "home"
-              ? handleSubmitToHome
-              : handleSubmitToStore
-          }
-        >
-          <h1 className={scss.title}>Complete the Form</h1>
-          <div className={scss.paymentDetailsBox}>
-            <div className={scss.inputBox}>
-              <label className={scss.label} htmlFor={ID.firstName}>
-                First name
-              </label>
-              <input
-                className={scss.input}
-                type="text"
-                name="firstName"
-                id={ID.firstName}
-                placeholder="John"
-                required
-              />
-              {isNameChecked && (
-                <p className={scss.error}>Invalid first name</p>
-              )}
-            </div>
-            <div className={scss.inputBox}>
-              <label className={scss.label} htmlFor={ID.lastName}>
-                Last name
-              </label>
-              <input
-                className={scss.input}
-                type="text"
-                name="lastName"
-                id={ID.lastName}
-                placeholder="Doe"
-                required
-              />
-              {isLastNameChecked && (
-                <p className={scss.error}>Invalid last name</p>
-              )}
-            </div>
-            <div className={scss.inputBox}>
-              <label className={scss.label} htmlFor={ID.email}>
-                E-mail
-              </label>
-              <input
-                className={scss.input}
-                type="email"
-                name="email"
-                id={ID.email}
-                placeholder="examplemail@.com"
-                required
-              />
-              {isEmailChecked && <p className={scss.error}>Invalid email</p>}
-            </div>
-          </div>
-          {searchParams.get("delivery") === "home" ? (
-            <>
-              <div className={scss.paymentDetailsBox}>
-                <div className={scss.inputBox}>
-                  <label className={scss.label} htmlFor={ID.country}>
-                    Country
-                  </label>
-                  <input
-                    className={scss.input}
-                    type="text"
-                    name="country"
-                    id={ID.country}
-                    placeholder="USA"
-                    required
-                    pattern="\S(.*\S)?"
-                    title="There cannot be any spaces at the beginning and end"
-                  />
-                </div>
-                <div className={scss.inputBox}>
-                  <label className={scss.label} htmlFor={ID.state}>
-                    State / Province
-                  </label>
-                  <input
-                    className={scss.input}
-                    type="text"
-                    name="state"
-                    id={ID.state}
-                    placeholder="NY"
-                    required
-                    pattern="\S(.*\S)?"
-                    title="There cannot be any spaces at the beginning and end"
-                  />
-                </div>
-              </div>
-              <div className={scss.paymentDetailsBox}>
-                <div className={scss.inputBox}>
-                  <label className={scss.label} htmlFor={ID.city}>
-                    City / Village
-                  </label>
-                  <input
-                    className={scss.input}
-                    type="text"
-                    name="city"
-                    id={ID.city}
-                    placeholder="New York"
-                    required
-                    pattern="\S(.*\S)?"
-                    title="There cannot be any spaces at the beginning and end"
-                  />
-                </div>
-                <div className={scss.inputBox}>
-                  <label className={scss.label} htmlFor={ID.zipCode}>
-                    Zip code
-                  </label>
-                  <input
-                    className={scss.input}
-                    type="text"
-                    name="zipCode"
-                    id={ID.zipCode}
-                    placeholder="10014"
-                    required
-                    pattern="\S(.*\S)?"
-                    title="There cannot be any spaces at the beginning and end"
-                  />
-                </div>
-              </div>
-              <div className={scss.paymentDetailsBox}>
-                <div className={scss.inputBox}>
-                  <label className={scss.label} htmlFor={ID.street}>
-                    Street
-                  </label>
-                  <input
-                    className={scss.input}
-                    type="text"
-                    name="street"
-                    id={ID.street}
-                    placeholder="495 Grove Street"
-                    required
-                    pattern="\S(.*\S)?"
-                    title="There cannot be any spaces at the beginning and end"
-                  />
-                </div>
-                <div className={scss.inputBox}>
-                  <label className={scss.label} htmlFor={ID.houseNumber}>
-                    House / Apartment number
-                  </label>
-                  <input
-                    className={scss.input}
-                    type="text"
-                    name="houseNumber"
-                    id={ID.houseNumber}
-                    placeholder="Apt #20"
-                    required
-                    pattern="\S(.*\S)?"
-                    title="There cannot be any spaces at the beginning and end"
-                  />
-                </div>
-              </div>
-            </>
-          ) : (
-            <Selects
-              options={options}
-              handleSelect={option => handleSelect(option)}
-              handleValue={handleValue}
-              width="100%"
+  return total && basket.length > 0 ? (
+    <div className={`container ${scss.wrapper}`}>
+      <form
+        className={scss.paymentDetailsForm}
+        onSubmit={
+          searchParams.get("delivery") === "home"
+            ? handleSubmitToHome
+            : handleSubmitToStore
+        }
+      >
+        <h1 className={scss.title}>Complete the Form</h1>
+        <div className={scss.paymentDetailsBox}>
+          <div className={scss.inputBox}>
+            <label className={scss.label} htmlFor={ID.current.firstName}>
+              First name
+            </label>
+            <input
+              className={scss.input}
+              type="text"
+              name="firstName"
+              id={ID.current.firstName}
+              placeholder="John"
+              required
             />
-          )}
-          <button type="submit" className={scss.submitBtn}>
-            Submit your order
-          </button>
-        </form>
-      ) : (
-        <Notification text="There is nothing interesting here" paddingTop="0" />
-      )}
+            {isNameChecked && <p className={scss.error}>Invalid first name</p>}
+          </div>
+          <div className={scss.inputBox}>
+            <label className={scss.label} htmlFor={ID.current.lastName}>
+              Last name
+            </label>
+            <input
+              className={scss.input}
+              type="text"
+              name="lastName"
+              id={ID.current.lastName}
+              placeholder="Doe"
+              required
+            />
+            {isLastNameChecked && (
+              <p className={scss.error}>Invalid last name</p>
+            )}
+          </div>
+          <div className={scss.inputBox}>
+            <label className={scss.label} htmlFor={ID.current.email}>
+              E-mail
+            </label>
+            <input
+              className={scss.input}
+              type="email"
+              name="email"
+              id={ID.current.email}
+              placeholder="examplemail@.com"
+              required
+            />
+            {isEmailChecked && <p className={scss.error}>Invalid email</p>}
+          </div>
+        </div>
+        {searchParams.get("delivery") === "home" ? (
+          <>
+            <div className={scss.paymentDetailsBox}>
+              <div className={scss.inputBox}>
+                <label className={scss.label} htmlFor={ID.current.country}>
+                  Country
+                </label>
+                <input
+                  className={scss.input}
+                  type="text"
+                  name="country"
+                  id={ID.current.country}
+                  placeholder="USA"
+                  required
+                  pattern="\S(.*\S)?"
+                  title="There cannot be any spaces at the beginning and end"
+                />
+              </div>
+              <div className={scss.inputBox}>
+                <label className={scss.label} htmlFor={ID.current.state}>
+                  State / Province
+                </label>
+                <input
+                  className={scss.input}
+                  type="text"
+                  name="state"
+                  id={ID.current.state}
+                  placeholder="NY"
+                  required
+                  pattern="\S(.*\S)?"
+                  title="There cannot be any spaces at the beginning and end"
+                />
+              </div>
+            </div>
+            <div className={scss.paymentDetailsBox}>
+              <div className={scss.inputBox}>
+                <label className={scss.label} htmlFor={ID.current.city}>
+                  City / Village
+                </label>
+                <input
+                  className={scss.input}
+                  type="text"
+                  name="city"
+                  id={ID.current.city}
+                  placeholder="New York"
+                  required
+                  pattern="\S(.*\S)?"
+                  title="There cannot be any spaces at the beginning and end"
+                />
+              </div>
+              <div className={scss.inputBox}>
+                <label className={scss.label} htmlFor={ID.current.zipCode}>
+                  Zip code
+                </label>
+                <input
+                  className={scss.input}
+                  type="text"
+                  name="zipCode"
+                  id={ID.current.zipCode}
+                  placeholder="10014"
+                  required
+                  pattern="\S(.*\S)?"
+                  title="There cannot be any spaces at the beginning and end"
+                />
+              </div>
+            </div>
+            <div className={scss.paymentDetailsBox}>
+              <div className={scss.inputBox}>
+                <label className={scss.label} htmlFor={ID.current.street}>
+                  Street
+                </label>
+                <input
+                  className={scss.input}
+                  type="text"
+                  name="street"
+                  id={ID.current.street}
+                  placeholder="495 Grove Street"
+                  required
+                  pattern="\S(.*\S)?"
+                  title="There cannot be any spaces at the beginning and end"
+                />
+              </div>
+              <div className={scss.inputBox}>
+                <label className={scss.label} htmlFor={ID.current.houseNumber}>
+                  House / Apartment number
+                </label>
+                <input
+                  className={scss.input}
+                  type="text"
+                  name="houseNumber"
+                  id={ID.current.houseNumber}
+                  placeholder="Apt #20"
+                  required
+                  pattern="\S(.*\S)?"
+                  title="There cannot be any spaces at the beginning and end"
+                />
+              </div>
+            </div>
+          </>
+        ) : (
+          <Selects
+            options={options}
+            handleSelect={option => handleSelect(option)}
+            handleValue={handleValue}
+            width="100%"
+          />
+        )}
+        <button type="submit" className={scss.submitBtn}>
+          Submit your order
+        </button>
+      </form>
     </div>
+  ) : (
+    <Navigate to="/basket" replace />
   );
 };
 

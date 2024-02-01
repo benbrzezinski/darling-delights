@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import AboutHeading from "../components/AboutHeading";
 import AboutOurStory from "../components/AboutOurStory";
 import DesignProcess from "../components/DesignProcess";
-import Designer from "../components/Designer";
+import Designers from "../components/Designers";
 import Instagram from "../components/Instagram";
 
 const About = () => {
@@ -14,7 +14,7 @@ const About = () => {
       <AboutHeading />
       <AboutOurStory />
       <DesignProcess />
-      <Designer />
+      <Designers />
       <Instagram />
     </>
   );

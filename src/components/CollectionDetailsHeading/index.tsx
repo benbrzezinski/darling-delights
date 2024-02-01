@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { CollectionDetailsHeading } from "../../types";
+import { CollectionDetailsHeadingType } from "../../types";
 import useIcons from "../../hooks/useIcons";
 import scss from "./CollectionDetailsHeading.module.scss";
 
@@ -7,7 +7,7 @@ const CollectionDetailsHeading = ({
   bgImg,
   title,
   text,
-}: CollectionDetailsHeading) => {
+}: CollectionDetailsHeadingType) => {
   const { pathname } = useLocation();
   const { Lower, Greater } = useIcons();
 
@@ -18,7 +18,7 @@ const CollectionDetailsHeading = ({
         backgroundImage: `url(${bgImg})`,
       }}
     >
-      <div className={scss.wrapper}>
+      <div className={`container ${scss.wrapper}`}>
         <section className={scss.heading}>
           <h1 className={scss.title}>{title}</h1>
           <p className={scss.text}>{text}</p>

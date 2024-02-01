@@ -7,9 +7,6 @@ import Counter from "yet-another-react-lightbox/plugins/counter";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import "yet-another-react-lightbox/styles.css";
-import "yet-another-react-lightbox/plugins/counter.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Size from "../Size";
 import Quantity from "../Quantity";
 import ProductButtons from "../ProductButtons";
@@ -31,8 +28,22 @@ const ProductDetails = () => {
   const product = products.find(product => product.id === id);
   const isInFavourites = favourites.find(product => product.id === id);
 
+  const closeShowColor = () => {
+    setShowColor(false);
+    document.removeEventListener("click", closeShowColor);
+  };
+
   const toggleShowColor = () => {
-    setShowColor(prev => !prev);
+    if (showColor) {
+      setShowColor(false);
+      document.removeEventListener("click", closeShowColor);
+      return;
+    }
+
+    setShowColor(true);
+    setTimeout(() => {
+      document.addEventListener("click", closeShowColor);
+    }, 0);
   };
 
   const handleToggleFavourites = () => {
@@ -40,7 +51,7 @@ const ProductDetails = () => {
   };
 
   return product ? (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       <div className={scss.imagesBox}>
         <img
           src={product.img}

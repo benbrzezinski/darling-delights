@@ -1,9 +1,9 @@
-import scss from "./Designer.module.scss";
+import scss from "./Designers.module.scss";
 
-const Designer = () => {
+const Designers = () => {
   return (
-    <div className={scss.wrapper}>
-      <h2 className={scss.title}>Designer at Darling.</h2>
+    <div className={`container ${scss.wrapper}`}>
+      <h2 className={scss.title}>Designers at Darling.</h2>
       <ul className={scss.designers}>
         <li className={scss.designer}>
           <img
@@ -46,4 +46,4 @@ const Designer = () => {
   );
 };
 
-export default Designer;
+export default Designers;

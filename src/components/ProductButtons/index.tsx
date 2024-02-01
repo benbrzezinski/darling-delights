@@ -36,6 +36,7 @@ const ProductButtons = () => {
     const indexOfPaymentParams = searchParams.get("from")
       ? search.indexOf("&", 28)
       : search.indexOf("&", 18);
+
     const paymentParams =
       indexOfPaymentParams !== -1
         ? `?${search.slice(indexOfPaymentParams + 1)}`
@@ -49,8 +50,6 @@ const ProductButtons = () => {
           quantity: searchParams.get("quantity") ?? "1",
         })
       );
-
-      navigate(`/basket${paymentParams}`);
     }
 
     navigate(`/basket${paymentParams}`);

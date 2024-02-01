@@ -17,7 +17,7 @@ const Searcher = () => {
 
   return (
     <div className={scss.background}>
-      <section className={scss.wrapper}>
+      <section className={`container ${scss.wrapper}`}>
         <h1 className={scss.title}>Our Products</h1>
         <div className={scss.searcherBox}>
           <input

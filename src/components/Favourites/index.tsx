@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { Favourites } from "../../types";
+import { FavouritesType } from "../../types";
 import { toggleFavourites, resetFavourites } from "../../redux/products/slice";
 import Notification from "../Notification";
 import useProducts from "../../hooks/useProducts";
@@ -11,7 +11,7 @@ const Favourites = ({
   isFavouritesOpen,
   closeFavourites,
   closeFavouritesByBackdrop,
-}: Favourites) => {
+}: FavouritesType) => {
   const { favourites } = useProducts();
   const { Close, FavouritesHeartFull } = useIcons();
   const dispatch = useDispatch();
@@ -97,7 +97,7 @@ const Favourites = ({
             <Notification
               text="You haven't added anything to your favourites"
               flexGrow={1}
-              paddingTop="0"
+              paddingTop={0}
             />
           )}
         </section>

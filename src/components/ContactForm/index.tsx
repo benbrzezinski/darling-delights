@@ -1,4 +1,4 @@
-import { FormEventHandler } from "react";
+import { FormEventHandler, useRef } from "react";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import ContactPhotos from "../ContactPhotos";
@@ -7,6 +7,12 @@ import useValidation from "../../hooks/useValidation";
 import scss from "./ContactForm.module.scss";
 
 const ContactForm = () => {
+  const ID = useRef({
+    name: nanoid(),
+    email: nanoid(),
+    message: nanoid(),
+    toastSuccess: nanoid(),
+  });
   const {
     verifyName,
     verifyEmail,
@@ -15,10 +21,6 @@ const ContactForm = () => {
     isEmailChecked,
     isMessageChecked,
   } = useValidation();
-
-  const nameID = nanoid();
-  const emailID = nanoid();
-  const messageID = nanoid();
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
@@ -38,52 +40,55 @@ const ContactForm = () => {
       return;
     }
 
-    toast.success("Your message has been sent");
+    toast.success("Your message has been sent", {
+      toastId: ID.current.toastSuccess,
+    });
+
     form.reset();
   };
 
   return (
     <div className={scss.background}>
-      <div className={scss.wrapper}>
+      <div className="container">
         <section className={scss.section}>
           <form className={scss.contactForm} onSubmit={handleSubmit}>
             <h1 className={scss.title}>Contact Our Team</h1>
             <div className={scss.contactFormBox}>
-              <label className={scss.label} htmlFor={nameID}>
+              <label className={scss.label} htmlFor={ID.current.name}>
                 Your name
               </label>
               <input
                 className={scss.input}
                 type="text"
                 name="name"
-                id={nameID}
+                id={ID.current.name}
                 placeholder="Full name"
                 required
               />
               {isNameChecked && <p className={scss.error}>Invalid name</p>}
             </div>
             <div className={scss.contactFormBox}>
-              <label className={scss.label} htmlFor={emailID}>
+              <label className={scss.label} htmlFor={ID.current.email}>
                 Your email
               </label>
               <input
                 className={scss.input}
                 type="email"
                 name="email"
-                id={emailID}
+                id={ID.current.email}
                 placeholder="yourmail@emaily.com"
                 required
               />
               {isEmailChecked && <p className={scss.error}>Invalid email</p>}
             </div>
             <div className={scss.contactFormBox}>
-              <label className={scss.label} htmlFor={messageID}>
+              <label className={scss.label} htmlFor={ID.current.message}>
                 How can we help?
               </label>
               <textarea
                 className={`${scss.input} ${scss.textarea}`}
                 name="message"
-                id={messageID}
+                id={ID.current.message}
                 rows={4}
                 placeholder="Enter your message here"
                 required

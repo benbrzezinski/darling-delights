@@ -76,7 +76,7 @@ $delay: 150ms;
   font-family: var(--ff-sec);
   font-size: var(--fs-6);
   font-weight: var(--fw-sec);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
 
   @include max-width(500px) {
@@ -157,7 +157,7 @@ $delay: 150ms;
 
 .code {
   font-size: var(--fs-9);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-10);
 }
 
@@ -208,7 +208,7 @@ $delay: 150ms;
 
 .quantity {
   font-size: var(--fs-sec);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   position: absolute;
   bottom: 8px;
   right: 8px;
@@ -229,14 +229,12 @@ $delay: 150ms;
 
 .text {
   font-size: var(--fs-sec);
-  line-height: 1.6;
 }
 
 .total {
   font-family: var(--ff-sec);
   font-size: var(--fs-4);
   font-weight: var(--fw-sec);
-  line-height: 1.6;
 }
 
 .btn {

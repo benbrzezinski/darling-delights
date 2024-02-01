@@ -6,11 +6,8 @@
 }
 
 .wrapperUp {
-  max-width: 1400px;
   display: flex;
   justify-content: space-between;
-  padding: 50px;
-  margin: auto;
 
   @include max-width(1000px) {
     flex-direction: column;
@@ -19,14 +16,14 @@
   }
 
   @include max-width(500px) {
-    padding: 25px 15px 50px 15px;
+    padding-top: 25px;
   }
 }
 
 .logo {
   font-family: var(--ff-sec);
   font-size: var(--fs-5);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-sec);
 }
 
@@ -45,7 +42,6 @@
   color: var(--cl-4);
   font-size: var(--fs-sec);
   font-weight: var(--fw-main);
-  line-height: 1.6;
   transition: color var(--duration) var(--timing-function);
 
   &:hover,
@@ -64,7 +60,7 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-4);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-4);
 
   @include max-width(1000px) {
@@ -79,7 +75,7 @@
 
 .newsletterLabel {
   font-size: var(--fs-sec);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-13);
   margin-bottom: 16px;
 
@@ -106,7 +102,7 @@
 .newsletterInput {
   width: 270px;
   font-size: var(--fs-sec);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-4);
   background-color: transparent;
   border: 1px solid var(--cl-4);
@@ -133,7 +129,6 @@
   justify-content: center;
   align-items: center;
   font-size: var(--fs-sec);
-  line-height: 1.6;
   color: var(--cl-14);
   background-color: var(--cl-3);
   border: none;
@@ -171,21 +166,15 @@
   padding-left: 42px;
 }
 
-.wrapperDown {
-  max-width: 1400px;
+div.wrapperDown {
   display: flex;
   justify-content: space-between;
-  padding: 0 50px 25px 50px;
-  margin: auto;
-
-  @include max-width(500px) {
-    padding-inline: 15px;
-  }
+  padding-top: 0;
+  padding-bottom: 25px;
 }
 
 .copyrightText {
   font-size: var(--fs-sec);
-  line-height: 1.6;
   color: var(--cl-4);
 
   @include max-width(500px) {

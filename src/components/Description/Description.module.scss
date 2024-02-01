@@ -1,15 +1,5 @@
 @use "../../scss//index.scss" as *;
 
-.wrapper {
-  max-width: 1400px;
-  padding-inline: 50px;
-  margin: auto;
-
-  @include max-width(560px) {
-    padding-inline: 15px;
-  }
-}
-
 .descriptionBox {
   display: flex;
   flex-direction: column;
@@ -26,7 +16,6 @@
 }
 
 .text {
-  line-height: 1.6;
   color: var(--cl-11);
   margin-bottom: 24px;
 }
@@ -35,7 +24,7 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-6);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
 
   @include max-width(852px) {
@@ -46,14 +35,12 @@
 .description,
 .featuresItem {
   font-size: var(--fs-3);
-  line-height: 1.6;
   color: var(--cl-11);
 }
 
 .title {
   font-weight: var(--fw-sec);
   font-size: var(--fs-3);
-  line-height: 1.6;
   color: var(--cl-11);
 }
 

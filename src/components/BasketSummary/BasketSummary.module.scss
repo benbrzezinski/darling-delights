@@ -5,15 +5,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-  max-width: 1400px;
-  padding-top: 50px;
-  padding-inline: 50px;
-  padding-bottom: 25px;
-  margin: auto;
-
-  @include max-width(664px) {
-    padding-inline: 15px;
-  }
+  padding-block: 50px;
 }
 
 .summary {
@@ -109,12 +101,10 @@
 .productName {
   font-weight: var(--fw-sec);
   font-size: var(--fs-sec);
-  line-height: 1.6;
 }
 
 .productInfo {
   font-size: var(--fs-9);
-  line-height: 1.6;
   color: var(--cl-20);
 }
 
@@ -122,14 +112,12 @@
   width: 180px;
   font-weight: var(--fw-sec);
   font-size: var(--fs-sec);
-  line-height: 1.6;
   text-align: center;
 }
 
 .productPriceMedium {
   font-weight: var(--fw-sec);
   font-size: var(--fs-sec);
-  line-height: 1.6;
 }
 
 .iconBox {

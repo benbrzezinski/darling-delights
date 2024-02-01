@@ -1,5 +1,5 @@
+import { FormEventHandler, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useRef, FormEventHandler } from "react";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import useIcons from "../../hooks/useIcons";
@@ -7,9 +7,12 @@ import useValidation from "../../hooks/useValidation";
 import scss from "./Footer.module.scss";
 
 const Footer = () => {
+  const ID = useRef({
+    email: nanoid(),
+    toastSuccess: nanoid(),
+  });
   const { Envelope, TikTok, Facebook, Instagram, YouTube } = useIcons();
   const { verifyEmail, isEmailChecked } = useValidation();
-  const newsletterID = useRef(nanoid());
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
@@ -21,13 +24,16 @@ const Footer = () => {
       return;
     }
 
-    toast.success("Thank you for subscribing 🎉");
+    toast.success("Thank you for signing up 🎉", {
+      toastId: ID.current.toastSuccess,
+    });
+
     form.reset();
   };
 
   return (
     <footer className={scss.footer}>
-      <div className={scss.wrapperUp}>
+      <div className={`container ${scss.wrapperUp}`}>
         <div>
           <Link to="/" className={scss.logo}>
             Darling.
@@ -80,10 +86,7 @@ const Footer = () => {
         <div className={scss.newsletterWrapper}>
           <h3 className={scss.newsletterTitle}>Subscribe to our newsletter</h3>
           <form className={scss.newsletterForm} onSubmit={handleSubmit}>
-            <label
-              htmlFor={newsletterID.current}
-              className={scss.newsletterLabel}
-            >
+            <label htmlFor={ID.current.email} className={scss.newsletterLabel}>
               For product announcements and exclusive insights
             </label>
             <div className={scss.newsletterBox}>
@@ -91,7 +94,7 @@ const Footer = () => {
               <input
                 type="email"
                 name="email"
-                id={newsletterID.current}
+                id={ID.current.email}
                 className={scss.newsletterInput}
                 placeholder="Input your e-mail"
                 required
@@ -104,7 +107,7 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <div className={scss.wrapperDown}>
+      <div className={`container ${scss.wrapperDown}`}>
         <p className={scss.copyrightText}>© 2023 Darling, Inc.</p>
         <ul className={scss.socialMedia}>
           <li>

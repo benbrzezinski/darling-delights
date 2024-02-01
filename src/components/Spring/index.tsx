@@ -3,7 +3,7 @@ import scss from "./Spring.module.scss";
 
 const Spring = () => {
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       <div className={scss.headingBox}>
         <img
           src="https://i.ibb.co/jRq94xp/collection-9.jpg"

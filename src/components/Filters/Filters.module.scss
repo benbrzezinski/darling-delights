@@ -1,19 +1,13 @@
 @use "../../scss/index.scss" as *;
 
 .wrapper {
-  max-width: 1400px;
   display: flex;
   justify-content: space-between;
-  padding-top: 70px;
-  padding-inline: 50px;
-  padding-bottom: 50px;
-  margin: auto;
 
   @include max-width(1000px) {
     flex-direction: column;
     align-items: center;
     gap: 30px;
-    padding-inline: 15px;
   }
 }
 

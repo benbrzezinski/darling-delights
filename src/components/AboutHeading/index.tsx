@@ -3,7 +3,7 @@ import scss from "./AboutHeading.module.scss";
 const AboutHeading = () => {
   return (
     <div className={scss.background}>
-      <div className={scss.wrapper}>
+      <div className={`container ${scss.wrapper}`}>
         <section className={scss.heading}>
           <h1 className={scss.title}>About us</h1>
         </section>

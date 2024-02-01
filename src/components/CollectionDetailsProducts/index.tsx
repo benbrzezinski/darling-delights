@@ -13,7 +13,7 @@ const CollectionDetailsProducts = ({ products }: { products: Product[] }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       {products.length > 0 ? (
         <ul className={scss.products}>
           {products.map(({ id, name, price, img }, i) => {

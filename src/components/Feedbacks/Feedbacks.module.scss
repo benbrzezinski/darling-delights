@@ -9,13 +9,9 @@
   justify-content: center;
   align-items: center;
   gap: 150px;
-  max-width: 1400px;
   border-bottom: 1px solid var(--cl-4);
-  padding-block: 70px;
-  padding-inline: 15px;
-  margin: auto;
 
-  @include max-width(1205px) {
+  @include max-width(1200px) {
     flex-direction: column;
     gap: 40px;
   }
@@ -27,7 +23,7 @@
   flex-direction: column;
   gap: 15px;
 
-  @include max-width(1205px) {
+  @include max-width(1200px) {
     align-items: center;
     text-align: center;
   }
@@ -37,7 +33,7 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-7);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-4);
 
   @include max-width(746px) {
@@ -47,7 +43,6 @@
 
 .text {
   width: 280px;
-  line-height: 1.6;
   color: var(--cl-4);
 }
 
@@ -94,7 +89,6 @@
 }
 
 .feedbackText {
-  line-height: 1.6;
   color: var(--cl-4);
   margin-bottom: 20px;
 }
@@ -102,12 +96,10 @@
 .feedbackAuthor {
   font-weight: var(--fw-sec);
   font-size: var(--fs-3);
-  line-height: 1.6;
   color: var(--cl-4);
   margin-bottom: 5px;
 }
 
 .feedbackCountry {
-  line-height: 1.6;
   color: var(--cl-4);
 }

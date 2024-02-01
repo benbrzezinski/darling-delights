@@ -12,7 +12,7 @@ const OurStory = () => {
 
   return (
     <div className={scss.background}>
-      <div className={scss.wrapper}>
+      <div className={`container ${scss.wrapper}`}>
         <h2 className={scss.title}>Our Story</h2>
         <video
           className={scss.video}

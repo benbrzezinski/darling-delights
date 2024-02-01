@@ -20,7 +20,7 @@ const BasketSummary = () => {
   };
 
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       {basket.length > 0 ? (
         <>
           <section className={scss.summary}>

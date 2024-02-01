@@ -35,7 +35,7 @@
   font-family: var(--ff-sec);
   font-size: clamp(1.3125rem, 0.5208rem + 3.9583vw, 2.5rem);
   font-weight: var(--fw-sec);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
 }
 
@@ -59,12 +59,10 @@
 .productName {
   font-size: clamp(0.875rem, 0.7083rem + 0.8333vw, 1.125rem);
   font-weight: var(--fw-sec);
-  line-height: 1.6;
 }
 
 .productInfo {
   font-size: clamp(0.75rem, 0.5833rem + 0.8333vw, 1rem);
-  line-height: 1.6;
   color: var(--cl-20);
 }
 

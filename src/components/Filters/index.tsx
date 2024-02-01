@@ -33,7 +33,7 @@ const Filters = () => {
   };
 
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       <ul className={scss.radioList}>
         <li className={scss.radioItem}>
           <label className={scss.radioLabel}>

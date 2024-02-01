@@ -2,7 +2,7 @@ import { MouseEvent, RefObject } from "react";
 import { SingleValue } from "react-select";
 import { ProductType, ProductPlacement, FeedbackPlacement } from "./enums";
 
-export type VerifyCreditCard = (
+export type VerifyCreditCardType = (
   name: "code" | "name" | "month" | "year" | "cvc",
   value: string,
   ref?: HTMLInputElement | null
@@ -39,58 +39,58 @@ export interface Feedback {
   placement: FeedbackPlacement;
 }
 
-export interface Header {
+export interface HeaderType {
   isSmallScreen: boolean;
   openMobileMenu: () => void;
   openBasket: () => void;
   openFavourites: () => void;
 }
 
-export interface MobileNav {
+export interface MobileNavType {
   isMobileMenuOpen: boolean;
   closeMobileMenu: () => void;
 }
 
-export interface Basket {
+export interface BasketType {
   isBasketOpen: boolean;
   closeBasket: () => void;
   closeBasketByBackdrop: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
-export interface Favourites {
+export interface FavouritesType {
   isFavouritesOpen: boolean;
   closeFavourites: () => void;
   closeFavouritesByBackdrop: (e: MouseEvent<HTMLDivElement>) => void;
 }
 
-export interface SignForm {
+export interface SignFormType {
   type: "login" | "register";
 }
 
-export interface Selects {
+export interface SelectsType {
   options: OptionType[];
   handleSelect: (option: SingleValue<OptionType>) => void;
   handleValue: () => OptionType;
   width: string;
 }
 
-export interface Pagination {
+export interface PaginationType {
   productsPerPage: 12 | 13;
 }
 
-export interface Notification {
+export interface NotificationType {
   text: string;
   flexGrow?: number;
-  paddingTop?: string;
+  paddingTop?: string | number;
 }
 
-export interface CollectionDetailsHeading {
+export interface CollectionDetailsHeadingType {
   bgImg: string;
   title: string;
   text: string;
 }
 
-export interface Loader {
+export interface LoaderType {
   isVisible?: boolean;
 }
 
@@ -107,7 +107,7 @@ export interface OptionTypeObj {
   [key: string]: OptionType[];
 }
 
-export interface InputRefs {
+export interface InputRefsType {
   name: RefObject<HTMLInputElement>;
   code: RefObject<HTMLInputElement>;
   month: RefObject<HTMLInputElement>;
@@ -121,7 +121,7 @@ export interface InputRefs {
   blik6: RefObject<HTMLInputElement>;
 }
 
-export interface LocationState {
+export type LocationState = {
   total: string;
   basket: Product[];
   fullName: string;
@@ -131,4 +131,4 @@ export interface LocationState {
   zipCode: string;
   street: string;
   houseNumber: string;
-}
+} | null;

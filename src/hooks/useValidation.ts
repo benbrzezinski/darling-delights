@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { VerifyCreditCard } from "../types";
+import { VerifyCreditCardType } from "../types";
 
 const useValidation = () => {
   const [isNameChecked, setIsNameChecked] = useState(false);
@@ -11,7 +11,9 @@ const useValidation = () => {
   >(false);
 
   const verifyName = (name: string) => {
-    if (!name.match(/^[A-Za-z\s]+$/)) {
+    if (
+      !name.match(/^[A-Za-z\u0400-\u04FF\u0500-\u052F\sąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+$/)
+    ) {
       setIsNameChecked(true);
       return false;
     }
@@ -21,7 +23,9 @@ const useValidation = () => {
   };
 
   const verifyLastName = (name: string) => {
-    if (!name.match(/^[A-Za-z\s]+$/)) {
+    if (
+      !name.match(/^[A-Za-z\u0400-\u04FF\u0500-\u052F\sąćęłńóśźżĄĆĘŁŃÓŚŹŻ]+$/)
+    ) {
       setIsLastNameChecked(true);
       return false;
     }
@@ -50,7 +54,7 @@ const useValidation = () => {
     return true;
   };
 
-  const verifyCreditCard: VerifyCreditCard = (name, value, ref) => {
+  const verifyCreditCard: VerifyCreditCardType = (name, value, ref) => {
     switch (name) {
       case "name":
         if (

@@ -1,8 +1,8 @@
 import { Hourglass } from "react-loader-spinner";
-import { Loader } from "../../types";
+import { LoaderType } from "../../types";
 import scss from "./Loader.module.scss";
 
-const Loader = ({ isVisible = true }: Loader) => {
+const Loader = ({ isVisible = true }: LoaderType) => {
   return (
     <>
       <Hourglass

@@ -3,7 +3,7 @@ import scss from "./CollectionsHeading.module.scss";
 const CollectionsHeadline = () => {
   return (
     <div className={scss.background}>
-      <div className={scss.wrapper}>
+      <div className={`container ${scss.wrapper}`}>
         <h1 className={scss.headline}>Collections</h1>
         <p className={scss.text}>
           Elevate Your Style with Our Diverse Range of Handcrafted Jewelry

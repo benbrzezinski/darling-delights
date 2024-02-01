@@ -16,7 +16,7 @@ const FeaturedProducts = () => {
   );
 
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       <section className={scss.headline}>
         <h2 className={scss.title}>Featured Products</h2>
         <p className={scss.text}>

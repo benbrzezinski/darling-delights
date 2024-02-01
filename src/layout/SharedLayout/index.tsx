@@ -140,7 +140,7 @@ const SharedLayout = () => {
         }
         onClick={handleScrollTop}
       />
-      <ToastContainer position="top-center" />
+      <ToastContainer />
     </>
   );
 };

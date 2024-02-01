@@ -6,14 +6,7 @@
   justify-content: center;
   align-items: stretch;
   gap: 35px;
-  max-width: 1400px;
   padding-block: 120px;
-  padding-inline: 50px;
-  margin: auto;
-
-  @include max-width(885px) {
-    padding-inline: 15px;
-  }
 }
 
 .headingBox {
@@ -36,14 +29,13 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-6);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
   margin-bottom: 8px;
 }
 
 .text {
   max-width: 500px;
-  line-height: 1.6;
   color: var(--cl-11);
   margin-bottom: 46px;
 }
@@ -59,10 +51,14 @@
   gap: 35px;
 
   @include max-width(1288px) {
-    grid-template-columns: repeat(2, 368px);
+    grid-template-columns: repeat(2, 364px);
   }
 
-  @include max-width(810px) {
+  @include max-width(876px) {
+    grid-template-columns: repeat(2, 310px);
+  }
+
+  @include max-width(768px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,7 +70,7 @@
   object-fit: cover;
   border-radius: var(--br-main);
 
-  @include max-width(810px) {
+  @include max-width(768px) {
     width: 100%;
   }
 }
@@ -89,7 +85,7 @@
     height: 460px;
   }
 
-  @include max-width(810px) {
+  @include max-width(768px) {
     width: 100%;
   }
 }

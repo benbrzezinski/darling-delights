@@ -27,7 +27,7 @@ const ShopProducts = () => {
   );
 
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       {currentProducts.length > 0 ? (
         <>
           <ul className={scss.products}>

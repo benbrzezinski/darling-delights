@@ -1,15 +1,7 @@
 @use "../../scss//index.scss" as *;
 
 .wrapper {
-  max-width: 1400px;
-  padding-top: 45px;
-  padding-inline: 50px;
-  padding-bottom: 100px;
-  margin: auto;
-
-  @include max-width(560px) {
-    padding-inline: 15px;
-  }
+  padding-bottom: 120px;
 }
 
 .headlineBox {
@@ -25,7 +17,7 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-6);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
 
   @include max-width(852px) {
@@ -38,7 +30,6 @@
 }
 
 .link {
-  line-height: 1.6;
   color: var(--cl-20);
 
   @include max-width(852px) {

@@ -5,18 +5,15 @@
   flex-direction: column;
   align-items: center;
   gap: 36px;
-  max-width: 1400px;
-  padding-top: 50px;
-  padding-bottom: 80px;
   padding-inline: 15px;
-  margin: auto;
+  padding-bottom: 90px;
 }
 
 .title {
   font-family: var(--ff-sec);
   font-weight: var(--fw-sec);
   font-size: var(--fs-6);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-12);
 
   @include min-width(1205px) {

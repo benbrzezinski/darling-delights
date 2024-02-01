@@ -17,7 +17,7 @@ const OurSelection = () => {
 
   return (
     <div className={scss.background}>
-      <div className={scss.wrapper}>
+      <div className={`container ${scss.wrapper}`}>
         <section className={scss.headline}>
           <h2 className={scss.title}>Our Selection of Jewelry</h2>
           <p className={scss.text}>

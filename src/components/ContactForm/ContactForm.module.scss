@@ -4,18 +4,6 @@
   background-color: var(--cl-7);
 }
 
-.wrapper {
-  max-width: 1400px;
-  padding-top: 70px;
-  padding-inline: 50px;
-  padding-bottom: 70px;
-  margin: auto;
-
-  @include max-width(500px) {
-    padding-inline: 15px;
-  }
-}
-
 .section {
   display: flex;
   justify-content: space-between;
@@ -49,7 +37,7 @@
   font-family: var(--ff-sec);
   font-weight: var(--fw-main);
   font-size: var(--fs-6);
-  line-height: 1.4;
+  line-height: var(--lh-sec);
   color: var(--cl-sec);
   margin-bottom: 10px;
 
@@ -61,7 +49,6 @@
 .label {
   font-weight: var(--fw-sec);
   font-size: var(--fs-sec);
-  line-height: 1.6;
   color: var(--cl-6);
   padding-left: 4px;
   margin-bottom: 4px;
@@ -69,7 +56,6 @@
 
 .input {
   background-color: var(--cl-4);
-  line-height: 1.6;
   color: var(--cl-11);
   border-top-left-radius: var(--br-main);
   border-top-right-radius: var(--br-main);
@@ -106,7 +92,6 @@
   justify-content: center;
   align-items: center;
   font-size: var(--fs-3);
-  line-height: 1.6;
   color: var(--cl-14);
   background-color: var(--cl-3);
   border: none;

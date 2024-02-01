@@ -3,7 +3,7 @@ import scss from "./Summer.module.scss";
 
 const Summer = () => {
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       <div className={scss.headingBox}>
         <section className={scss.heading}>
           <h2 className={scss.title}>Summer</h2>

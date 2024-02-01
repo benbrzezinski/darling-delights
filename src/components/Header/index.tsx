@@ -1,5 +1,5 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Header } from "../../types";
+import { HeaderType } from "../../types";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Header.module.scss";
@@ -9,14 +9,14 @@ const Header = ({
   openMobileMenu,
   openBasket,
   openFavourites,
-}: Header) => {
+}: HeaderType) => {
   const { pathname } = useLocation();
   const { basket, favourites } = useProducts();
   const { Hamburger, User, ShoppingCart, FavouritesHeartEmpty } = useIcons();
 
   return (
     <header className={scss.header}>
-      <div className={scss.wrapper}>
+      <div className={`container ${scss.wrapper}`}>
         <div className={scss.logoBox}>
           <Link to="/" className={scss.logo}>
             Darling.

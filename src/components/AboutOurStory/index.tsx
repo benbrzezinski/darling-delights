@@ -11,7 +11,7 @@ const AboutOurStory = () => {
   };
 
   return (
-    <div className={scss.wrapper}>
+    <div className={`container ${scss.wrapper}`}>
       <section className={scss.heading}>
         <h2 className={scss.title}>Our Story</h2>
         <p className={scss.text}>
