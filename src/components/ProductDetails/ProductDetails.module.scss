@@ -3,6 +3,7 @@
 .wrapper {
   display: flex;
   gap: 50px;
+  padding-top: 0;
 
   @include max-width(979px) {
     flex-direction: column;
@@ -27,6 +28,7 @@
 
 .imgBox {
   position: relative;
+  border-radius: var(--br-main);
   cursor: zoom-in;
 }
 

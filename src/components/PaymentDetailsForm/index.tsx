@@ -5,9 +5,11 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { FormEventHandler, useRef } from "react";
+import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import { LocationState } from "../../types";
+import { setIsUserAllowed } from "../../redux/auth/slice";
 import Selects from "../Selects";
 import useSelectsPropsStore from "../../hooks/useSelectsPropsStore";
 import useProducts from "../../hooks/useProducts";
@@ -41,6 +43,7 @@ const PaymentDetailsForm = () => {
   const { basket } = useProducts();
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const total = (location.state as LocationState)?.total;
 
@@ -69,6 +72,8 @@ const PaymentDetailsForm = () => {
       verifyEmail(email.value.trim());
       return;
     }
+
+    dispatch(setIsUserAllowed(true));
 
     navigate(`/summary${location.search}`, {
       state: {
@@ -116,6 +121,7 @@ const PaymentDetailsForm = () => {
     }
 
     const storeAddress = selectedStore.split(", ");
+    dispatch(setIsUserAllowed(true));
 
     navigate(`/summary${location.search}`, {
       state: {

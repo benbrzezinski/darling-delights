@@ -10,6 +10,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import authReducer from "./auth/slice";
 import productsReducer from "./products/slice";
 import filtersReducer from "./filters/slice";
 import pageReducer from "./page/slice";
@@ -27,6 +28,7 @@ const productsPersistReducer = persistReducer(
 
 const store = configureStore({
   reducer: {
+    auth: authReducer,
     products: productsPersistReducer,
     filters: filtersReducer,
     page: pageReducer,

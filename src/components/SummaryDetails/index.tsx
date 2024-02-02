@@ -3,13 +3,16 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { customAlphabet } from "nanoid";
-import { resetBasket } from "../../redux/products/slice";
 import { LocationState } from "../../types";
+import { resetBasket } from "../../redux/products/slice";
+import { setIsUserAllowed } from "../../redux/auth/slice";
+import useAuth from "../../hooks/useAuth";
 import useIcons from "../../hooks/useIcons";
 import scss from "./SummaryDetails.module.scss";
 
 const SummaryDetails = () => {
   const [searchParams] = useSearchParams();
+  const { isUserAllowed } = useAuth();
   const { Calendar, Customer, PaymentMethod, Receipt, Dollar, AddressCard } =
     useIcons();
   const dispatch = useDispatch();
@@ -19,6 +22,10 @@ const SummaryDetails = () => {
 
   useEffect(() => {
     dispatch(resetBasket());
+
+    return () => {
+      dispatch(setIsUserAllowed(false));
+    };
   }, [dispatch]);
 
   const addDaysAndFormatDate = (daysToAdd: number) => {
@@ -33,7 +40,7 @@ const SummaryDetails = () => {
     return `${day}/${month}/${year}`;
   };
 
-  return state?.basket ? (
+  return state?.basket && isUserAllowed ? (
     <div className={`container ${scss.wrapper}`}>
       <img
         className={scss.summaryImg}
@@ -56,8 +63,8 @@ const SummaryDetails = () => {
             </div>
             <p className={scss.summaryText}>
               {searchParams.get("delivery") === "home"
-                ? addDaysAndFormatDate(14)
-                : addDaysAndFormatDate(7)}
+                ? addDaysAndFormatDate(4)
+                : addDaysAndFormatDate(2)}
             </p>
           </li>
           <li className={scss.summaryItem}>
