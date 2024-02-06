@@ -18,10 +18,10 @@ import {
   MdOutlineCalendarMonth,
 } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
-import { RiSecurePaymentFill } from "react-icons/ri";
+import { RiSecurePaymentFill, RiInstagramFill } from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { PiEnvelopeSimpleLight } from "react-icons/pi";
-import { FaRegAddressCard, FaTiktok, FaInstagram } from "react-icons/fa";
+import { FaRegAddressCard, FaTiktok } from "react-icons/fa";
 import { FaFacebook, FaRegUser } from "react-icons/fa6";
 import { GiBigDiamondRing } from "react-icons/gi";
 import { FiPhoneCall } from "react-icons/fi";
@@ -117,7 +117,7 @@ const useIcons = () => {
 
   const Instagram = ({ className }: IconClass) => (
     <IconContext.Provider value={{ className }}>
-      <FaInstagram />
+      <RiInstagramFill />
     </IconContext.Provider>
   );
 

@@ -112,15 +112,6 @@ const Footer = () => {
         <ul className={scss.socialMedia}>
           <li>
             <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              <Instagram className={scss.icon} />
-            </a>
-          </li>
-          <li>
-            <a
               href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer nofollow"
@@ -135,6 +126,15 @@ const Footer = () => {
               rel="noopener noreferrer nofollow"
             >
               <TikTok className={scss.icon} />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+            >
+              <Instagram className={scss.icon} />
             </a>
           </li>
           <li>

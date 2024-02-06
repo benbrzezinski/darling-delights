@@ -169,6 +169,7 @@
 div.wrapperDown {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 0;
   padding-bottom: 25px;
 }
@@ -189,8 +190,8 @@ div.wrapperDown {
 
 .icon {
   color: var(--cl-4);
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   transition: color var(--duration) var(--timing-function);
 
   &:hover,

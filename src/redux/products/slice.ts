@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { toast } from "react-toastify";
 import { Product, ProductPayload } from "../../types";
-import products from "../../db/fake-products";
+import products from "../../db/products";
 
 const toastId = "ZxyMIR5nUlgzDuhSClL62";
 

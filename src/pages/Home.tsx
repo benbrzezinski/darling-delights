@@ -7,7 +7,7 @@ import OurCollections from "../components/OurCollections";
 import OurSelection from "../components/OurSelection";
 import OurStory from "../components/OurStory";
 import Feedbacks from "../components/Feedbacks";
-import feedbacks from "../db/fake-feedbacks";
+import feedbacks from "../db/feedbacks";
 
 const Home = () => {
   const feedbacksHome = feedbacks.filter(

@@ -6,7 +6,7 @@ import Description from "../components/Description";
 import OurAdvantages from "../components/OurAdvantages";
 import Suggestions from "../components/Suggestions";
 import Feedbacks from "../components/Feedbacks";
-import feedbacks from "../db/fake-feedbacks";
+import feedbacks from "../db/feedbacks";
 import BasketInfo from "../components/BasketInfo";
 
 const ShopDetails = () => {

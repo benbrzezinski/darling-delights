@@ -1,14 +1,55 @@
-@keyframes scale {
-  0% {
-    transform: scale(1);
+@keyframes bg-change {
+  25% {
+    background-image: url("/assets/images/heading-3.jpg");
+    background-position-y: 90%;
   }
+
+  50% {
+    background-image: url("/assets/images/heading-4.jpg");
+    background-position-y: 16%;
+  }
+
+  75% {
+    background-image: url("/assets/images/heading-2.jpg");
+    background-position-y: 30%;
+  }
+}
+
+@keyframes bg-scale {
+  24.99% {
+    background-size: 140%;
+  }
+
+  25% {
+    background-size: 100%;
+  }
+
+  49.99% {
+    background-size: 140%;
+  }
+
+  50% {
+    background-size: 100%;
+  }
+
+  74.99% {
+    background-size: 140%;
+  }
+
+  75% {
+    background-size: 100%;
+  }
+
+  99.99% {
+    background-size: 140%;
+  }
+}
+
+@keyframes scale {
   35% {
     transform: scale(1.2);
   }
   75% {
     transform: scale(0.8);
-  }
-  100% {
-    transform: scale(1);
   }
 }

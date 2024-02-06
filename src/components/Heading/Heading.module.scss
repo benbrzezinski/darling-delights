@@ -12,27 +12,29 @@
   }
 
   @include max-width(950px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    padding-top: 60px;
-    padding-bottom: 100px;
+    padding-block: 150px;
   }
 
-  @include max-width(768px) {
-    padding-top: 40px;
+  @include max-width(500px) {
+    padding-block: 70px;
   }
 }
 
 .hero {
   background-color: var(--cl-7);
-  background-image: url("/assets/svgs/hero-bg.svg");
+  background-image: url("/assets/images/heading-1.jpg");
+  background-position: center 15%;
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-blend-mode: exclusion;
+  animation: bg-change 60s steps(1) infinite, bg-scale 60s linear infinite;
 
   @include min-width(951px) {
     height: calc(100dvh - 72px);
+    background-image: url("/assets/svgs/hero-bg.svg");
+    background-position: center;
+    background-blend-mode: normal;
+    animation: none;
   }
 }
 
@@ -51,17 +53,12 @@
 .title {
   font-family: var(--ff-sec);
   font-weight: var(--fw-main);
-  font-size: var(--fs-8);
+  font-size: clamp(2.375rem, 0.9583rem + 7.0833vw, 4.5rem);
   line-height: 1.3;
   color: var(--cl-sec);
 
   @include max-width(950px) {
-    font-size: var(--fs-6);
     text-align: center;
-  }
-
-  @include max-width(384px) {
-    font-size: var(--fs-5);
   }
 }
 
@@ -85,13 +82,13 @@
   width: 400px;
   position: relative;
 
-  @include max-width(950px) {
+  @include max-width(951px) {
     width: auto;
     display: flex;
     gap: 30px;
   }
 
-  @include max-width(560px) {
+  @include max-width(950px) {
     display: none;
   }
 }
@@ -111,11 +108,6 @@
     width: 300px;
     top: -60px;
   }
-
-  @include max-width(950px) {
-    width: 250px;
-    position: static;
-  }
 }
 
 .imgSec {
@@ -134,13 +126,6 @@
     width: 150px;
     left: -130px;
     bottom: -100px;
-  }
-
-  @include max-width(950px) {
-    position: static;
-    width: 250px;
-    border-radius: var(--br-main);
-    box-shadow: none;
   }
 }
 
