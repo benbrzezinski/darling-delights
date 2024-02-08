@@ -29,10 +29,7 @@ const AboutOurStory = () => {
         controlsList="nodownload noremoteplayback noplaybackrate"
         poster="/assets/images/video-poster-2.jpg"
       >
-        <source
-          src="https://drive.google.com/uc?export=download&id=1L4gRIWo_c7c6ZOg4alId_gsfuLmdnxOH"
-          type="video/mp4"
-        />
+        <source src="/assets/videos/our-story.mp4" type="video/mp4" />
         Your browser does not support mp4 videos
       </video>
     </div>
