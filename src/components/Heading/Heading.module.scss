@@ -1,14 +1,13 @@
 @use "../../scss/index.scss" as *;
 
 .wrapper {
+  height: 100%;
   display: flex;
-  gap: 80px;
-  padding-top: 200px;
+  justify-content: start;
+  align-items: center;
 
-  @include max-width(1240px) {
+  @include max-width(1350px) {
     justify-content: center;
-    gap: 30px;
-    padding-top: 160px;
   }
 
   @include max-width(950px) {
@@ -22,19 +21,48 @@
 
 .hero {
   background-color: var(--cl-7);
-  background-image: url("/assets/images/heading-1.jpg");
-  background-position: center 15%;
+  background-image: url("/assets/images/heading-4.jpg");
+  background-position: center 16%;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-blend-mode: exclusion;
-  animation: bg-change 60s steps(1) infinite, bg-scale 60s linear infinite;
+  animation: bg-change 40s steps(1) infinite, bg-scale 40s linear infinite;
 
   @include min-width(951px) {
     height: calc(100dvh - 72px);
-    background-image: url("/assets/svgs/hero-bg.svg");
-    background-position: center;
-    background-blend-mode: normal;
+    background-image: none;
     animation: none;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("/assets/svgs/hero-bg.svg");
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+.imgBox {
+  position: absolute;
+  width: 650px;
+  top: 82px;
+  left: 50%;
+  bottom: 82px;
+  z-index: 1;
+  background-color: var(--cl-9);
+  background-image: url("/assets/images/heading-4.jpg");
+  background-size: 100%;
+  background-position: center 16%;
+  background-repeat: no-repeat;
+  border-radius: var(--br-5);
+  border: 1px solid #fff;
+  box-shadow: 0 8px 17px var(--cl-main), 0 0 2px var(--cl-main);
+  animation: bg-change 40s steps(1) infinite, bg-scale 40s linear infinite;
+
+  @include max-width(1350px) {
+    transform: translateX(-50%);
   }
 }
 
@@ -42,11 +70,15 @@
   max-width: 530px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
+  z-index: 2;
 
-  @include max-width(950px) {
+  @include max-width(1350px) {
     align-items: center;
-    gap: 20px;
+  }
+
+  @include min-width(951px) {
+    padding-bottom: 50px;
   }
 }
 
@@ -57,7 +89,7 @@
   line-height: 1.3;
   color: var(--cl-sec);
 
-  @include max-width(950px) {
+  @include max-width(1350px) {
     text-align: center;
   }
 }
@@ -75,57 +107,6 @@
   &:active {
     color: var(--cl-6);
     border-color: var(--cl-6);
-  }
-}
-
-.images {
-  width: 400px;
-  position: relative;
-
-  @include max-width(951px) {
-    width: auto;
-    display: flex;
-    gap: 30px;
-  }
-
-  @include max-width(950px) {
-    display: none;
-  }
-}
-
-.imgFirst {
-  width: 400px;
-  aspect-ratio: 2 / 3;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("/assets/images/heading-1.jpg");
-  background-color: var(--cl-9);
-  border-radius: var(--br-main);
-  position: absolute;
-  top: -100px;
-
-  @include max-width(1240px) {
-    width: 300px;
-    top: -60px;
-  }
-}
-
-.imgSec {
-  width: 240px;
-  aspect-ratio: 2 / 3;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("/assets/images/heading-2.jpg");
-  background-color: var(--cl-9);
-  border-radius: 120px 120px 0 0;
-  position: absolute;
-  right: -140px;
-  box-shadow: 0 8px 17px var(--cl-main), 0 0 2px var(--cl-main);
-
-  @include max-width(1240px) {
-    width: 150px;
-    left: -130px;
-    bottom: -100px;
   }
 }
 

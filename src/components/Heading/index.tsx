@@ -35,6 +35,7 @@ const Heading = () => {
 
   return (
     <div className={scss.hero} ref={heroRef}>
+      {isMediumScreen && <div className={scss.imgBox}></div>}
       <div className={`container ${scss.wrapper}`}>
         <section className={scss.heading}>
           <h1 className={scss.title}>
@@ -44,10 +45,6 @@ const Heading = () => {
             Shop now
           </Link>
         </section>
-        <div className={scss.images}>
-          <div className={scss.imgFirst}></div>
-          <div className={scss.imgSec}></div>
-        </div>
       </div>
       {isMediumScreen ? (
         <Lottie

@@ -1,11 +1,20 @@
 @use "../../scss/index.scss" as *;
 
 .background {
+  position: relative;
   background-color: var(--cl-7);
-  background-image: url("/assets/svgs/hero-bg.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    top: -72px;
+    pointer-events: none;
+    background-image: url("/assets/svgs/hero-bg.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 }
 
 .wrapper {

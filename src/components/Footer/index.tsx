@@ -108,7 +108,9 @@ const Footer = () => {
         </div>
       </div>
       <div className={`container ${scss.wrapperDown}`}>
-        <p className={scss.copyrightText}>© 2023 Darling, Inc.</p>
+        <p className={scss.copyrightText}>
+          © {new Date().getFullYear()} Darling, Inc.
+        </p>
         <ul className={scss.socialMedia}>
           <li>
             <a
