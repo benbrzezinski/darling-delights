@@ -22,7 +22,7 @@ const SharedLayout = () => {
   const [isBasketOpen, setIsBasketOpen] = useState(false);
   const [isFavouritesOpen, setIsFavouritesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const isSmallScreen = useMediaQuery({ query: "(max-width: 800px)" });
+  const isSmallScreen = useMediaQuery({ query: "(max-width: 950px)" });
 
   useEffect(() => {
     if (isMobileMenuOpen && isSmallScreen) {

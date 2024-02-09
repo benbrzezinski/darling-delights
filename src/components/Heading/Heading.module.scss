@@ -116,7 +116,7 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 15px;
-  z-index: 2;
+  z-index: 5;
   cursor: pointer;
   transition-property: transform, opacity;
   transition-duration: var(--duration), calc(var(--duration) + 250ms);

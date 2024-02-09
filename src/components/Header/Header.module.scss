@@ -13,7 +13,7 @@ div.wrapper {
 }
 
 .logoBox {
-  @include max-width(800px) {
+  @include max-width(950px) {
     flex: 1;
   }
 }
