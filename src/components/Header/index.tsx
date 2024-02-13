@@ -12,7 +12,8 @@ const Header = ({
 }: HeaderType) => {
   const { pathname } = useLocation();
   const { basket, favourites } = useProducts();
-  const { Hamburger, User, ShoppingCart, FavouritesHeartEmpty } = useIcons();
+  const { Hamburger, Location, User, ShoppingCart, FavouritesHeartEmpty } =
+    useIcons();
 
   return (
     <header className={scss.header}>
@@ -72,12 +73,22 @@ const Header = ({
         )}
         <div className={scss.iconsBox}>
           <NavLink
-            to="/login"
+            to="/location"
             className={({ isActive }) =>
-              isActive || pathname === "/registration" ? scss.isUserActive : ""
+              isActive ? scss.isIconActive : undefined
             }
           >
-            <User className={`${scss.icon} ${scss.user}`} />
+            <Location className={`${scss.icon} ${scss.symbol}`} />
+          </NavLink>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive || pathname === "/registration"
+                ? scss.isIconActive
+                : undefined
+            }
+          >
+            <User className={`${scss.icon} ${scss.symbol}`} />
           </NavLink>
           <button type="button" className={scss.btn} onClick={openBasket}>
             <ShoppingCart className={scss.icon} />
@@ -86,7 +97,7 @@ const Header = ({
             ) : null}
           </button>
           <button type="button" className={scss.btn} onClick={openFavourites}>
-            <FavouritesHeartEmpty className={`${scss.icon} ${scss.user}`} />
+            <FavouritesHeartEmpty className={`${scss.icon} ${scss.symbol}`} />
             {favourites.length > 0 ? (
               <p className={scss.quantityInfo}>{favourites.length}</p>
             ) : null}

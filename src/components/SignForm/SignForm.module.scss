@@ -9,10 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-block: 50px;
 
   @include max-width(768px) {
-    padding-bottom: 75px;
+    padding-bottom: 100px;
   }
 }
 
@@ -34,7 +33,7 @@
 .title {
   font-family: var(--ff-sec);
   font-weight: var(--fw-main);
-  font-size: var(--fs-7);
+  font-size: clamp(3rem, 2rem + 5vw, 4.5rem);
   line-height: var(--lh-sec);
   color: var(--cl-sec);
 }

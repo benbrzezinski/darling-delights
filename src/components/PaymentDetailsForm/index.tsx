@@ -298,7 +298,7 @@ const PaymentDetailsForm = () => {
         ) : (
           <Selects
             options={options}
-            handleSelect={option => handleSelect(option)}
+            handleSelect={handleSelect}
             handleValue={handleValue}
             width="100%"
           />

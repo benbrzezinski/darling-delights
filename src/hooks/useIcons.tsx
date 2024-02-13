@@ -28,6 +28,7 @@ import { FiPhoneCall } from "react-icons/fi";
 import { ImBin } from "react-icons/im";
 import { TfiReceipt } from "react-icons/tfi";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
+import { IoLocationOutline } from "react-icons/io5";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -211,6 +212,12 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Location = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <IoLocationOutline />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -242,6 +249,7 @@ const useIcons = () => {
     AddressCard,
     FavouritesHeartEmpty,
     FavouritesHeartFull,
+    Location,
   };
 };
 

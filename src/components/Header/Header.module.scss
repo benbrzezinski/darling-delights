@@ -8,12 +8,19 @@ div.wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 24px;
   padding-block: 15px;
+
+  @include max-width(354px) {
+    gap: 18px;
+  }
 }
 
 .logoBox {
+  min-width: 152px;
+
   @include max-width(950px) {
+    min-width: unset;
     flex: 1;
   }
 }
@@ -27,8 +34,8 @@ div.wrapper {
 
 .nav {
   display: flex;
+  align-items: center;
   gap: 40px;
-  padding-left: 13px;
 }
 
 .navItem {
@@ -62,7 +69,12 @@ div.wrapper {
 
 .iconsBox {
   display: flex;
+  align-items: center;
   gap: 24px;
+
+  @include max-width(354px) {
+    gap: 18px;
+  }
 }
 
 .btn {
@@ -73,8 +85,8 @@ div.wrapper {
 
 .icon {
   color: var(--cl-4);
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   transition: color var(--duration) var(--timing-function);
 
   &:hover,
@@ -83,12 +95,12 @@ div.wrapper {
   }
 }
 
-.user {
+.symbol {
   transform: translateY(1px);
 }
 
-.isUserActive {
-  & .user {
+.isIconActive {
+  & .symbol {
     color: var(--cl-3);
   }
 }
@@ -101,7 +113,7 @@ div.wrapper {
   border-radius: var(--br-sec);
   position: absolute;
   bottom: -10px;
-  left: 1px;
+  left: 2px;
   transform: translateX(-50%);
   font-size: calc(var(--fs-9) - 1px);
   background-color: var(--cl-16);

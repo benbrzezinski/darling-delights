@@ -1,0 +1,34 @@
+.wrapper {
+  min-height: 80dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.section {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.title {
+  font-family: var(--ff-sec);
+  font-weight: var(--fw-sec);
+  font-size: clamp(3rem, 2rem + 5vw, 4.5rem);
+  line-height: var(--lh-sec);
+  color: var(--cl-12);
+  text-align: center;
+}
+
+.map {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--cl-5);
+  border-radius: var(--br-4);
+  border: none;
+}

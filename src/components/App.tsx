@@ -16,6 +16,7 @@ const PaymentDetails = lazy(() => import("../pages/PaymentDetails"));
 const Summary = lazy(() => import("../pages/Summary"));
 const SignIn = lazy(() => import("../pages/SignIn"));
 const SignUp = lazy(() => import("../pages/SignUp"));
+const FindUs = lazy(() => import("../pages/FindUs"));
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
         <Route path="summary" element={<Summary />} />
         <Route path="login" element={<SignIn />} />
         <Route path="registration" element={<SignUp />} />
+        <Route path="location" element={<FindUs />} />
       </Route>
     </Routes>
   );

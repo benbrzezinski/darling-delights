@@ -37,8 +37,8 @@ const useSelectsPropsStore = () => {
         "China, Republic of China, 100007, Beijing, 789 Dongcheng Street, 8088",
     },
     {
-      value: "Japan, Kantō, 150-0002, Tokyo, 1-2-3 Shibuya, 12025",
-      label: "Japan, Kantō, 150-0002, Tokyo, 1-2-3 Shibuya, 12025",
+      value: "Japan, Kantō, 150-0002, Tokyo, Shibuya City, 2-chōme-19-12",
+      label: "Japan, Kantō, 150-0002, Tokyo, Shibuya City, 2-chōme-19-12",
     },
   ];
 
