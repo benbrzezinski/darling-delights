@@ -19,6 +19,6 @@
   width: 162px;
   height: 216px;
   object-fit: cover;
-  background-color: var(--cl-9);
   border-radius: var(--br-main);
+  @include bg-loading(var(--cl-9), #204641);
 }

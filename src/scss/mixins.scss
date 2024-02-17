@@ -15,3 +15,9 @@
     @content;
   }
 }
+
+@mixin bg-loading($color, $line) {
+  background-image: linear-gradient(to right, $color 0%, $line 10%, $color 20%);
+  background-size: 200%;
+  animation: bg-skeleton-loading 2s linear infinite;
+}

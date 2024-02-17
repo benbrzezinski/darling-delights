@@ -1,3 +1,5 @@
+@use "../../scss/index.scss" as *;
+
 .wrapper {
   min-height: 80dvh;
   display: flex;
@@ -28,7 +30,7 @@
 .map {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background-color: var(--cl-5);
   border-radius: var(--br-4);
   border: none;
+  @include bg-loading(var(--cl-5), #ebedf0);
 }

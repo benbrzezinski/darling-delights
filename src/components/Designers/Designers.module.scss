@@ -38,8 +38,8 @@
 .designerImg {
   object-fit: cover;
   aspect-ratio: 2 / 2.7;
-  background-color: var(--cl-5);
   border-radius: var(--br-main);
+  @include bg-loading(var(--cl-5), #ebedf0);
 }
 
 .nameBox {

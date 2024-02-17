@@ -55,6 +55,7 @@
 .images {
   width: 828px;
   position: relative;
+  z-index: 1;
 
   @include max-width(946px) {
     width: auto;

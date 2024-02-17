@@ -73,7 +73,7 @@
   min-width: 290px;
   aspect-ratio: 2 / 3;
   object-fit: cover;
-  background-color: var(--cl-8);
+  @include bg-loading(var(--cl-8), #235850);
 }
 
 .feedbackInfo {

@@ -12,8 +12,8 @@
 
 .summaryImg {
   object-fit: cover;
-  background-color: var(--cl-5);
   border-radius: var(--br-5);
+  @include bg-loading(var(--cl-5), #ebedf0);
   margin-bottom: 24px;
 
   @include max-width(330px) {
@@ -116,7 +116,7 @@
   }
 }
 
-.summaryBgImg {
+.summaryPaymentImg {
   width: 100px;
   height: 32px;
   background-repeat: no-repeat;
@@ -146,7 +146,7 @@
 }
 
 .basketSummary {
-  max-height: 340px;
+  max-height: 402px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -154,7 +154,7 @@
   overflow-x: hidden;
 
   @include max-width(664px) {
-    max-height: 396px;
+    max-height: 460px;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -199,7 +199,7 @@
   min-width: 94px;
   object-fit: cover;
   border-radius: var(--br-4);
-  background-color: var(--cl-5);
+  @include bg-loading(var(--cl-5), #ebedf0);
 
   @include max-width(664px) {
     width: 240px;

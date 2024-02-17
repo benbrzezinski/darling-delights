@@ -72,7 +72,7 @@ const SummaryDetails = () => {
               <Customer className={scss.summaryIcon} />
               <p className={scss.summaryName}>Customer</p>
             </div>
-            <p className={scss.summaryText}>{state.fullName}</p>
+            <p className={scss.summaryText}>{state.fullName.trim()}</p>
           </li>
           <li className={scss.summaryItem}>
             <div className={scss.summaryBox}>
@@ -80,7 +80,7 @@ const SummaryDetails = () => {
               <p className={scss.summaryName}>Payment Method</p>
             </div>
             <p
-              className={scss.summaryBgImg}
+              className={scss.summaryPaymentImg}
               style={{
                 backgroundImage:
                   searchParams.get("payment") === "credit"
@@ -110,13 +110,13 @@ const SummaryDetails = () => {
             </div>
             <div className={scss.summaryAddressBox}>
               <p className={scss.summaryText}>
-                {state.country}, {state.state}
+                {state.country.trim()}, {state.state.trim()}
               </p>
               <p className={scss.summaryText}>
-                {state.zipCode}, {state.city}
+                {state.zipCode.trim()}, {state.city.trim()}
               </p>
               <p className={scss.summaryText}>
-                {state.street}, {state.houseNumber}
+                {state.street.trim()}, {state.houseNumber.trim()}
               </p>
             </div>
           </li>

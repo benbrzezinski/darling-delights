@@ -136,7 +136,7 @@ $delay: 150ms;
   min-width: 94px;
   object-fit: cover;
   border-radius: var(--br-4);
-  background-color: var(--cl-5);
+  @include bg-loading(var(--cl-5), #ebedf0);
 }
 
 .basketProductInfoBox {

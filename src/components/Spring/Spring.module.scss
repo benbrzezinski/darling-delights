@@ -28,9 +28,9 @@
 }
 
 .headingImg {
-  background-color: var(--cl-5);
   object-fit: cover;
   border-radius: var(--br-main);
+  @include bg-loading(var(--cl-5), #ebedf0);
 
   @include max-width(768px) {
     width: 100%;
@@ -79,9 +79,9 @@
 }
 
 .img {
-  background-color: var(--cl-5);
   object-fit: cover;
   border-radius: var(--br-main);
+  @include bg-loading(var(--cl-5), #ebedf0);
 
   @include max-width(1288px) {
     height: 460px;

@@ -1,3 +1,5 @@
+@use "../mixins.scss" as *;
+
 %products {
   display: grid;
   grid-auto-flow: column;
@@ -6,8 +8,7 @@
   scroll-padding-inline: 5px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-inline: 5px;
-  padding-bottom: 5px;
+  padding: 5px;
 
   &::-webkit-scrollbar {
     width: 14px;
@@ -83,8 +84,8 @@
   object-fit: cover;
   border-top-left-radius: var(--br-main);
   border-top-right-radius: var(--br-main);
-  background-color: var(--cl-5);
   transition: transform var(--duration) var(--timing-function);
+  @include bg-loading(var(--cl-5), #ebedf0);
 
   &:hover,
   :focus-visible {

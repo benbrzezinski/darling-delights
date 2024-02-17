@@ -29,7 +29,7 @@
 }
 
 .basketSummary {
-  max-height: 400px;
+  max-height: 460px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -37,7 +37,7 @@
   overflow-x: hidden;
 
   @include max-width(664px) {
-    max-height: 437px;
+    max-height: 500px;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -82,7 +82,7 @@
   min-width: 120px;
   object-fit: cover;
   border-radius: var(--br-4);
-  background-color: var(--cl-5);
+  @include bg-loading(var(--cl-5), #ebedf0);
 
   @include max-width(664px) {
     width: 240px;

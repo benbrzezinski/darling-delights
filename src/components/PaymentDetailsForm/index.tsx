@@ -210,8 +210,8 @@ const PaymentDetailsForm = () => {
                   id={ID.current.country}
                   placeholder="USA"
                   required
-                  pattern="\S(.*\S)?"
-                  title="There cannot be any spaces at the beginning and end"
+                  pattern="/[^ ]/"
+                  title="There should be at least one character"
                 />
               </div>
               <div className={scss.inputBox}>
@@ -225,8 +225,8 @@ const PaymentDetailsForm = () => {
                   id={ID.current.state}
                   placeholder="NY"
                   required
-                  pattern="\S(.*\S)?"
-                  title="There cannot be any spaces at the beginning and end"
+                  pattern="/[^ ]/"
+                  title="There should be at least one character"
                 />
               </div>
             </div>
@@ -242,8 +242,8 @@ const PaymentDetailsForm = () => {
                   id={ID.current.city}
                   placeholder="New York"
                   required
-                  pattern="\S(.*\S)?"
-                  title="There cannot be any spaces at the beginning and end"
+                  pattern="/[^ ]/"
+                  title="There should be at least one character"
                 />
               </div>
               <div className={scss.inputBox}>
@@ -257,8 +257,8 @@ const PaymentDetailsForm = () => {
                   id={ID.current.zipCode}
                   placeholder="10014"
                   required
-                  pattern="\S(.*\S)?"
-                  title="There cannot be any spaces at the beginning and end"
+                  pattern="/[^ ]/"
+                  title="There should be at least one character"
                 />
               </div>
             </div>
@@ -274,8 +274,8 @@ const PaymentDetailsForm = () => {
                   id={ID.current.street}
                   placeholder="495 Grove Street"
                   required
-                  pattern="\S(.*\S)?"
-                  title="There cannot be any spaces at the beginning and end"
+                  pattern="/[^ ]/"
+                  title="There should be at least one character"
                 />
               </div>
               <div className={scss.inputBox}>
@@ -289,8 +289,8 @@ const PaymentDetailsForm = () => {
                   id={ID.current.houseNumber}
                   placeholder="Apt #20"
                   required
-                  pattern="\S(.*\S)?"
-                  title="There cannot be any spaces at the beginning and end"
+                  pattern="/[^ ]/"
+                  title="There should be at least one character"
                 />
               </div>
             </div>
