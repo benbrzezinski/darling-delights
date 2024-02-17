@@ -128,7 +128,10 @@ const useSelectsPropsStore = () => {
   const handleSelect = (option: SingleValue<OptionType>) => {
     if (option) {
       setSelectedStore(option.value);
-      setCoordinates(option.coordinates);
+
+      if (option.coordinates) {
+        setCoordinates(option.coordinates);
+      }
     }
   };
 
@@ -138,9 +141,9 @@ const useSelectsPropsStore = () => {
     if (option) return option;
 
     return {
-      value: "",
+      value: selectedStore,
       label: "Store Address",
-      coordinates: { lat: 0, lng: 0 },
+      coordinates,
     };
   };
 

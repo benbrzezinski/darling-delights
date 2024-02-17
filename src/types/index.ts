@@ -101,7 +101,7 @@ export interface IconClass {
 export interface OptionType {
   value: string;
   label: string;
-  coordinates: { lat: number; lng: number };
+  coordinates?: { lat: number; lng: number };
 }
 
 export interface OptionTypeObj {
