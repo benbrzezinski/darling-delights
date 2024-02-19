@@ -5,11 +5,9 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { FormEventHandler, useRef } from "react";
-import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import { LocationState } from "../../types";
-import { setIsUserAllowed } from "../../redux/auth/slice";
 import Selects from "../Selects";
 import useSelectsPropsStore from "../../hooks/useSelectsPropsStore";
 import useProducts from "../../hooks/useProducts";
@@ -43,7 +41,6 @@ const PaymentDetailsForm = () => {
   const { basket } = useProducts();
   const location = useLocation();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const total = (location.state as LocationState)?.total;
 
@@ -73,7 +70,19 @@ const PaymentDetailsForm = () => {
       return;
     }
 
-    dispatch(setIsUserAllowed(true));
+    if (
+      !country.value.trim() ||
+      !state.value.trim() ||
+      !city.value.trim() ||
+      !zipCode.value.trim() ||
+      !street.value.trim() ||
+      !houseNumber.value.trim()
+    ) {
+      toast.warning("Please ensure all fields are filled out", {
+        toastId: ID.current.toastWarning,
+      });
+      return;
+    }
 
     navigate(`/summary${location.search}`, {
       state: {
@@ -114,14 +123,13 @@ const PaymentDetailsForm = () => {
     );
 
     if (isStoreNotSelected) {
-      toast.warning("Choose store address", {
+      toast.warning("Please select your desired store address", {
         toastId: ID.current.toastWarning,
       });
       return;
     }
 
     const storeAddress = selectedStore.split(", ");
-    dispatch(setIsUserAllowed(true));
 
     navigate(`/summary${location.search}`, {
       state: {
@@ -210,8 +218,6 @@ const PaymentDetailsForm = () => {
                   id={ID.current.country}
                   placeholder="USA"
                   required
-                  pattern="/[^ ]/"
-                  title="There should be at least one character"
                 />
               </div>
               <div className={scss.inputBox}>
@@ -225,8 +231,6 @@ const PaymentDetailsForm = () => {
                   id={ID.current.state}
                   placeholder="NY"
                   required
-                  pattern="/[^ ]/"
-                  title="There should be at least one character"
                 />
               </div>
             </div>
@@ -242,8 +246,6 @@ const PaymentDetailsForm = () => {
                   id={ID.current.city}
                   placeholder="New York"
                   required
-                  pattern="/[^ ]/"
-                  title="There should be at least one character"
                 />
               </div>
               <div className={scss.inputBox}>
@@ -257,8 +259,6 @@ const PaymentDetailsForm = () => {
                   id={ID.current.zipCode}
                   placeholder="10014"
                   required
-                  pattern="/[^ ]/"
-                  title="There should be at least one character"
                 />
               </div>
             </div>
@@ -274,8 +274,6 @@ const PaymentDetailsForm = () => {
                   id={ID.current.street}
                   placeholder="495 Grove Street"
                   required
-                  pattern="/[^ ]/"
-                  title="There should be at least one character"
                 />
               </div>
               <div className={scss.inputBox}>
@@ -289,8 +287,6 @@ const PaymentDetailsForm = () => {
                   id={ID.current.houseNumber}
                   placeholder="Apt #20"
                   required
-                  pattern="/[^ ]/"
-                  title="There should be at least one character"
                 />
               </div>
             </div>

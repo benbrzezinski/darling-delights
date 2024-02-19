@@ -126,12 +126,9 @@ const useSelectsPropsStore = () => {
   ];
 
   const handleSelect = (option: SingleValue<OptionType>) => {
-    if (option) {
+    if (option && option.coordinates) {
       setSelectedStore(option.value);
-
-      if (option.coordinates) {
-        setCoordinates(option.coordinates);
-      }
+      setCoordinates(option.coordinates);
     }
   };
 

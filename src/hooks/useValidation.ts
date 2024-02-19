@@ -54,7 +54,7 @@ const useValidation = () => {
     return true;
   };
 
-  const verifyCreditCard: VerifyCreditCardType = (name, value, ref) => {
+  const verifyCreditCard: VerifyCreditCardType = (name, value, inputRef) => {
     switch (name) {
       case "name":
         if (
@@ -63,7 +63,7 @@ const useValidation = () => {
           )
         ) {
           setIsCreditCardChecked("Provided name is invalid");
-          if (ref) ref.focus();
+          if (inputRef) inputRef.focus();
           return true;
         }
         break;
@@ -75,32 +75,30 @@ const useValidation = () => {
           )
         ) {
           setIsCreditCardChecked("Card number is invalid");
-          if (ref) ref.focus();
+          if (inputRef) inputRef.focus();
           return true;
         }
         break;
 
       case "month":
-        if (value.length !== 2 || Number(value) < 1 || Number(value) > 12) {
+        if (Number(value) < 1 || Number(value) > 12) {
           setIsCreditCardChecked(
             "Expiry month is invalid, allowed values are 01-12"
           );
-          if (ref) ref.focus();
+          if (inputRef) inputRef.focus();
           return true;
         }
         break;
 
       case "year": {
         const year = new Date();
+        const fillString = year.getFullYear().toString().slice(0, 2);
 
-        if (
-          value.length !== 2 ||
-          year.getFullYear() > Number(value.padStart(4, "20"))
-        ) {
+        if (year.getFullYear() > Number(value.padStart(4, fillString))) {
           setIsCreditCardChecked(
             "Expiry year is invalid, it cannot be in the past"
           );
-          if (ref) ref.focus();
+          if (inputRef) inputRef.focus();
           return true;
         }
         break;
@@ -109,7 +107,7 @@ const useValidation = () => {
       case "cvc":
         if (value.length !== 3) {
           setIsCreditCardChecked("CVC is invalid");
-          if (ref) ref.focus();
+          if (inputRef) inputRef.focus();
           return true;
         }
         break;

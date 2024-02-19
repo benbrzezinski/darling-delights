@@ -61,7 +61,7 @@ const BasketPayment = () => {
 
   const handleFocusNextInput = (name: keyof InputRefsType) => {
     const ref = inputRefs[name];
-    if (ref && ref.current) ref.current.focus();
+    if (ref.current) ref.current.focus();
   };
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
@@ -115,7 +115,7 @@ const BasketPayment = () => {
     }
 
     if (new Date(`${values.month}/01/${values.year}`) < new Date()) {
-      toast.warning("Date cannot be in the past", {
+      toast.warning("Please provide a date in the future", {
         toastId: ID.current.toastDate,
       });
       return;
@@ -125,7 +125,7 @@ const BasketPayment = () => {
       searchParams.get("delivery") !== "home" &&
       searchParams.get("delivery") !== "store"
     ) {
-      toast.warning("Choose your delivery method", {
+      toast.warning("Please indicate your preferred delivery method", {
         toastId: ID.current.toastDelivery,
       });
       return;
@@ -141,7 +141,7 @@ const BasketPayment = () => {
       searchParams.get("delivery") !== "home" &&
       searchParams.get("delivery") !== "store"
     ) {
-      toast.warning("Choose your delivery method", {
+      toast.warning("Please indicate your preferred delivery method", {
         toastId: ID.current.toastDelivery,
       });
       return;
@@ -233,14 +233,15 @@ const BasketPayment = () => {
                     onChange={handleChange}
                     onFocus={handleFocusInput}
                     onBlur={e => {
-                      verifyCreditCard("month", e.target.value);
+                      verifyCreditCard(
+                        "month",
+                        e.target.value.padStart(2, "0")
+                      );
 
-                      if (Number(e.target.value) !== 0) {
-                        setValues(v => ({
-                          ...v,
-                          [e.target.name]: e.target.value.padStart(2, "0"),
-                        }));
-                      }
+                      setValues(v => ({
+                        ...v,
+                        [e.target.name]: e.target.value.padStart(2, "0"),
+                      }));
                     }}
                   />
                   <input
@@ -255,14 +256,12 @@ const BasketPayment = () => {
                     onChange={handleChange}
                     onFocus={handleFocusInput}
                     onBlur={e => {
-                      verifyCreditCard("year", e.target.value);
+                      verifyCreditCard("year", e.target.value.padStart(2, "0"));
 
-                      if (Number(e.target.value) !== 0) {
-                        setValues(v => ({
-                          ...v,
-                          [e.target.name]: e.target.value.padStart(2, "0"),
-                        }));
-                      }
+                      setValues(v => ({
+                        ...v,
+                        [e.target.name]: e.target.value.padStart(2, "0"),
+                      }));
                     }}
                   />
                   <input

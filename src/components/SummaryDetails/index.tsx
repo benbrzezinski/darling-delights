@@ -5,14 +5,11 @@ import { useMediaQuery } from "react-responsive";
 import { customAlphabet } from "nanoid";
 import { LocationState } from "../../types";
 import { resetBasket } from "../../redux/products/slice";
-import { setIsUserAllowed } from "../../redux/auth/slice";
-import useAuth from "../../hooks/useAuth";
 import useIcons from "../../hooks/useIcons";
 import scss from "./SummaryDetails.module.scss";
 
 const SummaryDetails = () => {
   const [searchParams] = useSearchParams();
-  const { isUserAllowed } = useAuth();
   const { Calendar, Customer, PaymentMethod, Receipt, Dollar, AddressCard } =
     useIcons();
   const dispatch = useDispatch();
@@ -22,10 +19,6 @@ const SummaryDetails = () => {
 
   useEffect(() => {
     dispatch(resetBasket());
-
-    return () => {
-      dispatch(setIsUserAllowed(false));
-    };
   }, [dispatch]);
 
   const addDaysAndFormatDate = (daysToAdd: number) => {
@@ -40,7 +33,7 @@ const SummaryDetails = () => {
     return `${day}/${month}/${year}`;
   };
 
-  return state?.basket && isUserAllowed ? (
+  return state?.basket ? (
     <div className={`container ${scss.wrapper}`}>
       <img
         className={scss.summaryImg}

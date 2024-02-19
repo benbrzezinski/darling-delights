@@ -17,8 +17,10 @@ const VoucherSummary = () => {
     (acc, { price, quantity }) => price * Number(quantity) + acc,
     0
   );
+
   const discount = voucherConfirmed === "y" ? 25 : 0;
   const deliveryFee = searchParams.get("delivery") === "home" ? 5 : 0;
+
   const warrantyFee = !searchParams.get("warranty")
     ? 0
     : searchParams.get("warranty") === "1"
@@ -26,6 +28,7 @@ const VoucherSummary = () => {
     : searchParams.get("warranty") === "2"
     ? 20
     : 0;
+
   const careFee = !searchParams.get("care")
     ? 0
     : searchParams.get("care") === "basic"
@@ -33,6 +36,7 @@ const VoucherSummary = () => {
     : searchParams.get("care") === "premium"
     ? 6
     : 0;
+
   const totalFee = deliveryFee + warrantyFee + careFee;
   const total = subtotal - discount + totalFee;
 
@@ -42,6 +46,7 @@ const VoucherSummary = () => {
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = e => {
     e.preventDefault();
+
     const form = e.currentTarget;
     const voucher = form.elements.namedItem("voucher") as HTMLInputElement;
 
