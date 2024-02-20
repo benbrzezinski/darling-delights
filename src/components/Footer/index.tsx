@@ -21,6 +21,7 @@ const Footer = () => {
     const email = form.elements.namedItem("email") as HTMLInputElement;
 
     if (!verifyEmail(email.value.trim())) {
+      email.focus();
       return;
     }
 

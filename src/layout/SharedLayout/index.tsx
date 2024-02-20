@@ -2,8 +2,7 @@ import Lottie from "lottie-react";
 import { useState, useEffect, Suspense, MouseEvent } from "react";
 import { Outlet } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
+import { ToastContainer, Zoom } from "react-toastify";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import throttle from "lodash.throttle";
 import Header from "../../components/Header";
@@ -140,7 +139,15 @@ const SharedLayout = () => {
         }
         onClick={handleScrollTop}
       />
-      <ToastContainer />
+      <ToastContainer
+        className={scss.toastContainer}
+        bodyClassName={scss.toastBody}
+        autoClose={10000}
+        draggablePercent={50}
+        limit={3}
+        transition={Zoom}
+        closeOnClick
+      />
     </>
   );
 };

@@ -1,3 +1,5 @@
+@use "../../scss/index.scss" as *;
+
 .scrollUp {
   width: 50px;
   position: fixed;
@@ -14,4 +16,15 @@
     opacity: 0;
     pointer-events: none;
   }
+}
+
+div.toastContainer {
+  @include min-width(481px) {
+    width: fit-content;
+  }
+}
+
+div.toastBody {
+  font-family: var(--ff-main);
+  line-height: var(--lh-sec);
 }

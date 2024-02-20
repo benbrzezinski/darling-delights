@@ -1,4 +1,5 @@
 @use "./scss/index.scss" as *;
+@import "react-toastify/dist/ReactToastify.min.css";
 @import "react-responsive-carousel/lib/styles/carousel.min.css";
 @import "yet-another-react-lightbox/styles.css";
 @import "yet-another-react-lightbox/plugins/counter.css";
@@ -86,6 +87,10 @@ button.control-prev {
 button.control-next {
   border-top-right-radius: var(--br-main);
   border-bottom-right-radius: var(--br-main);
+}
+
+div.Toastify__toast {
+  min-height: 72px;
 }
 
 div.rccs {

@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { toast } from "react-toastify";
+import { nanoid } from "nanoid";
 import { Product, ProductPayload } from "../../types";
 import products from "../../db/products";
 
-const toastId = "ZxyMIR5nUlgzDuhSClL62";
+const toastId = nanoid();
 
 const initialState = {
   items: products,
@@ -36,6 +37,7 @@ const productsSlice = createSlice({
           state.basket.splice(i, 1);
           toast.success("Removed from the basket", {
             toastId,
+            autoClose: 5000,
           });
         }
       }
