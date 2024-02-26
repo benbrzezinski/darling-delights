@@ -29,6 +29,7 @@ import { ImBin } from "react-icons/im";
 import { TfiReceipt } from "react-icons/tfi";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
+import { GrPowerReset } from "react-icons/gr";
 import { IconClass } from "../types";
 
 const useIcons = () => {
@@ -218,6 +219,12 @@ const useIcons = () => {
     </IconContext.Provider>
   );
 
+  const Reset = ({ className }: IconClass) => (
+    <IconContext.Provider value={{ className }}>
+      <GrPowerReset />
+    </IconContext.Provider>
+  );
+
   return {
     Hamburger,
     Close,
@@ -250,6 +257,7 @@ const useIcons = () => {
     FavouritesHeartEmpty,
     FavouritesHeartFull,
     Location,
+    Reset,
   };
 };
 

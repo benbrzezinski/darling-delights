@@ -1,4 +1,5 @@
 export enum ProductType {
+  Default = "",
   Ring = "RING",
   Bracelet = "BRACELET",
   Necklace = "NECKLACE",
@@ -12,6 +13,14 @@ export enum ProductPlacement {
   Shop = "SHOP",
   CollectionSummer = "COLLECTION_SUMMER",
   CollectionSpring = "COLLECTION_SPRING",
+}
+
+export enum SortingMethod {
+  Default = "",
+  Ascending = "ASC",
+  Descending = "DESC",
+  Alphabetically = "A-Z",
+  NonAlphabetically = "Z-A",
 }
 
 export enum FeedbackPlacement {

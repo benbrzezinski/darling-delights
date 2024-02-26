@@ -119,7 +119,7 @@
   z-index: 5;
   cursor: pointer;
   transition-property: transform, opacity;
-  transition-duration: var(--duration), calc(var(--duration) + 250ms);
+  transition-duration: calc(var(--duration) * 2);
   transition-timing-function: var(--timing-function);
 
   &.notVisible {

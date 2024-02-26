@@ -82,11 +82,8 @@
   width: 24px;
   height: 24px;
   position: absolute;
-  top: 15px;
+  top: 50%;
   left: 16px;
+  transform: translateY(-50%);
   transition: color var(--duration) var(--timing-function);
-
-  @include max-width(428px) {
-    top: 13px;
-  }
 }

@@ -630,7 +630,7 @@ const products: Product[] = [
     code: "23561",
     type: ProductType.Bracelet,
     name: "Astonishing Bracelet",
-    price: 89.99,
+    price: 150.25,
     img: "https://i.ibb.co/8c1QC7W/shop-26.jpg",
     size: "",
     quantity: "",

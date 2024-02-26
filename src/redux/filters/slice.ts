@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ProductType, SortingMethod } from "../../types/enums";
 
 const initialState = {
   searcher: "",
-  productType: "",
-  sortedPrice: "",
+  productType: "" as ProductType,
+  sortingMethod: "" as SortingMethod,
 };
 
 const filtersSlice = createSlice({
@@ -13,17 +14,17 @@ const filtersSlice = createSlice({
     setSearcher: (state, action: PayloadAction<string>) => {
       state.searcher = action.payload;
     },
-    setProductType: (state, action: PayloadAction<string>) => {
+    setProductType: (state, action: PayloadAction<ProductType>) => {
       state.productType = action.payload;
     },
-    setSortedPrice: (state, action: PayloadAction<string>) => {
-      state.sortedPrice = action.payload;
+    setSortingMethod: (state, action: PayloadAction<SortingMethod>) => {
+      state.sortingMethod = action.payload;
     },
   },
 });
 
 const filtersReducer = filtersSlice.reducer;
-export const { setSearcher, setProductType, setSortedPrice } =
+export const { setSearcher, setProductType, setSortingMethod } =
   filtersSlice.actions;
 
 export default filtersReducer;

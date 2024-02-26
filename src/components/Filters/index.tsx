@@ -1,35 +1,69 @@
+import { ChangeEventHandler, MouseEventHandler } from "react";
 import { SingleValue } from "react-select";
-import { ChangeEventHandler } from "react";
 import { useDispatch } from "react-redux";
-import { setProductType, setSortedPrice } from "../../redux/filters/slice";
+import { setProductType, setSortingMethod } from "../../redux/filters/slice";
 import { OptionType } from "../../types";
-import { ProductType } from "../../types/enums";
+import { ProductType, SortingMethod } from "../../types/enums";
 import Selects from "../Selects";
 import useFilters from "../../hooks/useFilters";
+import useIcons from "../../hooks/useIcons";
 import scss from "./Filters.module.scss";
 
 const Filters = () => {
+  const { productType, sortingMethod } = useFilters();
+  const { Reset } = useIcons();
   const dispatch = useDispatch();
-  const { productType, sortedPrice } = useFilters();
 
   const options: OptionType[] = [
-    { value: "asc", label: "Lowest to Highest" },
-    { value: "desc", label: "Highest to Lowest" },
+    {
+      value: SortingMethod.Ascending,
+      label: "Sort by price: to highest",
+    },
+    {
+      value: SortingMethod.Descending,
+      label: "Sort by price: to lowest",
+    },
+    {
+      value: SortingMethod.Alphabetically,
+      label: "Sort by name: A-Z",
+    },
+    {
+      value: SortingMethod.NonAlphabetically,
+      label: "Sort by name: Z-A",
+    },
   ];
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
-    const productType = e.target.dataset.type;
-    if (productType !== undefined) dispatch(setProductType(productType));
+    const productTypeData = e.target.dataset.type as ProductType | undefined;
+    if (productTypeData !== undefined) {
+      dispatch(setProductType(productTypeData));
+    }
   };
 
   const handleSelect = (option: SingleValue<OptionType>) => {
-    if (option) dispatch(setSortedPrice(option.value));
+    if (option) {
+      const optionValue = option.value as SortingMethod;
+      dispatch(setSortingMethod(optionValue));
+    }
   };
 
-  const handleDefaultValue = () => {
-    const option = options.find(({ value }) => value === sortedPrice);
+  const handleValue = () => {
+    const option = options.find(item => {
+      const optionValue = item.value as SortingMethod;
+      if (optionValue === sortingMethod) return item;
+    });
+
     if (option) return option;
-    return { value: "", label: "Sort by price" };
+    return { value: SortingMethod.Default, label: "Filters" };
+  };
+
+  const handleClearFilters: MouseEventHandler<HTMLButtonElement> = e => {
+    const btn = e.currentTarget;
+    btn.classList.add(scss.rotate);
+    dispatch(setSortingMethod(SortingMethod.Default));
+    setTimeout(() => {
+      btn.classList.remove(scss.rotate);
+    }, 300);
   };
 
   return (
@@ -41,8 +75,8 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              defaultChecked={productType === ""}
-              data-type=""
+              checked={productType === ProductType.Default}
+              data-type={ProductType.Default}
               onChange={handleChange}
             />
             All
@@ -54,7 +88,7 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              defaultChecked={productType === "RING"}
+              checked={productType === ProductType.Ring}
               data-type={ProductType.Ring}
               onChange={handleChange}
             />
@@ -67,7 +101,7 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              defaultChecked={productType === "BRACELET"}
+              checked={productType === ProductType.Bracelet}
               data-type={ProductType.Bracelet}
               onChange={handleChange}
             />
@@ -80,7 +114,7 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              defaultChecked={productType === "NECKLACE"}
+              checked={productType === ProductType.Necklace}
               data-type={ProductType.Necklace}
               onChange={handleChange}
             />
@@ -93,7 +127,7 @@ const Filters = () => {
               type="radio"
               name="filter"
               className={scss.radio}
-              defaultChecked={productType === "EARRING"}
+              checked={productType === ProductType.Earring}
               data-type={ProductType.Earring}
               onChange={handleChange}
             />
@@ -101,12 +135,26 @@ const Filters = () => {
           </label>
         </li>
       </ul>
-      <Selects
-        options={options}
-        handleSelect={handleSelect}
-        handleValue={handleDefaultValue}
-        width="190px"
-      />
+      <div className={scss.filtersBox}>
+        <Selects
+          options={options}
+          handleSelect={handleSelect}
+          handleValue={handleValue}
+          width="200px"
+        />
+        <button
+          className={scss.clearFiltersBtn}
+          style={{
+            backgroundColor: sortingMethod ? "var(--cl-12)" : "var(--cl-10)",
+          }}
+          type="button"
+          title="Clear Filters"
+          onClick={handleClearFilters}
+          disabled={sortingMethod ? false : true}
+        >
+          <Reset className={scss.clearFiltersIcon} />
+        </button>
+      </div>
     </div>
   );
 };

@@ -74,6 +74,7 @@ const Header = ({
         <div className={scss.iconsBox}>
           <NavLink
             to="/location"
+            title="Find Us"
             className={({ isActive }) =>
               isActive ? scss.isIconActive : undefined
             }
@@ -82,6 +83,7 @@ const Header = ({
           </NavLink>
           <NavLink
             to="/login"
+            title="User"
             className={({ isActive }) =>
               isActive || pathname === "/registration"
                 ? scss.isIconActive
@@ -90,13 +92,23 @@ const Header = ({
           >
             <User className={`${scss.icon} ${scss.symbol}`} />
           </NavLink>
-          <button type="button" className={scss.btn} onClick={openBasket}>
+          <button
+            type="button"
+            title="Basket"
+            className={scss.btn}
+            onClick={openBasket}
+          >
             <ShoppingCart className={scss.icon} />
             {basket.length > 0 ? (
               <p className={scss.quantityInfo}>{basket.length}</p>
             ) : null}
           </button>
-          <button type="button" className={scss.btn} onClick={openFavourites}>
+          <button
+            type="button"
+            title="Favourites"
+            className={scss.btn}
+            onClick={openFavourites}
+          >
             <FavouritesHeartEmpty className={`${scss.icon} ${scss.symbol}`} />
             {favourites.length > 0 ? (
               <p className={scss.quantityInfo}>{favourites.length}</p>

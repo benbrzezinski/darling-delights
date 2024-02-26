@@ -16,7 +16,8 @@ const Selects = ({
         container: baseStyles => ({
           ...baseStyles,
           width,
-          lineHeight: "1.18",
+          lineHeight: 1.4,
+          zIndex: 2,
 
           "&::after": {
             content: '""',
@@ -39,17 +40,17 @@ const Selects = ({
         menuList: baseStyles => ({
           ...baseStyles,
           boxShadow: "0px 0px 1px var(--cl-5), 0px 0px 2px var(--cl-5)",
-          borderRadius: "4px",
+          borderRadius: "var(--br-4)",
           padding: 0,
         }),
         option: (baseStyles, state) => ({
           ...baseStyles,
-          color: state.isFocused ? "#fff" : "#000",
-          backgroundColor: state.isFocused ? "#0d554a" : "#fff",
+          color: state.isFocused ? "var(--cl-4)" : "var(--cl-main)",
+          backgroundColor: state.isFocused ? "var(--cl-12)" : "var(--cl-4)",
           cursor: "pointer",
 
           "&:active": {
-            backgroundColor: "#0d554a",
+            backgroundColor: "var(--cl-12)",
           },
         }),
         indicatorSeparator: baseStyles => ({

@@ -3,9 +3,9 @@ import { RootState } from "../store";
 import {
   selectSearcher,
   selectProductType,
-  selectSortedPrice,
+  selectSortingMethod,
 } from "../filters/selectors";
-import { ProductPlacement } from "../../types/enums";
+import { ProductPlacement, SortingMethod } from "../../types/enums";
 
 export const selectProducts = (state: RootState) => state.products.items;
 
@@ -19,25 +19,35 @@ export const selectIsBasketInfoOpen = (state: RootState) =>
 export const selectTotal = (state: RootState) => state.products.total;
 
 export const selectFilteredProducts = createSelector(
-  [selectProducts, selectSearcher, selectProductType, selectSortedPrice],
-  (products, searcher, productType, sortedPrice) => {
-    const filtered = products
-      .filter(({ placement }) => placement.includes(ProductPlacement.Shop))
-      .filter(({ name }) =>
-        name.toLocaleLowerCase().includes(searcher.toLocaleLowerCase().trim())
-      )
-      .filter(({ type }) => type.startsWith(productType));
+  [selectProducts, selectSearcher, selectProductType, selectSortingMethod],
+  (products, searcher, productType, sortingMethod) => {
+    const filtered = products.filter(
+      ({ placement, name, type }) =>
+        placement.includes(ProductPlacement.Shop) &&
+        name
+          .toLocaleLowerCase()
+          .includes(searcher.toLocaleLowerCase().trim()) &&
+        type.startsWith(productType)
+    );
 
-    if (sortedPrice) {
-      if (sortedPrice === "asc") {
+    switch (sortingMethod) {
+      case SortingMethod.Default:
+        return filtered;
+
+      case SortingMethod.Ascending:
         return filtered.sort((a, b) => a.price - b.price);
-      }
 
-      if (sortedPrice === "desc") {
+      case SortingMethod.Descending:
         return filtered.sort((a, b) => b.price - a.price);
-      }
-    }
 
-    return filtered;
+      case SortingMethod.Alphabetically:
+        return filtered.sort((a, b) => a.name.localeCompare(b.name));
+
+      case SortingMethod.NonAlphabetically:
+        return filtered.sort((a, b) => b.name.localeCompare(a.name));
+
+      default:
+        return filtered;
+    }
   }
 );
