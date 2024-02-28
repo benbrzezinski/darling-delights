@@ -48,18 +48,14 @@ const BasketSummary = () => {
                         <p className={scss.productName}>{name}</p>
                         <p className={scss.productInfo}>{code}</p>
                         <p className={scss.productInfo}>Size: {size}</p>
-                        <p className={scss.productInfo}>
-                          Quantity: {quantity || "1"}
-                        </p>
+                        <p className={scss.productInfo}>Quantity: {quantity}</p>
                         <p className={scss.productPriceMedium}>${price}</p>
                       </div>
                       <div className={scss.iconBox}>
                         <Link
                           to={{
                             pathname: `/shop/${id}`,
-                            search: `?from=basket&size=${size}&quantity=${
-                              quantity || "1"
-                            }`,
+                            search: `?from=basket&size=${size}&quantity=${quantity}`,
                           }}
                           className={scss.editLink}
                         >
@@ -80,18 +76,14 @@ const BasketSummary = () => {
                         <p className={scss.productName}>{name}</p>
                         <p className={scss.productInfo}>{code}</p>
                         <p className={scss.productInfo}>Size: {size}</p>
-                        <p className={scss.productInfo}>
-                          Quantity: {quantity || "1"}
-                        </p>
+                        <p className={scss.productInfo}>Quantity: {quantity}</p>
                       </div>
                       <p className={scss.productPrice}>${price}</p>
                       <div className={scss.iconBox}>
                         <Link
                           to={{
                             pathname: `/shop/${id}`,
-                            search: `?from=basket&size=${size}&quantity=${
-                              quantity || "1"
-                            }`,
+                            search: `?from=basket&size=${size}&quantity=${quantity}`,
                           }}
                           className={scss.editLink}
                         >

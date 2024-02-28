@@ -6,6 +6,7 @@ const Selects = ({
   handleSelect,
   handleValue,
   width,
+  zIndex = "auto",
 }: SelectsType) => {
   return (
     <Select
@@ -17,7 +18,7 @@ const Selects = ({
           ...baseStyles,
           width,
           lineHeight: 1.4,
-          zIndex: 2,
+          zIndex,
 
           "&::after": {
             content: '""',

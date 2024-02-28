@@ -1,14 +1,14 @@
-import { useDispatch } from "react-redux";
 import { ChangeEventHandler } from "react";
+import { useDispatch } from "react-redux";
 import { setSearcher } from "../../redux/filters/slice";
 import useFilters from "../../hooks/useFilters";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Searcher.module.scss";
 
 const Searcher = () => {
-  const dispatch = useDispatch();
   const { searcher } = useFilters();
   const { Search } = useIcons();
+  const dispatch = useDispatch();
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
     const { value } = e.currentTarget;

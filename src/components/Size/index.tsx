@@ -1,5 +1,6 @@
-import { useSearchParams } from "react-router-dom";
 import { ChangeEventHandler } from "react";
+import { useSearchParams } from "react-router-dom";
+import validateSize from "../../utils/validateSize";
 import scss from "./Size.module.scss";
 
 const Size = () => {
@@ -13,7 +14,9 @@ const Size = () => {
 
   return (
     <div className={scss.sizeBox}>
-      <p className={scss.sizeValue}>Size - {searchParams.get("size")}</p>
+      <p className={scss.sizeValue}>
+        Size - {validateSize(searchParams.get("size"))}
+      </p>
       <ul className={scss.sizes}>
         <li className={scss.sizeItem}>
           <label className={scss.sizeLabel} onChange={handleChange}>

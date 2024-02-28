@@ -1,10 +1,11 @@
+import { ChangeEventHandler, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { useState, ChangeEventHandler } from "react";
+import validateQuantity from "../../utils/validateQuantity";
 import scss from "./Quantity.module.scss";
 
 const Quantity = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [isQuantityChecked, setIsQuantityChecked] = useState(false);
+  const [isQuantityInvalid, setIsQuantityInvalid] = useState(false);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
     const quantity = e.currentTarget.value;
@@ -22,39 +23,39 @@ const Quantity = () => {
       searchParams.set("quantity", "1");
       setSearchParams(searchParams);
       e.currentTarget.value = "1";
-      setIsQuantityChecked(true);
+      setIsQuantityInvalid(true);
       return;
     }
 
     searchParams.set("quantity", quantity);
     setSearchParams(searchParams);
-    setIsQuantityChecked(false);
+    setIsQuantityInvalid(false);
   };
 
   const decreaseQuantity = () => {
     const quantity = String(Number(searchParams.get("quantity")) - 1);
 
     if (Number(quantity) < 1) {
-      setIsQuantityChecked(true);
+      setIsQuantityInvalid(true);
       return;
     }
 
     searchParams.set("quantity", quantity);
     setSearchParams(searchParams);
-    setIsQuantityChecked(false);
+    setIsQuantityInvalid(false);
   };
 
   const increaseQuantity = () => {
     const quantity = String(Number(searchParams.get("quantity")) + 1);
 
     if (Number(quantity) > 99) {
-      setIsQuantityChecked(true);
+      setIsQuantityInvalid(true);
       return;
     }
 
     searchParams.set("quantity", quantity);
     setSearchParams(searchParams);
-    setIsQuantityChecked(false);
+    setIsQuantityInvalid(false);
   };
 
   return (
@@ -72,9 +73,9 @@ const Quantity = () => {
           type="number"
           name="quantity"
           className={scss.quantity}
-          value={searchParams.get("quantity") ?? "1"}
-          min="1"
-          max="99"
+          value={validateQuantity(searchParams.get("quantity"), -1)}
+          min={1}
+          max={99}
           onChange={handleChange}
         />
         <button
@@ -85,7 +86,7 @@ const Quantity = () => {
           +
         </button>
       </div>
-      {isQuantityChecked && (
+      {isQuantityInvalid && (
         <p className={scss.error}>Allowed values are between 1 and 99</p>
       )}
     </div>

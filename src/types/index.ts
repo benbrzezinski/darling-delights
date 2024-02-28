@@ -72,6 +72,7 @@ export interface SelectsType {
   handleSelect: (option: SingleValue<OptionType>) => void;
   handleValue: () => OptionType;
   width: string;
+  zIndex?: string | number;
 }
 
 export interface PaginationType {

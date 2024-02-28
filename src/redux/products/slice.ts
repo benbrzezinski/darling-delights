@@ -3,6 +3,8 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { toast } from "react-toastify";
 import { nanoid } from "nanoid";
 import { Product, ProductPayload } from "../../types";
+import validateSize from "../../utils/validateSize";
+import validateQuantity from "../../utils/validateQuantity";
 import products from "../../db/products";
 
 const toastId = nanoid();
@@ -26,8 +28,8 @@ const productsSlice = createSlice({
         const i = state.basket.findIndex(({ id }) => id === product.id);
 
         if (i === -1) {
-          product.size = action.payload.size ?? "48";
-          product.quantity = action.payload.quantity ?? "1";
+          product.size = validateSize(action.payload.size);
+          product.quantity = validateQuantity(action.payload.quantity);
           state.basket.push(product);
           state.isBasketInfoOpen = true;
           disableBodyScroll(document.body);
@@ -59,8 +61,8 @@ const productsSlice = createSlice({
       const product = state.items.find(({ id }) => id === action.payload.id);
 
       if (product) {
-        product.size = action.payload.size ?? "48";
-        product.quantity = action.payload.quantity ?? "1";
+        product.size = validateSize(action.payload.size);
+        product.quantity = validateQuantity(action.payload.quantity);
         state.basket.push(product);
       }
     },

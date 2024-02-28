@@ -141,6 +141,7 @@ const Filters = () => {
           handleSelect={handleSelect}
           handleValue={handleValue}
           width="200px"
+          zIndex={2}
         />
         <button
           className={scss.clearFiltersBtn}
