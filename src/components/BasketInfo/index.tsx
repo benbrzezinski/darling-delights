@@ -8,11 +8,11 @@ import scss from "./BasketInfo.module.scss";
 
 const BasketInfo = () => {
   const { id } = useParams();
-  const { products, isBasketInfoOpen } = useProducts();
+  const { basket, isBasketInfoOpen } = useProducts();
   const { Close } = useIcons();
   const dispatch = useDispatch();
 
-  const product = products.find(product => product.id === id);
+  const product = basket.find(product => product.id === id);
 
   const handleCloseBasketInfo = () => {
     dispatch(closeBasketInfo());

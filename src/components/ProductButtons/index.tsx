@@ -1,9 +1,4 @@
-import {
-  useSearchParams,
-  useParams,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { useSearchParams, useParams, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toggleInBasket, addToBasket } from "../../redux/products/slice";
 import useProducts from "../../hooks/useProducts";
@@ -15,7 +10,6 @@ const ProductButtons = () => {
   const { id } = useParams();
   const { basket } = useProducts();
   const { AddShoppingCart } = useIcons();
-  const { search } = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -33,14 +27,23 @@ const ProductButtons = () => {
   };
 
   const handleBuyNow = () => {
-    const indexOfPaymentParams = searchParams.get("from")
-      ? search.indexOf("&", 28)
-      : search.indexOf("&", 18);
+    const searchParamsData = {
+      payment: searchParams.get("payment"),
+      delivery: searchParams.get("delivery"),
+      warranty: searchParams.get("warranty"),
+      care: searchParams.get("care"),
+    };
 
-    const paymentParams =
-      indexOfPaymentParams !== -1
-        ? `?${search.slice(indexOfPaymentParams + 1)}`
-        : "";
+    const paymentParams = Object.entries(searchParamsData).reduce(
+      (acc: string[], [key, value]) => {
+        if (value) {
+          acc.push(`${key}=${value}`);
+        }
+
+        return acc;
+      },
+      []
+    );
 
     if (!isInBasket && id) {
       dispatch(
@@ -52,7 +55,9 @@ const ProductButtons = () => {
       );
     }
 
-    navigate(`/basket${paymentParams}`);
+    navigate(
+      `/basket${paymentParams.length > 0 ? `?${paymentParams.join("&")}` : ""}`
+    );
   };
 
   return (

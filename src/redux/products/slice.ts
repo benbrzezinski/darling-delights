@@ -28,14 +28,16 @@ const productsSlice = createSlice({
         const i = state.basket.findIndex(({ id }) => id === product.id);
 
         if (i === -1) {
-          product.size = validateSize(action.payload.size);
-          product.quantity = validateQuantity(action.payload.quantity);
-          state.basket.push(product);
+          const productToBasket = {
+            ...product,
+            size: validateSize(action.payload.size),
+            quantity: validateQuantity(action.payload.quantity),
+          };
+
+          state.basket.push(productToBasket);
           state.isBasketInfoOpen = true;
           disableBodyScroll(document.body);
         } else {
-          product.size = "";
-          product.quantity = "";
           state.basket.splice(i, 1);
           toast.success("Removed from the basket", {
             toastId,
@@ -61,9 +63,13 @@ const productsSlice = createSlice({
       const product = state.items.find(({ id }) => id === action.payload.id);
 
       if (product) {
-        product.size = validateSize(action.payload.size);
-        product.quantity = validateQuantity(action.payload.quantity);
-        state.basket.push(product);
+        const productToBasket = {
+          ...product,
+          size: validateSize(action.payload.size),
+          quantity: validateQuantity(action.payload.quantity),
+        };
+
+        state.basket.push(productToBasket);
       }
     },
     closeBasketInfo: state => {

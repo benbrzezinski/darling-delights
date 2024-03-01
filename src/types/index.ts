@@ -106,7 +106,10 @@ export interface OptionType {
 }
 
 export interface OptionTypeObj {
-  [key: string]: OptionType[];
+  payment: OptionType[];
+  delivery: OptionType[];
+  warranty: OptionType[];
+  care: OptionType[];
 }
 
 export interface InputRefsType {

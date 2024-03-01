@@ -60,16 +60,14 @@ const Basket = ({
                   <Link
                     to={{
                       pathname: `shop/${id}`,
-                      search: `?from=basket&size=${size}&quantity=${
-                        quantity || "1"
-                      }`,
+                      search: `?from=basket&size=${size}&quantity=${quantity}`,
                     }}
                     className={scss.editLink}
                     onClick={closeBasket}
                   >
                     <EditPen className={scss.editPen} />
                   </Link>
-                  <p className={scss.quantity}>x{quantity || "1"}</p>
+                  <p className={scss.quantity}>x{quantity}</p>
                 </li>
               ))}
             </ul>

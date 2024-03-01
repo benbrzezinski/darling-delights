@@ -24,14 +24,17 @@ const useSelectsPropsProduct = () => {
     ],
   };
 
-  const handleSelect = (option: SingleValue<OptionType>, optionKey: string) => {
+  const handleSelect = (
+    option: SingleValue<OptionType>,
+    optionKey: keyof OptionTypeObj
+  ) => {
     if (option) {
       searchParams.set(optionKey, option.value);
       setSearchParams(searchParams);
     }
   };
 
-  const handleValue = (optionKey: string) => {
+  const handleValue = (optionKey: keyof OptionTypeObj) => {
     const option = options[optionKey].find(
       ({ value }) => value === searchParams.get(optionKey)
     );
