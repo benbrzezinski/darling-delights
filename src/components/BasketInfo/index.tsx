@@ -33,7 +33,11 @@ const BasketInfo = () => {
       }
       onClick={handleCloseBasketInfoByBackdrop}
     >
-      <section className={scss.section}>
+      <section
+        className={
+          isBasketInfoOpen ? `${scss.section} ${scss.isVisible}` : scss.section
+        }
+      >
         <div className={scss.headlineBox}>
           <h2 className={scss.title}>Added to the basket</h2>
           <button

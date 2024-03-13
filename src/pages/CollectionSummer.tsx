@@ -17,11 +17,10 @@ const CollectionSummer = () => {
         <title>Darling Delights - Summer</title>
       </Helmet>
       <CollectionDetailsHeading
-        bgImg={"https://i.ibb.co/WPrV7GY/collection-7-big.jpg"}
-        title={"Summer"}
-        text={
-          "Experience Sun-Kissed Elegance: Our Exquisite Summer Jewelry Collection - Embrace the Warmth and Glamour of Summertime with Incomparable Gracefulness"
-        }
+        bgImg="https://i.ibb.co/WPrV7GY/collection-7-big.jpg"
+        title="Summer"
+        text="Experience Sun-Kissed Elegance: Our Exquisite Summer Jewelry Collection - Embrace the Warmth and Glamour of Summertime with Incomparable Gracefulness"
+        marginBottom={0}
       />
       <CollectionDetailsProducts products={collectionProducts} />
     </>

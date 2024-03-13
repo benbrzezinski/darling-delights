@@ -53,9 +53,15 @@
   }
 }
 
+.voucherList {
+  max-width: 286px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .voucherValue {
-  width: 55px;
-  height: 28px;
   display: grid;
   place-items: center;
   font-size: var(--fs-9);
@@ -64,11 +70,13 @@
   border-radius: var(--br-3);
   pointer-events: none;
   user-select: none;
+  padding-block: 5px;
+  padding-inline: 10px;
 }
 
 .error {
   @extend %error;
-  padding-left: 2px;
+  font-size: clamp(0.75rem, 0.6667rem + 0.4167vw, 0.875rem);
   margin-top: 0;
 }
 

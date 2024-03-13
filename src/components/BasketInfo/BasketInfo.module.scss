@@ -21,7 +21,13 @@
 .section {
   background-color: var(--cl-4);
   border-radius: var(--br-main);
+  transform: translateY(-100%);
   padding: 30px;
+  transition: transform var(--duration) var(--timing-function);
+
+  &.isVisible {
+    transform: translateY(0);
+  }
 }
 
 .headlineBox {

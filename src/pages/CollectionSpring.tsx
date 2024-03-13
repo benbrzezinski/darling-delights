@@ -17,11 +17,10 @@ const CollectionSpring = () => {
         <title>Darling Delights - Spring</title>
       </Helmet>
       <CollectionDetailsHeading
-        bgImg={"https://i.ibb.co/DwwvH0R/collection-11-big.jpg"}
-        title={"Spring"}
-        text={
-          "Explore the Essence of Renewal with Our Elegant Spring Jewelry Collection - Each Piece Blooms with the Season's Spirit, Enlivening Your Senses with Delicate Beauty"
-        }
+        bgImg="https://i.ibb.co/DwwvH0R/collection-11-big.jpg"
+        title="Spring"
+        text="Explore the Essence of Renewal with Our Elegant Spring Jewelry Collection - Each Piece Blooms with the Season's Spirit, Enlivening Your Senses with Delicate Beauty"
+        marginBottom={10}
       />
       <CollectionDetailsProducts products={collectionProducts} />
     </>

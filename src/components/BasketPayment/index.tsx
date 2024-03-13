@@ -11,7 +11,7 @@ import "react-credit-cards-2/dist/lib/styles.scss";
 import { toast } from "react-toastify";
 import { InputRefsType } from "../../types";
 import ProductSelects from "../ProductSelects";
-import VoucherSummary from "../VoucherSummary";
+import TransactionSummary from "../TransactionSummary";
 import useProducts from "../../hooks/useProducts";
 import useValidation from "../../hooks/useValidation";
 import scss from "./BasketPayment.module.scss";
@@ -356,7 +356,7 @@ const BasketPayment = () => {
               Proceed to payment
             </button>
           </form>
-          <VoucherSummary />
+          <TransactionSummary />
         </>
       ) : null}
     </section>

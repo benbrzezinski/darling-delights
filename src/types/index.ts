@@ -89,6 +89,7 @@ export interface CollectionDetailsHeadingType {
   bgImg: string;
   title: string;
   text: string;
+  marginBottom: string | number;
 }
 
 export interface LoaderType {

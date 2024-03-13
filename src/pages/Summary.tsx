@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import SummaryDetails from "../components/SummaryDetails";
+import SummaryTransactionDetails from "../components/SummaryTransactionDetails";
 
 const Summary = () => {
   return (
@@ -7,7 +7,7 @@ const Summary = () => {
       <Helmet>
         <title>Darling Delights - Summary</title>
       </Helmet>
-      <SummaryDetails />
+      <SummaryTransactionDetails />
     </>
   );
 };

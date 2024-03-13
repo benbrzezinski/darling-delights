@@ -10,7 +10,10 @@ const ProductSelects = () => {
   const { Info } = useIcons();
 
   const toggleMoreInfo = () => {
-    if (!moreInfo) window.scrollBy({ top: 200, behavior: "smooth" });
+    moreInfo
+      ? window.scrollBy({ top: -200, behavior: "smooth" })
+      : window.scrollBy({ top: 200, behavior: "smooth" });
+
     setMoreInfo(i => !i);
   };
 
@@ -58,9 +61,15 @@ const ProductSelects = () => {
               1 Year Warranty / 2 Years Warranty: $10.00 / $20.00
             </li>
             <li className={scss.paymentSelectsInfoItem}>
-              Basic Care / Premium Care: $2.00 / $5.00
+              Basic Care / Premium Care: $2.00 / $6.00
             </li>
           </ul>
+          <h3 className={scss.paymentSelectsInfoTitle} style={{ marginTop: 5 }}>
+            Free delivery from $200.00
+          </h3>
+          <p className={scss.paymentSelectsVoucherCode}>
+            Code to apply in the Voucher field: <strong>FREED</strong>
+          </p>
         </>
       )}
     </div>

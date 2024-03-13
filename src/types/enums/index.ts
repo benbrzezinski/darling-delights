@@ -27,3 +27,8 @@ export enum FeedbackPlacement {
   Home = "HOME",
   Shop = "SHOP",
 }
+
+export enum VoucherType {
+  Premium = "$25 OFF",
+  FreeDelivery = "FREED",
+}

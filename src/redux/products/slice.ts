@@ -41,7 +41,7 @@ const productsSlice = createSlice({
           state.basket.splice(i, 1);
           toast.success("Removed from the basket", {
             toastId,
-            autoClose: 5000,
+            autoClose: 3000,
           });
         }
       }

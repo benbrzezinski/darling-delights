@@ -7,6 +7,7 @@ const CollectionDetailsHeading = ({
   bgImg,
   title,
   text,
+  marginBottom,
 }: CollectionDetailsHeadingType) => {
   const { pathname } = useLocation();
   const { Lower, Greater } = useIcons();
@@ -20,7 +21,9 @@ const CollectionDetailsHeading = ({
     >
       <div className={`container ${scss.wrapper}`}>
         <section className={scss.heading}>
-          <h1 className={scss.title}>{title}</h1>
+          <h1 className={scss.title} style={{ marginBottom }}>
+            {title}
+          </h1>
           <p className={scss.text}>{text}</p>
           <div className={scss.linkBox}>
             <button

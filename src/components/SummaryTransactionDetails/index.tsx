@@ -6,9 +6,9 @@ import { customAlphabet } from "nanoid";
 import { LocationState } from "../../types";
 import { resetBasket } from "../../redux/products/slice";
 import useIcons from "../../hooks/useIcons";
-import scss from "./SummaryDetails.module.scss";
+import scss from "./SummaryTransactionDetails.module.scss";
 
-const SummaryDetails = () => {
+const SummaryTransactionDetails = () => {
   const [searchParams] = useSearchParams();
   const { Calendar, Customer, PaymentMethod, Receipt, Dollar, AddressCard } =
     useIcons();
@@ -156,4 +156,4 @@ const SummaryDetails = () => {
   );
 };
 
-export default SummaryDetails;
+export default SummaryTransactionDetails;

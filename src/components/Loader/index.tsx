@@ -11,7 +11,7 @@ const Loader = ({ isVisible = true }: LoaderType) => {
         width="100"
         ariaLabel="hourglass-loading"
         wrapperClass={scss.loader}
-        colors={["#6b4a09", "#f2c66d"]}
+        colors={["var(--cl-14)", "var(--cl-3)"]}
       />
       <div className={scss.spanDown}></div>
     </>
