@@ -8,21 +8,22 @@ const Quantity = () => {
   const [isQuantityInvalid, setIsQuantityInvalid] = useState(false);
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
-    const quantity = e.currentTarget.value;
-    const min = Number(e.currentTarget.min);
-    const max = Number(e.currentTarget.max);
+    const input = e.target;
+    const quantity = input.value;
+    const min = Number(input.min);
+    const max = Number(input.max);
 
     if (quantity === "") {
       searchParams.set("quantity", "");
       setSearchParams(searchParams);
-      e.currentTarget.value = "";
+      e.target.value = "";
       return;
     }
 
     if (Number(quantity) < min || Number(quantity) > max) {
       searchParams.set("quantity", "1");
       setSearchParams(searchParams);
-      e.currentTarget.value = "1";
+      e.target.value = "1";
       setIsQuantityInvalid(true);
       return;
     }
@@ -72,10 +73,11 @@ const Quantity = () => {
         <input
           type="number"
           name="quantity"
+          inputMode="numeric"
           className={scss.quantity}
-          value={validateQuantity(searchParams.get("quantity"), -1)}
           min={1}
           max={99}
+          value={validateQuantity(searchParams.get("quantity"), -1)}
           onChange={handleChange}
         />
         <button

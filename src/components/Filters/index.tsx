@@ -147,6 +147,7 @@ const Filters = () => {
           className={scss.clearFiltersBtn}
           style={{
             backgroundColor: sortingMethod ? "var(--cl-12)" : "var(--cl-10)",
+            cursor: sortingMethod ? "pointer" : "default",
           }}
           type="button"
           title="Clear Filters"
