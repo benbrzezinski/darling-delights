@@ -7,7 +7,7 @@ const Designers = () => {
       <ul className={scss.designers}>
         <li className={scss.designer}>
           <img
-            src="https://i.ibb.co/N6nCt90/designer-1.jpg"
+            src="/assets/images/designer-1.jpg"
             alt="designer Joseph Anderson"
             width={360}
             className={scss.designerImg}
@@ -19,7 +19,7 @@ const Designers = () => {
         </li>
         <li className={scss.designer}>
           <img
-            src="https://i.ibb.co/f2ZRc4R/designer-2.jpg"
+            src="/assets/images/designer-2.jpg"
             alt="designer Jennifer Robinson"
             width={360}
             className={scss.designerImg}
@@ -31,7 +31,7 @@ const Designers = () => {
         </li>
         <li className={scss.designer}>
           <img
-            src="https://i.ibb.co/CVxBXDV/designer-3.jpg"
+            src="/assets/images/designer-3.jpg"
             alt="designer Erica Serrano"
             width={360}
             className={scss.designerImg}

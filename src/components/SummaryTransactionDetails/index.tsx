@@ -72,15 +72,16 @@ const SummaryTransactionDetails = () => {
               <PaymentMethod className={scss.summaryIcon} />
               <p className={scss.summaryName}>Payment Method</p>
             </div>
-            <p
+            <img
+              src={
+                searchParams.get("payment") === "credit"
+                  ? "assets/images/credit-card.png"
+                  : "assets/svgs/blik.svg"
+              }
               className={scss.summaryPaymentImg}
-              style={{
-                backgroundImage:
-                  searchParams.get("payment") === "credit"
-                    ? "url(assets/images/creditCard.png)"
-                    : "url(assets/svgs/blik.svg)",
-              }}
-            ></p>
+              alt="payment method"
+              loading="lazy"
+            />
           </li>
           <li className={scss.summaryItem}>
             <div className={scss.summaryBox}>

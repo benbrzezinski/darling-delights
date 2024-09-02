@@ -17,11 +17,7 @@ const Pagination = ({ productsPerPage }: PaginationType) => {
   const dispatch = useDispatch();
 
   const quantityOfPages = Math.ceil(filteredProducts.length / productsPerPage);
-  const pages: number[] = [];
-
-  for (let i = 1; i <= quantityOfPages; i++) {
-    pages.push(i);
-  }
+  const pages = Array.from({ length: quantityOfPages }, (_, i) => i + 1);
 
   useEffect(() => {
     if (initialRender.current) {

@@ -118,13 +118,12 @@
 
 .summaryPaymentImg {
   width: 100px;
-  height: 32px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right center;
+  height: 35px;
+  object-fit: contain;
+  object-position: right center;
 
   @include max-width(392px) {
-    width: 80px;
+    width: 90px;
   }
 }
 

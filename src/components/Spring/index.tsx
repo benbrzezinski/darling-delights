@@ -6,7 +6,7 @@ const Spring = () => {
     <div className={`container ${scss.wrapper}`}>
       <div className={scss.headingBox}>
         <img
-          src="https://i.ibb.co/jRq94xp/collection-9.jpg"
+          src="/assets/images/collection-9.jpg"
           alt="collection image"
           width={570}
           height={342}
@@ -29,7 +29,7 @@ const Spring = () => {
       </div>
       <div className={scss.imagesBox}>
         <img
-          src="https://i.ibb.co/SxBs6QY/collection-10.jpg"
+          src="/assets/images/collection-10.jpg"
           alt="collection image"
           width={570}
           height={570}
@@ -37,7 +37,7 @@ const Spring = () => {
           loading="lazy"
         />
         <img
-          src="https://i.ibb.co/1Q7VWrr/collection-11.jpg"
+          src="/assets/images/collection-11.jpg"
           alt="collection image"
           width={570}
           height={570}
@@ -45,7 +45,7 @@ const Spring = () => {
           loading="lazy"
         />
         <img
-          src="https://i.ibb.co/vvy6KXq/collection-12.jpg"
+          src="/assets/images/collection-12.jpg"
           alt="collection image"
           width="100%"
           className={`${scss.img} ${scss.span}`}

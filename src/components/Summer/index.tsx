@@ -19,7 +19,7 @@ const Summer = () => {
           </Link>
         </section>
         <img
-          src="https://i.ibb.co/ZL1j9KM/collection-7.jpg"
+          src="/assets/images/collection-7.jpg"
           alt="collection image"
           width={570}
           height={456}
@@ -29,7 +29,7 @@ const Summer = () => {
       </div>
       <div className={scss.imagesBox}>
         <img
-          src="https://i.ibb.co/zQCLKfM/collection-6.jpg"
+          src="/assets/images/collection-6.jpg"
           alt="collection image"
           width={368}
           height={460}
@@ -37,7 +37,7 @@ const Summer = () => {
           loading="lazy"
         />
         <img
-          src="https://i.ibb.co/NTcQrWD/collection-13.jpg"
+          src="/assets/images/collection-13.jpg"
           alt="collection image"
           width={368}
           height={460}
@@ -45,7 +45,7 @@ const Summer = () => {
           loading="lazy"
         />
         <img
-          src="https://i.ibb.co/G0Z16FK/collection-5.jpg"
+          src="/assets/images/collection-5.jpg"
           alt="collection image"
           width={368}
           height={460}
@@ -53,7 +53,7 @@ const Summer = () => {
           loading="lazy"
         />
         <img
-          src="https://i.ibb.co/LNrTNFg/collection-3.jpg"
+          src="/assets/images/collection-3.jpg"
           alt="collection image"
           width="100%"
           className={`${scss.img} ${scss.span}`}

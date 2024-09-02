@@ -36,7 +36,7 @@ const SharedLayout = () => {
 
   useEffect(() => {
     const handleScroll = throttle(() => {
-      setIsTop(window.scrollY === 0);
+      setIsTop(window.scrollY < 1000);
     }, THROTTLE_DELAY);
 
     window.addEventListener("scroll", handleScroll);

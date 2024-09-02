@@ -43,11 +43,11 @@
   }
 
   &.first {
-    background-image: url("https://i.ibb.co/0yt4b4b/our-collections-1.jpg");
+    background-image: url("/assets/images/our-collections-1.jpg");
   }
 
   &.sec {
-    background-image: url("https://i.ibb.co/XZb59cy/our-collections-2.jpg");
+    background-image: url("/assets/images/our-collections-2.jpg");
 
     @include min-width(1205px) {
       transform: translateY(-35px);
@@ -55,15 +55,15 @@
   }
 
   &.third {
-    background-image: url("https://i.ibb.co/9gGt184/our-collections-3.jpg");
+    background-image: url("/assets/images/our-collections-3.jpg");
   }
 
   &.fourth {
-    background-image: url("https://i.ibb.co/ThC9hKs/our-collections-4.jpg");
+    background-image: url("/assets/images/our-collections-4.jpg");
   }
 
   &.fifth {
-    background-image: url("https://i.ibb.co/TKYcHkK/our-collections-5.jpg");
+    background-image: url("/assets/images/our-collections-5.jpg");
 
     @include min-width(1205px) {
       transform: translateY(-35px);
@@ -71,7 +71,7 @@
   }
 
   &.sixth {
-    background-image: url("https://i.ibb.co/wKwKVnG/our-collections-6.jpg");
+    background-image: url("/assets/images/our-collections-6.jpg");
   }
 }
 

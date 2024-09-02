@@ -8,7 +8,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Luxury Gems Necklace",
     price: 168.76,
-    img: "https://i.ibb.co/QXJ45ZF/shop-11.jpg",
+    img: "/assets/images/shop-11.jpg",
     size: "",
     quantity: "",
     color: {
@@ -23,7 +23,7 @@ const products: Product[] = [
     type: ProductType.Bracelet,
     name: "Aurora Bracelet",
     price: 125.28,
-    img: "https://i.ibb.co/FnFrWxw/shop-8.jpg",
+    img: "/assets/images/shop-8.jpg",
     size: "",
     quantity: "",
     color: {
@@ -38,7 +38,7 @@ const products: Product[] = [
     type: ProductType.Bracelet,
     name: "Reflections Bracelet",
     price: 228.75,
-    img: "https://i.ibb.co/Dw3mkZK/shop-2.jpg",
+    img: "/assets/images/shop-2.jpg",
     size: "",
     quantity: "",
     color: {
@@ -53,7 +53,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Dreamy Infinity Ring",
     price: 327.71,
-    img: "https://i.ibb.co/H47sDZP/shop-6.jpg",
+    img: "/assets/images/shop-6.jpg",
     size: "",
     quantity: "",
     color: {
@@ -68,7 +68,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Opulent Jewels Ring",
     price: 168.76,
-    img: "https://i.ibb.co/Q9HqdFK/shop-4.jpg",
+    img: "/assets/images/shop-4.jpg",
     size: "",
     quantity: "",
     color: {
@@ -83,7 +83,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Serene Solitaire Earrings",
     price: 125.28,
-    img: "https://i.ibb.co/3m834Wz/shop-5.jpg",
+    img: "/assets/images/shop-5.jpg",
     size: "",
     quantity: "",
     color: {
@@ -98,7 +98,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Graceful Earrings",
     price: 124.38,
-    img: "https://i.ibb.co/s3yMzMF/shop-10.jpg",
+    img: "/assets/images/shop-10.jpg",
     size: "",
     quantity: "",
     color: {
@@ -113,7 +113,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Ornate Earrings",
     price: 802.49,
-    img: "https://i.ibb.co/qpJWCZf/shop-31.jpg",
+    img: "/assets/images/shop-31.jpg",
     size: "",
     quantity: "",
     color: {
@@ -128,7 +128,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Sparkling Ring",
     price: 450.89,
-    img: "https://i.ibb.co/cYTp3dk/shop-9.jpg",
+    img: "/assets/images/shop-9.jpg",
     size: "",
     quantity: "",
     color: {
@@ -143,7 +143,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Timeless Halo Earrings",
     price: 620.73,
-    img: "https://i.ibb.co/mJKZ7WT/shop-3.jpg",
+    img: "/assets/images/shop-3.jpg",
     size: "",
     quantity: "",
     color: {
@@ -158,7 +158,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Lavish Ring",
     price: 348.89,
-    img: "https://i.ibb.co/rcd8trw/shop-17.jpg",
+    img: "/assets/images/shop-17.jpg",
     size: "",
     quantity: "",
     color: {
@@ -173,7 +173,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Blissful Bloom Ring",
     price: 348.89,
-    img: "https://i.ibb.co/RjhmwZ4/shop-7.jpg",
+    img: "/assets/images/shop-7.jpg",
     size: "",
     quantity: "",
     color: {
@@ -188,7 +188,7 @@ const products: Product[] = [
     type: ProductType.Bracelet,
     name: "Marvelous Bracelet",
     price: 942.16,
-    img: "https://i.ibb.co/QDfhycK/shop-29.jpg",
+    img: "/assets/images/shop-29.jpg",
     size: "",
     quantity: "",
     color: {
@@ -203,7 +203,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Glimmering Ring",
     price: 515.35,
-    img: "https://i.ibb.co/bbX1QL2/shop-1.jpg",
+    img: "/assets/images/shop-1.jpg",
     size: "",
     quantity: "",
     color: {
@@ -218,7 +218,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Exquisite Earrings",
     price: 327.71,
-    img: "https://i.ibb.co/2PKL4gz/our-selection-product-2.jpg",
+    img: "/assets/images/our-selection-product-2.jpg",
     size: "",
     quantity: "",
     color: {
@@ -237,7 +237,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Elegance Earrings",
     price: 620.73,
-    img: "https://i.ibb.co/HXvfbyM/our-selection-product-3.jpg",
+    img: "/assets/images/our-selection-product-3.jpg",
     size: "",
     quantity: "",
     color: {
@@ -256,7 +256,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Palatial Jewels Ring",
     price: 168.76,
-    img: "https://i.ibb.co/J2WW6N9/collection-1.jpg",
+    img: "/assets/images/collection-1.jpg",
     size: "",
     quantity: "",
     color: {
@@ -271,7 +271,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Serene Solitaire Ring",
     price: 125.28,
-    img: "https://i.ibb.co/0QGL94f/collection-2.jpg",
+    img: "/assets/images/collection-2.jpg",
     size: "",
     quantity: "",
     color: {
@@ -286,7 +286,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Timeless Deluxe Necklace",
     price: 168.76,
-    img: "https://i.ibb.co/NTcQrWD/collection-13.jpg",
+    img: "/assets/images/collection-13.jpg",
     size: "",
     quantity: "",
     color: {
@@ -301,7 +301,7 @@ const products: Product[] = [
     type: ProductType.Brooch,
     name: "Timeless Brooch",
     price: 204.54,
-    img: "https://i.ibb.co/LNrTNFg/collection-3.jpg",
+    img: "/assets/images/collection-3.jpg",
     size: "",
     quantity: "",
     color: {
@@ -316,7 +316,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Radiance Necklace",
     price: 168.76,
-    img: "https://i.ibb.co/bKDgk5Z/featured-product-1.jpg",
+    img: "/assets/images/featured-product-1.jpg",
     size: "",
     quantity: "",
     color: {
@@ -331,7 +331,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Shimmering Ring",
     price: 250.72,
-    img: "https://i.ibb.co/jwTXrjQ/our-selection-product-1.jpg",
+    img: "/assets/images/our-selection-product-1.jpg",
     size: "",
     quantity: "",
     color: {
@@ -346,7 +346,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Refined Earrings",
     price: 125.28,
-    img: "https://i.ibb.co/cgs89XN/featured-product-2.jpg",
+    img: "/assets/images/featured-product-2.jpg",
     size: "",
     quantity: "",
     color: {
@@ -361,7 +361,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Delights Earrings",
     price: 323.71,
-    img: "https://i.ibb.co/6XXjSfK/featured-product-3.jpg",
+    img: "/assets/images/featured-product-3.jpg",
     size: "",
     quantity: "",
     color: {
@@ -376,7 +376,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Striking Necklace",
     price: 450.25,
-    img: "https://i.ibb.co/FXqxgKT/collection-14.jpg",
+    img: "/assets/images/collection-14.jpg",
     size: "",
     quantity: "",
     color: {
@@ -391,7 +391,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Timeless Elegance Ring",
     price: 168.76,
-    img: "https://i.ibb.co/DYr7wC4/shop-13.jpg",
+    img: "/assets/images/shop-13.jpg",
     size: "",
     quantity: "",
     color: {
@@ -406,7 +406,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Luxurious Ring",
     price: 250.72,
-    img: "https://i.ibb.co/NNd20kP/shop-16.jpg",
+    img: "/assets/images/shop-16.jpg",
     size: "",
     quantity: "",
     color: {
@@ -421,7 +421,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Grand Necklace",
     price: 168.76,
-    img: "https://i.ibb.co/Yd5wcvC/shop-21.jpg",
+    img: "/assets/images/shop-21.jpg",
     size: "",
     quantity: "",
     color: {
@@ -436,7 +436,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Exclusive Earrings",
     price: 250.72,
-    img: "https://i.ibb.co/r4GyGGG/shop-22.jpg",
+    img: "/assets/images/shop-22.jpg",
     size: "",
     quantity: "",
     color: {
@@ -451,7 +451,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Sparkling Necklace",
     price: 515.35,
-    img: "https://i.ibb.co/G0Z16FK/collection-5.jpg",
+    img: "/assets/images/collection-5.jpg",
     size: "",
     quantity: "",
     color: {
@@ -466,7 +466,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Glimmering Earrings",
     price: 450.89,
-    img: "https://i.ibb.co/zQCLKfM/collection-6.jpg",
+    img: "/assets/images/collection-6.jpg",
     size: "",
     quantity: "",
     color: {
@@ -481,7 +481,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Luxury Ring",
     price: 450.89,
-    img: "https://i.ibb.co/WBBxxbb/collection-4.jpg",
+    img: "/assets/images/collection-4.jpg",
     size: "",
     quantity: "",
     color: {
@@ -496,7 +496,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Recherche Necklace",
     price: 780.99,
-    img: "https://i.ibb.co/BPS2bbr/shop-24.jpg",
+    img: "/assets/images/shop-24.jpg",
     size: "",
     quantity: "",
     color: {
@@ -511,7 +511,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Sumptuous Necklace",
     price: 204.54,
-    img: "https://i.ibb.co/YR97Gx7/shop-25.jpg",
+    img: "/assets/images/shop-25.jpg",
     size: "",
     quantity: "",
     color: {
@@ -526,7 +526,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Splendid Earrings",
     price: 780.99,
-    img: "https://i.ibb.co/mDbJZrz/shop-30.jpg",
+    img: "/assets/images/shop-30.jpg",
     size: "",
     quantity: "",
     color: {
@@ -541,7 +541,7 @@ const products: Product[] = [
     type: ProductType.Bracelet,
     name: "Fanciful Bracelet",
     price: 125.28,
-    img: "https://i.ibb.co/RjWBcfQ/shop-20.jpg",
+    img: "/assets/images/shop-20.jpg",
     size: "",
     quantity: "",
     color: {
@@ -556,7 +556,7 @@ const products: Product[] = [
     type: ProductType.Bracelet,
     name: "Resplendent Bracelet",
     price: 450.89,
-    img: "https://i.ibb.co/XfRcqTM/shop-27.jpg",
+    img: "/assets/images/shop-27.jpg",
     size: "",
     quantity: "",
     color: {
@@ -571,7 +571,7 @@ const products: Product[] = [
     type: ProductType.Bracelet,
     name: "Luxury Charms Bracelet",
     price: 620.73,
-    img: "https://i.ibb.co/MG7X057/shop-12.jpg",
+    img: "/assets/images/shop-12.jpg",
     size: "",
     quantity: "",
     color: {
@@ -586,7 +586,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Deluxe Emerald Necklace",
     price: 1015.99,
-    img: "https://i.ibb.co/dpf7Tfn/shop-14.jpg",
+    img: "/assets/images/shop-14.jpg",
     size: "",
     quantity: "",
     color: {
@@ -601,7 +601,7 @@ const products: Product[] = [
     type: ProductType.Ring,
     name: "Dedicated Rubin Ring",
     price: 802.49,
-    img: "https://i.ibb.co/VpCqLgh/shop-23.jpg",
+    img: "/assets/images/shop-23.jpg",
     size: "",
     quantity: "",
     color: {
@@ -616,7 +616,7 @@ const products: Product[] = [
     type: ProductType.Bracelet,
     name: "Extraordinary Bracelet",
     price: 150.25,
-    img: "https://i.ibb.co/TLyY6JC/shop-28.jpg",
+    img: "/assets/images/shop-28.jpg",
     size: "",
     quantity: "",
     color: {
@@ -631,7 +631,7 @@ const products: Product[] = [
     type: ProductType.Bracelet,
     name: "Astonishing Bracelet",
     price: 150.25,
-    img: "https://i.ibb.co/8c1QC7W/shop-26.jpg",
+    img: "/assets/images/shop-26.jpg",
     size: "",
     quantity: "",
     color: {
@@ -646,7 +646,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Magnificent Necklace",
     price: 1010.99,
-    img: "https://i.ibb.co/b121nPh/shop-15.jpg",
+    img: "/assets/images/shop-15.jpg",
     size: "",
     quantity: "",
     color: {
@@ -661,7 +661,7 @@ const products: Product[] = [
     type: ProductType.Earring,
     name: "Elaborate Earrings",
     price: 204.54,
-    img: "https://i.ibb.co/vJHJsry/shop-18.jpg",
+    img: "/assets/images/shop-18.jpg",
     size: "",
     quantity: "",
     color: {
@@ -676,7 +676,7 @@ const products: Product[] = [
     type: ProductType.Necklace,
     name: "Sophisticated Necklace",
     price: 327.71,
-    img: "https://i.ibb.co/qnGvBxR/shop-19.jpg",
+    img: "/assets/images/shop-19.jpg",
     size: "",
     quantity: "",
     color: {
