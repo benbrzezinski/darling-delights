@@ -76,6 +76,7 @@ export interface SelectsType {
 }
 
 export interface PaginationType {
+  currentPage: number;
   productsPerPage: 12 | 13;
 }
 

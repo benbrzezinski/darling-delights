@@ -1,23 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { toggleFavourites } from "../../redux/products/slice";
 import Pagination from "../Pagination";
 import Notification from "../Notification";
-import usePage from "../../hooks/usePage";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./ShopProducts.module.scss";
 
 const ShopProducts = () => {
-  const { currentPage } = usePage();
+  const FIRST_PAGE = 1;
+  const LAST_PAGE = 4;
+  const [searchParams] = useSearchParams();
   const { filteredProducts, favourites } = useProducts();
   const { FavouritesHeartEmpty, FavouritesHeartFull } = useIcons();
   const dispatch = useDispatch();
-
   const isMediumScreen = useMediaQuery({ query: "(max-width: 1215px)" });
-  const productsPerPage = isMediumScreen ? 12 : 13;
 
+  const paramsPage = searchParams.get("p") ? Number(searchParams.get("p")) : 1;
+  const currentPage =
+    isNaN(paramsPage) || paramsPage < FIRST_PAGE || paramsPage > LAST_PAGE
+      ? 1
+      : paramsPage;
+
+  const productsPerPage = isMediumScreen ? 12 : 13;
   const lastProductIndex = currentPage * productsPerPage;
   const firstProductIndex = lastProductIndex - productsPerPage;
 
@@ -79,7 +85,10 @@ const ShopProducts = () => {
               );
             })}
           </ul>
-          <Pagination productsPerPage={productsPerPage} />
+          <Pagination
+            currentPage={currentPage}
+            productsPerPage={productsPerPage}
+          />
         </>
       ) : filteredProducts.length > 0 ? (
         <>
@@ -132,7 +141,10 @@ const ShopProducts = () => {
               );
             })}
           </ul>
-          <Pagination productsPerPage={productsPerPage} />
+          <Pagination
+            currentPage={currentPage}
+            productsPerPage={productsPerPage}
+          />
         </>
       ) : (
         <Notification text="Sorry, no products were found" />

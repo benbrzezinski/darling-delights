@@ -12,7 +12,6 @@ import {
 import storage from "redux-persist/lib/storage";
 import productsReducer from "./products/slice";
 import filtersReducer from "./filters/slice";
-import pageReducer from "./page/slice";
 
 const productsPersistConfig = {
   key: "products",
@@ -29,7 +28,6 @@ const store = configureStore({
   reducer: {
     products: productsPersistReducer,
     filters: filtersReducer,
-    page: pageReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

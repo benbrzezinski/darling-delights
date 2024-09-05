@@ -1,32 +1,18 @@
-import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import { nanoid } from "nanoid";
 import { PaginationType } from "../../types";
-import { setPage } from "../../redux/page/slice";
 import scrollToValue from "../../utils/scrollToValue";
-import usePage from "../../hooks/usePage";
 import useProducts from "../../hooks/useProducts";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Pagination.module.scss";
 
-const Pagination = ({ productsPerPage }: PaginationType) => {
-  const { currentPage } = usePage();
+const Pagination = ({ currentPage, productsPerPage }: PaginationType) => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const { filteredProducts } = useProducts();
   const { Greater, Lower } = useIcons();
-  const initialRender = useRef(true);
-  const dispatch = useDispatch();
 
   const quantityOfPages = Math.ceil(filteredProducts.length / productsPerPage);
   const pages = Array.from({ length: quantityOfPages }, (_, i) => i + 1);
-
-  useEffect(() => {
-    if (initialRender.current) {
-      initialRender.current = false;
-      return;
-    }
-
-    if (quantityOfPages) dispatch(setPage(1));
-  }, [quantityOfPages, filteredProducts.length, dispatch]);
 
   return pages.length > 0 ? (
     <ul className={scss.pagination}>
@@ -36,7 +22,8 @@ const Pagination = ({ productsPerPage }: PaginationType) => {
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              dispatch(setPage(currentPage - 1));
+              searchParams.set("p", String(currentPage - 1));
+              setSearchParams(searchParams);
               scrollToValue(500);
             }}
           >
@@ -61,7 +48,8 @@ const Pagination = ({ productsPerPage }: PaginationType) => {
                 : scss.paginationBtn
             }
             onClick={() => {
-              dispatch(setPage(page));
+              searchParams.set("p", String(page));
+              setSearchParams(searchParams);
               scrollToValue(500);
             }}
           >
@@ -75,7 +63,8 @@ const Pagination = ({ productsPerPage }: PaginationType) => {
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              dispatch(setPage(currentPage + 1));
+              searchParams.set("p", String(currentPage + 1));
+              setSearchParams(searchParams);
               scrollToValue(500);
             }}
           >
