@@ -17,10 +17,12 @@ const ShopProducts = () => {
   const dispatch = useDispatch();
   const isMediumScreen = useMediaQuery({ query: "(max-width: 1215px)" });
 
-  const paramsPage = searchParams.get("p") ? Number(searchParams.get("p")) : 1;
+  const paramsPage = searchParams.get("p")
+    ? Number(searchParams.get("p"))
+    : FIRST_PAGE;
   const currentPage =
     isNaN(paramsPage) || paramsPage < FIRST_PAGE || paramsPage > LAST_PAGE
-      ? 1
+      ? FIRST_PAGE
       : paramsPage;
 
   const productsPerPage = isMediumScreen ? 12 : 13;

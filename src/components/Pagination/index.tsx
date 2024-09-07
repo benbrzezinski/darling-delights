@@ -1,5 +1,4 @@
 import { useSearchParams } from "react-router-dom";
-import { nanoid } from "nanoid";
 import { PaginationType } from "../../types";
 import scrollToValue from "../../utils/scrollToValue";
 import useProducts from "../../hooks/useProducts";
@@ -14,17 +13,21 @@ const Pagination = ({ currentPage, productsPerPage }: PaginationType) => {
   const quantityOfPages = Math.ceil(filteredProducts.length / productsPerPage);
   const pages = Array.from({ length: quantityOfPages }, (_, i) => i + 1);
 
+  const handlePageChange = (page: number) => {
+    searchParams.set("p", String(page));
+    setSearchParams(searchParams);
+    scrollToValue(500);
+  };
+
   return pages.length > 0 ? (
     <ul className={scss.pagination}>
       {currentPage !== pages[0] ? (
-        <li className={scss.paginationItem} key={nanoid()}>
+        <li className={scss.paginationItem} key="lower">
           <button
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              searchParams.set("p", String(currentPage - 1));
-              setSearchParams(searchParams);
-              scrollToValue(500);
+              handlePageChange(currentPage - 1);
             }}
           >
             <Lower className={scss.iconLT} />
@@ -38,7 +41,7 @@ const Pagination = ({ currentPage, productsPerPage }: PaginationType) => {
               ? scss.paginationItemCurrent
               : scss.paginationItem
           }
-          key={nanoid()}
+          key={page}
         >
           <button
             type="button"
@@ -48,9 +51,7 @@ const Pagination = ({ currentPage, productsPerPage }: PaginationType) => {
                 : scss.paginationBtn
             }
             onClick={() => {
-              searchParams.set("p", String(page));
-              setSearchParams(searchParams);
-              scrollToValue(500);
+              handlePageChange(page);
             }}
           >
             {page}
@@ -58,14 +59,12 @@ const Pagination = ({ currentPage, productsPerPage }: PaginationType) => {
         </li>
       ))}
       {currentPage !== pages[pages.length - 1] ? (
-        <li className={scss.paginationItem} key={nanoid()}>
+        <li className={scss.paginationItem} key="greater">
           <button
             type="button"
             className={scss.paginationBtn}
             onClick={() => {
-              searchParams.set("p", String(currentPage + 1));
-              setSearchParams(searchParams);
-              scrollToValue(500);
+              handlePageChange(currentPage + 1);
             }}
           >
             <Greater className={scss.iconGT} />

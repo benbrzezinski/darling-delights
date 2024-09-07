@@ -11,7 +11,6 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import productsReducer from "./products/slice";
-import filtersReducer from "./filters/slice";
 
 const productsPersistConfig = {
   key: "products",
@@ -27,7 +26,6 @@ const productsPersistReducer = persistReducer(
 const store = configureStore({
   reducer: {
     products: productsPersistReducer,
-    filters: filtersReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

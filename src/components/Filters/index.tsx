@@ -1,18 +1,21 @@
 import { ChangeEventHandler, MouseEventHandler } from "react";
+import { useSearchParams } from "react-router-dom";
 import { SingleValue } from "react-select";
-import { useDispatch } from "react-redux";
-import { setProductType, setSortingMethod } from "../../redux/filters/slice";
 import { OptionType } from "../../types";
 import { ProductType, SortingMethod } from "../../types/enums";
 import Selects from "../Selects";
-import useFilters from "../../hooks/useFilters";
 import useIcons from "../../hooks/useIcons";
 import scss from "./Filters.module.scss";
 
 const Filters = () => {
-  const { productType, sortingMethod } = useFilters();
+  const [searchParams, setSearchParams] = useSearchParams();
   const { Reset } = useIcons();
-  const dispatch = useDispatch();
+
+  const page = searchParams.get("p") ? Number(searchParams.get("p")) : 1;
+  const productType = (searchParams.get("type")?.toLocaleUpperCase() ??
+    "") as ProductType;
+  const sortingMethod = (searchParams.get("sort")?.toLocaleUpperCase() ??
+    "") as SortingMethod;
 
   const options: OptionType[] = [
     {
@@ -34,16 +37,27 @@ const Filters = () => {
   ];
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
-    const productTypeData = e.target.dataset.type as ProductType | undefined;
-    if (productTypeData !== undefined) {
-      dispatch(setProductType(productTypeData));
+    const productDatasetType = e.target.dataset.type as ProductType;
+
+    if (page !== 1) {
+      searchParams.set("p", "1");
     }
+
+    if (productDatasetType === ProductType.Default) {
+      searchParams.delete("type");
+      setSearchParams(searchParams);
+      return;
+    }
+
+    searchParams.set("type", productDatasetType.toLocaleLowerCase());
+    setSearchParams(searchParams);
   };
 
   const handleSelect = (option: SingleValue<OptionType>) => {
     if (option) {
       const optionValue = option.value as SortingMethod;
-      dispatch(setSortingMethod(optionValue));
+      searchParams.set("sort", optionValue.toLocaleLowerCase());
+      setSearchParams(searchParams);
     }
   };
 
@@ -54,13 +68,17 @@ const Filters = () => {
     });
 
     if (option) return option;
-    return { value: SortingMethod.Default, label: "Filters" };
+
+    return { value: SortingMethod.Default, label: "Sorting" };
   };
 
   const handleClearFilters: MouseEventHandler<HTMLButtonElement> = e => {
     const btn = e.currentTarget;
     btn.classList.add(scss.rotate);
-    dispatch(setSortingMethod(SortingMethod.Default));
+
+    searchParams.delete("sort");
+    setSearchParams(searchParams);
+
     setTimeout(() => {
       btn.classList.remove(scss.rotate);
     }, 300);

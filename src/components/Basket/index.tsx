@@ -44,19 +44,28 @@ const Basket = ({
             <ul className={scss.basket}>
               {basket.map(({ id, img, name, code, price, size, quantity }) => (
                 <li className={scss.basketItem} key={id}>
-                  <img
-                    width={94}
-                    height={94}
-                    src={img}
-                    alt={name}
-                    className={scss.basketImg}
-                    loading="lazy"
-                  />
-                  <div className={scss.basketProductInfoBox}>
-                    <p className={scss.name}>{name}</p>
-                    <p className={scss.code}>{code}</p>
-                    <p className={scss.price}>${price}</p>
-                  </div>
+                  <Link
+                    to={{
+                      pathname: `shop/${id}`,
+                      search: `?from=basket&size=${size}&quantity=${quantity}`,
+                    }}
+                    className={scss.productLink}
+                    onClick={closeBasket}
+                  >
+                    <img
+                      width={94}
+                      height={94}
+                      src={img}
+                      alt={name}
+                      className={scss.basketImg}
+                      loading="lazy"
+                    />
+                    <div className={scss.basketProductInfoBox}>
+                      <p className={scss.name}>{name}</p>
+                      <p className={scss.code}>{code}</p>
+                      <p className={scss.price}>${price}</p>
+                    </div>
+                  </Link>
                   <Link
                     to={{
                       pathname: `shop/${id}`,
