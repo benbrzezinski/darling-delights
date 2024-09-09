@@ -44,6 +44,7 @@
 
 .searcherBox {
   width: 760px;
+  height: 45px;
   position: relative;
 
   &:has(:hover, :focus-visible) {
@@ -59,12 +60,11 @@
 
 .searcher {
   width: 100%;
-  height: 45px;
+  height: 100%;
   font-size: var(--fs-3);
   background-color: var(--cl-4);
   border: 1px solid var(--cl-5);
   border-radius: var(--br-sec);
-  padding-block: 11px;
   padding-left: 25px;
   padding-right: 65px;
   transition: color var(--duration) var(--timing-function);
@@ -100,5 +100,6 @@
 .icon {
   width: 30px;
   height: 30px;
+  color: var(--cl-main);
   transition: color var(--duration) var(--timing-function);
 }
