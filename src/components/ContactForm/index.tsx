@@ -76,7 +76,7 @@ const ContactForm = () => {
                 type="email"
                 name="email"
                 id={ID.current.email}
-                placeholder="yourmail@emaily.com"
+                placeholder="example@email.com"
                 required
               />
               {isEmailChecked && <p className={scss.error}>Invalid email</p>}

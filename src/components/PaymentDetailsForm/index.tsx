@@ -198,7 +198,7 @@ const PaymentDetailsForm = () => {
               type="email"
               name="email"
               id={ID.current.email}
-              placeholder="examplemail@.com"
+              placeholder="example@email.com"
               required
             />
             {isEmailChecked && <p className={scss.error}>Invalid email</p>}

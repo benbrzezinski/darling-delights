@@ -29,7 +29,7 @@
 }
 
 .basketSummary {
-  max-height: 460px;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -37,7 +37,6 @@
   overflow-x: hidden;
 
   @include max-width(664px) {
-    max-height: 500px;
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -72,6 +71,11 @@
   display: flex;
   align-items: center;
   gap: 30px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--cl-5);
+    padding-bottom: 20px;
+  }
 
   @include max-width(664px) {
     flex-direction: column;
@@ -124,7 +128,7 @@
   width: 100px;
   display: flex;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
 
   @include max-width(664px) {
     width: auto;

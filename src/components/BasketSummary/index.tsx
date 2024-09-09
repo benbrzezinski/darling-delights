@@ -64,6 +64,7 @@ const BasketSummary = () => {
                         <button
                           type="button"
                           className={scss.binBtn}
+                          title="Remove"
                           onClick={() => handleToggleInBasket(id)}
                         >
                           <Bin className={scss.binIcon} />
@@ -92,6 +93,7 @@ const BasketSummary = () => {
                         <button
                           type="button"
                           className={scss.binBtn}
+                          title="Remove"
                           onClick={() => handleToggleInBasket(id)}
                         >
                           <Bin className={scss.binIcon} />
