@@ -12,9 +12,9 @@ const Filters = () => {
   const { Reset } = useIcons();
 
   const page = searchParams.get("p") ? Number(searchParams.get("p")) : 1;
-  const productType = (searchParams.get("type")?.toLocaleUpperCase() ??
+  const productType = (searchParams.get("type")?.toUpperCase() ??
     "") as ProductType;
-  const sortingMethod = (searchParams.get("sort")?.toLocaleUpperCase() ??
+  const sortingMethod = (searchParams.get("sort")?.toUpperCase() ??
     "") as SortingMethod;
 
   const options: OptionType[] = [
@@ -49,14 +49,14 @@ const Filters = () => {
       return;
     }
 
-    searchParams.set("type", productDatasetType.toLocaleLowerCase());
+    searchParams.set("type", productDatasetType.toLowerCase());
     setSearchParams(searchParams);
   };
 
   const handleSelect = (option: SingleValue<OptionType>) => {
     if (option) {
       const optionValue = option.value as SortingMethod;
-      searchParams.set("sort", optionValue.toLocaleLowerCase());
+      searchParams.set("sort", optionValue.toLowerCase());
       setSearchParams(searchParams);
     }
   };

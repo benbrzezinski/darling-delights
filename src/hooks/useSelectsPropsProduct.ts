@@ -43,7 +43,7 @@ const useSelectsPropsProduct = () => {
 
     return {
       value: "",
-      label: optionKey.slice(0, 1).toLocaleUpperCase() + optionKey.slice(1),
+      label: optionKey.slice(0, 1).toUpperCase() + optionKey.slice(1),
     };
   };
 

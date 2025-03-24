@@ -16,7 +16,7 @@
     "lodash.throttle": "^4.1.1",
     "lottie-react": "^2.4.0",
     "modern-normalize": "^2.0.0",
-    "nanoid": "^4.0.2",
+    "nanoid": "^5.1.5",
     "react": "^18.2.0",
     "react-credit-cards-2": "^1.0.1",
     "react-dom": "^18.2.0",
@@ -46,6 +46,6 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "sass": "^1.66.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^6.2.3"
   }
 }

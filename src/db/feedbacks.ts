@@ -1,10 +1,9 @@
-import { nanoid } from "nanoid";
 import { Feedback } from "../types";
 import { FeedbackPlacement } from "../types/enums";
 
 const feedbacks: Feedback[] = [
   {
-    id: nanoid(),
+    id: "fb1",
     author: "Anna Fernandez",
     country: "California",
     img: "/assets/images/feedback-1.jpg",
@@ -12,7 +11,7 @@ const feedbacks: Feedback[] = [
     placement: FeedbackPlacement.Home,
   },
   {
-    id: nanoid(),
+    id: "fb2",
     author: "Sophie Anderson",
     country: "Spain",
     img: "/assets/images/feedback-2.jpg",
@@ -20,7 +19,7 @@ const feedbacks: Feedback[] = [
     placement: FeedbackPlacement.Home,
   },
   {
-    id: nanoid(),
+    id: "fb3",
     author: "David Smith",
     country: "China",
     img: "/assets/images/feedback-3.jpg",
@@ -28,7 +27,7 @@ const feedbacks: Feedback[] = [
     placement: FeedbackPlacement.Home,
   },
   {
-    id: nanoid(),
+    id: "fb4",
     author: "Lena Martinez",
     country: "Mexico",
     img: "/assets/images/feedback-4.jpg",
@@ -36,7 +35,7 @@ const feedbacks: Feedback[] = [
     placement: FeedbackPlacement.Shop,
   },
   {
-    id: nanoid(),
+    id: "fb5",
     author: "Mohammed Ali",
     country: "United Arab Emirates",
     img: "/assets/images/feedback-5.jpg",
@@ -44,7 +43,7 @@ const feedbacks: Feedback[] = [
     placement: FeedbackPlacement.Shop,
   },
   {
-    id: nanoid(),
+    id: "fb6",
     author: "Alexandra Johnson",
     country: "Canada",
     img: "/assets/images/feedback-6.jpg",

@@ -17,18 +17,16 @@ const useProducts = () => {
   const isBasketInfoOpen = useSelector(selectIsBasketInfoOpen);
   const total = useSelector(selectTotal);
   const searcherQuery = searchParams.get("q") ?? "";
-  const productType = (searchParams.get("type")?.toLocaleUpperCase() ??
+  const productType = (searchParams.get("type")?.toUpperCase() ??
     "") as ProductType;
-  const sortingMethod = (searchParams.get("sort")?.toLocaleUpperCase() ??
+  const sortingMethod = (searchParams.get("sort")?.toUpperCase() ??
     "") as SortingMethod;
 
   const filterProducts = () => {
     const filtered = products.filter(
       ({ placement, name, type }) =>
         placement.includes(ProductPlacement.Shop) &&
-        name
-          .toLocaleLowerCase()
-          .includes(searcherQuery.toLocaleLowerCase().trim()) &&
+        name.toLowerCase().includes(searcherQuery.toLowerCase().trim()) &&
         type.startsWith(productType)
     );
 

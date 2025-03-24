@@ -62,7 +62,14 @@
   animation: bg-change 40s steps(1) infinite, bg-scale 40s linear infinite;
 
   @include max-width(1350px) {
-    transform: translateX(-50%);
+    translate: -50%;
+  }
+
+  @include min-height(1080px) {
+    height: 915px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
   }
 }
 

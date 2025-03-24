@@ -10,6 +10,12 @@
   }
 }
 
+@mixin min-height($bp) {
+  @media screen and (min-height: $bp) {
+    @content;
+  }
+}
+
 @mixin landscape() {
   @media screen and (orientation: landscape) {
     @content;
