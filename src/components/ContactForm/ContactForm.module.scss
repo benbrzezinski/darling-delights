@@ -1,6 +1,7 @@
 @use "../../scss/index.scss" as *;
 
 .background {
+  min-height: calc(100dvh - 366px);
   background-color: var(--cl-7);
 }
 
