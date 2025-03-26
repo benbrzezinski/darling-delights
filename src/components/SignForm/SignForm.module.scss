@@ -5,7 +5,7 @@
 }
 
 .wrapper {
-  min-height: 80dvh;
+  min-height: calc(100dvh - 366px);
   display: flex;
   justify-content: center;
   align-items: center;

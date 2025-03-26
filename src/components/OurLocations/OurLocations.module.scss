@@ -1,7 +1,7 @@
 @use "../../scss/index.scss" as *;
 
 .wrapper {
-  min-height: 80dvh;
+  min-height: calc(100dvh - 366px);
   display: flex;
   flex-direction: column;
   justify-content: center;

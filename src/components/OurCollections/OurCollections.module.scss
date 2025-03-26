@@ -1,6 +1,7 @@
 @use "../../scss/index.scss" as *;
 
 .wrapper {
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   align-items: center;
