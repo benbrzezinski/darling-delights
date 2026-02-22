@@ -11,13 +11,17 @@ import BasketInfo from "../components/BasketInfo";
 
 const ShopDetails = () => {
   const feedbacksShop = feedbacks.filter(
-    ({ placement }) => placement === FeedbackPlacement.Shop
+    ({ placement }) => placement === FeedbackPlacement.Shop,
   );
 
   return (
     <>
       <Helmet>
         <title>Darling Delights - Product</title>
+        <meta
+          name="description"
+          content="View detailed information about each Darling Delights jewelry piece, including materials, design, and care instructions."
+        ></meta>
       </Helmet>
       <ProductDetailsNav />
       <ProductDetails />

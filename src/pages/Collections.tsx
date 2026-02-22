@@ -8,6 +8,10 @@ const Collections = () => {
     <>
       <Helmet>
         <title>Darling Delights - Collections</title>
+        <meta
+          name="description"
+          content="Browse Darling Delights collections featuring diamonds, gemstones, and unique jewelry pieces designed for every occasion."
+        ></meta>
       </Helmet>
       <CollectionsHeading />
       <Summer />

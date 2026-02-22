@@ -12,7 +12,7 @@ $delay: 150ms;
 
   &.isVisible {
     opacity: 1;
-    pointer-events: all;
+    pointer-events: auto;
     transition: opacity var(--duration) var(--timing-function);
   }
 }
@@ -123,7 +123,8 @@ $delay: 150ms;
     background-clip: padding-box;
     background-color: var(--cl-5);
     border-radius: var(--br-sec);
-    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, 0.05),
+    box-shadow:
+      inset -1px -1px 0 rgba(0, 0, 0, 0.05),
       inset 1px 1px 0 rgba(0, 0, 0, 0.05);
   }
 

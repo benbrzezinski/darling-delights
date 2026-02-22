@@ -11,13 +11,17 @@ import feedbacks from "../db/feedbacks";
 
 const Home = () => {
   const feedbacksHome = feedbacks.filter(
-    ({ placement }) => placement === FeedbackPlacement.Home
+    ({ placement }) => placement === FeedbackPlacement.Home,
   );
 
   return (
     <>
       <Helmet>
         <title>Darling Delights</title>
+        <meta
+          name="description"
+          content="Explore Darling Delights jewelry: timeless elegance with diamonds, gemstones, and curated pieces crafted to enhance your style."
+        ></meta>
       </Helmet>
       <Heading />
       <OurAdvantages />

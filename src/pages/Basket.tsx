@@ -7,6 +7,10 @@ const Basket = () => {
     <>
       <Helmet>
         <title>Darling Delights - Basket</title>
+        <meta
+          name="description"
+          content="Review your selected jewelry in the Darling Delights basket and prepare for a seamless checkout experience."
+        ></meta>
       </Helmet>
       <BasketSummary />
       <Suggestions />

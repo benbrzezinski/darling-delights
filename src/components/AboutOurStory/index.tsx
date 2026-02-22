@@ -23,11 +23,13 @@ const AboutOurStory = () => {
       </section>
       <video
         className={scss.video}
-        onMouseEnter={showControls}
+        onMouseOver={showControls}
         onMouseLeave={hideControls}
         controls
         controlsList="nodownload noremoteplayback noplaybackrate"
         poster="/assets/images/video-poster-2.jpg"
+        preload="none"
+        playsInline
       >
         <source src="/assets/videos/our-story.mp4" type="video/mp4" />
         Your browser does not support mp4 videos

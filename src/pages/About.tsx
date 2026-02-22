@@ -10,6 +10,10 @@ const About = () => {
     <>
       <Helmet>
         <title>Darling Delights - About</title>
+        <meta
+          name="description"
+          content="Learn about Darling Delights, our passion for fine jewelry, expert craftsmanship, and dedication to timeless elegance."
+        ></meta>
       </Helmet>
       <AboutHeading />
       <AboutOurStory />

@@ -6,6 +6,10 @@ const PaymentDetails = () => {
     <>
       <Helmet>
         <title>Darling Delights - Payment</title>
+        <meta
+          name="description"
+          content="Enter your payment details securely and complete your Darling Delights order with confidence and ease."
+        ></meta>
       </Helmet>
       <PaymentDetailsForm />
     </>

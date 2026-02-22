@@ -6,6 +6,10 @@ const SignIn = () => {
     <>
       <Helmet>
         <title>Darling Delights - Sign In</title>
+        <meta
+          name="description"
+          content="Sign in to your Darling Delights account to manage orders, wishlists, and enjoy a personalized jewelry experience."
+        ></meta>
       </Helmet>
       <SignForm type="login" />
     </>

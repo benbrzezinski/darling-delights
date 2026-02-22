@@ -9,6 +9,10 @@ const Shop = () => {
     <>
       <Helmet>
         <title>Darling Delights - Shop</title>
+        <meta
+          name="description"
+          content="Explore the Darling Delights shop: diamonds, gemstones, and handcrafted jewelry pieces for every occasion."
+        ></meta>
       </Helmet>
       <Searcher />
       <Filters />

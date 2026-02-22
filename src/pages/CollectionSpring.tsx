@@ -8,13 +8,17 @@ const CollectionSpring = () => {
   const { products } = useProducts();
 
   const collectionProducts = products.filter(({ placement }) =>
-    placement.includes(ProductPlacement.CollectionSpring)
+    placement.includes(ProductPlacement.CollectionSpring),
   );
 
   return (
     <>
       <Helmet>
         <title>Darling Delights - Spring</title>
+        <meta
+          name="description"
+          content="Discover Darling Delights Spring Collection: fresh, elegant jewelry pieces inspired by seasonal beauty and timeless style."
+        ></meta>
       </Helmet>
       <CollectionDetailsHeading
         bgImg="/assets/images/collection-11-big.jpg"
